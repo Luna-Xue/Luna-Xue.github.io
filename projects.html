@@ -13,17 +13,47 @@ body_attr: >-
   | sort: "date" | reverse
 %}
 
-<div class="row">
-  <div class="col-12">
-    <h1 class="mb-3">Projects</h1>
-    <p class="text-muted mb-4">
-      All of my past and current projects are listed here.
-    </p>
-
-    <div class="row">
-      {% for item in projects_sorted %}
-        {% include widgets/project_card.html item=item %}
-      {% endfor %}
+<div class="col-12 col-md-6 col-xl-4 d-flex">
+    <div class="card shadow-sm border-0 mb-4 project-card interactive w-100">
+      <a href="{{ url }}" class="stretched-link" target="_blank" rel="noopener">
+        <img class="card-img-top project-thumb" src="{{ item.thumb | relative_url }}" alt="{{ item.title }}">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title mb-1">
+          <a href="{{ url }}" class="text-decoration-none stretched-link" target="_blank" rel="noopener">
+            {{ item.title }}
+          </a>
+        </h5>
+        <div class="text-muted small">{{ item.subtitle }}</div>
+      </div>
     </div>
   </div>
-</div>
+  
+
+<script>
+    // 触摸时给卡片加上 .is-hover，短暂显示浮起态
+    document.addEventListener('touchstart', function (e) {
+      const card = e.target.closest('.project-card.interactive');
+      if (!card) return;
+      card.classList.add('is-hover');
+      // 150~200ms 够用，可按需调整
+      setTimeout(() => card.classList.remove('is-hover'), 180);
+    }, { passive: true });
+  
+    // 鼠标移出或失焦时，确保移除
+    document.addEventListener('mouseleave', function (e) {
+      const card = e.target.closest && e.target.closest('.project-card.interactive');
+      if (card) card.classList.remove('is-hover');
+    }, true);
+  
+    // 键盘 Tab 聚焦时也浮起（a、button 等在卡内）
+    document.addEventListener('focusin', function (e) {
+      const card = e.target.closest('.project-card.interactive');
+      if (card) card.classList.add('is-hover');
+    });
+    document.addEventListener('focusout', function (e) {
+      const card = e.target.closest('.project-card.interactive');
+      if (card) card.classList.remove('is-hover');
+    });
+  </script>
+  
