@@ -13,7 +13,7 @@ abstract: >-
 cover:          /assets/images/covers/cover3.jpg
 authors:
   - Xiaochan Xue
-  - Saurabh Raman Parkar 
+  - Saurabh Parkar 
   - Shucheng Yu
   - Yao Zheng
 links:
