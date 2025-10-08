@@ -12,22 +12,26 @@ title: "Test Page"
     transform: translateY(-2px); box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12);
   }
 
-  /* 只给底边两个角倒角：TL TR BL BR = 0 0 var var */
-  .float-illustration {
-    border-radius: 0 0 var(--fig-radius) var(--fig-radius);
-    overflow: hidden;                 /* 避免内部直角溢出 */
-    background: #fff;                 /* 可选：给 figure 一个白底 */
-    border: 1px solid #eee;           /* 可选：细边框，让倒角更明显 */
-  }
+  :root { --fig-radius: 12px; }
 
-  .fig-thumb {
-    width: 220px;                     /* 不要太大 */
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 0 0 var(--fig-radius) var(--fig-radius); /* 同步只圆底角 */
-    display: block;                   /* 避免默认行内元素造成的细缝 */
-  }
+/* figure 容器：四角圆角 */
+.float-illustration {
+  border-radius: var(--fig-radius);
+  overflow: hidden;     /* 防止内部直角露出 */
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+/* 内部图片：四角同样圆角 */
+.fig-thumb {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--fig-radius);
+  display: block;
+}
+
 
   .fig-caption {
     font-size: .82rem;
