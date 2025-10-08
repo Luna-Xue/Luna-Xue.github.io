@@ -1,5 +1,5 @@
 ---
-title:          "Over-the-air federated learning with enhanced privacy"
+title:          "Over-the-air Federated Learning with Enhanced Privacy"
 date:           2023-5-28 00:01:00 +0800
 selected:       true
 pub:            "IEEE International Conference on Communications (ICC)"
