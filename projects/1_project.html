@@ -3,24 +3,38 @@ layout: default
 title: "Test Page"
 ---
 
-<!-- 轻量内联样式：小插图浮动与尺寸控制 -->
+<!-- 轻量内联样式：小插图浮动与尺寸控制 + 仅底部倒角 -->
 <style>
-  .hover-lift { transition: transform .15s ease, box-shadow .15s ease; }
+  :root { --fig-radius: 12px; } /* 底部圆角半径，可按需调整 */
+
+  .hover-lift { transition: transform .15s ease, box-shadow .15s ease, border-radius .15s ease; }
   .hover-lift:hover, .hover-lift:focus-within, .hover-lift.is-hover {
     transform: translateY(-2px); box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12);
   }
+
+  /* 只给底边两个角倒角：TL TR BL BR = 0 0 var var */
+  .float-illustration {
+    border-radius: 0 0 var(--fig-radius) var(--fig-radius);
+    overflow: hidden;                 /* 避免内部直角溢出 */
+    background: #fff;                 /* 可选：给 figure 一个白底 */
+    border: 1px solid #eee;           /* 可选：细边框，让倒角更明显 */
+  }
+
   .fig-thumb {
-    width: 220px;                /* 不要太大 */
+    width: 220px;                     /* 不要太大 */
     max-width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: .5rem;
+    border-radius: 0 0 var(--fig-radius) var(--fig-radius); /* 同步只圆底角 */
+    display: block;                   /* 避免默认行内元素造成的细缝 */
   }
+
   .fig-caption {
     font-size: .82rem;
-    color: #6c757d;              /* text-muted */
+    color: #6c757d;                   /* text-muted */
   }
-  /* 让小图在中大屏幕靠右浮动；小屏改为块级显示 */
+
+  /* 中大屏右浮动；小屏块级铺排 */
   @media (min-width: 768px) {
     .float-illustration { float: right; margin: .25rem 0 .75rem 1rem; }
   }
