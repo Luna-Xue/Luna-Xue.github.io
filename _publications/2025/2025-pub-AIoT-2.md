@@ -17,6 +17,7 @@ authors:
   - Shucheng Yu
   - Yao Zheng
 links:
-  Code: https://github.com/luost26/academic-homepage
-  Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
+  Paper: 
+  Code: https://github.com/Luna-Xue
+  Demo: 
 ---
