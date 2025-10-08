@@ -3,42 +3,117 @@ layout: default
 title: "Test Page"
 ---
 
-<!-- 轻量内联样式：卡片浮动与封面占比 -->
+<!-- 轻量内联样式：小插图浮动与尺寸控制 -->
 <style>
   .hover-lift { transition: transform .15s ease, box-shadow .15s ease; }
   .hover-lift:hover, .hover-lift:focus-within, .hover-lift.is-hover {
     transform: translateY(-2px); box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12);
   }
-  .thumb-16x9 { aspect-ratio: 16/9; object-fit: cover; width: 100%; height: auto; }
+  .fig-thumb {
+    width: 220px;                /* 不要太大 */
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: .5rem;
+  }
+  .fig-caption {
+    font-size: .82rem;
+    color: #6c757d;              /* text-muted */
+  }
+  /* 让小图在中大屏幕靠右浮动；小屏改为块级显示 */
+  @media (min-width: 768px) {
+    .float-illustration { float: right; margin: .25rem 0 .75rem 1rem; }
+  }
+  @media (max-width: 767.98px) {
+    .float-illustration { display: block; margin: .75rem 0; }
+  }
 </style>
 
 <div class="row">
   <div class="col-12 col-lg-9">
+
     <h1 class="mb-3">Hello, Test 👋</h1>
-    <p class="text-muted">This is a quick test page to verify layout, styles, and JS hooks.</p>
+    <p class="text-muted">This page demonstrates a text-first project detail layout with a few small floating illustrations.</p>
 
-    <div class="card border-0 shadow-sm hover-lift mb-4">
-      <img class="card-img-top thumb-16x9"
-           src="https://picsum.photos/960/540"
-           alt="Random placeholder image" loading="lazy" decoding="async">
-      <div class="card-body">
-        <h5 class="card-title mb-1">Floating Card</h5>
-        <p class="card-text">Hover or tap to see the lift effect. Click the button to toggle the box below.</p>
-        <button id="btn-toggle" class="btn btn-primary btn-sm">Toggle Box</button>
-      </div>
-      <div id="toggle-box" class="px-3 pb-3" style="display:none;">
-        <div class="border rounded p-3">✅ It works! You can see me now.</div>
-      </div>
-    </div>
+    <!-- 小插图 1（右浮动） -->
+    <figure class="float-illustration hover-lift text-center">
+      <img class="fig-thumb"
+           src="https://picsum.photos/seed/a/360/220"
+           alt="Illustration A" loading="lazy" decoding="async">
+      <figcaption class="fig-caption mt-1">Illustration A</figcaption>
+    </figure>
 
-    <h5 class="mt-4">Quick Checklist</h5>
+    <h2 id="overview">Overview</h2>
+    <p>
+      This section summarizes the background, problem statement, and overall objectives. Keep the prose concise and
+      focused on what the reader should take away. If needed, link to external resources or related work for context.
+    </p>
+    <p>
+      The layout prioritizes text content while sprinkling in lightweight visuals that complement the narrative without
+      overwhelming the page or distracting from the main message.
+    </p>
+
+    <!-- 小插图 2（右浮动） -->
+    <figure class="float-illustration hover-lift text-center">
+      <img class="fig-thumb"
+           src="https://picsum.photos/seed/b/360/220"
+           alt="Illustration B" loading="lazy" decoding="async">
+      <figcaption class="fig-caption mt-1">Illustration B</figcaption>
+    </figure>
+
+    <h2 id="approach">Approach</h2>
     <ul>
-      <li>Page title from front matter is shown in the browser tab.</li>
-      <li>Permalink is <code>/projects/test/</code>.</li>
-      <li>Bootstrap card styles render correctly.</li>
-      <li>Hover/tap lift effect works.</li>
-      <li>JS button toggles a box.</li>
+      <li><strong>Design:</strong> Outline the key ideas, assumptions, and architecture decisions.</li>
+      <li><strong>Implementation:</strong> Describe the practical setup, toolchain, or testbed.</li>
+      <li><strong>Validation:</strong> Explain how you evaluate, including datasets and metrics.</li>
     </ul>
+    <p>
+      Keep each bullet actionable. If there are modules or phases, enumerate them clearly so that readers can map each
+      result back to a concrete step in the approach.
+    </p>
+
+    <!-- 小插图 3（右浮动） -->
+    <figure class="float-illustration hover-lift text-center">
+      <img class="fig-thumb"
+           src="https://picsum.photos/seed/c/360/220"
+           alt="Illustration C" loading="lazy" decoding="async">
+      <figcaption class="fig-caption mt-1">Illustration C</figcaption>
+    </figure>
+
+    <h2 id="results">Results</h2>
+    <p>
+      Summarize key findings with a brief narrative. If you reference figures, keep them small and aligned with the text,
+      as shown here. Reserve large charts for dedicated figures or a gallery section when necessary.
+    </p>
+    <ul>
+      <li>Metric A improved by <strong>XX%</strong> over the baseline.</li>
+      <li>System is stable under <strong>N</strong> trials and varying conditions.</li>
+      <li>Demo available via an external link (paper/code/video).</li>
+    </ul>
+
+    <h2 id="resources">Resources</h2>
+    <p class="mb-2">
+      <a class="btn btn-sm btn-outline-primary mr-2 mb-2" href="#" target="_blank" rel="noopener">
+        <i class="fa-solid fa-file-lines mr-1" aria-hidden="true"></i> Paper
+      </a>
+      <a class="btn btn-sm btn-outline-primary mr-2 mb-2" href="#" target="_blank" rel="noopener">
+        <i class="fa-brands fa-github mr-1" aria-hidden="true"></i> Code
+      </a>
+      <a class="btn btn-sm btn-outline-primary mr-2 mb-2" href="#" target="_blank" rel="noopener">
+        <i class="fa-brands fa-youtube mr-1" aria-hidden="true"></i> Demo
+      </a>
+    </p>
+    <p class="text-muted">
+      Contact: your_email@hawaii.edu &nbsp;•&nbsp; Acknowledgements: sponsors, collaborators, students.
+    </p>
+
+    <hr>
+    <h5 class="mt-4">Notes</h5>
+    <p>
+      You can add more sections as needed. The small floating images are optional; remove any that don’t add value. Keep
+      paragraphs short for readability.
+    </p>
+
   </div>
 
   <div class="col-12 col-lg-3">
@@ -46,27 +121,20 @@ title: "Test Page"
       <div class="card-body">
         <div class="mb-2"><strong>Status:</strong> Online</div>
         <div class="mb-2"><strong>Updated:</strong> <span id="now"></span></div>
-        <div class="mb-2"><strong>Permalink:</strong> <code>{{ page.permalink }}</code></div>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  // 简单交互：按钮切换显示
-  document.getElementById('btn-toggle').addEventListener('click', function () {
-    var box = document.getElementById('toggle-box');
-    box.style.display = (box.style.display === 'none' || !box.style.display) ? 'block' : 'none';
-  });
-
   // 显示当前时间（本地）
   document.getElementById('now').textContent = new Date().toLocaleString();
 
-  // 触屏轻触时给卡片短暂浮起
+  // 触屏轻触时给小插图短暂浮起
   document.addEventListener('touchstart', function (e) {
-    const card = e.target.closest('.hover-lift');
-    if (!card) return;
-    card.classList.add('is-hover');
-    setTimeout(() => card.classList.remove('is-hover'), 180);
+    const fig = e.target.closest('.hover-lift');
+    if (!fig) return;
+    fig.classList.add('is-hover');
+    setTimeout(() => fig.classList.remove('is-hover'), 180);
   }, { passive: true });
 </script>
