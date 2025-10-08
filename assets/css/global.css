@@ -90,3 +90,29 @@ div.lazy {
     font-family: Courier, monospace;
 }
 
+/* 基础过渡 */
+.project-card.interactive {
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  
+  /* 悬停、键盘聚焦、脚本触发时的浮起态 */
+  .project-card.interactive:hover,
+  .project-card.interactive:focus-within,
+  .project-card.interactive.is-hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12);
+  }
+  
+  /* 触屏设备上，用 :active 也给点反馈 */
+  @media (hover: none) {
+    .project-card.interactive:active {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12);
+    }
+  }
+  
+  /* 减少动画选项尊重系统设置（可选） */
+  @media (prefers-reduced-motion: reduce) {
+    .project-card.interactive { transition: none; }
+  }
+  
