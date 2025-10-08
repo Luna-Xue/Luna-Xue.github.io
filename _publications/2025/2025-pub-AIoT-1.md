@@ -14,7 +14,7 @@ cover:          /assets/images/covers/cover3.jpg
 authors:
   - Xiaochan Xue
   - Shucheng Yu
-  - Saurabh Raman Parkar 
+  - Saurabh Parkar 
   - Yao Zheng
 links:
   Code: https://github.com/luost26/academic-homepage
