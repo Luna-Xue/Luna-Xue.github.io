@@ -1,6 +1,6 @@
 ---
 title:          "AI-assisted Composite ISAC for mmWave Respiration Pattern Recognition"
-date:           2025-05-12 00:01:00 +0800
+date:           2025-12-3 00:01:00 +0800
 selected:       true
 pub:            "IEEE Annual Congress on Artificial Intelligence of Things (AIoT)"
 # pub_pre:        "Submitted to "
