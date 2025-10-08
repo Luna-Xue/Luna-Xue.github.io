@@ -1,0 +1,27 @@
+{%- assign title = include.item.title -%}
+{%- assign subtitle = include.item.subtitle -%}
+{%- assign thumb = include.item.thumb | default: include.item.hero -%}
+{%- assign url = include.item.external_url | default: include.item.internal_url | default: include.item.url -%}
+
+<div class="col-12 col-md-6 col-xl-4 d-flex">
+  <div class="card shadow-sm border-0 mb-4 project-card w-100">
+    {% if thumb %}
+    <a href="{{ url }}" target="_blank" rel="noopener">
+      <img class="card-img-top project-thumb" src="{{ thumb | relative_url }}" alt="{{ title }}">
+    </a>
+    {% endif %}
+    <div class="card-body">
+      <h5 class="card-title mb-1">
+        <a class="stretched-link text-decoration-none" href="{{ url }}" target="_blank" rel="noopener">
+          {{ title }}
+        </a>
+      </h5>
+      {% if subtitle %}
+      <div class="text-muted small mb-2">{{ subtitle }}</div>
+      {% endif %}
+      {% if include.item.excerpt %}
+      <p class="card-text">{{ include.item.excerpt }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
