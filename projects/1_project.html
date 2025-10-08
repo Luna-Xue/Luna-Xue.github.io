@@ -3,42 +3,31 @@ layout: default
 title: "Test Page"
 ---
 
-<!-- 轻量内联样式：小插图浮动与尺寸控制 + 仅底部倒角 -->
 <style>
-  :root { --fig-radius: 12px; } /* 底部圆角半径，可按需调整 */
+  :root { --r: 12px; } /* 圆角半径 */
 
-  .hover-lift { transition: transform .15s ease, box-shadow .15s ease, border-radius .15s ease; }
-  .hover-lift:hover, .hover-lift:focus-within, .hover-lift.is-hover {
-    transform: translateY(-2px); box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12);
+  /* 悬浮/点按抬起（PC: hover/focus；触屏: active） */
+  .hover-lift { transition: transform .15s ease, box-shadow .15s ease; }
+  .hover-lift:hover,
+  .hover-lift:focus-within { transform: translateY(-2px); box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12); }
+  @media (hover: none) {
+    .hover-lift:active { transform: translateY(-2px); box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12); }
   }
 
-  :root { --fig-radius: 12px; }
-
-/* figure 容器：四角圆角 */
-.float-illustration {
-  border-radius: var(--fig-radius);
-  overflow: hidden;     /* 防止内部直角露出 */
-  background: #fff;
-  border: 1px solid #eee;
-}
-
-/* 内部图片：四角同样圆角 */
-.fig-thumb {
-  width: 220px;
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: var(--fig-radius);
-  display: block;
-}
-
-
-  .fig-caption {
-    font-size: .82rem;
-    color: #6c757d;                   /* text-muted */
+  /* 迷你插图卡片（四角圆、白底、细边、右浮动） */
+  .fig {
+    border-radius: var(--r);
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #eee;
+    text-align: center;
+    width: 220px;          /* 不要太大 */
+    max-width: 100%;
   }
+  .fig img { display: block; width: 100%; height: auto; object-fit: cover; }
+  .fig .cap { font-size: .82rem; color: #6c757d; padding: .25rem .5rem; }
 
-  /* 中大屏右浮动；小屏块级铺排 */
+  /* 布局：中大屏右浮动；小屏改为块级堆叠 */
   @media (min-width: 768px) {
     .float-illustration { float: right; margin: .25rem 0 .75rem 1rem; }
   }
@@ -54,11 +43,9 @@ title: "Test Page"
     <p class="text-muted">This page demonstrates a text-first project detail layout with a few small floating illustrations.</p>
 
     <!-- 小插图 1（右浮动） -->
-    <figure class="float-illustration hover-lift text-center">
-      <img class="fig-thumb"
-           src="https://picsum.photos/seed/a/360/220"
-           alt="Illustration A" loading="lazy" decoding="async">
-      <figcaption class="fig-caption mt-1">Illustration A</figcaption>
+    <figure class="float-illustration hover-lift fig">
+      <img src="https://picsum.photos/seed/a/360/220" alt="Illustration A" loading="lazy" decoding="async">
+      <figcaption class="cap">Illustration A</figcaption>
     </figure>
 
     <h2 id="overview">Overview</h2>
@@ -72,11 +59,9 @@ title: "Test Page"
     </p>
 
     <!-- 小插图 2（右浮动） -->
-    <figure class="float-illustration hover-lift text-center">
-      <img class="fig-thumb"
-           src="https://picsum.photos/seed/b/360/220"
-           alt="Illustration B" loading="lazy" decoding="async">
-      <figcaption class="fig-caption mt-1">Illustration B</figcaption>
+    <figure class="float-illustration hover-lift fig">
+      <img src="https://picsum.photos/seed/b/360/220" alt="Illustration B" loading="lazy" decoding="async">
+      <figcaption class="cap">Illustration B</figcaption>
     </figure>
 
     <h2 id="approach">Approach</h2>
@@ -91,11 +76,9 @@ title: "Test Page"
     </p>
 
     <!-- 小插图 3（右浮动） -->
-    <figure class="float-illustration hover-lift text-center">
-      <img class="fig-thumb"
-           src="https://picsum.photos/seed/c/360/220"
-           alt="Illustration C" loading="lazy" decoding="async">
-      <figcaption class="fig-caption mt-1">Illustration C</figcaption>
+    <figure class="float-illustration hover-lift fig">
+      <img src="https://picsum.photos/seed/c/360/220" alt="Illustration C" loading="lazy" decoding="async">
+      <figcaption class="cap">Illustration C</figcaption>
     </figure>
 
     <h2 id="results">Results</h2>
@@ -145,14 +128,6 @@ title: "Test Page"
 </div>
 
 <script>
-  // 显示当前时间（本地）
+  // 仅更新时间，交互抬起交给 CSS
   document.getElementById('now').textContent = new Date().toLocaleString();
-
-  // 触屏轻触时给小插图短暂浮起
-  document.addEventListener('touchstart', function (e) {
-    const fig = e.target.closest('.hover-lift');
-    if (!fig) return;
-    fig.classList.add('is-hover');
-    setTimeout(() => fig.classList.remove('is-hover'), 180);
-  }, { passive: true });
 </script>
