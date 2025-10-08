@@ -1,5 +1,5 @@
 ---
-title:          "Cooperative noma-based spectrum leasing with multiple secondary users"
+title:          "Cooperative Noma-based Spectrum Leasing with Multiple Secondary Users"
 date:           2023-6-23 00:01:00 +0800
 selected:       false
 pub:            "IEEE Transactions on Vehicular Technology (TVT)"
