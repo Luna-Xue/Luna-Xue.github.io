@@ -103,16 +103,26 @@ div.lazy {
     box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12);
   }
   
-  /* 触屏设备上，用 :active 也给点反馈 */
+  /* 统一的浮动效果 */
+.hover-lift {
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .hover-lift:hover,
+  .hover-lift:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12);
+  }
+  
+  /* 触屏：点按也给反馈 */
   @media (hover: none) {
-    .project-card.interactive:active {
+    .hover-lift:active {
       transform: translateY(-2px);
       box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12);
     }
   }
   
-  /* 减少动画选项尊重系统设置（可选） */
+  /* 尊重减少动画设置（可选） */
   @media (prefers-reduced-motion: reduce) {
-    .project-card.interactive { transition: none; }
+    .hover-lift { transition: none; }
   }
   

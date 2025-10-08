@@ -16,43 +16,70 @@ body_attr: >-
 <div class="row">
   <div class="col-12">
     <h1 class="mb-3">Projects</h1>
-    <p class="text-muted mb-4">
-      All of my past and current projects are listed here.
-    </p>
+    <p class="text-muted mb-4">All of my past and current projects are listed here.</p>
 
     <div class="row">
       {% for item in projects_sorted %}
-        {% include widgets/project_card.html item=item %}
+        {%- assign title = item.title -%}
+        {%- assign subtitle = item.subtitle -%}
+        {%- assign thumb = item.thumb | default: item.hero -%}
+        {%- assign url = item.external_url | default: item.internal_url | default: item.url -%}
+        {%- assign excerpt = item.excerpt -%}
+
+        <div class="col-12 col-md-6 col-xl-4 d-flex">
+          <div class="card shadow-sm border-0 mb-4 project-card hover-lift w-100">
+            {% if thumb %}
+              <a href="{{ url }}" target="_blank" rel="noopener">
+                <img class="card-img-top project-thumb"
+                     src="{{ thumb | relative_url }}"
+                     alt="{{ title | escape }}"
+                     loading="lazy" decoding="async">
+              </a>
+            {% endif %}
+
+            <div class="card-body">
+              <h5 class="card-title mb-1">
+                <a class="stretched-link text-decoration-none"
+                   href="{{ url }}" target="_blank" rel="noopener">
+                  {{ title }}
+                </a>
+              </h5>
+              {% if subtitle %}
+                <div class="text-muted small mb-2">{{ subtitle }}</div>
+              {% endif %}
+              {% if excerpt %}
+                <p class="card-text">{{ excerpt }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
       {% endfor %}
     </div>
   </div>
 </div>
 
-
 <script>
-    // 触摸时给卡片加上 .is-hover，短暂显示浮起态
-    document.addEventListener('touchstart', function (e) {
-      const card = e.target.closest('.project-card.interactive');
-      if (!card) return;
-      card.classList.add('is-hover');
-      // 150~200ms 够用，可按需调整
-      setTimeout(() => card.classList.remove('is-hover'), 180);
-    }, { passive: true });
-  
-    // 鼠标移出或失焦时，确保移除
-    document.addEventListener('mouseleave', function (e) {
-      const card = e.target.closest && e.target.closest('.project-card.interactive');
-      if (card) card.classList.remove('is-hover');
-    }, true);
-  
-    // 键盘 Tab 聚焦时也浮起（a、button 等在卡内）
-    document.addEventListener('focusin', function (e) {
-      const card = e.target.closest('.project-card.interactive');
-      if (card) card.classList.add('is-hover');
-    });
-    document.addEventListener('focusout', function (e) {
-      const card = e.target.closest('.project-card.interactive');
-      if (card) card.classList.remove('is-hover');
-    });
-  </script>
-  
+  // 触摸时给卡片加上 .is-hover，短暂显示浮起态
+  document.addEventListener('touchstart', function (e) {
+    const card = e.target.closest('.project-card.hover-lift');
+    if (!card) return;
+    card.classList.add('is-hover');
+    setTimeout(() => card.classList.remove('is-hover'), 180);
+  }, { passive: true });
+
+  // 鼠标移出或失焦时，确保移除
+  document.addEventListener('mouseleave', function (e) {
+    const card = e.target.closest && e.target.closest('.project-card.hover-lift');
+    if (card) card.classList.remove('is-hover');
+  }, true);
+
+  // 键盘 Tab 聚焦时也浮起
+  document.addEventListener('focusin', function (e) {
+    const card = e.target.closest('.project-card.hover-lift');
+    if (card) card.classList.add('is-hover');
+  });
+  document.addEventListener('focusout', function (e) {
+    const card = e.target.closest('.project-card.hover-lift');
+    if (card) card.classList.remove('is-hover');
+  });
+</script>
