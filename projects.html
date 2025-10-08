@@ -14,83 +14,34 @@ body_attr: >-
 {% assign links = page.links %}
 
 <div class="row">
-  <div class="col-12 col-lg-9">
-
-    {% if hero %}
-    <div class="mb-4">
-      <img src="{{ hero | relative_url }}" class="img-fluid rounded shadow-sm"
-           alt="{{ title | escape }}" loading="lazy" decoding="async">
-    </div>
-    {% endif %}
-
-    <h1 class="mb-2">{{ title }}</h1>
-    {% if subtitle %}<p class="text-muted lead">{{ subtitle }}</p>{% endif %}
-
-    {% if tags %}
-      <div class="mb-3">
-        {% for t in tags %}
-          <span class="badge badge-pill badge-info mr-1">{{ t }}</span>
-        {% endfor %}
-      </div>
-    {% endif %}
-
-    {% if links %}
-      <div class="mb-4">
-        {% for l in links %}
-          <a class="btn btn-sm btn-outline-primary mr-2 mb-2"
-             href="{{ l.url }}" target="_blank" rel="noopener">
-            {% if l.icon %}<i class="{{ l.icon }} mr-1" aria-hidden="true"></i>{% endif %}
-            {{ l.text }}
-          </a>
-        {% endfor %}
-      </div>
-    {% endif %}
-
-    <article class="markdown-body">
-      {{ content }}
-    </article>
-
-    {% if gallery %}
-      <hr>
-      <h5 class="mt-4 mb-3">Gallery</h5>
-      <div id="projCarousel" class="carousel slide mb-4" data-ride="carousel">
-        <div class="carousel-inner">
-          {% for g in gallery %}
-          <div class="carousel-item {% if forloop.first %}active{% endif %}">
-            <img class="d-block w-100" src="{{ g | relative_url }}" alt="slide {{ forloop.index }}"
-                 loading="lazy" decoding="async" style="object-fit:cover; max-height:560px;">
+    {% for item in projects_sorted %}
+      {% assign title = item.title %}
+      {% assign subtitle = item.subtitle %}
+      {% assign thumb = item.thumb | default: item.hero %}
+      {% assign url = item.url %}  {# ← 站内详情页地址 #}
+      {% assign excerpt = item.excerpt %}
+  
+      <div class="col-12 col-md-6 col-xl-4 d-flex">
+        <div class="card shadow-sm border-0 mb-4 project-card hover-lift w-100">
+          {% if thumb %}
+            <a href="{{ url }}">
+              <img class="card-img-top project-thumb"
+                   src="{{ thumb | relative_url }}" alt="{{ title | escape }}"
+                   loading="lazy" decoding="async">
+            </a>
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title mb-1">
+              <a class="stretched-link text-decoration-none" href="{{ url }}">{{ title }}</a>
+            </h5>
+            {% if subtitle %}<div class="text-muted small mb-2">{{ subtitle }}</div>{% endif %}
+            {% if excerpt %}<p class="card-text">{{ excerpt }}</p>{% endif %}
           </div>
-          {% endfor %}
         </div>
-        <a class="carousel-control-prev" href="#projCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#projCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
-    {% endif %}
-
+    {% endfor %}
   </div>
-
-  <div class="col-12 col-lg-3">
-    <div class="card border-0 shadow-sm bg-white sticky-top" style="top:80px">
-      <div class="card-body">
-        {% if page.role %}<div class="mb-2"><strong>Role:</strong> {{ page.role }}</div>{% endif %}
-        {% if page.period %}<div class="mb-2"><strong>Period:</strong> {{ page.period }}</div>{% endif %}
-        {% if page.collaborators %}
-          <div class="mb-2"><strong>Collaborators:</strong>
-            <ul class="pl-3 mb-0">
-              {% for c in page.collaborators %}<li>{{ c }}</li>{% endfor %}
-            </ul>
-          </div>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
+  
 
 <style>
   .markdown-body img { max-width: 100%; height: auto; }
