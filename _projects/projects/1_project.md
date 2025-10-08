@@ -3,7 +3,7 @@ layout: project
 title: "Project Title Here"
 subtitle: "One-line tagline or short description"
 date: 2025-10-01
-permalink: /projects/1_project/
+permalink: /projects/1_project
 thumb: /assets/projects/1/thumb.jpg
 hero:  /assets/projects/1/hero.jpg
 tags: [Wireless, ISAC, O-RAN]
