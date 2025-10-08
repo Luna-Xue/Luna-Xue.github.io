@@ -12,7 +12,7 @@ abstract: >-
   When the cover image is not provided, it will generate a random colorful bubble images as the cover image using the <code>bubble_visual_hash.js</code> script.
 # cover:          /assets/images/covers/cover3.jpg
 authors:
-  - Your Name*#
+  - Xiaochan Xue*#
   - James Wang*
   - Some Other Name
   - John Doe

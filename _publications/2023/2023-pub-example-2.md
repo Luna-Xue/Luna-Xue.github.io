@@ -16,7 +16,7 @@ authors:
   - John Doe*
   - Robert White
   - James Wang
-  - Your Name#
+  - Xiaochan Xue#
 links:
   Paper: https://www.biorxiv.org
   Code: https://github.com
