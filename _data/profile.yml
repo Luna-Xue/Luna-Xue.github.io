@@ -31,19 +31,19 @@ short_bio: >-
 
 portrait_url: /assets/images/photos/XXC_1.png
 portrait_caption: >-
-  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+  Photo by Xiaochan Xue on NJ, 2025.
 
 education:
-- name: Massachusetts Institute of Technology
-  logo: /assets/images/badges/MIT_Social_circle.png
+- name: Stevens Institute of Technology
+  logo: /assets/images/badges/stevens.png
   position: >- 
     Department of Electrical Engineering and Computer Science <br/>
-    Ph.D. Student
-  date: Sep. 2024 - present
-- name: Peking University
-  logo: /assets/images/badges/PKU_red.png
-  position: B.S. in Computer Science
-  date: Sep. 2019 - Jul. 2021
+    Ph.D. in Computer Engineering and M.S. in Electrical Engineering
+  date: Jan. 2018 - Aug. 2025
+- name: Jilin University
+  logo: /assets/images/badges/jlu.png
+  position: B.S. in Communication Engineering
+  date: Sep. 2013 - Jul. 2017
 
 # experience:
 # - name: Peking University
