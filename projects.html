@@ -44,6 +44,12 @@ body_attr: >-
 
   /* 标题悬停更明显（可选） */
   .project-card .card-title a:hover { text-decoration: underline; }
+
+  /* 卡片底部链接按钮（可选） */
+  .project-links .btn {
+    padding: .25rem .5rem;
+    font-size: .8rem;
+  }
 </style>
 
 <div class="row">
@@ -56,13 +62,28 @@ body_attr: >-
         {%- assign title = item.title -%}
         {%- assign subtitle = item.subtitle -%}
         {%- assign thumb = item.thumb | default: item.hero -%}
-        {%- assign url = item.external_url | default: item.internal_url | default: item.url -%}
+        {%- assign detail_url = item.url | default: item.internal_url | default: item.external_url -%}
         {%- assign excerpt = item.excerpt -%}
+        {%- assign links = item.links -%}
+
+        {%- comment -%}
+          判断 detail_url 是否为外链（含协议且不包含本站 url）
+        {%- endcomment -%}
+        {%- assign is_external = false -%}
+        {% if detail_url %}
+          {% if detail_url contains '://' %}
+            {% unless site.url and detail_url contains site.url %}
+              {% assign is_external = true %}
+            {% endunless %}
+          {% endif %}
+        {% endif %}
 
         <div class="col-12 col-md-6 col-xl-4 d-flex">
           <div class="card shadow-sm border-0 mb-4 project-card hover-lift w-100">
+
             {% if thumb %}
-              <a href="{{ url }}" target="_blank" rel="noopener">
+              <a href="{{ detail_url }}"
+                 {% if is_external %}target="_blank" rel="noopener"{% endif %}>
                 <img class="card-img-top project-thumb"
                      src="{{ thumb | relative_url }}"
                      alt="{{ title | escape }}"
@@ -73,17 +94,34 @@ body_attr: >-
             <div class="card-body">
               <h5 class="card-title mb-1">
                 <a class="stretched-link text-decoration-none"
-                   href="{{ url }}" target="_blank" rel="noopener">
+                   href="{{ detail_url }}"
+                   {% if is_external %}target="_blank" rel="noopener"{% endif %}>
                   {{ title }}
                 </a>
               </h5>
+
               {% if subtitle %}
                 <div class="text-muted small mb-2">{{ subtitle }}</div>
               {% endif %}
+
               {% if excerpt %}
                 <p class="card-text">{{ excerpt }}</p>
               {% endif %}
+
+              {% if links %}
+              <div class="project-links mt-2">
+                {% for l in links %}
+                  <a class="btn btn-sm btn-outline-primary mr-2 mb-2"
+                     href="{{ l.url }}"
+                     target="_blank" rel="noopener">
+                    {% if l.icon %}<i class="{{ l.icon }} mr-1" aria-hidden="true"></i>{% endif %}
+                    {{ l.text }}
+                  </a>
+                {% endfor %}
+              </div>
+              {% endif %}
             </div>
+
           </div>
         </div>
       {% endfor %}
