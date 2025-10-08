@@ -22,12 +22,10 @@ website: https://xiaochanxue.github.io/
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    A <a href="https://en.wikipedia.org/wiki/Bicolor_cat" target="_blank">bicolor cat</a> is a cat with white fur combined with fur of some other colour, for example solid black, tabby, or colourpointed.
+    I am an Assistant Professor in the Department of Electrical and Computer Engineering at the <a href="https://www.ee.hawaii.edu/faculty/profile?usr=138" target="_blank">University of Hawaii at Mānoa</a>. My research lies at the intersection of wireless communication, cybersecurity, and artificial intelligence. 
   </p>
   <p>
-    There are various patterns of a bicolour cat. These range from the Van-patterned (colour on the crown of the head 
-    and the tail only) to a solid colour with a throat locket or medallion. Bicolour coats are found in many cat breeds, 
-    as well as being common in domestic longhair and domestic shorthair cats.
+    My group builds secure, intelligent, and efficient wireless systems for 5G, Sub-6G, NextG, and beyond by combining AI/ML with advanced physical-layer techniques. We leverage mmWave sensing, Integrated Sensing and Communication (ISAC), and Physical-Layer Security (PLS) to enable real-time, contactless, and privacy-preserving applications. We prototype on O-RAN testbeds and edge IoT platforms. A growing thrust uses Generative AI as both a tool (data augmentation, waveform and beam co-design) and a threat (adversarial RF examples, LLM-driven control attacks) to harden wireless and CPS, and to advance biomedical sensing such as contactless vitals and activity monitoring.
   </p>
 
 portrait_url: /assets/images/photos/XXC_1.png
@@ -39,8 +37,7 @@ education:
   logo: /assets/images/badges/SIT.png
   position: >- 
     Department of Electrical Engineering and Computer Science <br/>
-    Ph.D. in Computer Engineering
-    M.S. in Electrical Engineering
+    Ph.D. and M.S.
   date: Jan. 2018 - Aug. 2025
 - name: Jilin University
   logo: /assets/images/badges/JLU.png
