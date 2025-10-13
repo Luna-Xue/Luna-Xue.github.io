@@ -25,7 +25,7 @@ short_bio: >-
     I am a tenure-track Assistant Professor in the Department of Electrical and Computer Engineering at the <a href="https://www.ee.hawaii.edu/faculty/profile?usr=138" target="_blank">University of Hawaii at Mānoa</a>. My research lies at the intersection of wireless communication, cybersecurity, and artificial intelligence. 
   </p>
   <p>
-    My group builds secure, intelligent, and efficient wireless systems for 5G, Sub-6G, NextG, and beyond by combining AI/ML with advanced physical-layer techniques. We leverage mmWave sensing, Integrated Sensing and Communication (ISAC), and Physical-Layer Security (PLS) to enable real-time, contactless, and privacy-preserving applications. We prototype on O-RAN testbeds and edge IoT platforms. A growing thrust uses Generative AI as both a tool (data augmentation, waveform and beam co-design) and a threat (adversarial RF examples, LLM-driven control attacks) to harden wireless and CPS, and to advance biomedical sensing such as contactless vitals and activity monitoring.
+    My group builds secure, intelligent, and efficient wireless systems for 5G, Sub-6G, NextG, and beyond by combining AI/ML with advanced physical-layer techniques. We leverage mmWave sensing, Integrated Sensing and Communication (ISAC), and Physical-Layer Security (PLS) to enable real-time, contactless, and privacy-preserving applications. We prototype on O-NSF testbeds and edge IoT platforms. A growing thrust uses Generative AI as both a tool (data augmentation, waveform and beam co-design) and a threat (adversarial RF examples, LLM-driven control attacks) to harden wireless and CPS, and to advance biomedical sensing such as contactless vitals and activity monitoring.
   </p>
 
 portrait_url: /assets/images/photos/XXC_1.png
@@ -51,7 +51,7 @@ education:
 #   date: Sep. 2019 - Jul. 2021
 
 awards:
-- name: <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2548461" target="_blank">NSF CPS Rising Star</a>
+- name: <a href="https://cps-vo.org/group/CPSRisingStarsWorkshop25" target="_blank">NSF CPS Rising Star</a>
   date: 2025
 - name: Excellence Doctoral Fellowship
   date: 2023
