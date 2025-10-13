@@ -1,0 +1,32 @@
+---
+layout: project
+title: "O-RAN Testbed"
+subtitle: "O-RAN + ISAC prototyping"
+date: 2025-10-01
+permalink: /projects/project_oran.html  # 详情页 URL
+thumb: /assets/images/covers/cover1.jpg
+hero:  /assets/images/covers/cover1.jpg
+tags: [RIS, O-RAN, ISAC, Testbed]
+role: "PI"
+period: "2025 — present"
+collaborators:
+  - "Yeshiva University"
+  - "UHM"
+links:
+  - text: "Paper"
+    url: "https://arxiv.org/abs/xxxx.xxxxx"
+    icon: "fa-solid fa-file-lines"
+  - text: "Code"
+    url: "https://github.com/your/repo"
+    icon: "fa-brands fa-github"
+  - text: "Demo"
+    url: "https://youtu.be/xxxx"
+    icon: "fa-brands fa-youtube"
+gallery:
+  - /assets/projects/ai-ran-1.jpg
+  - /assets/projects/ai-ran-2.jpg
+  - /assets/projects/ai-ran-3.jpg
+excerpt: >-
+  Building an O-RAN Testbed with sensing-aware scheduling, privacy-preserving learning, and RIS-assisted UAV detection.
+order: 10
+---

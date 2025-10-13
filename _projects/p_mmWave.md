@@ -1,9 +1,9 @@
 ---
 layout: project
-title: "O-RAN Testbed"
-subtitle: "O-RAN + ISAC prototyping"
-date: 2025-10-01
-permalink: /projects/1_project.html  # 详情页 URL
+title: "mmWave Sensing"
+subtitle: "ISAC prototyping + Breathing Detection"
+date: 2024-11-01
+permalink: /projects/project_mmwave.html  # 详情页 URL
 thumb: /assets/images/covers/cover1.jpg
 hero:  /assets/images/covers/cover1.jpg
 tags: [RIS, O-RAN, ISAC, Testbed]

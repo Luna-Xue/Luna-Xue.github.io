@@ -1,0 +1,133 @@
+---
+layout: default
+title: "mmWave Sensing"
+---
+
+<style>
+  :root { --r: 12px; } /* 圆角半径 */
+
+  /* 悬浮/点按抬起（PC: hover/focus；触屏: active） */
+  .hover-lift { transition: transform .15s ease, box-shadow .15s ease; }
+  .hover-lift:hover,
+  .hover-lift:focus-within { transform: translateY(-2px); box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12); }
+  @media (hover: none) {
+    .hover-lift:active { transform: translateY(-2px); box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.12); }
+  }
+
+  /* 迷你插图卡片（四角圆、白底、细边、右浮动） */
+  .fig {
+    border-radius: var(--r);
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #eee;
+    text-align: center;
+    width: 220px;          /* 不要太大 */
+    max-width: 100%;
+  }
+  .fig img { display: block; width: 100%; height: auto; object-fit: cover; }
+  .fig .cap { font-size: .82rem; color: #6c757d; padding: .25rem .5rem; }
+
+  /* 布局：中大屏右浮动；小屏改为块级堆叠 */
+  @media (min-width: 768px) {
+    .float-illustration { float: right; margin: .25rem 0 .75rem 1rem; }
+  }
+  @media (max-width: 767.98px) {
+    .float-illustration { display: block; margin: .75rem 0; }
+  }
+</style>
+
+<div class="row">
+  <div class="col-12 col-lg-9">
+
+    <h1 class="mb-3">O-RAN Testbed</h1>
+    <p class="text-muted">This page demonstrates a text-first project detail layout with a few small floating illustrations.</p>
+
+    <!-- 小插图 1（右浮动） -->
+    <figure class="float-illustration hover-lift fig">
+      <img src="https://picsum.photos/seed/a/360/220" alt="Illustration A" loading="lazy" decoding="async">
+      <figcaption class="cap">Illustration A</figcaption>
+    </figure>
+
+    <h2 id="overview">Overview</h2>
+    <p>
+      This section summarizes the background, problem statement, and overall objectives. Keep the prose concise and
+      focused on what the reader should take away. If needed, link to external resources or related work for context.
+    </p>
+    <p>
+      The layout prioritizes text content while sprinkling in lightweight visuals that complement the narrative without
+      overwhelming the page or distracting from the main message.
+    </p>
+
+    <!-- 小插图 2（右浮动） -->
+    <figure class="float-illustration hover-lift fig">
+      <img src="https://picsum.photos/seed/b/360/220" alt="Illustration B" loading="lazy" decoding="async">
+      <figcaption class="cap">Illustration B</figcaption>
+    </figure>
+
+    <h2 id="approach">Approach</h2>
+    <ul>
+      <li><strong>Design:</strong> Outline the key ideas, assumptions, and architecture decisions.</li>
+      <li><strong>Implementation:</strong> Describe the practical setup, toolchain, or testbed.</li>
+      <li><strong>Validation:</strong> Explain how you evaluate, including datasets and metrics.</li>
+    </ul>
+    <p>
+      Keep each bullet actionable. If there are modules or phases, enumerate them clearly so that readers can map each
+      result back to a concrete step in the approach.
+    </p>
+
+    <!-- 小插图 3（右浮动） -->
+    <figure class="float-illustration hover-lift fig">
+      <img src="https://picsum.photos/seed/c/360/220" alt="Illustration C" loading="lazy" decoding="async">
+      <figcaption class="cap">Illustration C</figcaption>
+    </figure>
+
+    <h2 id="results">Results</h2>
+    <p>
+      Summarize key findings with a brief narrative. If you reference figures, keep them small and aligned with the text,
+      as shown here. Reserve large charts for dedicated figures or a gallery section when necessary.
+    </p>
+    <ul>
+      <li>Metric A improved by <strong>XX%</strong> over the baseline.</li>
+      <li>System is stable under <strong>N</strong> trials and varying conditions.</li>
+      <li>Demo available via an external link (paper/code/video).</li>
+    </ul>
+
+    <h2 id="resources">Resources</h2>
+    <p class="mb-2">
+      <a class="btn btn-sm btn-outline-primary mr-2 mb-2" href="#" target="_blank" rel="noopener">
+        <i class="fa-solid fa-file-lines mr-1" aria-hidden="true"></i> Paper
+      </a>
+      <a class="btn btn-sm btn-outline-primary mr-2 mb-2" href="#" target="_blank" rel="noopener">
+        <i class="fa-brands fa-github mr-1" aria-hidden="true"></i> Code
+      </a>
+      <a class="btn btn-sm btn-outline-primary mr-2 mb-2" href="#" target="_blank" rel="noopener">
+        <i class="fa-brands fa-youtube mr-1" aria-hidden="true"></i> Demo
+      </a>
+    </p>
+    <p class="text-muted">
+      Contact: xxue@hawaii.edu &nbsp;•&nbsp; Collaborators: Yeshiva University &nbsp;•&nbsp; Students: Saurabh Parkar.
+    </p>
+
+    <hr>
+    <h5 class="mt-4">Notes</h5>
+    <p>
+      You can add more sections as needed. The small floating images are optional; remove any that don’t add value. Keep
+      paragraphs short for readability.
+    </p>
+
+  </div>
+
+  <div class="col-12 col-lg-3 small">
+    <div class="card border-0 shadow-sm bg-white sticky-top" style="top:80px">
+      <div class="card-body">
+        <div class="mb-2"><strong>Status:</strong> Active</div>
+        <div class="mb-2"><strong>Updated:</strong> <span id="now"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 仅更新时间，交互抬起交给 CSS
+  document.getElementById('now').textContent = new Date().toLocaleString();
+</script>
