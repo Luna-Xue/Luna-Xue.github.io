@@ -9,7 +9,11 @@ pub_last:       ' <span class="badge badge-pill badge-publication badge-success"
 pub_date:       "2025"
 # semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-
-  Photo by Pineapple Supply Co. on Unsplash. Please put a tldr (too-long-didnt-read, 1~2 sentences) of your publication here. It is not recommended to put the actual abstract here because it is usually too long to fit in. $\LaTeX$ is supported. $a=b+c$.
+  Respiratory monitoring is essential for early detection of various health conditions. Conventional methods rely on contact sensors or clinical equipment, limiting usability for daily healthcare or remote settings. Wireless sensing provides a contactless alternative; however, OFDM-based systems face challenges in resolution and motion robustness, while FMCW radars lack communication capabilities without additional hardware.
+  
+  In this paper, we make an attempt toward a lightweight Integrated Sensing and Communication (ISAC) system by embedding narrowband FMCW signals into the guard bands of OFDM channels. This re-purposing enables high-resolution sensing and reliable communication simultaneously, without modifying the OFDM structure or introducing extra hardware. We explore trade-offs between sensing accuracy and communication quality, evaluated in terms of Error Vector Magnitude (EVM), under varying FMCW sweep bandwidths and FMCW-to-OFDM power ratios. By integrating signal enhancement techniques and a 1D-CNN classifier, we develop a robust respiratory pattern recognition system resilient to motion interference.
+  
+  We implement a 28 GHz mmWave testbed with USRPs. Through extensive experimental evaluation, we determine suitable parameter settings for the proposed composite waveform based on EVM performance and alignment with ground truth measurements. Ultimately, our system classifies four respiratory patterns achieves over $98\%$ accuracy, demonstrating its effectiveness and practicality for wireless health monitoring.
 cover:          /assets/images/covers/AIoT_Breath.png
 authors:
   - Xiaochan Xue#
@@ -18,6 +22,6 @@ authors:
   - Yao Zheng
 links:
   Paper: 
-  Code: https://github.com/Luna-Xue
+  #Code: https://github.com/Luna-Xue
   Demo: 
 ---
