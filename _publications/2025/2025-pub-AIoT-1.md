@@ -9,7 +9,7 @@ pub_last:       ' <span class="badge badge-pill badge-publication badge-success"
 pub_date:       "2025"
 # semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-
-  Photo by Pineapple Supply Co. on Unsplash. Please put a tldr (too-long-didnt-read, 1~2 sentences) of your publication here. It is not recommended to put the actual abstract here because it is usually too long to fit in. $\LaTeX$ is supported. $a=b+c$.
+  The growing proliferation of unmanned aerial vehicles (UAVs) has raised critical security concerns, especially due to high-speed intrusions into sensitive airspaces. Traditional detection methods—based on radar, acoustic, vision, or radio frequency sensing—face challenges in scalability, cost, and robustness under dynamic environments. To address these limitations, we propose a RIS and O-RAN-assisted framework within the Integrated Sensing and Communication (ISAC) paradigm, tailored for the 3.7\,GHz Citizens Broadband Radio Service (CBRS) band. The system leverages programmable RIS to enhance signal observability and enables multi-stage UAV detection through O-RAN-based distributed intelligence. A composite OFDM–FMCW waveform enables high-resolution range–Doppler sensing, while a GRU based predictive controller supports low-latency RIS adaptation. Experimental results demonstrate significant improvements in detection accuracy, scalability, and resilience compared to conventional designs, validating the feasibility of RIS and O-RAN integration for UAV sensing under realistic deployment constraints.
 cover:          /assets/images/covers/AIoT_ORAN.png
 authors:
   - Xiaochan Xue#
