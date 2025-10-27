@@ -28,6 +28,10 @@ short_bio: >-
     My group builds secure, intelligent, and efficient wireless systems for 5G, Sub-6G, NextG, and beyond by combining AI/ML with advanced physical-layer techniques. We leverage mmWave sensing, Integrated Sensing and Communication (ISAC), and Physical-Layer Security (PLS) to enable real-time, contactless, and privacy-preserving applications. We prototype on O-NSF testbeds and edge IoT platforms. A growing thrust uses Generative AI as both a tool (data augmentation, waveform and beam co-design) and a threat (adversarial RF examples, LLM-driven control attacks) to harden wireless and CPS, and to advance biomedical sensing such as contactless vitals and activity monitoring.
   </p>
 
+  <p style="background-color: #f8f9fa; padding: 12px; margin-top: 24px; color: #db535a;">
+    <em><strong>Prospective Students:</strong> I am looking for self-motivated Ph.D. students to start in Fall 2026, Spring 2027.</em>
+  </p>
+
 portrait_url: /assets/images/photos/XXC_1.png
 portrait_caption: >-
   Photo by Xiaochan Xue on NJ, 2025.
