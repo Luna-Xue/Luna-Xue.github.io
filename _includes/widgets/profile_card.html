@@ -31,6 +31,29 @@
         text-align: center;
       }
     }
+    /* 头像：在容器内绝对水平居中（保险做法） */
+.float-container a > img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* 图标行：用 flex 居中 + 等距间隙 */
+.float-container .mt-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;           /* 控制图标间距 */
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* 保留你原来的下边距 */
+  line-height: 1;      /* 避免图标基线造成的微偏差 */
+}
+
+/* 抵消 pr-3 的单侧内边距，改为左右对称的外边距 */
+.float-container .mt-3 .pr-3 {
+  padding-right: 0 !important;
+  margin: 0 7px;
+}
+
   </style>
 </head>
 <body>
