@@ -4,33 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Profile Page</title>
-  <!-- 引入 Bootstrap 样式 -->
+
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome（若全站已有可移除） -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <style>
-    /* 大屏下右侧浮动容器 */
-    .float-container {
-      float: right;
-      max-width: 250px;
-      width: auto;
-      margin-left: 1em;
-      text-align: center;
+    /* UHM 主题色 */
+    :root{
+      --uhm-green:#024731;
+      --uhm-green-darker:#013D2A;
     }
-    /* 小屏下取消浮动，并设置自动左右边距实现居中 */
-    @media (max-width: 767.98px) {
-      .card-body {
-        padding-left: 30px !important;
-        padding-right: 30px !important;
-      }
-      .float-container {
-        float: none !important;
-        display: block;
-        width: auto;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 20px;
-        text-align: center;
-      }
+
+    /* 大屏：右侧浮动容器 */
+    .float-container{
+      float:right; max-width:250px; width:auto; margin-left:1em; text-align:center;
     }
+
+    /* 方形头像：边框 + 轻投影 */
+    .portrait-img{
+      height:180px; width:180px; object-fit:cover;
+      border:2px solid var(--uhm-green);
+      box-shadow:0 2px 8px rgba(0,0,0,.08);
+    }
+
+    /* 图标行：统一紧凑间距、单行、不出现下划线 */
+    .icon-row{
+      display:flex; flex-wrap:nowrap; justify-content:center;
+      gap:8px; margin-bottom:16px; white-space:nowrap;
+    }
+    .icon-btn{
+      flex:0 0 auto; width:36px; height:36px;
+      display:inline-flex; align-items:center; justify-content:center;
+      text-decoration:none !important; outline:none; border-radius:9999px;
+      margin:0 4px; /* 兜底：旧浏览器无 gap 时也有间距 */
+    }
+    .icon-btn i{
+      font-size:22px; color:var(--uhm-green);
+      transition: transform .18s cubic-bezier(.2,.6,.2,1), color .18s ease, filter .18s ease;
+      line-height:1;
+    }
+    /* 悬停/键盘聚焦：轻微上浮 + 平滑放大（逐渐） */
+    .icon-btn:hover i, .icon-btn:focus i{
+      transform: translateY(-1px) scale(1.12);
+      color: var(--uhm-green-darker);
+      filter: brightness(1.05);
+    }
+    /* 点击回弹 */
+    .icon-btn:active i{ transform: translateY(0) scale(1.06); }
+    /* 焦点可达性 */
+    .icon-btn:focus{ box-shadow:0 0 0 3px rgba(2,71,49,.15); }
+
+    /* 小屏：取消浮动并加左右留白 */
+    @media (max-width: 767.98px){
+      .card-body{ padding-left:30px !important; padding-right:30px !important; }
+      .float-container{ float:none !important; display:block; width:auto; margin:0 auto 20px; text-align:center; }
+    }
+
+    /* 链接主题色（去下划线） */
+    a{ color:var(--uhm-green); text-decoration:none; }
+    a:hover, a:focus{ color:var(--uhm-green-darker); text-decoration:none; }
   </style>
 </head>
 <body>
@@ -38,68 +72,72 @@
   <div class="col">
     <div class="card border-0 shadow-sm bg-white mt-5">
       <div class="card-body p-5">
-        <!-- 右侧浮动的图片和图标容器 -->
+
+        <!-- 右侧浮动：方形头像 + 图标 -->
         <div class="float-container">
           {% if site.data.profile.portrait_url %}
-          <a target="_blank" href="{{ site.data.profile.portrait_url | relative_url }}">
-            <img src="{{ site.data.profile.portrait_url | relative_url }}" class="rounded-circle img-fluid" style="height: 180px;" alt="Portrait">
+          <a target="_blank" href="{{ site.data.profile.portrait_url | relative_url }}" rel="noopener" aria-label="Open portrait">
+            <img src="{{ site.data.profile.portrait_url | relative_url }}" class="img-fluid portrait-img" alt="Portrait" loading="lazy" decoding="async">
           </a>
           {% endif %}
-          <!-- 图标放在照片下方 -->
-          <div class="mt-3" style="margin-bottom: 20px;">
-            <a class="pr-3 no-break no-underline enlarge-icon" href="mailto:{{ site.data.profile.email | encode_email }}">
-              <i class="fas fa-envelope" style="color: #76aad9; font-size: 25px;" alt=""></i> 
-            </a>
-            {% if site.data.profile.gscholar %}
-              {%- if site.data.profile.gscholar contains 'scholar.google' -%}
-              {%- assign gscholar_url = site.data.profile.gscholar -%}
-              {%- else -%}
-              {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
-              {%- endif -%}
-              <a class="pr-3 no-break no-underline enlarge-icon" target="_blank" href="{{ gscholar_url }}">
-                <i class="fab fa-google-scholar" style="color: #024731; font-size: 25px;" alt=""></i> 
+
+          <!-- 图标（统一紧凑间距、平滑放大、无下划线） -->
+          <div class="mt-3">
+            <div class="icon-row">
+              <a class="icon-btn" href="mailto:{{ site.data.profile.email | encode_email }}" aria-label="Email">
+                <i class="fas fa-envelope"></i>
               </a>
-            {% endif %}
-            {% if site.data.profile.github %}
-              <a class="enlarge-icon" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
+
+              {% if site.data.profile.gscholar %}
+                {%- if site.data.profile.gscholar contains 'scholar.google' -%}
+                  {%- assign gscholar_url = site.data.profile.gscholar -%}
+                {%- else -%}
+                  {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
+                {%- endif -%}
+              <a class="icon-btn" target="_blank" rel="noopener" href="{{ gscholar_url }}" aria-label="Google Scholar">
+                <!-- 如果你站点没有自定义 scholar 图标，可改为 fas fa-graduation-cap -->
+                <i class="fab fa-google-scholar"></i>
+              </a>
+              {% endif %}
+
+              {% if site.data.profile.github %}
+              <a class="icon-btn" target="_blank" rel="noopener" href="https://github.com/{{ site.data.profile.github }}" aria-label="GitHub">
                 <i class="fab fa-github"></i>
               </a>
-            {% endif %}
-            {% if site.data.profile.wechat_qrcode %}
-              <a class="enlarge-icon" data-toggle="modal" data-target="#modal-wechat">
-                <i class="fab fa-weixin" style="color: #024731; font-size: 25px;" alt=""></i>
+              {% endif %}
+
+              {% if site.data.profile.wechat_qrcode %}
+              <a class="icon-btn" data-toggle="modal" data-target="#modal-wechat" href="javascript:void(0)" aria-label="WeChat">
+                <i class="fab fa-weixin"></i>
               </a>
-            {% endif %}
-            {% if site.data.profile.twitter %}
-              <a class="enlarge-icon" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
-                <i class="fab fa-twitter" style="color: #024731; font-size: 25px;" alt=""></i>
+              {% endif %}
+
+              {% if site.data.profile.twitter %}
+              <a class="icon-btn" target="_blank" rel="noopener" href="https://twitter.com/{{ site.data.profile.twitter }}" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
               </a>
-            {% endif %}
-            {% if site.data.profile.linkedin %}
-              <a class="enlarge-icon" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
-                <i class="fab fa-linkedin" style="color: #024731; font-size: 25px;" alt=""></i> 
+              {% endif %}
+
+              {% if site.data.profile.linkedin %}
+              <a class="icon-btn" target="_blank" rel="me noopener" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
               </a>
-            {% endif %}
-            {% if site.data.profile.orcid %}
-              <a class="enlarge-icon" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}">
-                <i class="fab fa-orcid" style="color: #024731; font-size: 25px;" alt=""></i>
+              {% endif %}
+
+              {% if site.data.profile.orcid %}
+              <a class="icon-btn" target="_blank" rel="me noopener" href="https://orcid.org/{{ site.data.profile.orcid }}" aria-label="ORCID">
+                <i class="fab fa-orcid"></i>
               </a>
-            {% endif %}
-            {% if site.data.profile.cv_link %}
-              <a class="enlarge-icon" target="_blank " href="{{ site.data.profile.cv_link | relative_url }}">
-                <i class="fas fa-address-card" style="color: #024731; font-size: 25px;" alt=""></i> 
-              </a> <br/>
-            {% endif %}
+              {% endif %}
+            </div>
           </div>
         </div>
-        
-        <!-- 文字内容部分 -->
+
+        <!-- 左侧文字内容 -->
         <div>
           <div class="text-profile-position">
             {% for position in site.data.profile.positions %}
-              {% if position.logo %}
-                <img src="{{ position.logo | relative_url }}" alt="Logo" class="inline-badge"/>
-              {% endif %}
+              {% if position.logo %}<img src="{{ position.logo | relative_url }}" alt="Logo" class="inline-badge"/>{% endif %}
               {{ position.name }}<br/>
             {% endfor %}
           </div>
@@ -107,7 +145,8 @@
             {{ site.data.profile.short_bio }}
           </div>
         </div>
-        <div style="clear: both;"></div>
+
+        <div style="clear:both;"></div>
       </div>
     </div>
   </div>
@@ -118,23 +157,21 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-body p-0">
-        <img src="{{ site.data.profile.wechat_qrcode | relative_url }}" class="img-fluid">
+        <img src="{{ site.data.profile.wechat_qrcode | relative_url }}" class="img-fluid" alt="WeChat QR">
       </div>
       {% if site.data.profile.wechat_prompt %}
-      <div class="modal-body p-1">
-        {{ site.data.profile.wechat_prompt }}
-      </div>
+      <div class="modal-body p-1">{{ site.data.profile.wechat_prompt }}</div>
       {% endif %}
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Close</button>
       </div>
     </div>
   </div>
 </div>
 {% endif %}
 
-<!-- 引入 Bootstrap 的 JS 依赖 -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS 依赖 -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
