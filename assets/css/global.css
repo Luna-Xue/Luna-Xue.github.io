@@ -163,3 +163,80 @@ div.lazy {
 .profile-name > :nth-child(2) {
   display: block !important;
 }
+
+/* === 1) 统一字体家族 & 渲染特性（英文+中文） === */
+.navbar-brand,
+.site-title,
+.profile-name,
+.brand-title {
+  font-family: "Inter", "Noto Sans SC", ui-sans-serif, system-ui, -apple-system,
+               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 600;                  /* 姓名更醒目 */
+  line-height: 1.15;
+  font-stretch: 100%;                /* 避免浏览器用“压缩/扩展体” */
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 职称/第二行稍微轻一点 */
+.site-title small,
+.profile-title,
+.brand-subtitle { font-weight: 500 !important; }
+
+/* 中文子串统一使用同一套中文无衬线（避免回退差异） */
+.navbar-brand :lang(zh), .site-title :lang(zh),
+.profile-name :lang(zh), .brand-title :lang(zh) {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+               "Source Han Sans SC", "Heiti SC", sans-serif !important;
+}
+
+/* === 2) 统一布局为两行竖向堆叠，消除导航可用宽度差的影响 === */
+.navbar-brand,
+.site-title,
+.profile-name,
+.brand-title {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 3px !important;               /* 行间距锁 3px（可改 2/4/6） */
+}
+
+/* 清除默认外边距，防止出现“空行” */
+.navbar-brand > *, .site-title > *,
+.profile-name > *, .brand-title > * { margin: 0 !important; }
+
+/* 第一行（姓名）不换行，避免断行引起的视觉宽度差 */
+.navbar-brand > :first-child,
+.site-title  > :first-child,
+.profile-name > :first-child,
+.brand-title > :first-child {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+}
+
+/* === 3) 锁定字符宽幅：用 ch 单位统一容器可用宽度 === */
+/* 说明：28ch 约等于 28 个“0”的宽度；保证两页“可用行宽”一致 */
+.navbar-brand,
+.site-title,
+.profile-name,
+.brand-title {
+  inline-size: 28ch;                 /* 你也可以调成 26ch/30ch 以适配字号 */
+}
+
+/* 小屏不要硬锁，避免挤压布局 */
+@media (max-width: 480px) {
+  .navbar-brand, .site-title, .profile-name, .brand-title { inline-size: auto; }
+}
+
+/* === 4) （可选）极致“等宽外观”模式（谨慎开启）
+ * 开启后中文会用“全角”字形，所有汉字宽度一致，视觉更像等宽，但字形会更“方正”一些。
+ * 如果你想要这种效果，去掉下行注释即可。
+ */
+/*
+.navbar-brand :lang(zh), .site-title :lang(zh),
+.profile-name :lang(zh), .brand-title :lang(zh) {
+  font-variant-east-asian: full-width;
+}
+*/
