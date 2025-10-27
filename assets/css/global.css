@@ -127,26 +127,39 @@ div.lazy {
   }
 
 
-  /* 统一名字 + 职称两行的间距（去掉“空行”，保留2–4px的小间距） */
+ /* === 让“姓名 + 职称”不受 navbar 宽度影响，统一为两行且间距一致 === */
 
-/* 1) 先把标题区里所有常见元素的默认 margin 归零 */
-.navbar-brand :is(h1,h2,h3,h4,h5,h6,p,span,small),
-.site-title    :is(h1,h2,h3,h4,h5,h6,p,span,small),
-.profile-name, .profile-title {
-  margin: 0 !important;
+/* 1) 把标题容器变成竖向堆叠的 inline-flex，并用 gap 控制行间距 */
+.navbar-brand,
+.site-title,
+.brand-title,
+.profile-name {                /* 兜底：部分主题从 profile.yml 渲染会用这些类 */
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 3px !important;        /* 行距统一成 3px：想更紧/更松可改 2/4/6 */
+  line-height: 1.15 !important;
 }
 
-/* 2) 让“第二行”（职称/副标题）变成块级并给一个固定上间距 */
-.navbar-brand :is(.profile-title, small),
-.site-title  :is(.profile-title, small),
-.profile-title {
-  display: block;
-  margin-top: 3px !important;   /* 想更紧就改成 2px，想更松就 4–6px */
-  line-height: 1.2;
+/* 2) 把内部两行的默认 margin 清零，避免 p/h* 的默认外边距造成“空行” */
+.navbar-brand > * ,
+.site-title > * ,
+.brand-title > * ,
+.profile-name > * { margin: 0 !important; }
+
+/* 3) 第一行（姓名）禁止换行，避免因可用宽度不同出现断行导致的空白 */
+.navbar-brand > :first-child,
+.site-title  > :first-child,
+.brand-title > :first-child,
+.profile-name > :first-child {
+  white-space: nowrap !important;
+  word-break: keep-all !important;   /* 避免中英文被强制断字 */
 }
 
-/* 3) 统一两行的行高和字重（可按需保留/调整） */
-.navbar-brand, .site-title, .profile-name { line-height: 1.15; }
-.profile-name { font-weight: 600; }
-.profile-title, .site-title small { font-weight: 500; }
-
+/* 4) 让“职称”这一行是块级，确保上下两行稳定对齐 */
+.navbar-brand > :nth-child(2),
+.site-title  > :nth-child(2),
+.brand-title > :nth-child(2),
+.profile-name > :nth-child(2) {
+  display: block !important;
+}
