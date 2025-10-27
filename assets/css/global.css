@@ -126,33 +126,25 @@ div.lazy {
     .hover-lift { transition: none; }
   }
   
-  /* === 统一站点左上角姓名 & 职称的字体 === */
-/* 把常见主题里会用到的“标题/品牌位”一次覆盖 */
-.navbar-brand,
-.site-title,
-.site-title small,
-header .site-title,
-header .navbar-brand,
-.masthead .site-title,
-.masthead .navbar-brand,
-.sidebar .site-title,
-.profile-name,         /* 有些主题会给从 profile.yml 读出的名字加这个类 */
-.profile-title,        /* 职称/副标题常用类 */
-.brand-title,
-.brand-subtitle {
-  /* 英文走 Inter，中文走 Noto Sans SC；都没有就走系统无衬线 */
-  font-family: "Inter", "Noto Sans SC", ui-sans-serif, system-ui, -apple-system,
-               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-  line-height: 1.1;
+/* 统一名字 + 职称两行的间距（去掉“空行”，保留2–4px的小间距） */
+
+/* 1) 先把标题区里所有常见元素的默认 margin 归零 */
+.navbar-brand :is(h1,h2,h3,h4,h5,h6,p,span,small),
+.site-title    :is(h1,h2,h3,h4,h5,h6,p,span,small),
+.profile-name, .profile-title {
+  margin: 0 !important;
 }
 
-/* 姓名更醒目，职称稍轻一点（可按需调整） */
-.navbar-brand,
-.site-title,
-.masthead .site-title,
-.profile-name,
-.brand-title { font-weight: 600 !important; }
+/* 2) 让“第二行”（职称/副标题）变成块级并给一个固定上间距 */
+.navbar-brand :is(.profile-title, small),
+.site-title  :is(.profile-title, small),
+.profile-title {
+  display: block;
+  margin-top: 3px !important;   /* 想更紧就改成 2px，想更松就 4–6px */
+  line-height: 1.2;
+}
 
-.site-title small,
-.profile-title,
-.brand-subtitle { font-weight: 500 !important; }
+/* 3) 统一两行的行高和字重（可按需保留/调整） */
+.navbar-brand, .site-title, .profile-name { line-height: 1.15; }
+.profile-name { font-weight: 600; }
+.profile-title, .site-title small { font-weight: 500; }
