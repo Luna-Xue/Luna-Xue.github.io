@@ -126,3 +126,33 @@ div.lazy {
     .hover-lift { transition: none; }
   }
   
+  /* === 统一站点左上角姓名 & 职称的字体 === */
+/* 把常见主题里会用到的“标题/品牌位”一次覆盖 */
+.navbar-brand,
+.site-title,
+.site-title small,
+header .site-title,
+header .navbar-brand,
+.masthead .site-title,
+.masthead .navbar-brand,
+.sidebar .site-title,
+.profile-name,         /* 有些主题会给从 profile.yml 读出的名字加这个类 */
+.profile-title,        /* 职称/副标题常用类 */
+.brand-title,
+.brand-subtitle {
+  /* 英文走 Inter，中文走 Noto Sans SC；都没有就走系统无衬线 */
+  font-family: "Inter", "Noto Sans SC", ui-sans-serif, system-ui, -apple-system,
+               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  line-height: 1.1;
+}
+
+/* 姓名更醒目，职称稍轻一点（可按需调整） */
+.navbar-brand,
+.site-title,
+.masthead .site-title,
+.profile-name,
+.brand-title { font-weight: 600 !important; }
+
+.site-title small,
+.profile-title,
+.brand-subtitle { font-weight: 500 !important; }
