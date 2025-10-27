@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Profile Page</title>
-  <!-- 引入 Bootstrap 样式 -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     /* 大屏下右侧浮动容器 */
@@ -15,108 +14,56 @@
       margin-left: 1em;
       text-align: center;
     }
-    /* 小屏下取消浮动，并设置自动左右边距实现居中 */
+    /* 小屏：取消浮动并居中 */
     @media (max-width: 767.98px) {
-      .card-body {
-        padding-left: 30px !important;
-        padding-right: 30px !important;
-      }
+      .card-body { padding-left: 30px !important; padding-right: 30px !important; }
       .float-container {
-        float: none !important;
-        display: block;
-        width: auto;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 20px;
-        text-align: center;
+        float: none !important; display: block; width: auto;
+        margin: 0 auto 20px; text-align: center;
       }
     }
-    /* 头像：在容器内绝对水平居中（保险做法） */
-    .float-container a > img {
-    display: block;
-    margin: 0 auto;
-    }
 
-    /* 图标行：用 flex 居中 + 等距间隙 */
-    .float-container .mt-3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;           /* 控制图标间距 */
-    flex-wrap: wrap;
-    margin-bottom: 20px; /* 保留你原来的下边距 */
-    line-height: 1;      /* 避免图标基线造成的微偏差 */
-    }
+    /* 头像在容器内水平居中 */
+    .float-container a > img { display: block; margin: 0 auto; }
 
-    /* 抵消 pr-3 的单侧内边距，改为左右对称的外边距 */
-    .float-container .mt-3 .pr-3 {
-    padding-right: 0 !important;
-    margin: 0 7px;
+    /* 图标行（单独类） */
+    .float-container .icon-row{
+      display: flex; justify-content: center; align-items: center;
+      gap: 14px; flex-wrap: wrap; margin-bottom: 12px; line-height: 1;
     }
-    /* 平滑放大：适用于所有图标（.float-container 里的 i） */
-    .float-container .mt-3 a i{
-    display: inline-block;                 /* 让 transform 生效 */
-    transition: transform .15s ease;       /* 放大动画 */
-    transform-origin: center;
-    will-change: transform;
-    }
+    /* 抵消 pr-3 的单侧 padding，改左右对称外边距 */
+    .float-container .icon-row .pr-3{ padding-right:0 !important; margin:0 7px; }
 
-    /* 鼠标悬停 & 键盘聚焦时放大 */
+    /* 图标放大动画 */
+    .float-container .icon-row a i{
+      display:inline-block; transition: transform .15s ease; transform-origin:center; will-change:transform;
+    }
     @media (hover:hover){
-    .float-container .mt-3 a:hover i,
-    .float-container .mt-3 a:focus i,
-    .float-container .mt-3 a:focus-visible i{
-        transform: scale(1.18);              /* 放大幅度可按需调 */
+      .float-container .icon-row a:hover i,
+      .float-container .icon-row a:focus i,
+      .float-container .icon-row a:focus-visible i{ transform: scale(1.18); }
     }
-    }
+    @media (hover:none){ .float-container .icon-row a:active i{ transform: scale(1.12); } }
+    @media (prefers-reduced-motion: reduce){ .float-container .icon-row a i{ transition:none; } }
 
-    /* 触屏轻点时也给一点反馈 */
-    @media (hover:none){
-    .float-container .mt-3 a:active i{
-        transform: scale(1.12);
-    }
-    }
-
-    /* 可选：减少动画偏好时关闭过渡 */
-    @media (prefers-reduced-motion: reduce){
-    .float-container .mt-3 a i{ transition: none; }
-    }
-    /* 细分割线（仅在右侧浮动卡片里用） */
+    /* 分割线与按钮 */
     .float-container .profile-sep{
-    max-width: 200px;
-    margin: 8px auto 12px;     /* 居中 */
-    border: 0;
-    border-top: 1px solid rgba(2,71,49,.25); /* #024731 的浅色 */
+      max-width:200px; margin:8px auto 12px; border:0;
+      border-top:1px solid rgba(2,71,49,.25); /* #024731 */
     }
-
-    /* 按钮行：居中 + 间距 */
     .float-container .profile-actions{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+      display:flex; justify-content:center; gap:10px;
     }
-
-    /* 统一按钮风格（UHM 绿） */
     .btn-uhm{
-    background: #024731;
-    border-color: #024731;
-    color: #fff;
-    font-weight: 600;
-    border-radius: 9999px;
-    padding: .375rem .9rem;
+      background:#024731; border-color:#024731; color:#fff;
+      font-weight:600; border-radius:9999px; padding:.375rem .9rem;
     }
-    .btn-uhm:hover{ color:#fff; filter: brightness(1.06); }
-
+    .btn-uhm:hover{ color:#fff; filter:brightness(1.06); }
     .btn-uhm-outline{
-    background: #fff;
-    border: 1px solid #024731;
-    color: #024731;
-    font-weight: 600;
-    border-radius: 9999px;
-    padding: .375rem .9rem;
+      background:#fff; border:1px solid #024731; color:#024731;
+      font-weight:600; border-radius:9999px; padding:.375rem .9rem;
     }
     .btn-uhm-outline:hover{ background:#024731; color:#fff; }
-
   </style>
 </head>
 <body>
@@ -124,82 +71,79 @@
   <div class="col">
     <div class="card border-0 shadow-sm bg-white mt-5">
       <div class="card-body p-5">
-        <!-- 右侧浮动的图片和图标容器 -->
+        <!-- 右侧浮动容器 -->
         <div class="float-container">
+
           {% if site.data.profile.portrait_url %}
           <a target="_blank" href="{{ site.data.profile.portrait_url | relative_url }}">
-            <img src="{{ site.data.profile.portrait_url | relative_url }}" class="figure-img img-fluid img-thumbnail" style="height: 200px;" alt="Portrait">
+            <img src="{{ site.data.profile.portrait_url | relative_url }}" class="figure-img img-fluid img-thumbnail" style="height:200px;" alt="Portrait">
           </a>
           {% endif %}
-          <!-- 图标放在照片下方 -->
-          <div class="mt-3" style="margin-bottom: 20px;">
+
+          <!-- 图标行 -->
+          <div class="icon-row mt-3">
             <a class="pr-3 no-break no-underline enlarge-icon" href="mailto:{{ site.data.profile.email | encode_email }}">
-              <i class="fas fa-envelope" style="color: #024731; font-size: 25px;" alt=""></i> 
+              <i class="fas fa-envelope" style="color:#024731; font-size:25px;" aria-hidden="true"></i>
             </a>
+
             {% if site.data.profile.gscholar %}
               {%- if site.data.profile.gscholar contains 'scholar.google' -%}
-              {%- assign gscholar_url = site.data.profile.gscholar -%}
+                {%- assign gscholar_url = site.data.profile.gscholar -%}
               {%- else -%}
-              {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
+                {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
               {%- endif -%}
               <a class="pr-3 no-break no-underline enlarge-icon" target="_blank" href="{{ gscholar_url }}">
-                <i class="fab fa-google-scholar" style="color: #024731; font-size: 25px;" alt=""></i> 
+                <i class="fab fa-google-scholar" style="color:#024731; font-size:25px;" aria-hidden="true"></i>
               </a>
             {% endif %}
-            {% if site.data.profile.github %}
-              <a class="pr-3 no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
-                <i class="fab fa-github" style="color: #024731; font-size: 25px;" alt=""></i>
-              </a>
-            {% endif %}
-            {% if site.data.profile.wechat_qrcode %}
-              <a class="pr-3 no-break" data-toggle="modal" data-target="#modal-wechat">
-                <i class="fab fa-weixin" style="color: #024731; font-size: 25px;" alt=""></i>
-              </a>
-            {% endif %}
-            {% if site.data.profile.twitter %}
-              <a class="pr-3 no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
-                <i class="fab fa-twitter" style="color: #024731; font-size: 25px;" alt=""></i>
-              </a>
-            {% endif %}
-            {% if site.data.profile.linkedin %}
-              <a class="pr-3 no-break no-underline enlarge-icon" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
-                <i class="fab fa-linkedin" style="color: #024731; font-size: 25px;" alt=""></i> 
-              </a>
-            {% endif %}
-            {% if site.data.profile.orcid %}
-              <a class="pr-3 no-break" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}">
-                <i class="fab fa-orcid" style="color: #024731; font-size: 25px;" alt=""></i>
-              </a>
-            {% endif %}
-            <!-- {% if site.data.profile.cv_link %}
-              <a class="enlarge-icon" target="_blank " href="{{ site.data.profile.cv_link | relative_url }}">
-                <i class="fas fa-address-card" style="color: #024731; font-size: 25px;" alt=""></i> 
-              </a> <br/>
-            {% endif %} -->
-            <hr class="profile-sep">
 
-            <div class="profile-actions">
-              {% if site.data.profile.cv_link %}
-                <a class="btn btn-uhm btn-sm" target="_blank" href="{{ site.data.profile.cv_link | relative_url }}">CV</a>
-              {% endif %}
-            
-              {% if site.data.profile.deadline_link %}
-                <a class="btn btn-uhm-outline btn-sm" href="{{ site.data.profile.deadline_link | relative_url }}">Deadline</a>
-              {% else %}
-                <!-- 没有配置时可先指到你的会议/DDL页面路径 -->
-                <!-- <a class="btn btn-uhm-outline btn-sm" href="/deadlines/">Deadline</a> -->
-              {% endif %}
-            </div>            
+            {% if site.data.profile.github %}
+            <a class="pr-3 no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
+              <i class="fab fa-github" style="color:#024731; font-size:25px;" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.data.profile.wechat_qrcode %}
+            <a class="pr-3 no-break" data-toggle="modal" data-target="#modal-wechat">
+              <i class="fab fa-weixin" style="color:#024731; font-size:25px;" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.data.profile.twitter %}
+            <a class="pr-3 no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
+              <i class="fab fa-twitter" style="color:#024731; font-size:25px;" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.data.profile.linkedin %}
+            <a class="pr-3 no-break no-underline enlarge-icon" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
+              <i class="fab fa-linkedin" style="color:#024731; font-size:25px;" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.data.profile.orcid %}
+            <a class="pr-3 no-break" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}">
+              <i class="fab fa-orcid" style="color:#024731; font-size:25px;" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+          </div>
+
+          <!-- 分割线 + 操作按钮 -->
+          <hr class="profile-sep">
+          <div class="profile-actions">
+            <a class="btn btn-uhm btn-sm" target="_blank"
+               href="{{ site.data.profile.cv_link | default: '/files/CV.pdf' | relative_url }}">CV</a>
+            <a class="btn btn-uhm-outline btn-sm"
+               href="{{ site.data.profile.deadline_link | default: '/deadlines/' | relative_url }}">Deadline</a>
+          </div>
+
         </div>
-        </div>
-        
-        <!-- 文字内容部分 -->
+
+        <!-- 文字内容 -->
         <div>
           <div class="text-profile-position">
             {% for position in site.data.profile.positions %}
-              {% if position.logo %}
-                <img src="{{ position.logo | relative_url }}" alt="Logo" class="inline-badge"/>
-              {% endif %}
+              {% if position.logo %}<img src="{{ position.logo | relative_url }}" alt="Logo" class="inline-badge"/>{% endif %}
               {{ position.name }}<br/>
             {% endfor %}
           </div>
@@ -218,12 +162,10 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-body p-0">
-        <img src="{{ site.data.profile.wechat_qrcode | relative_url }}" class="img-fluid">
+        <img src="{{ site.data.profile.wechat_qrcode | relative_url }}" class="img-fluid" alt="WeChat QR">
       </div>
       {% if site.data.profile.wechat_prompt %}
-      <div class="modal-body p-1">
-        {{ site.data.profile.wechat_prompt }}
-      </div>
+      <div class="modal-body p-1">{{ site.data.profile.wechat_prompt }}</div>
       {% endif %}
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -233,7 +175,6 @@
 </div>
 {% endif %}
 
-<!-- 引入 Bootstrap 的 JS 依赖 -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
