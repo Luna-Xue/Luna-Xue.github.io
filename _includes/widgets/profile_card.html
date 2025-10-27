@@ -7,7 +7,7 @@
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Font Awesome 5 -->
+  <!-- Font Awesome 5（如全站已有，可移除） -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <style>
@@ -19,101 +19,85 @@
 
     /* 大屏右侧浮动容器 */
     .float-container{
-      float:right;
-      max-width:250px;
-      width:auto;
-      margin-left:1em;
-      text-align:center;
+      float:right; max-width:250px; width:auto;
+      margin-left:1em; text-align:center;
     }
 
-    /* 统一图标排布与动效（无下划线） */
-    /* 图标行：不换行，始终单行显示 */
-.icon-row{
-  display: flex;
-  flex-wrap: nowrap;         /* 关键：不允许换行 */
-  justify-content: center;
-  gap: 10px 14px;
-  margin-bottom: 20px;
-
-  /* 处理小屏溢出：保持单行 + 可横向滚动（可选） */
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* 每个图标固定尺寸且不收缩 */
-.icon-btn{
-  flex: 0 0 auto;            /* 关键：禁止被压缩换行 */
-  width: 30px;
-  height: 30px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none !important;
-  outline: none;
-  border-radius: 9999px;
-
-  /* 兜底：旧浏览器没 gap 也能保持间距 */
-  margin: 0 7px;
-}
-
-/* 图标动画（你已有的保留即可） */
-.icon-btn i{
-  font-size: 25px;
-  color: var(--uhm-green, #024731);
-  transition: transform .18s ease, filter .18s ease, color .18s ease;
-}
-.icon-btn:hover i,
-.icon-btn:focus i{
-  transform: translateY(-2px) scale(1.12);
-  filter: brightness(1.05);
-  color: var(--uhm-green-darker, #013D2A);
-}
-.icon-btn:active i{ transform: translateY(-1px) scale(1.06); }
-.icon-btn:focus{ box-shadow: 0 0 0 3px rgba(2,71,49,.15); }
-
-/* 动作按钮区（CV / Deadline） */
-.action-buttons{
-      display:flex; justify-content:center; gap:10px; /* 现代浏览器 */
+    /* 头像：方形 + 主题色边框 + 轻微投影，像贴图 */
+    .portrait-img{
+      height:180px; width:180px; object-fit:cover;
+      border: 2px solid var(--uhm-green);
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
     }
-    .action-buttons .btn-uhm{
+
+    /* 图标行：不换行、居中、无滑动；间距更紧凑 */
+    .icon-row{
+      display:flex; flex-wrap:nowrap; justify-content:center;
+      gap:8px;               /* 统一更小的间距 */
+      margin-bottom:12px;
+      white-space:nowrap;    /* 不允许换行 */
+      overflow-x:hidden;     /* 禁止横向滑动 */
+    }
+    /* 图标按钮：更紧凑的尺寸 */
+    .icon-btn{
+      flex:0 0 auto; width:36px; height:36px;
+      display:inline-flex; align-items:center; justify-content:center;
+      text-decoration:none !important; outline:none; border-radius:9999px;
+      margin:0 4px;          /* 兜底：旧浏览器无 gap 也有间距 */
+    }
+    .icon-btn i{
+      font-size:22px; color:var(--uhm-green);
+      transition: transform .18s ease, filter .18s ease, color .18s ease;
+      line-height:1;
+    }
+    .icon-btn:hover i, .icon-btn:focus i{
+      transform: translateY(-2px) scale(1.12);
+      filter: brightness(1.05);
+      color: var(--uhm-green-darker);
+    }
+    .icon-btn:active i{ transform: translateY(-1px) scale(1.06); }
+    .icon-btn:focus{ box-shadow:0 0 0 3px rgba(2,71,49,.15); }
+
+    /* 分割线（头像下方） */
+    .profile-divider{
+      border:0; height:1px; width:100%;
+      background: linear-gradient(to right, rgba(2,71,49,.15), rgba(2,71,49,.35), rgba(2,71,49,.15));
+      margin: 8px 0 10px;
+    }
+
+    /* 下方按钮（CV / Deadline） */
+    .action-buttons{
+      display:flex; justify-content:center; gap:10px;
+    }
+    .btn-uhm{
       background-color: var(--uhm-green);
       border-color: var(--uhm-green);
       color:#fff !important;
-      padding: .45rem .9rem;
-      border-radius: .5rem;
-      font-weight: 600;
+      padding:.4rem .85rem;
+      border-radius:.5rem;
+      font-weight:600;
       transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
     }
-    .action-buttons .btn-uhm:hover,
-    .action-buttons .btn-uhm:focus{
+    .btn-uhm:hover, .btn-uhm:focus{
       background-color: var(--uhm-green-darker);
       border-color: var(--uhm-green-darker);
       transform: translateY(-1px);
-      text-decoration: none;
-      outline: none;
+      text-decoration:none; outline:none;
     }
 
-/* 很窄的屏幕上，适度缩小图标，仍保持单行（可选） */
-@media (max-width: 360px){
-  .icon-btn{ width: 36px; height: 36px; }
-  .icon-btn i{ font-size: 20px; }
-  /* 小屏按钮改为紧凑排列 */
-  .action-buttons{ gap:8px; }
-}
-
-
-    /* 细节：头像圆裁剪更稳 */
-    .rounded-circle{ object-fit:cover; }
-
-    /* 小屏取消浮动并加左右留白 */
+    /* 小屏适配：取消浮动、两侧留白 */
     @media (max-width: 767.98px){
       .card-body{ padding-left:30px !important; padding-right:30px !important; }
       .float-container{
         float:none !important; display:block; width:auto;
-        margin-left:auto; margin-right:auto; margin-bottom:20px; text-align:center;
+        margin:0 auto 20px; text-align:center;
       }
     }
+
+    /* 链接主题色（其余不变） */
+    a{ color:var(--uhm-green); }
+    a:hover, a:focus{ color:var(--uhm-green-darker); text-decoration:none; }
+    hr{ border-top:1px solid rgba(2,71,49,.2); }
   </style>
 </head>
 <body>
@@ -122,15 +106,18 @@
     <div class="card border-0 shadow-sm bg-white mt-5">
       <div class="card-body p-5">
 
-        <!-- 右侧浮动：头像 + 图标 -->
+        <!-- 右侧浮动：头像 + 图标 + 分割线 + 按钮 -->
         <div class="float-container">
           {% if site.data.profile.portrait_url %}
           <a target="_blank" href="{{ site.data.profile.portrait_url | relative_url }}" rel="noopener" aria-label="Open portrait">
-            <img src="{{ site.data.profile.portrait_url | relative_url }}" class="rounded-circle img-fluid" style="height:180px;width:180px;" alt="Portrait" loading="lazy" decoding="async">
+            <img src="{{ site.data.profile.portrait_url | relative_url }}"
+                 class="img-fluid portrait-img"
+                 alt="{{ site.data.profile.portrait_alt | default: 'Portrait' }}"
+                 loading="lazy" decoding="async">
           </a>
           {% endif %}
 
-          <!-- 图标（统一间距 + 悬浮上浮放大） -->
+          <!-- 图标（紧凑、单行、无滑动；已移除 CV 图标） -->
           <div class="mt-3">
             <div class="icon-row">
 
@@ -139,13 +126,12 @@
               </a>
 
               {% if site.data.profile.gscholar %}
-              {%- if site.data.profile.gscholar contains 'scholar.google' -%}
-                {%- assign gscholar_url = site.data.profile.gscholar -%}
-              {%- else -%}
-                {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
-              {%- endif -%}
+                {%- if site.data.profile.gscholar contains 'scholar.google' -%}
+                  {%- assign gscholar_url = site.data.profile.gscholar -%}
+                {%- else -%}
+                  {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
+                {%- endif -%}
               <a class="icon-btn" target="_blank" rel="noopener" href="{{ gscholar_url }}" aria-label="Google Scholar">
-                <!-- 使用毕业帽替代（Font Awesome 无官方 scholar 品牌图标） -->
                 <i class="fas fa-graduation-cap"></i>
               </a>
               {% endif %}
@@ -180,13 +166,23 @@
               </a>
               {% endif %}
 
-              {% if site.data.profile.cv_link %}
-              <a class="icon-btn" target="_blank" rel="noopener" href="{{ site.data.profile.cv_link | relative_url }}" aria-label="CV">
-                <i class="fas fa-address-card"></i>
-              </a>
-              {% endif %}
-
             </div>
+          </div>
+
+          <!-- 分割线 -->
+          <hr class="profile-divider">
+
+          <!-- 下方按钮（CV / Deadline） -->
+          <div class="action-buttons">
+            {% if site.data.profile.cv_link %}
+              <a class="btn btn-uhm" target="_blank" rel="noopener" href="{{ site.data.profile.cv_link | relative_url }}">CV</a>
+            {% endif %}
+
+            {% if site.data.profile.deadline_link %}
+              <a class="btn btn-uhm" target="_blank" rel="noopener" href="{{ site.data.profile.deadline_link }}">Deadline</a>
+            {% elsif site.data.profile.deadline %}
+              <a class="btn btn-uhm" target="_blank" rel="noopener" href="{{ site.data.profile.deadline | relative_url }}">Deadline</a>
+            {% endif %}
           </div>
         </div>
 
@@ -195,7 +191,7 @@
           <div class="text-profile-position">
             {% for position in site.data.profile.positions %}
               {% if position.logo %}
-                <img src="{{ position.logo | relative_url }}" alt="Logo" class="inline-badge"/>
+                <img src="{{ position.logo | relative_url }}" alt="{{ position.logo_alt | default: 'Logo' }}" class="inline-badge"/>
               {% endif %}
               {{ position.name }}<br/>
             {% endfor %}
