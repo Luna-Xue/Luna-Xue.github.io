@@ -1,14 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top mb-5 shadow-sm">
     <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container-lg{% endif %}">
-        <a class="navbar-brand d-flex flex-column" href="{{ '/' | relative_url }}">
-            <span class="font-weight-bold">
-              {{ site.data.profile.nav.name_en }}
-              {% if site.data.profile.nav.name_zh %} <small class="text-muted">{{ site.data.profile.nav.name_zh }}</small>{% endif %}
-            </span>
-            {% if site.data.profile.nav.title %}
-            <small class="text-muted">{{ site.data.profile.nav.title }}</small>
-            {% endif %}
-          </a>          
+        <a class="navbar-brand"><strong>{{site.data.profile.navbar_name}}</strong></a>
         <button class="navbar-toggler" style="font-size: 1em; padding: 0.5em;" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-map"></i> Menu
         </button>
