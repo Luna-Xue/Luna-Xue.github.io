@@ -72,10 +72,34 @@
 .icon-btn:active i{ transform: translateY(-1px) scale(1.06); }
 .icon-btn:focus{ box-shadow: 0 0 0 3px rgba(2,71,49,.15); }
 
+/* 动作按钮区（CV / Deadline） */
+.action-buttons{
+      display:flex; justify-content:center; gap:10px; /* 现代浏览器 */
+    }
+    .action-buttons .btn-uhm{
+      background-color: var(--uhm-green);
+      border-color: var(--uhm-green);
+      color:#fff !important;
+      padding: .45rem .9rem;
+      border-radius: .5rem;
+      font-weight: 600;
+      transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
+    }
+    .action-buttons .btn-uhm:hover,
+    .action-buttons .btn-uhm:focus{
+      background-color: var(--uhm-green-darker);
+      border-color: var(--uhm-green-darker);
+      transform: translateY(-1px);
+      text-decoration: none;
+      outline: none;
+    }
+
 /* 很窄的屏幕上，适度缩小图标，仍保持单行（可选） */
 @media (max-width: 360px){
   .icon-btn{ width: 36px; height: 36px; }
   .icon-btn i{ font-size: 20px; }
+  /* 小屏按钮改为紧凑排列 */
+  .action-buttons{ gap:8px; }
 }
 
 
