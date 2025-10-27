@@ -32,28 +32,55 @@
       }
     }
     /* 头像：在容器内绝对水平居中（保险做法） */
-.float-container a > img {
-  display: block;
-  margin: 0 auto;
-}
+    .float-container a > img {
+    display: block;
+    margin: 0 auto;
+    }
 
-/* 图标行：用 flex 居中 + 等距间隙 */
-.float-container .mt-3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;           /* 控制图标间距 */
-  flex-wrap: wrap;
-  margin-bottom: 20px; /* 保留你原来的下边距 */
-  line-height: 1;      /* 避免图标基线造成的微偏差 */
-}
+    /* 图标行：用 flex 居中 + 等距间隙 */
+    .float-container .mt-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;           /* 控制图标间距 */
+    flex-wrap: wrap;
+    margin-bottom: 20px; /* 保留你原来的下边距 */
+    line-height: 1;      /* 避免图标基线造成的微偏差 */
+    }
 
-/* 抵消 pr-3 的单侧内边距，改为左右对称的外边距 */
-.float-container .mt-3 .pr-3 {
-  padding-right: 0 !important;
-  margin: 0 7px;
-}
+    /* 抵消 pr-3 的单侧内边距，改为左右对称的外边距 */
+    .float-container .mt-3 .pr-3 {
+    padding-right: 0 !important;
+    margin: 0 7px;
+    }
+    /* 平滑放大：适用于所有图标（.float-container 里的 i） */
+    .float-container .mt-3 a i{
+    display: inline-block;                 /* 让 transform 生效 */
+    transition: transform .15s ease;       /* 放大动画 */
+    transform-origin: center;
+    will-change: transform;
+    }
 
+    /* 鼠标悬停 & 键盘聚焦时放大 */
+    @media (hover:hover){
+    .float-container .mt-3 a:hover i,
+    .float-container .mt-3 a:focus i,
+    .float-container .mt-3 a:focus-visible i{
+        transform: scale(1.18);              /* 放大幅度可按需调 */
+    }
+    }
+
+    /* 触屏轻点时也给一点反馈 */
+    @media (hover:none){
+    .float-container .mt-3 a:active i{
+        transform: scale(1.12);
+    }
+    }
+
+    /* 可选：减少动画偏好时关闭过渡 */
+    @media (prefers-reduced-motion: reduce){
+    .float-container .mt-3 a i{ transition: none; }
+    }
   </style>
 </head>
 <body>
