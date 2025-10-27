@@ -81,6 +81,42 @@
     @media (prefers-reduced-motion: reduce){
     .float-container .mt-3 a i{ transition: none; }
     }
+    /* 细分割线（仅在右侧浮动卡片里用） */
+    .float-container .profile-sep{
+    max-width: 200px;
+    margin: 8px auto 12px;     /* 居中 */
+    border: 0;
+    border-top: 1px solid rgba(2,71,49,.25); /* #024731 的浅色 */
+    }
+
+    /* 按钮行：居中 + 间距 */
+    .float-container .profile-actions{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    }
+
+    /* 统一按钮风格（UHM 绿） */
+    .btn-uhm{
+    background: #024731;
+    border-color: #024731;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 9999px;
+    padding: .375rem .9rem;
+    }
+    .btn-uhm:hover{ color:#fff; filter: brightness(1.06); }
+
+    .btn-uhm-outline{
+    background: #fff;
+    border: 1px solid #024731;
+    color: #024731;
+    font-weight: 600;
+    border-radius: 9999px;
+    padding: .375rem .9rem;
+    }
+    .btn-uhm-outline:hover{ background:#024731; color:#fff; }
+
   </style>
 </head>
 <body>
@@ -140,7 +176,21 @@
                 <i class="fas fa-address-card" style="color: #024731; font-size: 25px;" alt=""></i> 
               </a> <br/>
             {% endif %} -->
-          </div>
+            <hr class="profile-sep">
+
+            <div class="profile-actions">
+              {% if site.data.profile.cv_link %}
+                <a class="btn btn-uhm btn-sm" target="_blank" href="{{ site.data.profile.cv_link | relative_url }}">CV</a>
+              {% endif %}
+            
+              {% if site.data.profile.deadline_link %}
+                <a class="btn btn-uhm-outline btn-sm" href="{{ site.data.profile.deadline_link | relative_url }}">Deadline</a>
+              {% else %}
+                <!-- 没有配置时可先指到你的会议/DDL页面路径 -->
+                <!-- <a class="btn btn-uhm-outline btn-sm" href="/deadlines/">Deadline</a> -->
+              {% endif %}
+            </div>            
+        </div>
         </div>
         
         <!-- 文字内容部分 -->
