@@ -125,26 +125,3 @@ div.lazy {
   @media (prefers-reduced-motion: reduce) {
     .hover-lift { transition: none; }
   }
-  
-/* 统一名字 + 职称两行的间距（去掉“空行”，保留2–4px的小间距） */
-
-/* 1) 先把标题区里所有常见元素的默认 margin 归零 */
-.navbar-brand :is(h1,h2,h3,h4,h5,h6,p,span,small),
-.site-title    :is(h1,h2,h3,h4,h5,h6,p,span,small),
-.profile-name, .profile-title {
-  margin: 0 !important;
-}
-
-/* 2) 让“第二行”（职称/副标题）变成块级并给一个固定上间距 */
-.navbar-brand :is(.profile-title, small),
-.site-title  :is(.profile-title, small),
-.profile-title {
-  display: block;
-  margin-top: 3px !important;   /* 想更紧就改成 2px，想更松就 4–6px */
-  line-height: 1.2;
-}
-
-/* 3) 统一两行的行高和字重（可按需保留/调整） */
-.navbar-brand, .site-title, .profile-name { line-height: 1.15; }
-.profile-name { font-weight: 600; }
-.profile-title, .site-title small { font-weight: 500; }
