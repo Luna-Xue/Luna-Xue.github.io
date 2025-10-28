@@ -10,105 +10,141 @@
 
 {% assign item = include.item %}
 
-<style>
-  /* Publications 项目式按钮（与 Projects 风格一致的小按钮） */
-  .pub-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem;
-    padding: .5rem 0 .25rem;
-  }
-  .pub-links .btn {
-    padding: .25rem .5rem;
-    font-size: .8rem;
-    border-radius: .5rem;
-  }
-</style>
+/* ------------------ 小工具：生成“有效链接”的文本与按钮 HTML ------------------ */
+{% capture _valid_text_links %}{% endcapture %}
+{% capture _valid_btn_links %}{% endcapture %}
 
 {%- comment -%}
-  将 item.links 转为按钮的辅助片段：
-  - 根据键名（不区分大小写）猜测按钮类别与图标/颜色
-  - 兼容 link: { url: "...", target: "..."} 或 link: "..."
-  - 对 DOI 支持裸 DOI（自动加 https://doi.org/）
+  工具：输出一个按钮（Bootstrap outline 风格的小按钮）
 {%- endcomment -%}
-{% capture render_link_buttons %}
-  {% if item.links %}
-    {% for link in item.links %}
-      {% assign key_raw = link[0] %}
-      {% assign key = key_raw | downcase %}
-      {% if link[1].url %}
-        {% assign url = link[1].url %}
-        {% assign target = link[1].target | default: '_blank' %}
-      {% else %}
-        {% assign url = link[1] %}
-        {% assign target = '_blank' %}
-      {% endif %}
+{% assign _btn_tpl = '<a class="btn BTNCLASS btn-sm" href="URL" target="TARGET" rel="noopener"><i class="ICON"></i> LABEL</a>' %}
 
-      {%- comment -%} 归一化 DOI URL {%- endcomment -%}
-      {% assign is_doi = false %}
-      {% if key contains 'doi' %}
-        {% assign is_doi = true %}
-      {% endif %}
-      {% if is_doi and url and (url contains 'http' ) == false %}
-        {% assign url = 'https://doi.org/' | append: url %}
-      {% endif %}
+{%- comment -%}
+  工具：根据键名决定按钮风格与标签
+{%- endcomment -%}
+{% assign _map = '
+paper|btn-outline-primary|fas fa-file-alt|Paper,
+pdf|btn-outline-primary|fas fa-file-alt|Paper,
+code|btn-outline-secondary|fab fa-github|Code,
+github|btn-outline-secondary|fab fa-github|Code,
+slides|btn-outline-info|fas fa-file-powerpoint|Slides,
+ppt|btn-outline-info|fas fa-file-powerpoint|Slides,
+poster|btn-outline-info|fas fa-image|Poster,
+video|btn-outline-danger|fas fa-video|Video,
+record|btn-outline-danger|fas fa-video|Video,
+dataset|btn-outline-success|fas fa-database|Dataset,
+data|btn-outline-success|fas fa-database|Dataset,
+arxiv|btn-outline-dark|fas fa-external-link-alt|arXiv,
+doi|btn-outline-dark|fas fa-link|DOI,
+website|btn-outline-secondary|fas fa-external-link-alt|Website,
+page|btn-outline-secondary|fas fa-external-link-alt|Website,
+project|btn-outline-secondary|fas fa-external-link-alt|Website,
+bib|btn-outline-secondary|fas fa-book|BibTeX,
+bibtex|btn-outline-secondary|fas fa-book|BibTeX
+' | strip %}
 
-      {%- comment -%} 按键名匹配视觉风格与标签 {%- endcomment -%}
-      {% assign btn_class = 'btn-outline-secondary' %}
-      {% assign icon = 'fas fa-external-link-alt' %}
-      {% assign label = key_raw %}
+{% assign _printed_urls = '' %}
 
-      {% if key == 'paper' or key contains 'pdf' %}
-        {% assign btn_class = 'btn-outline-primary' %}
-        {% assign icon = 'fas fa-file-alt' %}
-        {% assign label = 'Paper' %}
-      {% elsif key contains 'code' or key contains 'github' %}
-        {% assign btn_class = 'btn-outline-secondary' %}
-        {% assign icon = 'fab fa-github' %}
-        {% assign label = 'Code' %}
-      {% elsif key contains 'slide' or key contains 'ppt' %}
-        {% assign btn_class = 'btn-outline-info' %}
-        {% assign icon = 'fas fa-file-powerpoint' %}
-        {% assign label = 'Slides' %}
-      {% elsif key contains 'poster' %}
-        {% assign btn_class = 'btn-outline-info' %}
-        {% assign icon = 'fas fa-image' %}
-        {% assign label = 'Poster' %}
-      {% elsif key contains 'video' or key contains 'talk' or key contains 'record' or key contains 'youtube' %}
-        {% assign btn_class = 'btn-outline-danger' %}
-        {% assign icon = 'fas fa-video' %}
-        {% assign label = 'Video' %}
-      {% elsif key contains 'data' or key contains 'dataset' %}
-        {% assign btn_class = 'btn-outline-success' %}
-        {% assign icon = 'fas fa-database' %}
-        {% assign label = 'Dataset' %}
-      {% elsif key contains 'arxiv' %}
-        {% assign btn_class = 'btn-outline-dark' %}
-        {% assign icon = 'fas fa-external-link-alt' %}
-        {% assign label = 'arXiv' %}
-      {% elsif is_doi %}
-        {% assign btn_class = 'btn-outline-dark' %}
-        {% assign icon = 'fas fa-link' %}
-        {% assign label = 'DOI' %}
-      {% elsif key contains 'project' or key contains 'website' or key == 'page' or key contains 'demo' %}
-        {% assign btn_class = 'btn-outline-secondary' %}
-        {% assign icon = 'fas fa-external-link-alt' %}
-        {% assign label = 'Website' %}
-      {% elsif key contains 'bib' %}
-        {% assign btn_class = 'btn-outline-secondary' %}
-        {% assign icon = 'fas fa-book' %}
-        {% assign label = 'BibTeX' %}
-      {% endif %}
+{%- comment -%}
+  判断 URL 是否有效（排除空、#、N/A、TBD、coming soon、-、—）
+{%- endcomment -%}
+{% assign _bad_tokens = '#,/#,n/a,na,tbd,coming soon,-,—' | downcase %}
 
-      {% if url %}
-        <a class="btn {{ btn_class }} btn-sm" href="{{ url | relative_url }}" target="{{ target }}" rel="noopener">
-          <i class="{{ icon }}"></i> {{ label }}
-        </a>
-      {% endif %}
-    {% endfor %}
+{%- comment -%}
+  帮助函数：尝试渲染一条链接（文本 + 按钮），仅当 URL 有效且未重复
+{%- endcomment -%}
+{% macro _emit_for key_raw url_raw target_raw %}
+  {% assign key = key_raw | downcase %}
+  {% assign url = url_raw | to_s | strip %}
+  {% assign target = target_raw | default: '_blank' %}
+
+  {% assign url_dc = url | downcase %}
+  {% assign is_bad = false %}
+  {% if url == '' %}{% assign is_bad = true %}{% endif %}
+  {% if _bad_tokens contains url_dc %}{% assign is_bad = true %}{% endif %}
+  {% if is_bad %}{% return %}{% endif %}
+
+  {# 裸 DOI 自动补全 #}
+  {% if key == 'doi' and url and (url contains 'http') == false %}
+    {% assign url = 'https://doi.org/' | append: url %}
+    {% assign url_dc = url | downcase %}
   {% endif %}
-{% endcapture %}
 
+  {# 避免重复 #}
+  {% if _printed_urls contains url_dc %}{% return %}{% endif %}
+  {% assign _printed_urls = _printed_urls | append: url_dc | append: '|' %}
+
+  {# 文本链接（原有方括号风格） #}
+  {% capture _valid_text_links %}{{ _valid_text_links }}<a target="{{ target }}" href="{{ url }}">[{{ key_raw }}]</a> {% endcapture %}
+
+  {# 按钮映射 #}
+  {% assign btn_class = 'btn-outline-secondary' %}
+  {% assign icon = 'fas fa-external-link-alt' %}
+  {% assign label = key_raw %}
+  {% assign found = '' %}
+  {% assign pairs = _map | split: ',' %}
+  {% for p in pairs %}
+    {% assign parts = p | split: '|' %}
+    {% assign kk = parts[0] | strip %}
+    {% if kk == key %}
+      {% assign found = p %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if found != '' %}
+    {% assign parts = found | split: '|' %}
+    {% assign btn_class = parts[1] | strip %}
+    {% assign icon = parts[2] | strip %}
+    {% assign label = parts[3] | strip %}
+  {% endif %}
+
+  {% assign _btn = _btn_tpl
+    | replace: 'BTNCLASS', btn_class
+    | replace: 'URL', url
+    | replace: 'TARGET', target
+    | replace: 'ICON', icon
+    | replace: 'LABEL', label %}
+
+  {% capture _valid_btn_links %}{{ _valid_btn_links }}{{ _btn }} {% endcapture %}
+{% endmacro %}
+
+{%- comment -%}
+  先处理“独立字段”来源
+{%- endcomment -%}
+{% if item.paper %}{{ '' | _emit_for: 'paper', item.paper, '_blank' }}{% endif %}
+{% if item.pdf %}{{ '' | _emit_for: 'pdf', item.pdf, '_blank' }}{% endif %}
+{% if item.code %}{{ '' | _emit_for: 'code', item.code, '_blank' }}{% endif %}
+{% if item.github %}{{ '' | _emit_for: 'github', item.github, '_blank' }}{% endif %}
+{% if item.slides %}{{ '' | _emit_for: 'slides', item.slides, '_blank' }}{% endif %}
+{% if item.poster %}{{ '' | _emit_for: 'poster', item.poster, '_blank' }}{% endif %}
+{% if item.video %}{{ '' | _emit_for: 'video', item.video, '_blank' }}{% endif %}
+{% if item.dataset %}{{ '' | _emit_for: 'dataset', item.dataset, '_blank' }}{% endif %}
+{% if item.data %}{{ '' | _emit_for: 'data', item.data, '_blank' }}{% endif %}
+{% if item.arxiv %}{{ '' | _emit_for: 'arxiv', item.arxiv, '_blank' }}{% endif %}
+{% if item.doi %}{{ '' | _emit_for: 'doi', item.doi, '_blank' }}{% endif %}
+{% if item.website %}{{ '' | _emit_for: 'website', item.website, '_blank' }}{% endif %}
+{% if item.page %}{{ '' | _emit_for: 'page', item.page, '_blank' }}{% endif %}
+{% if item.project %}{{ '' | _emit_for: 'project', item.project, '_blank' }}{% endif %}
+{% if item.bibtex %}{{ '' | _emit_for: 'bibtex', item.bibtex, '_blank' }}{% endif %}
+
+{%- comment -%}
+  再处理 item.links（键名自动映射）
+{%- endcomment -%}
+{% if item.links %}
+  {% for link in item.links %}
+    {% assign key_raw = link[0] %}
+    {% if link[1].url %}
+      {% assign url_val = link[1].url %}
+      {% assign target_val = link[1].target | default: '_blank' %}
+    {% else %}
+      {% assign url_val = link[1] %}
+      {% assign target_val = '_blank' %}
+    {% endif %}
+    {{ '' | _emit_for: key_raw, url_val, target_val }}
+  {% endfor %}
+{% endif %}
+
+/* ------------------ 版式：桌面端 ------------------ */
 <div class="d-none d-md-block">
   <div class="row no-gutters {% unless include.hide_bottom_border %}border-bottom{% endunless %} border-gray">
     <div class="col-md-3 col-xl-2 mb-md-0 p-md-3">
@@ -121,80 +157,35 @@
     <div class="col-md-9 col-xl-10 p-3 pl-md-0">
       <h5 class="mt-0 mb-1 font-weight-normal">{{ item.title }}</h5>
       <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
-      <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }} <span data-semantic-schol ar-id="{{ item.semantic_scholar_id }}"></span></p>
+      <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
+
       {% if show_abs and item.abstract %}
       <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
       {% endif %}
 
-      <!-- 原有的方括号文本链接，保留 -->
-      <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
-        {% for link in item.links %}
-          {% if link[1].url %}
-            <a target="{{ link[1]['target'] | default: '_blank' }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
-          {% else %}
-            <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>
-          {% endif %}
-        {% endfor %}
-      </p>
-
-      {% if show_links %}
-        {%- assign _paper = item.paper | default: item.pdf -%}
-        {%- assign _code = item.code | default: item.github -%}
-        {%- assign _dataset = item.dataset | default: item.data -%}
-        {%- assign _site = item.website | default: item.page | default: item.project -%}
-        <div class="pub-links">
-          {%- if _paper -%}
-            <a class="btn btn-outline-primary btn-sm" href="{{ _paper | relative_url }}" target="_blank" rel="noopener">
-              <i class="fas fa-file-alt"></i> Paper
-            </a>
-          {%- endif -%}
-          {%- if _code -%}
-            <a class="btn btn-outline-secondary btn-sm" href="{{ _code | relative_url }}" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i> Code
-            </a>
-          {%- endif -%}
-          {%- if item.slides -%}
-            <a class="btn btn-outline-info btn-sm" href="{{ item.slides | relative_url }}" target="_blank" rel="noopener">
-              <i class="fas fa-file-powerpoint"></i> Slides
-            </a>
-          {%- endif -%}
-          {%- if item.poster -%}
-            <a class="btn btn-outline-info btn-sm" href="{{ item.poster | relative_url }}" target="_blank" rel="noopener">
-              <i class="fas fa-image"></i> Poster
-            </a>
-          {%- endif -%}
-          {%- if item.video -%}
-            <a class="btn btn-outline-danger btn-sm" href="{{ item.video | relative_url }}" target="_blank" rel="noopener">
-              <i class="fas fa-video"></i> Video
-            </a>
-          {%- endif -%}
-          {%- if _dataset -%}
-            <a class="btn btn-outline-success btn-sm" href="{{ _dataset | relative_url }}" target="_blank" rel="noopener">
-              <i class="fas fa-database"></i> Dataset
-            </a>
-          {%- endif -%}
-          {%- if item.arxiv -%}
-            <a class="btn btn-outline-dark btn-sm" href="{{ item.arxiv }}" target="_blank" rel="noopener">
-              <i class="fas fa-external-link-alt"></i> arXiv
-            </a>
-          {%- endif -%}
-          {%- if item.doi -%}
-            <a class="btn btn-outline-dark btn-sm" href="https://doi.org/{{ item.doi }}" target="_blank" rel="noopener">
-              <i class="fas fa-link"></i> DOI
-            </a>
-          {%- endif -%}
-          {%- if _site -%}
-            <a class="btn btn-outline-secondary btn-sm" href="{{ _site | relative_url }}" target="_blank" rel="noopener">
-              <i class="fas fa-external-link-alt"></i> Website
-            </a>
-          {%- endif -%}
-          {{ render_link_buttons }}
-        </div>
+      {# 仅当有有效文本链接时才显示原“方括号”行 #}
+      {% assign _text_strip = _valid_text_links | strip %}
+      {% if _text_strip != '' %}
+        <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+          {{ _valid_text_links }}
+        </p>
       {% endif %}
+
+      {# 仅当开启且确有可展示按钮时才显示按钮区 #}
+      {% if show_links %}
+        {% assign _btn_strip = _valid_btn_links | strip %}
+        {% if _btn_strip != '' %}
+          <div class="project-links" style="padding:.5rem 0 .25rem;">
+            {{ _valid_btn_links }}
+          </div>
+        {% endif %}
+      {% endif %}
+
     </div>
   </div>
 </div>
 
+<!-- ------------------ 版式：移动端 ------------------ -->
 <div class="row no-gutters d-md-none {% unless include.hide_bottom_border %}border-bottom{% endunless %} border-gray {% if include.first %}rounded-xl-top{% endif %} {% if include.last %}rounded-xl-bottom{% endif %} {% if item.cover %}lazy{% endif %}" data-src="{{ item.cover | relative_url }}">
   <div class="w-100 {% if include.first %}rounded-xl-top{% endif %} {% if include.last %}rounded-xl-bottom{% endif %}" style="background-color: rgba(255,255,255,0.9);">
     <div class="d-flex align-items-start flex-column py-3 px-4">
@@ -203,74 +194,25 @@
         <h5 class="mt-0 mb-1 font-weight-normal">{{ item.title }}</h5>
         <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
         <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
+
         {% if show_abs and item.abstract %}
         <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
         {% endif %}
 
-        <!-- 原有的方括号文本链接，保留 -->
-        <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
-          {% for link in item.links %}
-            {% if link[1].url %}
-              <a target="{{ link[1]['target'] | default: '_blank' }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
-            {% else %}
-              <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>
-            {% endif %}
-          {% endfor %}
-        </p>
+        {% assign _text_strip_m = _valid_text_links | strip %}
+        {% if _text_strip_m != '' %}
+          <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+            {{ _valid_text_links }}
+          </p>
+        {% endif %}
 
         {% if show_links %}
-          {%- assign _paper = item.paper | default: item.pdf -%}
-          {%- assign _code = item.code | default: item.github -%}
-          {%- assign _dataset = item.dataset | default: item.data -%}
-          {%- assign _site = item.website | default: item.page | default: item.project -%}
-          <div class="pub-links">
-            {%- if _paper -%}
-              <a class="btn btn-outline-primary btn-sm" href="{{ _paper | relative_url }}" target="_blank" rel="noopener">
-                <i class="fas fa-file-alt"></i> Paper
-              </a>
-            {%- endif -%}
-            {%- if _code -%}
-              <a class="btn btn-outline-secondary btn-sm" href="{{ _code | relative_url }}" target="_blank" rel="noopener">
-                <i class="fab fa-github"></i> Code
-              </a>
-            {%- endif -%}
-            {%- if item.slides -%}
-              <a class="btn btn-outline-info btn-sm" href="{{ item.slides | relative_url }}" target="_blank" rel="noopener">
-                <i class="fas fa-file-powerpoint"></i> Slides
-              </a>
-            {%- endif -%}
-            {%- if item.poster -%}
-              <a class="btn btn-outline-info btn-sm" href="{{ item.poster | relative_url }}" target="_blank" rel="noopener">
-                <i class="fas fa-image"></i> Poster
-              </a>
-            {%- endif -%}
-            {%- if item.video -%}
-              <a class="btn btn-outline-danger btn-sm" href="{{ item.video | relative_url }}" target="_blank" rel="noopener">
-                <i class="fas fa-video"></i> Video
-              </a>
-            {%- endif -%}
-            {%- if _dataset -%}
-              <a class="btn btn-outline-success btn-sm" href="{{ _dataset | relative_url }}" target="_blank" rel="noopener">
-                <i class="fas fa-database"></i> Dataset
-              </a>
-            {%- endif -%}
-            {%- if item.arxiv -%}
-              <a class="btn btn-outline-dark btn-sm" href="{{ item.arxiv }}" target="_blank" rel="noopener">
-                <i class="fas fa-external-link-alt"></i> arXiv
-              </a>
-            {%- endif -%}
-            {%- if item.doi -%}
-              <a class="btn btn-outline-dark btn-sm" href="https://doi.org/{{ item.doi }}" target="_blank" rel="noopener">
-                <i class="fas fa-link"></i> DOI
-              </a>
-            {%- endif -%}
-            {%- if _site -%}
-              <a class="btn btn-outline-secondary btn-sm" href="{{ _site | relative_url }}" target="_blank" rel="noopener">
-                <i class="fas fa-external-link-alt"></i> Website
-              </a>
-            {%- endif -%}
-            {{ render_link_buttons }}
-          </div>
+          {% assign _btn_strip_m = _valid_btn_links | strip %}
+          {% if _btn_strip_m != '' %}
+            <div class="project-links" style="padding:.5rem 0 .25rem;">
+              {{ _valid_btn_links }}
+            </div>
+          {% endif %}
         {% endif %}
       </div>
     </div>
