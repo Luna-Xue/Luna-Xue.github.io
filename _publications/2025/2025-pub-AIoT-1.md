@@ -18,6 +18,9 @@ authors:
   - Yao Zheng
 links:
   Paper: 
-  Code: https://github.com/Luna-Xue
+  Code: 
+  - text: "Demo"
+    url: "https://github.com/Luna-Xue"
+    icon: "fa-brands fa-youtube"
   # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---
