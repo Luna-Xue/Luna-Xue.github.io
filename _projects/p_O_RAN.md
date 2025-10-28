@@ -4,8 +4,8 @@ title: "O-RAN Testbed"
 subtitle: "O-RAN + ISAC prototyping"
 date: 2025-10-01
 permalink: /projects/project_oran.html  # 详情页 URL
-thumb: /assets/images/covers/cover1.jpg
-hero:  /assets/images/covers/cover1.jpg
+thumb: /assets/images/covers/ORAN.svg
+hero:  /assets/images/covers/ORAN.svg
 tags: [RIS, O-RAN, ISAC, Testbed]
 role: "PI"
 period: "2025 — present"
