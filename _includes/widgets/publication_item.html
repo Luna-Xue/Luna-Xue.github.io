@@ -3,7 +3,28 @@
   {% assign show_abs = true %}
 {% endif %}
 
+{% assign show_links = include.show_links %}
+{% if show_links == nil %}
+  {% assign show_links = true %}
+{% endif %}
+
 {% assign item = include.item %}
+
+<style>
+  /* Publications 项目式按钮（与 Projects 风格一致的小按钮） */
+  .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    padding: .5rem 0 .25rem;
+  }
+  .pub-links .btn {
+    padding: .25rem .5rem;
+    font-size: .8rem;
+    border-radius: .5rem;
+  }
+</style>
+
 <div class="d-none d-md-block">
     <div class="row no-gutters {% unless include.hide_bottom_border %}border-bottom{% endunless %} border-gray">
         <div class="col-md-3 col-xl-2 mb-md-0 p-md-3">
@@ -31,6 +52,75 @@
                 {% endfor %}
             </p>
 
+            {% if show_links %}
+            {%- assign _paper = item.paper | default: item.pdf -%}
+            {%- assign _code = item.code | default: item.github -%}
+            {%- assign _dataset = item.dataset | default: item.data -%}
+            {%- assign _site = item.website | default: item.page | default: item.project -%}
+
+            <div class="pub-links">
+              {%- if _paper -%}
+                <a class="btn btn-outline-primary btn-sm" href="{{ _paper | relative_url }}" target="_blank" rel="noopener">
+                  <i class="fas fa-file-alt"></i> Paper
+                </a>
+              {%- endif -%}
+
+              {%- if _code -%}
+                <a class="btn btn-outline-secondary btn-sm" href="{{ _code | relative_url }}" target="_blank" rel="noopener">
+                  <i class="fab fa-github"></i> Code
+                </a>
+              {%- endif -%}
+
+              {%- if item.slides -%}
+                <a class="btn btn-outline-info btn-sm" href="{{ item.slides | relative_url }}" target="_blank" rel="noopener">
+                  <i class="fas fa-file-powerpoint"></i> Slides
+                </a>
+              {%- endif -%}
+
+              {%- if item.poster -%}
+                <a class="btn btn-outline-info btn-sm" href="{{ item.poster | relative_url }}" target="_blank" rel="noopener">
+                  <i class="fas fa-image"></i> Poster
+                </a>
+              {%- endif -%}
+
+              {%- if item.video -%}
+                <a class="btn btn-outline-danger btn-sm" href="{{ item.video | relative_url }}" target="_blank" rel="noopener">
+                  <i class="fas fa-video"></i> Video
+                </a>
+              {%- endif -%}
+
+              {%- if _dataset -%}
+                <a class="btn btn-outline-success btn-sm" href="{{ _dataset | relative_url }}" target="_blank" rel="noopener">
+                  <i class="fas fa-database"></i> Dataset
+                </a>
+              {%- endif -%}
+
+              {%- if item.arxiv -%}
+                <a class="btn btn-outline-dark btn-sm" href="{{ item.arxiv }}" target="_blank" rel="noopener">
+                  <i class="fas fa-external-link-alt"></i> arXiv
+                </a>
+              {%- endif -%}
+
+              {%- if item.doi -%}
+                <a class="btn btn-outline-dark btn-sm" href="https://doi.org/{{ item.doi }}" target="_blank" rel="noopener">
+                  <i class="fas fa-link"></i> DOI
+                </a>
+              {%- endif -%}
+
+              {%- if _site -%}
+                <a class="btn btn-outline-secondary btn-sm" href="{{ _site | relative_url }}" target="_blank" rel="noopener">
+                  <i class="fas fa-external-link-alt"></i> Website
+                </a>
+              {%- endif -%}
+
+              {%- if item.bibtex -%}
+                <a class="btn btn-outline-secondary btn-sm" href="{{ item.bibtex | relative_url }}" target="_blank" rel="noopener">
+                  <i class="fas fa-book"></i> BibTeX
+                </a>
+              {%- endif -%}
+            </div>
+            {% endif %}
+
         </div>
     </div>
 </div>
@@ -56,6 +146,76 @@
                     {% endif %}
                     {% endfor %}
                 </p>
+
+                {% if show_links %}
+                {%- assign _paper = item.paper | default: item.pdf -%}
+                {%- assign _code = item.code | default: item.github -%}
+                {%- assign _dataset = item.dataset | default: item.data -%}
+                {%- assign _site = item.website | default: item.page | default: item.project -%}
+
+                <div class="pub-links">
+                  {%- if _paper -%}
+                    <a class="btn btn-outline-primary btn-sm" href="{{ _paper | relative_url }}" target="_blank" rel="noopener">
+                      <i class="fas fa-file-alt"></i> Paper
+                    </a>
+                  {%- endif -%}
+
+                  {%- if _code -%}
+                    <a class="btn btn-outline-secondary btn-sm" href="{{ _code | relative_url }}" target="_blank" rel="noopener">
+                      <i class="fab fa-github"></i> Code
+                    </a>
+                  {%- endif -%}
+
+                  {%- if item.slides -%}
+                    <a class="btn btn-outline-info btn-sm" href="{{ item.slides | relative_url }}" target="_blank" rel="noopener">
+                      <i class="fas fa-file-powerpoint"></i> Slides
+                    </a>
+                  {%- endif -%}
+
+                  {%- if item.poster -%}
+                    <a class="btn btn-outline-info btn-sm" href="{{ item.poster | relative_url }}" target="_blank" rel="noopener">
+                      <i class="fas fa-image"></i> Poster
+                    </a>
+                  {%- endif -%}
+
+                  {%- if item.video -%}
+                    <a class="btn btn-outline-danger btn-sm" href="{{ item.video | relative_url }}" target="_blank" rel="noopener">
+                      <i class="fas fa-video"></i> Video
+                    </a>
+                  {%- endif -%}
+
+                  {%- if _dataset -%}
+                    <a class="btn btn-outline-success btn-sm" href="{{ _dataset | relative_url }}" target="_blank" rel="noopener">
+                      <i class="fas fa-database"></i> Dataset
+                    </a>
+                  {%- endif -%}
+
+                  {%- if item.arxiv -%}
+                    <a class="btn btn-outline-dark btn-sm" href="{{ item.arxiv }}" target="_blank" rel="noopener">
+                      <i class="fas fa-external-link-alt"></i> arXiv
+                    </a>
+                  {%- endif -%}
+
+                  {%- if item.doi -%}
+                    <a class="btn btn-outline-dark btn-sm" href="https://doi.org/{{ item.doi }}" target="_blank" rel="noopener">
+                      <i class="fas fa-link"></i> DOI
+                    </a>
+                  {%- endif -%}
+
+                  {%- if _site -%}
+                    <a class="btn btn-outline-secondary btn-sm" href="{{ _site | relative_url }}" target="_blank" rel="noopener">
+                      <i class="fas fa-external-link-alt"></i> Website
+                    </a>
+                  {%- endif -%}
+
+                  {%- if item.bibtex -%}
+                    <a class="btn btn-outline-secondary btn-sm" href="{{ item.bibtex | relative_url }}" target="_blank" rel="noopener">
+                      <i class="fas fa-book"></i> BibTeX
+                    </a>
+                  {%- endif -%}
+                </div>
+                {% endif %}
+
             </div>
         </div>
     </div>
