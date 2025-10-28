@@ -8,22 +8,6 @@ body_attr: >-
 
 {% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-<style>
-    /* 与 projects 同风格的小按钮链接条 */
-    .pub-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
-      padding: .5rem .75rem .75rem;
-    }
-    .pub-links .btn {
-      padding: .25rem .5rem;
-      font-size: .8rem;
-      border-radius: .5rem;
-    }
-  </style>
-  
-
 <div class="row">
     <div class="col-12 col-lg-10">
         {% for year in pubs_by_year %}

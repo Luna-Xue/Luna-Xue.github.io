@@ -18,10 +18,8 @@ authors:
   - Chunsheng Xin
 # * is equal contribution
 links:
-  - text: "Paper"
-    url: "https://ieeexplore.ieee.org/abstract/document/9500643/"
-    icon: "fa-solid fa-file-lines"
-  # Code: https://github.com/Luna-Xue
+  Paper: https://ieeexplore.ieee.org/abstract/document/9500643/
+  Code: https://github.com/Luna-Xue
   # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 
 ---

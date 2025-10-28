@@ -17,11 +17,7 @@ authors:
   - Saurabh Parkar 
   - Yao Zheng
 links:
-  - text: "Paper"
-    url: "https://arxiv.org/abs/xxxx.xxxxx"
-    icon: "fa-solid fa-file-lines"
-  - text: "Demo"
-    url: "https://github.com/Luna-Xue"
-    icon: "fa-brands fa-youtube"
+  Paper: 
+  Code: https://github.com/Luna-Xue
   # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---

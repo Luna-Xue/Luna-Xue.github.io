@@ -17,9 +17,7 @@ authors:
   - Shucheng Yu
   - Min Song
 links:
-  - text: "Paper"
-    url: "https://ieeexplore.ieee.org/abstract/document/10160162/"
-    icon: "fa-solid fa-file-lines"
+  Paper: https://ieeexplore.ieee.org/abstract/document/10160162/
   # Code: https://github.com/luost26/academic-homepage
   # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---
