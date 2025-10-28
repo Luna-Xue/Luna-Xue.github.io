@@ -41,6 +41,17 @@ body_attr: >-
     width: 100%;
     height: auto;
   }
+  /* 放在 projects.html 的 <style> 里，覆盖原来的 .project-thumb  */
+  .project-thumb {
+    aspect-ratio: 16 / 9;   /* 固定展示框比例 */
+    width: 100%;
+    height: auto;           /* 由 aspect-ratio 推导高度 */
+    object-fit: contain;    /* 等比缩放，可能留边但不裁切 */
+    object-position: center;
+    background: #f6f7f8;    /* 留边底色，可换透明或你的主题色 */
+    image-rendering: auto;  /* 保持浏览器默认插值，不模糊也不像素化 */
+  }
+
 
   /* 标题悬停更明显（可选） */
   .project-card .card-title a:hover { text-decoration: underline; }
