@@ -4,8 +4,8 @@ title: "mmWave Sensing"
 subtitle: "ISAC prototyping + Breathing Detection"
 date: 2024-11-01
 permalink: /projects/project_mmwave.html  # 详情页 URL
-thumb: /assets/images/covers/cover1.jpg
-hero:  /assets/images/covers/cover1.jpg
+thumb: /assets/images/covers/AIoT_Breath.png
+hero:  /assets/images/covers/AIoT_Breath.png
 tags: [RIS, O-RAN, ISAC, Testbed]
 role: "PI"
 period: "2025 — present"
