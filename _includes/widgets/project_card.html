@@ -7,7 +7,12 @@
   <div class="card shadow-sm border-0 mb-4 project-card w-100">
     {% if thumb %}
     <a href="{{ url }}" target="_blank" rel="noopener">
-      <img class="card-img-top project-thumb" src="{{ thumb | relative_url }}" alt="{{ title }}">
+      <img
+        src="{{ thumb_1x | relative_url }}"
+        srcset="{{ thumb_1x | relative_url }} 1x, {{ thumb_2x | relative_url }} 2x"
+        sizes="(max-width: 576px) 100vw, 33vw"
+        alt="{{ title | escape }}"
+        loading="lazy" decoding="async">
     </a>
     {% endif %}
     <div class="card-body">
