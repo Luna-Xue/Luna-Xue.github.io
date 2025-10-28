@@ -16,9 +16,10 @@ authors:
   - Shucheng Yu#
   - Saurabh Parkar 
   - Yao Zheng
-links:
-  Paper: 
-  Code: 
+links: 
+  - text: "Code"
+    url: "https://github.com/your/repo"
+    icon: "fa-brands fa-github"
   - text: "Demo"
     url: "https://github.com/Luna-Xue"
     icon: "fa-brands fa-youtube"
