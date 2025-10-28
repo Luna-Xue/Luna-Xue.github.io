@@ -21,7 +21,8 @@ authors:
   - Shucheng Yu#
   - Yao Zheng
 links:
-  Paper: 
+  - text: "Paper"
+    url: "https://arxiv.org/abs/xxxx.xxxxx"
+    icon: "fa-solid fa-file-lines"
   #Code: https://github.com/Luna-Xue
-  Demo: 
 ---
