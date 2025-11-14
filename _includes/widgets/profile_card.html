@@ -93,6 +93,16 @@
                             <i class="fab fa-orcid"></i> ORCID
                         </a>
                         {% endif %}
+
+                        <!-- 分割线 + 操作按钮 -->
+                        <hr class="profile-sep">
+                        <div class="profile-actions">
+                            <a class="btn btn-uhm btn-sm" target="_blank"
+                            href="{{ site.data.profile.cv_link | default: '/files/CV.pdf' | relative_url }}">CV</a>
+                            <a class="btn btn-uhm-outline btn-sm"
+                            href="{{ site.data.profile.deadline | default: '/deadlines/' | relative_url }}">Deadline</a>
+                        </div>
+
                     </div>
                 </div>
             </div>

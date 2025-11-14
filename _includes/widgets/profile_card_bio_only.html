@@ -16,6 +16,9 @@
                         {% if site.data.profile.cv_link %}
                             <a target="_blank" href="{{ site.data.profile.cv_link | relative_url }}"><i class="fas fa-file-alt"></i> Curriculum Vitae</a> <br/>
                         {% endif %}
+                        {% if site.data.profile.deadline %}
+                            <a target="_blank" href="{{ site.data.profile.deadline | relative_url }}"><i class="fas fa-file-alt"></i> Conference Deadline</a> <br/>
+                        {% endif %}
                     </div>
         
                 </div>
