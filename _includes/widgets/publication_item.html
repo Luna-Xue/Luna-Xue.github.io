@@ -1,6 +1,7 @@
 {% assign show_abs = include.show_abstract %}
 {% if show_abs == nil %}
-  {% assign show_abs = fasle %}
+<!-- Show abstract at Homepage: true; otherwise false-->
+  {% assign show_abs = fasle %} 
 {% endif %}
 
 {% assign item = include.item %}
