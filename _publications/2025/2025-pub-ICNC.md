@@ -19,7 +19,7 @@ authors:
   - Xiaochan Xue#
   - Shucheng Yu#
   - Saurabh Parkar 
-  - JIarui Li
+  - Jiarui Li
 links:
   Paper: 
   #Code: https://github.com/Luna-Xue
