@@ -1,5 +1,5 @@
 ---
-show: false
+show: true
 width: 1
 date: 2017-01-11 00:01:00 +0800
 class: ""  # Override the default card style
