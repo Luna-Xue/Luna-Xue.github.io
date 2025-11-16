@@ -8,8 +8,8 @@ date: 2020-01-12 00:01:00 +0800
   <div class="card-body">
     <h5 class="card-title">GitHub Star History</h5>
     <p class="card-text">
-      This image shows the star history of the GitHub repository of this website.
+      Always try to record all of my projects.
     </p>
-    <p class="card-text"><small><a href="https://github.com/luost26/academic-homepage" target="_blank">Give a star!</a></small></p>
+    <p class="card-text"><small><a href="https://github.com/Luna-Xue" target="_blank">Explore my projects</a></small></p>
   </div>
 </div>
