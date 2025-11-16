@@ -67,8 +67,30 @@
                     </div>
                     {% endif %}
 
-                </div>
+                    {% if site.data.profile.services %}
+                    <div class="col-lg-6">
+                        <div class="mx-2 my-1">
+                            <h6>Services</h6>
+                            <ul class="list small pl-3 mb-1">
+                                {% for item in site.data.profile.services %}
+                                <li>
+                                    <div class="d-flex">
+                                        <div>
+                                            <strong>{{ item.role }}</strong>{% if item.venue %}, {{ item.venue }}{% endif %}
+                                            {% if item.note %}<span class="d-block small text-muted">{{ item.note }}</span>{% endif %}
+                                        </div>
+                                        {% if item.date %}
+                                        <div class="ml-auto mt-auto no-break"><em>{{ item.date }}</em></div>
+                                        {% endif %}
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
 
+                </div>
             </div>
         </div>
     </div>
