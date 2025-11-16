@@ -65,15 +65,20 @@ awards:
 services:
   - role: "TPC Member"
     venue: "IEEE INFOCOM 2026 (ISAC Track)"
-    date: "2024–2026"
+    date: "2026"
     note: "Technical program committee member for the ISAC track."
 
   - role: "Reviewer"
     venue: "IEEE Transactions on Vehicular Technology (TVT)"
-    date: "2022–Present"
+    date: "2024–Present"
+    note: "Journal reviewer for wireless communications and networking."
+  
+  - role: "Reviewer"
+    venue: "IEEE Transactions on Vehicular Technology (TVT)"
+    date: "2024–Present"
     note: "Journal reviewer for wireless communications and networking."
 
   - role: "Advisor & Mentor"
     venue: "WINGS Lab, University of Hawaiʻi at Mānoa"
-    date: "2025–Present"
+    date: "2024–Present"
     note: "Advising graduate and undergraduate students in ISAC, wireless security, and O-RAN."
