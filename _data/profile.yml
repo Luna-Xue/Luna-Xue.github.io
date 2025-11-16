@@ -69,14 +69,8 @@ services:
     note: "Technical program committee member for the ISAC track."
 
   - role: "Reviewer"
-    venue: "IEEE Transactions on Vehicular Technology (TVT)"
+    venue: "IEEE INFOCOM 2025-2026, IEEE TVT, AJECE"
     date: "2024–Present"
-    note: "Journal reviewer for wireless communications and networking."
-  
-  - role: "Reviewer"
-    venue: "IEEE Transactions on Vehicular Technology (TVT)"
-    date: "2024–Present"
-    note: "Journal reviewer for wireless communications and networking."
 
   - role: "Advisor & Mentor"
     venue: "WINGS Lab, University of Hawaiʻi at Mānoa"
