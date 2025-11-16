@@ -65,7 +65,7 @@ awards:
 services:
   - role: "TPC Member"
     venue: "IEEE INFOCOM 2026 (ISAC Track)"
-    date: "2026"
+    date: "2025"
     note: "Technical program committee member for the ISAC track."
 
   - role: "Reviewer"
