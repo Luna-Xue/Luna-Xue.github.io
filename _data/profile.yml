@@ -74,5 +74,5 @@ services:
 
   - role: "Advisor & Mentor"
     venue: "WINGS Lab, University of Hawaiʻi at Mānoa"
-    date: "2024–Present"
+    date: "2025–Present"
     note: "Advising graduate and undergraduate students in ISAC, wireless security, and O-RAN."
