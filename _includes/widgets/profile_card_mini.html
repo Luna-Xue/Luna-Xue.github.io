@@ -84,6 +84,12 @@
                             <i class="fab fa-orcid"></i>
                         </a>
                         {% endif %}
+
+                        {% if site.data.profile.dblp %}
+                        <a class="px-1 no-break" target="_blank" href="https://dblp.org/pid/{{ site.data.profile.orcid }}.html">
+                            <i class="ai ai-dblp"></i>
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
