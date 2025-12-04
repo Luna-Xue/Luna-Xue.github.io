@@ -72,6 +72,10 @@ services:
   - role: "Reviewer"
     venue: "IEEE INFOCOM 2025-2026, IEEE TVT, AJECE"
     date: "2024–Present"
+  
+  - role: "Membership"
+    venue: "IEEE, IEEE Communications Society, IEEE Women in Engineering, IEEE Young Professionals"
+    date: "2025–Present"
 
   - role: "Advisor & Mentor"
     venue: "WINGS Lab, University of Hawaiʻi at Mānoa"
