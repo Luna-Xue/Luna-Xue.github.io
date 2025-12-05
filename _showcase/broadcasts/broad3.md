@@ -7,5 +7,5 @@ group: Broadcasting
 
 ---
 <div>
-<img src="{{ 'assets/images/icon/icons8-live2d-cubism-480.png' | relative_url }}" class="img-fluid rounded-xl" >
+<img src="{{ 'assets/images/icon/live2d.png' | relative_url }}" class="img-fluid rounded-xl" >
 </div>
