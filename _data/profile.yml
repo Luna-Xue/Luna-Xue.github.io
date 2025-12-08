@@ -64,6 +64,10 @@ awards:
   date: 2023
 
 services:
+  - role: "Session Chair"
+    venue: "IEEE ICNC 2026"
+    date: "2026"
+    
   - role: "TPC Member"
     venue: "IEEE INFOCOM 2026 (ISAC Track)"
     date: "2025"
