@@ -63,11 +63,11 @@ awards:
 - name: Excellence Doctoral Fellowship
   date: 2023
 
-services:
+Professional Services:
   - role: "Session Chair"
     venue: "IEEE ICNC 2026"
     date: "2026"
-    
+
   - role: "TPC Member"
     venue: "IEEE INFOCOM 2026 (ISAC Track)"
     date: "2025"
