@@ -63,12 +63,7 @@
                                 <li class="mb-1">
                                     <div class="d-flex">
                                         <div>
-                                            <strong>{{ item.role }}</strong>{% if item.venue %}, {{ item.venue }}{% endif %}
-                                            {% if item.note %}
-                                            <div class="small text-muted">
-                                                {{ item.note }}
-                                            </div>
-                                            {% endif %}
+                                            {{ item.name }}
                                         </div>
                                         {% if item.date %}
                                         <div class="ml-auto mt-auto no-break"><em>{{ item.date }}</em></div>
