@@ -21,7 +21,7 @@ authors:
   - Shucheng Yu#
   - Yao Zheng
 links:
-  Paper: 
+  Paper: /assets/files/2025_AIoT_Breathing.pdf
   #Code: https://github.com/Luna-Xue
   Demo: 
 ---

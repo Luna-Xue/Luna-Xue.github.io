@@ -21,7 +21,7 @@ authors:
   - Saurabh Parkar 
   - Jiarui Li
 links:
-  Paper: 
+  Paper: /assets/files/2026_ICNC_Waveform.pdf
   #Code: https://github.com/Luna-Xue
   Demo: 
 ---

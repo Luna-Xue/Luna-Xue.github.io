@@ -17,7 +17,7 @@ authors:
   - Saurabh Parkar 
   - Yao Zheng
 links:
-  Paper: 
+  Paper: /assets/files/2025_AIoT_ROISD.pdf
   Code: https://github.com/Luna-Xue
   # Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---
