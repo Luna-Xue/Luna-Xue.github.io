@@ -66,6 +66,9 @@ awards:
   date: 2023
 
 professional_services:
+  - role: "Demo/Posters Chairs"
+    venue: "IEEE Healthcom 2026"
+    date: "19 - 21 October 2026"
   - role: "Session Chair"
     venue: "IEEE ICNC 2026"
     date: "2026"
