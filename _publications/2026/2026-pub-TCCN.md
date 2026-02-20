@@ -2,8 +2,8 @@
 title:          "Adaptive Mode Selection in mmWave ISAC via Spectrally Disjoint Composite Waveforms"
 date:           2026-02-20 00:01:00 +0800
 selected:       true
-pub:            "TechRxiv"
-pub_pre:        "Submitted to TCCN"
+pub:            "TechRxiv."
+pub_pre:        "Submitted to TCCN."
 pub_post:       'Under review.'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Conference</span>'
 pub_date:       "2026"
