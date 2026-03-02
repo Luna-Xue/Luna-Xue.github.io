@@ -2,7 +2,7 @@
 title:          "DomusMind: A Benchmark for Evaluating Lifelong Smart Home Agents Under Drift"
 date:           2026-03-01 00:01:00 +0800
 selected:       true
-pub:            "ICLR 2026 LLA."
+pub:            "ICLR 2026 Workshop on Lifelong Agents: Learning, Aligning, Evolving."
 # pub_pre:        "Submitted to TCCN."
 # pub_post:       'Under review.'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Conference</span>'
