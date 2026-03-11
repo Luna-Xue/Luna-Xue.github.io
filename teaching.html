@@ -16,7 +16,7 @@ body_attr: >-
       <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
 
       <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
-        <div class="px-3 py-2 small">
+        <div class="px-3 py-2">
           {% for item in year.items %}
             <div class="py-2 {% unless forloop.first %}border-top border-gray{% endunless %}">
               <div class="d-flex">
