@@ -5,7 +5,7 @@ selected:       true
 pub:            "ICLR 2026 Workshop on Lifelong Agents: Learning, Aligning, Evolving."
 # pub_pre:        "Submitted to TCCN."
 # pub_post:       'Under review.'
-pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Workshop</span>'
+pub_last:       ' <span class="badge badge-pill badge-publication badge-primary">Workshop</span>'
 pub_date:       "2026"
 # semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-
