@@ -10,7 +10,7 @@ pub_date:       "2026"
 # semantic_scholar_id: 204e3073870fae3d05bcbc2f6a8e263d9b72e776  # use this to retrieve citation count
 abstract: >-
   Integrated sensing and communication (ISAC) in 5G NR and beyond increasingly requires coexisting waveforms and autonomous runtime adaptation under shared spectrum and RF hardware constraints. This paper proposes a spectrally disjoint composite OFDM-FMCW waveform that enables simultaneous high rate communication and high resolution sensing without time division scheduling or intrusive changes to standardized OFDM processing. The key idea is to embed a narrowband FMCW sensing signal into unused OFDM spectral regions such as guard bands, preserving the native advantages of both waveforms while reducing mutual interference through frequency domain orthogonality. The composite structure also improves the measurable peak to average power ratio (PAPR) by about 10 dB by leveraging the near constant envelope of FMCW, providing practical benefits for mmWave RF front ends. Building on the dual sensing modalities, we introduce a lightweight, utility-driven close loop control policy that maps runtime sensing and communication indicators to a probabilistic preference over OFDM sensing and FMCW sensing, improving robustness over fixed-mode baselines. We validate the design on a mmWave ISAC testbed for contactless respiration monitoring, demonstrating reliable communication performance together with robust micro Doppler extraction. The results suggest frequency domain composite waveform design as a scalable pathway toward practical and autonomy ready ISAC deployments.
-cover:          
+cover:         /assets/images/covers/TCCN.png
 authors:
   - Saurabh Parkar#
   - Xiaochan Xue#
