@@ -20,7 +20,7 @@ abstract: >-
     drift, which identifies execution reliability as a distinct bottleneck. By sweeping a
     confirmation threshold, DomusMind characterizes a success–annoyance frontier
     that enables principled selection of operating points for long-horizon alignment.
-cover:          /assets/images/covers/ToM-smarthome.png
+cover:          /assets/images/covers/2026_iclrw.png
 authors:
   - Rong Xu#
   - Yinxin Wan

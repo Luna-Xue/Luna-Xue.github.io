@@ -1,7 +1,7 @@
 ---
 title:          "Waveform Design for ISAC: Trends and Future Directions"
 date:           2025-12-16 00:01:00 +0800
-selected:       true
+selected:       false
 pub:            "IEEE International Conference on Computing, Networking and Communications (ICNC)"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
