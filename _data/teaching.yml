@@ -7,6 +7,8 @@ items:
     links:
       - name: "Course page"
         url: "https://wings-uhm.github.io/Web/courses/ECE362/"
+      - name: "Official Website"
+        url: "https://ece.hawaii.edu/student/graduate/course-descriptions"
 
   - term: "Spring 2026"
     date: "2026-01-01"
@@ -16,6 +18,8 @@ items:
     links:
       - name: "Course page"
         url: "https://wings-uhm.github.io/Web/courses/ECE669/"
+      - name: "Official Website"
+        url: "https://ece.hawaii.edu/student/graduate/course-descriptions"
 
   - term: "2025 Fall"
     date: "2025-08-01"
@@ -35,6 +39,8 @@ items:
     links:
       - name: "Course page"
         url: "https://wings-uhm.github.io/Web/courses/CPE691/"
+      - name: "Official Website"
+        url: https://web.stevens.edu/catalog/archive/2024-2025/en/catalog/academic-catalog/courses/cpe-computer-engineering/600/cpe-691.html
   
   - term: "2024 Fall"
     date: "2024-08-01"
@@ -44,6 +50,8 @@ items:
     links:
       - name: "Course page"
         url: "https://wings-uhm.github.io/Web/courses/CPE691/"
+      - name: "Official Website"
+        url: https://web.stevens.edu/catalog/archive/2024-2025/en/catalog/academic-catalog/courses/cpe-computer-engineering/600/cpe-691.html
 
   - term: "2024 Spring"
     date: "2024-01-01"
@@ -53,3 +61,5 @@ items:
     links:
       - name: "Course page"
         url: "https://wings-uhm.github.io/Web/courses/CPE691/"
+      - name: "Official Website"
+        url: https://web.stevens.edu/catalog/archive/2024-2025/en/catalog/academic-catalog/courses/cpe-computer-engineering/600/cpe-691.html
