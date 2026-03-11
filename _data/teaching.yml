@@ -1,4 +1,13 @@
 items:
+  - term: "2026 Fall"
+    date: "2026-08-01"
+    course: "ECE 362: Discrete Math for Engineers"
+    school: "University of Hawaiʻi at Mānoa"
+    role: "Instructor"
+    links:
+      - name: "Course page"
+        url: "https://wings-uhm.github.io/Web/courses/ECE362/"
+
   - term: "Spring 2026"
     date: "2026-01-01"
     course: "ECE 669: Wireless and Mobile Security"
@@ -7,3 +16,22 @@ items:
     links:
       - name: "Course page"
         url: "https://wings-uhm.github.io/Web/courses/ECE669/"
+
+  - term: "2025 Fall"
+    date: "2025-08-01"
+    course: "ECE 693E: Intelligent and Secure Wireless Networks"
+    school: "University of Hawaiʻi at Mānoa"
+    role: "Instructor"
+    note: "From Wireless Fundamentals to intelligent, secure, and programmable AI-driven Radio Access Networks."
+    links:
+      - name: "Course page"
+        url: "https://wings-uhm.github.io/Web/courses/ECE693E/"
+
+  - term: "2024 Spring-2025 Spring"
+    date: "2024-08-01"
+    course: "CPE 691: Information Systems Security"
+    school: "Stevens Institute of Technology"
+    role: "Instructor"
+    links:
+      - name: "Course page"
+        url: "https://wings-uhm.github.io/Web/courses/CPE691/"
