@@ -27,8 +27,26 @@ items:
       - name: "Course page"
         url: "https://wings-uhm.github.io/Web/courses/ECE693E/"
 
-  - term: "2024 Spring-2025 Spring"
+  - term: "2025 Spring"
+    date: "2025-01-01"
+    course: "CPE 691: Information Systems Security"
+    school: "Stevens Institute of Technology"
+    role: "Instructor"
+    links:
+      - name: "Course page"
+        url: "https://wings-uhm.github.io/Web/courses/CPE691/"
+  
+  - term: "2024 Fall"
     date: "2024-08-01"
+    course: "CPE 691: Information Systems Security"
+    school: "Stevens Institute of Technology"
+    role: "Instructor"
+    links:
+      - name: "Course page"
+        url: "https://wings-uhm.github.io/Web/courses/CPE691/"
+
+  - term: "2024 Spring"
+    date: "2024-01-01"
     course: "CPE 691: Information Systems Security"
     school: "Stevens Institute of Technology"
     role: "Instructor"
