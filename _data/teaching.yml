@@ -8,9 +8,3 @@ items:
     links:
       - name: "Syllabus"
         url: "https://example.com/syllabus"
-
-  - term: "Fall 2025"
-    date: "2025-08-01"
-    course: "EE 4xx: Signals and Systems"
-    school: "Stevens Institute of Technology"
-    role: "TA"
