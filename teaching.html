@@ -26,12 +26,34 @@ body_attr: >-
                   {% if item.role %}<span class="text-muted"> ({{ item.role }})</span>{% endif %}
                   {% if item.note %}<div class="text-muted">{{ item.note }}</div>{% endif %}
                   {% if item.links %}
-                    <div>
-                      {% for l in item.links %}
-                        <a target="_blank" href="{{ l.url }}">[{{ l.name }}]</a>
-                      {% endfor %}
-                    </div>
-                  {% endif %}
+                      <div class="mt-1">
+                        {% for l in item.links %}
+                          {% if l.name == "Course page" %}
+                            <a target="_blank"
+                              href="{{ l.url }}"
+                              class="mr-2"
+                              title="Course page">
+                              <i class="fa-solid fa-book-open"></i>
+                            </a>
+                          {% elsif l.name == "Official Website" %}
+                            <a target="_blank"
+                              href="{{ l.url }}"
+                              class="mr-2"
+                              title="Official Website">
+                              <i class="fa-solid fa-globe"></i>
+                            </a>
+                          {% else %}
+                            <!-- 其他类型链接的兜底处理 -->
+                            <a target="_blank"
+                              href="{{ l.url }}"
+                              class="mr-2"
+                              title="{{ l.name }}">
+                              <i class="fa-solid fa-link"></i>
+                            </a>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    {% endif %}
                 </div>
 
                 {% if item.term %}
