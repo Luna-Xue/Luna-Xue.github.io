@@ -24,25 +24,28 @@
             
             <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
                 {% for link in item.links %}
-                {% if link[1].url %}
-                  <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">
-                    {% if link[0] == "Paper" %}
-                      <i class="fa-regular fa-file-pdf"></i>
-                    {% else %}
-                      [{{ link[0] }}]
-                    {% endif %}
-                  </a>
-                {% else %}
-                  <a target="_blank" href="{{ link[1] }}">
-                    {% if link[0] == "Paper" %}
-                      <i class="fa-regular fa-file-pdf"></i>
-                    {% else %}
-                      [{{ link[0] }}]
-                    {% endif %}
-                  </a>
-                {% endif %}
+                  {% assign label = link[0] %}
+                  {% assign data = link[1] %}
+              
+                  {% if data.url %}
+                    <a target="{{ data['target'] }}" href="{{ data['url'] }}" class="mr-2" title="{{ label }}">
+                  {% else %}
+                    <a target="_blank" href="{{ data }}" class="mr-2" title="{{ label }}">
+                  {% endif %}
+              
+                      {% if label == "Paper" %}
+                        <i class="fa-regular fa-file-pdf"></i>
+                      {% elsif label == "Demo" %}
+                        <i class="fa-solid fa-play-circle"></i>
+                      {% elsif label == "Code" %}
+                        <i class="fa-solid fa-code"></i>
+                      {% else %}
+                        [{{ label }}]
+                      {% endif %}
+              
+                    </a>
                 {% endfor %}
-            </p>
+              </p>
 
         </div>
     </div>
