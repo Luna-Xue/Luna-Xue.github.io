@@ -27,7 +27,7 @@ authors:
   - Xiaochan Xue#
 
 links:
-#   Paper: https://www.techrxiv.org/users/1024689/articles/1384911-adaptive-mode-selection-in-mmwave-isac-via-spectrally-disjoint-composite-waveforms?commit=3211979af5deb0380d4f1ebb9d522442d88a85d5
+  Paper: https://openreview.net/forum?id=dCBF23RZYJ
 #   Code: https://github.com/Luna-Xue
 #   Demo: 
 ---
