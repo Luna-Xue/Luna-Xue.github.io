@@ -28,6 +28,7 @@ authors:
 
 links:
   Paper: https://openreview.net/forum?id=dCBF23RZYJ
+  Poster: https://github.com/Luna-Xue/Luna-Xue.github.io/blob/main/assets/files/2026_iclrw_DomusMind.pdf
 #   Code: https://github.com/Luna-Xue
 #   Demo: 
 ---
