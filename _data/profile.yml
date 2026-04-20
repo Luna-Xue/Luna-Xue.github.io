@@ -67,6 +67,10 @@ awards:
 
 professional_services:
   - role: "TPC Member"
+    venue: "IEEE S&P 2027"
+    date: "18 May 2027"
+
+  - role: "TPC Member"
     venue: "IEEE/ACM CHASE 2026"
     date: "06 August 2026"
     note: "mHealth Security Workshop 2026"
