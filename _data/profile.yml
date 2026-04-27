@@ -90,7 +90,7 @@ professional_services:
     note: "Technical program committee member for the ISAC track."
 
   - role: "Reviewer"
-    venue: "IEEE INFOCOM 2025-2026, IEEE TVT, ICLR 2026 AIWILD, AJECE"
+    venue: "IEEE INFOCOM 2025-2026, IEEE TVT, ICLR 2026 AIWILD, ICML 2026 AIWILD, AJECE"
     date: "2024–Present"
   
   - role: "Membership"
