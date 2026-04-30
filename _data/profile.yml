@@ -66,6 +66,10 @@ awards:
   date: 2023
 
 professional_services:
+  - role: "Geo-diversity Co-chair"
+    venue: "N²Women Board 2026"
+    date: "30 April 2026"
+
   - role: "TPC Member"
     venue: "IEEE S&P 2027"
     date: "18 May 2027"
