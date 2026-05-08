@@ -37,7 +37,7 @@
   list_only: true
   attach:
     - label: "paper"
-      url: "/Web/papers/2026_ICNC_Waveform.pdf"
+      url: "https://ieeexplore.ieee.org/abstract/document/11416964"
       icon: "file-pdf-o"
     - label: "cite"
       type: "bibtex"
@@ -77,7 +77,7 @@
   publish: "IEEE Annual Congress on Artificial Intelligence of Things (AIoT), 2025"
   type: "conference"
   image: "AIoT_Breath.png"
-  details: "/Web/papers/2025_AIoT_Breathing.pdf"
+  details: "https://ieeexplore.ieee.org/abstract/document/11416194"
   cate: ["isac", "spectrum_wireless"]
   list_only: false
   attach:
@@ -102,7 +102,7 @@
   publish: "IEEE Annual Congress on Artificial Intelligence of Things (AIoT), 2025"
   type: "conference"
   image: "AIoT_ORAN.png"
-  details: "/Web/papers/2025_AIoT_ROISD.pdf"
+  details: "https://par.nsf.gov/servlets/purl/10662511"
   cate: ["isac", "ai_ran", "spectrum_wireless"]
   list_only: false
   attach:
