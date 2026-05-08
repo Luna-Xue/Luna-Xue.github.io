@@ -53,7 +53,7 @@ sections:
       
       - title: "Reconfigurable Intelligent Surface"
         subtitle: "Programmable wireless environments for sensing, communication, and AI-RAN control"
-        image: "/assets/img/research-ml-systems.jpg"
+        image: "/assets/img/projects/ris.png"
         url: "/projects/reconfigurable-intelligent-surface/"
         status: "Ongoing"
 
