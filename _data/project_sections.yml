@@ -1,0 +1,80 @@
+# Card grid for /pages/projects — edit headings, cards, images, and urls here.
+# image: path under site root, e.g. /assets/img/research-ml-systems.jpg
+# url: internal page path
+
+sections:
+  - heading: "Security, privacy & trust"
+    cards:
+      - title: "Fake Base Station"
+        subtitle: "Physical-layer detection and defense for unauthorized cellular base stations"
+        image: "/assets/img/research-FBS.png"
+        url: "/projects/fake-base-station/"
+        status: "Ongoing"
+
+      - title: "AI-RAN Resilience Test"
+        subtitle: "AI-enabled vulnerability probing and defense for intelligent RAN systems"
+        image: "/assets/img/research_AI-RAN_resilience.png"
+        url: "/projects/ai-ran-resilience-test/"
+        status: "Ongoing"
+
+      - title: "Device Trust Bootstrapping"
+        subtitle: "Physical-layer trust establishment for wireless devices"
+        image: "/assets/img/projects/INFOCOM2023.png"
+        url: "/projects/device-trust-bootstrapping/"
+        status: "Finished"
+
+      - title: "Over-the-Air Federated Learning"
+        subtitle: "Privacy-preserving distributed learning over wireless channels"
+        image: "/assets/img/research_wirelessFL.png"
+        url: "/projects/over-the-air-federated-learning/"
+        status: "Finished"
+
+  - heading: "AI & Language Model Agents"
+    cards:
+      - title: "DomusMind - Inspired by Doraemon"
+        subtitle: "Benchmarking lifelong smart home agents under concept drift and changing household contexts"
+        image: "/assets/img/projects/2026_iclrw.png"
+        url: "/projects/lifelong-iot-agent/"
+        status: "Ongoing"
+      
+      - title: "EdgeSLM for Intelligent IoT"
+        subtitle: "Small language models for adaptive reasoning, automation, and privacy-aware edge intelligence"
+        image: "/assets/img/research-SLM.png"
+        url: "/projects/edge-slm-iot/"
+        status: "Ongoing"
+
+  - heading: "ISAC & wireless sensing"
+    cards:
+      - title: "mmWave ISAC Vital Sign Detection"
+        subtitle: "Spectrally disjoint composite waveforms and adaptive mode selection"
+        image: "/assets/img/projects/breathing.png"
+        url: "/projects/adaptive-mmwave-isac-modes/"
+        status: "Ongoing"
+      
+      - title: "Reconfigurable Intelligent Surface"
+        subtitle: "Programmable wireless environments for sensing, communication, and AI-RAN control"
+        image: "/assets/img/research-ml-systems.jpg"
+        url: "/projects/reconfigurable-intelligent-surface/"
+        status: "Ongoing"
+
+      - title: "Sionna-enabled UH Manoa Campus-Scale Ray Tracing for AI-RAN/ISAC"
+        subtitle: "Measurement-calibrated urban RF modeling for AI-native RAN control, ISAC evaluation, and wireless digital twins"
+        image: "/assets/img/projects/Sonnia.png"
+        url: ""
+        status: "Planning"
+
+  - heading: "AI-RAN testbed & infrastructure"
+    cards:
+      - title: "O-RAN/AI-RAN Testbed"
+        subtitle: "Core infrastructure and system integration for secure intelligent networking"
+        image: "/assets/img/facilities/Testbed.svg"
+        url: "/projects/oran-testbed/"
+        status: "Ongoing"
+
+  - heading: "JESSE (High school)"
+    cards:
+      - title: "Smart Robot Car"
+        subtitle: "AI-RAN-assisted communication control for remote robot driving"
+        image: "/assets/img/facilities/Hiwonder_ROSOrin_Pro.png"
+        url: "/projects/smart-robot-car/"
+        status: "Ongoing"

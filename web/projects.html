@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Project</title>
+    <style>
+        header {
+            width: 100%;
+            background-color: rgb(122,0,25);
+            display: flex;
+            align-items: center;
+            padding: 0px;
+            flex-wrap: wrap;
+        }
+        body {
+            background-color: #FFF5E1;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .image-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .top-image {
+            margin-right: 20px; /* 添加右边距以确保导航栏紧挨着 logo */
+            height: 80px;
+            width: 170px;
+            background: none;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+        .navbar a {
+            color: white;
+            text-align: center;
+            padding: 14px 25px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .entry-content img {
+            float: right;
+            margin: 0 0 10px 10px; /* 确保图片和文字之间有间距 */
+        }
+        .entry-content p {
+            overflow: hidden; /* 确保段落包含浮动的图片 */
+        }
+        @media (max-width: 1024px) {
+            header {
+                flex-direction: column; /* 将header变为竖直方向 */
+                align-items: center; /* 居中对齐 */
+            }
+            .navbar {
+                flex-direction: column; /* 将导航栏变为竖直方向 */
+                align-items: center;
+                width: 100%; /* 使导航栏在窄屏幕时占满整个宽度 */
+            }
+            .navbar a {
+                padding: 10px;
+                font-size: 16px;
+                width: 100%; /* 使链接在窄屏幕时占满整个宽度 */
+                box-sizing: border-box;
+            }
+            .top-image {
+                height: 60px;
+                width: 130px;
+                margin-right: 0; /* 去掉右边距 */
+                margin-bottom: 10px; /* 添加底部间距 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="image-container">
+            <!--
+            <a href="https://twin-cities.umn.edu/">
+                <img src="university-of-minnesota.png" alt="Image 1" class="top-image">
+            </a>
+            -->
+        </div>
+        <div class="navbar">
+            <a href="home.html">Home</a>
+            <a href="publication.html">Publications</a>
+            <a href="Awards_Activities.html">Awards &amp; Activities</a>
+            <a href="teaching.html">Teaching</a>
+            <a href="projects.html">Projects</a>
+            
+            <a href="team.html">Team</a>
+        
+            <a href="news.html">News</a>
+        </div>
+    </header>
+    
+    <article id="post-1004" class="clearfix post-1004 page type-page status-publish hentry">
+        
+        <h1 class="entry-title" style="color: red;">Projects</h1>	
+       
+        <div class="entry-content">
+            <p><strong>Projects - Under Construction&#8230;.</strong></p>
+            <p>0. Machine Learning for EDA
+                <img decoding="async" src="project/P1.png" alt="" width="148" height="58" />
+            </p>
+            <ul>
+                <li>LLM-aided Verilog Generation [DAC&#8217;24 WIP]</li>
+            </ul>
+            <p>1. Efficient Machine Learning Systems, Natural Language Processing, Computing Vision</p>
+            <ul>
+                <li>Sparse Training &#8211; [ICCD&#8217;22]</li>
+                <li>FPGA Acceleration and Architecture &#8211; [MICRO&#8217;17], [FPGA&#8217;18], [FPGA&#8217;19], [DAC&#8217;20], [DAC&#8217;22]</li>
+                <li>GPU Acceleration &#8211; [SC&#8217;21]</li>
+                <li>Efficient DNN Pruning &#8211; [EMNLP&#8217;20], [DAC&#8217;21], [IJCAI&#8217;21 a], [ACL&#8217;22]</li>
+                <li>Efficient Training &#8211;  [IJCAI&#8217;21]</li>
+                <li>Run-time Reconfigurable Inference &#8211; [DAC&#8217;21], [DATE&#8217;22]</li>
+                <li>Embedded/IoT System [DATE&#8217;22], [ICCAD&#8217;22 a], [ICCAD&#8217;22 b]</li>
+            </ul>
+            <p>2. Privacy-Preserving Machine Learning
+                <img decoding="async" src="project/p2.png" alt="" width="92" height="92" />
+            </p>
+            <ul>
+                <li>Gradient Attack &#8211; [EMNLP&#8217;21 a]</li>
+                <li>Membership Inference Attack &#8211; [IJCAI&#8217;21 b]</li>
+                <li>Secure Federated Learning &#8211; [EMNLP&#8217;21 b(<i>Oral</i>)]</li>
+            </ul>
+            <p>3. Non-von Neuman computing &amp; Emerging Tech.</p>
+            <ul>
+                <li>ReRAM Based ML &#8211; [ISCA&#8217;21], [ISLPED&#8217;19], [DATE&#8217;21 (best paper nomination)], [ISCAS&#8217;22]</li>
+                <li>Quantum ML &#8211; [ICCAD&#8217;21 c], [MLSys&#8217;22].</li>
+            </ul>
+            <p>4. Optigrid: Planning &amp; Optimizing the Power Grid During the Low Carbon Transition in Connecticut (Sponsor: Eversource)
+                <img decoding="async" src="https://www.eversource.uconn.edu/wp-content/uploads/2015/12/eversource-txt-logo.png" alt="eversource-txt-logo" width="267" height="44" />
+            </p>
+            <ul>
+                <li>Developing statistical and deep learning models to predict demand using historical weather, EV  sales, and PV installations.</li>
+                <li>Real-time techniques to process statistical and deep learning models.</li>
+            </ul>
+            <p>5. Graph Processing &amp; Graph Neural Network &#8211; [ICCD&#8217;22] (Sponsor: SRC)
+                <img loading="lazy" decoding="async" src="https://src.secure-platform.com/file/84/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjo4NCwiYWxsb3dOb3RTaWduZWRVcmwiOiJGYWxzZSIsImlnbm9yZU9wZW5XYXRlck1lZGlhVXJsR2VuZXJhdGlvbk1vZGUiOiJUcnVlIiwiZm9yY2VEb3dubG9hZCI6IkZhbHNlIiwiZXhwIjoxNzYwNTkxNjQyfQ.0kqQg4A0HfDxI2_4UTJbP2t-LbafrpHgAuOKKR0fblI" alt="Banner" width="237" height="94" />
+            </p>
+            <ul>
+                <li>Exploring extreme sparsity for GNNs to achieve high energy efficiency in large core-count machines.</li>
+                <li>Project description: our main objective is to pioneer next-generation many cores systems for the efficient execution of GNNs in the field. We will co-innovate on the algorithm and hardware to deliver strong performance scaling and energy improvements in futuristic large shared-memory multicores.</li>
+                <li>Personnel: Xiaochan Xue (PI), Omer Khan (Co-PI);</li>
+            </ul>
+            <p>6. Change and Damage Detection from Aerial Images. (Sponsor: Travelers)
+                <img loading="lazy" decoding="async" src="project/p3.png" alt="" width="177" height="97" />
+            </p>
+            <ul>
+                <li>Project Description: This project will perform data preprocessing and data understanding of the satellite image from Travelers, and propose change detention via Siamese Networks on pre and post-event images. We will also develop unsupervised anomaly (change) detection on aerial images and Hail damage detection.</li>
+                <li>Personnel: Jinbo Bi (PI), Xiaochan Xue (Co-PI), Dongjin Song (Co-PI).</li>
+            </ul>
+            <p>7. Evaluating the Impact of Preferential Trade Agreements on Agricultural and Food Trade: New Insights from Natural Language
+                <img loading="lazy" decoding="async" src="project/p4.jpg" alt="" width="114" height="114" />
+                Processing and Machine Learning: This work is supported by the Agriculture and Food Research Initiative (Award Number 2022-67023-36399) from the National Institute of Food and Agriculture.
+            </p>
+            <ul style="list-style-type: circle">
+                <li>Project Description: This project generates new knowledge regarding the formation of preferential trade agreements (PTAs), their impact on global trade, and the consequences for U.S. agricultural and food businesses and employment.</li>
+                <li>Personnel: Xiaochan Xue (Co-PI); Jeremy Jelliffe (Collaborator at ERS-USDA); Dongjin Song, (Co-PI); Sandro Steinbach, (PI)</li>
+            </ul>
+            <p>8. Feasibility of Transformer-based Code Migration for HPC (Sponsor: DOE/LLNL)
+                <img loading="lazy" decoding="async" src="project/p5.png" alt="" width="141" height="54" />
+            </p>
+            <ul>
+                <li>Investigating a set of large language models (LLM)-based code translation and generation techniques specially designed for meeting LLNL’s HPC application requirements.</li>
+                <li>Personnel: Xiaochan Xue (PI)</li>
+            </ul>
+            <p>9. Incorporating Large Language Models (LLMs) into Transportation Safety Analytics and Equity, DOT/NEUTC</p>
+            <p>10. Expanding Capabilities of Artificial Intelligence (AI) Based Video Analytics for Intersection Safety and Operation for CTDOT, DOT/CCTRP
+                <img loading="lazy" decoding="async" src="project/p6.png" alt="" width="198" height="64" />
+            </p>
+            <p>11. Automated Wrong Way Driving Detection Using Economical Sensor Technologies, DOT/CCTRP</p>
+        </div><!-- .entry-content -->
+        <footer class="entry-footer"></footer><!-- .entry-footer -->
+    </article>
+</body>
+</html>

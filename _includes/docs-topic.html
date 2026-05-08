@@ -1,0 +1,73 @@
+{% assign topic = site.data.docs | where: "id", page.doc_id | first %}
+
+{% if topic %}
+<div class="docs-topic-layout" data-docs-topic>
+    <aside class="docs-topic-sidebar" aria-label="{{ topic.title }} menu">
+        <a class="docs-back-link" href="{{ '/pages/docs' | relative_url }}"><i class="fa fa-arrow-left"></i> All Docs</a>
+        <div class="docs-topic-sidebar-title">{{ topic.title }}</div>
+        <div class="docs-topic-menu" role="tablist" aria-orientation="vertical">
+            {% for section in topic.sections %}
+            {% assign section_id = topic.id | append: '-' | append: forloop.index %}
+            <button class="docs-topic-menu-item{% if forloop.first %} active{% endif %}" type="button" role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="topic-panel-{{ section_id }}" data-topic-target="{{ section_id }}">
+                <span>{{ section.heading }}</span>
+            </button>
+            {% endfor %}
+        </div>
+    </aside>
+
+    <section class="docs-topic-content">
+        <div class="docs-topic-heading">
+            <div class="docs-panel-kicker">{{ topic.label }}</div>
+            <h2>{{ topic.title }}</h2>
+            <p>{{ topic.summary }}</p>
+        </div>
+
+        {% for section in topic.sections %}
+        {% assign section_id = topic.id | append: '-' | append: forloop.index %}
+        <article class="docs-topic-panel{% if forloop.first %} active{% endif %}" id="topic-panel-{{ section_id }}" data-topic-panel="{{ section_id }}" role="tabpanel">
+            <h3>{{ section.heading }}</h3>
+            {% if section.body %}
+            <p>{{ section.body }}</p>
+            {% endif %}
+            {% if section.steps %}
+            <ol>
+                {% for step in section.steps %}
+                <li>{{ step }}</li>
+                {% endfor %}
+            </ol>
+            {% endif %}
+        </article>
+        {% endfor %}
+    </section>
+</div>
+
+<script>
+(function() {
+  var root = document.querySelector('[data-docs-topic]');
+  if (!root) return;
+
+  var buttons = root.querySelectorAll('[data-topic-target]');
+  var panels = root.querySelectorAll('[data-topic-panel]');
+
+  function showSection(id) {
+    for (var i = 0; i < buttons.length; i++) {
+      var active = buttons[i].getAttribute('data-topic-target') === id;
+      buttons[i].classList.toggle('active', active);
+      buttons[i].setAttribute('aria-selected', active ? 'true' : 'false');
+    }
+
+    for (var j = 0; j < panels.length; j++) {
+      panels[j].classList.toggle('active', panels[j].getAttribute('data-topic-panel') === id);
+    }
+  }
+
+  for (var k = 0; k < buttons.length; k++) {
+    buttons[k].addEventListener('click', function() {
+      showSection(this.getAttribute('data-topic-target'));
+    });
+  }
+})();
+</script>
+{% else %}
+<p>This doc topic could not be found.</p>
+{% endif %}

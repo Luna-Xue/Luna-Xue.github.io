@@ -1,0 +1,134 @@
+<div class="docs-topic-layout docs-topic-layout-wide" data-docs-topic>
+    <aside class="docs-topic-sidebar" aria-label="O-RAN tutorial menu">
+        <a class="docs-back-link" href="{{ '/pages/docs' | relative_url }}"><i class="fa fa-arrow-left"></i> All Docs</a>
+        <div class="docs-topic-menu" role="tablist" aria-orientation="vertical">
+            <button class="docs-topic-menu-item active" type="button" role="tab" aria-selected="true" aria-controls="oran-panel-overview" data-topic-target="overview">
+                <span>Overview</span>
+            </button>
+
+            <div class="docs-topic-menu-heading">Core 5G</div>
+            <button class="docs-topic-menu-item" type="button" role="tab" aria-selected="false" aria-controls="oran-panel-nw-setup" data-topic-target="nw-setup">
+                <span>Network Setup</span>
+            </button>
+            <button class="docs-topic-menu-item" type="button" role="tab" aria-selected="false" aria-controls="oran-panel-open5gs-cn" data-topic-target="open5gs-cn">
+                <span>Open5GS Core Network</span>
+            </button>
+            <button class="docs-topic-menu-item" type="button" role="tab" aria-selected="false" aria-controls="oran-panel-srsran-ue-config" data-topic-target="srsran-ue-config">
+                <span>srsRAN UE Config</span>
+            </button>
+
+            <div class="docs-topic-menu-heading">Deployment</div>
+            <button class="docs-topic-menu-item" type="button" role="tab" aria-selected="false" aria-controls="oran-panel-deployment-installation" data-topic-target="deployment-installation">
+                <span>Near RT-RIC Deployment</span>
+            </button>
+            <button class="docs-topic-menu-item" type="button" role="tab" aria-selected="false" aria-controls="oran-panel-navigation" data-topic-target="navigation">
+                <span>O-RAN Services</span>
+            </button>
+
+            <div class="docs-topic-menu-heading">Kubernetes</div>
+            <button class="docs-topic-menu-item" type="button" role="tab" aria-selected="false" aria-controls="oran-panel-kubernetes-installation" data-topic-target="kubernetes-installation">
+                <span>Installation</span>
+            </button>
+            <button class="docs-topic-menu-item" type="button" role="tab" aria-selected="false" aria-controls="oran-panel-dashboard" data-topic-target="dashboard">
+                <span>Headlamp Dashboard</span>
+            </button>
+
+            <div class="docs-topic-menu-heading">UE Configuration</div>
+            <button class="docs-topic-menu-item" type="button" role="tab" aria-selected="false" aria-controls="oran-panel-cots-ue-config" data-topic-target="cots-ue-config">
+                <span>COTS UE Config</span>
+            </button>
+            <button class="docs-topic-menu-item" type="button" role="tab" aria-selected="false" aria-controls="oran-panel-sim-card-config" data-topic-target="sim-card-config">
+                <span>SIM Card Config</span>
+            </button>
+        </div>
+    </aside>
+
+    <section class="docs-topic-content docs-markdown-content">
+        <article class="docs-topic-panel active" id="oran-panel-overview" data-topic-panel="overview" role="tabpanel">
+            {% capture overview_md %}{% include docs/oran/overview.md %}{% endcapture %}
+            {{ overview_md | markdownify }}
+        </article>
+
+        <article class="docs-topic-panel" id="oran-panel-nw-setup" data-topic-panel="nw-setup" role="tabpanel">
+            {% capture nw_setup_md %}{% include docs/oran/core-5g/nw-setup.md %}{% endcapture %}
+            {{ nw_setup_md | markdownify }}
+        </article>
+
+        <article class="docs-topic-panel" id="oran-panel-open5gs-cn" data-topic-panel="open5gs-cn" role="tabpanel">
+            {% capture open5gs_cn_md %}{% include docs/oran/core-5g/open5gs-cn.md %}{% endcapture %}
+            {{ open5gs_cn_md | markdownify }}
+        </article>
+
+        <article class="docs-topic-panel" id="oran-panel-srsran-ue-config" data-topic-panel="srsran-ue-config" role="tabpanel">
+            {% capture srsran_ue_config_md %}{% include docs/oran/core-5g/srsran-ue-config.md %}{% endcapture %}
+            {{ srsran_ue_config_md | markdownify }}
+        </article>
+
+        <article class="docs-topic-panel" id="oran-panel-deployment-installation" data-topic-panel="deployment-installation" role="tabpanel">
+            {% capture deployment_installation_md %}{% include docs/oran/deployment/installation.md %}{% endcapture %}
+            {{ deployment_installation_md | markdownify }}
+        </article>
+
+        <article class="docs-topic-panel" id="oran-panel-navigation" data-topic-panel="navigation" role="tabpanel">
+            {% capture navigation_md %}{% include docs/oran/deployment/navigation.md %}{% endcapture %}
+            {{ navigation_md | markdownify }}
+        </article>
+
+        <article class="docs-topic-panel" id="oran-panel-dashboard" data-topic-panel="dashboard" role="tabpanel">
+            {% capture dashboard_md %}{% include docs/oran/kubernetes/dashboard.md %}{% endcapture %}
+            {{ dashboard_md | markdownify }}
+        </article>
+
+        <article class="docs-topic-panel" id="oran-panel-kubernetes-installation" data-topic-panel="kubernetes-installation" role="tabpanel">
+            {% capture kubernetes_installation_md %}{% include docs/oran/kubernetes/installation.md %}{% endcapture %}
+            {{ kubernetes_installation_md | markdownify }}
+        </article>
+
+        <article class="docs-topic-panel" id="oran-panel-cots-ue-config" data-topic-panel="cots-ue-config" role="tabpanel">
+            {% capture cots_ue_config_md %}{% include docs/oran/ue-config/cots-ue-config.md %}{% endcapture %}
+            {{ cots_ue_config_md | markdownify }}
+        </article>
+
+        <article class="docs-topic-panel" id="oran-panel-sim-card-config" data-topic-panel="sim-card-config" role="tabpanel">
+            {% capture sim_card_config_md %}{% include docs/oran/ue-config/sim-card-config.md %}{% endcapture %}
+            {{ sim_card_config_md | markdownify }}
+        </article>
+    </section>
+</div>
+
+<script>
+(function() {
+  var root = document.querySelector('[data-docs-topic]');
+  if (!root) return;
+
+  var buttons = root.querySelectorAll('[data-topic-target]');
+  var panels = root.querySelectorAll('[data-topic-panel]');
+
+  function showSection(id, updateHash) {
+    for (var i = 0; i < buttons.length; i++) {
+      var active = buttons[i].getAttribute('data-topic-target') === id;
+      buttons[i].classList.toggle('active', active);
+      buttons[i].setAttribute('aria-selected', active ? 'true' : 'false');
+    }
+
+    for (var j = 0; j < panels.length; j++) {
+      panels[j].classList.toggle('active', panels[j].getAttribute('data-topic-panel') === id);
+    }
+
+    if (updateHash && window.history) {
+      window.history.replaceState(null, '', '#' + id);
+    }
+  }
+
+  for (var k = 0; k < buttons.length; k++) {
+    buttons[k].addEventListener('click', function() {
+      showSection(this.getAttribute('data-topic-target'), true);
+    });
+  }
+
+  var initial = window.location.hash ? window.location.hash.replace('#', '') : '';
+  if (initial && root.querySelector('[data-topic-target="' + initial + '"]')) {
+    showSection(initial, false);
+  }
+})();
+</script>

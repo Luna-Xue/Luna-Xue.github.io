@@ -1,0 +1,98 @@
+---
+layout: default
+title: "Publications"
+header_title: Selected Publications
+subtitle: <p>For the complete publication list, please visit my <a class='news-link'
+    href="https://scholar.google.com/citations?user=rhcjOdQAAAAJ">Google Scholar</a>.</p>
+include_header: page_header.html
+nav_item: Publications
+extra_scripts:
+- /assets/js/papers.js
+---
+
+<div class="project overview">
+    <span>Filter publications by clicking the tags below.</span>
+    <div id="myBtnContainer" class="flex flex-center">
+        <button class="btn active wireless_security" onclick="filterSelection('wireless_security')">
+            <i class="fa fa-fw fa-tag"></i> Wireless Security
+        </button>
+        <button class="btn active ai_ran" onclick="filterSelection('ai_ran')">
+            <i class="fa fa-fw fa-tag"></i> AI-RAN / O-RAN
+        </button>
+        <button class="btn active isac" onclick="filterSelection('isac')">
+            <i class="fa fa-fw fa-tag"></i> ISAC
+        </button>
+        <button class="btn active federated_learning" onclick="filterSelection('federated_learning')">
+            <i class="fa fa-fw fa-tag"></i> Federated Learning
+        </button>
+        <button class="btn active smart_agents" onclick="filterSelection('smart_agents')">
+            <i class="fa fa-fw fa-tag"></i> Smart Agents
+        </button>
+        <button class="btn active spectrum_wireless" onclick="filterSelection('spectrum_wireless')">
+            <i class="fa fa-fw fa-tag"></i> Spectrum & Wireless
+        </button>
+    </div>
+</div>
+
+<div class="clearfix mb2 mt2">
+    (# denotes corresponding author)
+</div>
+
+{% for project in site.data.projects %}
+{% unless project.list_only %}
+{% include project-outline.html project=project %}
+{% endunless %}
+{% endfor %}
+
+<hr class="mt3 mb3">
+
+<h3>Additional Conference Publications</h3>
+<ol reversed class="news-full-list">
+{% for project in site.data.projects %}
+{% if project.list_only and project.type != "journal" and project.type != "workshop" %}
+<li>
+  {% if project.details and project.details != "" %}
+  <a href="{{ project.details }}" target="_blank" rel="noopener"><strong>{{ project.name }}</strong></a>
+  {% else %}
+  <strong>{{ project.name }}</strong>
+  {% endif %}
+  <br><span style="font-size:.9em">{{ project.authors }}</span>
+  <br><b>{{ project.publish }}</b>
+</li>
+{% endif %}
+{% endfor %}
+</ol>
+
+<h3 class="mt3">Additional Journal Publications</h3>
+<ol reversed class="news-full-list">
+{% for project in site.data.projects %}
+{% if project.list_only and project.type == "journal" %}
+<li>
+  {% if project.details and project.details != "" %}
+  <a href="{{ project.details }}" target="_blank" rel="noopener"><strong>{{ project.name }}</strong></a>
+  {% else %}
+  <strong>{{ project.name }}</strong>
+  {% endif %}
+  <br><span style="font-size:.9em">{{ project.authors }}</span>
+  <br><b>{{ project.publish }}</b>
+</li>
+{% endif %}
+{% endfor %}
+</ol>
+
+<h3 class="mt3">Workshop &amp; Poster Publications</h3>
+<ol reversed class="news-full-list">
+{% for project in site.data.projects %}
+{% if project.list_only and project.type == "workshop" %}
+<li>
+  {% if project.details and project.details != "" %}
+  <a href="{{ project.details }}" target="_blank" rel="noopener"><strong>{{ project.name }}</strong></a>
+  {% else %}
+  <strong>{{ project.name }}</strong>
+  {% endif %}
+  <br><span style="font-size:.9em">{{ project.authors }}</span>
+  <br><b>{{ project.publish }}</b>
+</li>
+{% endif %}
+{% endfor %}
+</ol>

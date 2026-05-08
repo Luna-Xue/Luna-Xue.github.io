@@ -1,0 +1,71 @@
+---
+layout: default
+title: "Projects"
+header_title: Research Projects
+subtitle: ""
+include_header: page_header.html
+nav_item: Projects
+---
+
+{% assign default_thumb = "/assets/img/research-ml-systems.jpg" %}
+
+{% for section in site.data.project_sections.sections %}
+<h2 class="project-section-heading mt3 mb2">{{ section.heading }}</h2>
+
+<div class="project-card-grid">
+  {% for card in section.cards %}
+  {% assign thumb = card.image | default: default_thumb %}
+
+  {% capture card_inner %}
+    <div class="project-card-thumb"
+         style="background-image: url('{{ thumb | relative_url }}');"
+         role="img"
+         aria-label="{{ card.title | xml_escape }}"></div>
+
+    <div class="project-card-body">
+      {% if card.status and card.status != "" %}
+      {% assign status_class = card.status | downcase | replace: " ", "-" %}
+      <div class="project-status-badge project-status-{{ status_class }}">{{ card.status }}</div>
+      {% endif %}
+
+      <div class="project-card-title">{{ card.title }}</div>
+
+      {% if card.subtitle and card.subtitle != "" %}
+      <p class="project-card-subtitle">{{ card.subtitle }}</p>
+      {% endif %}
+    </div>
+  {% endcapture %}
+
+  <div class="project-card-cell">
+    {% if card.url and card.url != "" %}
+      {% assign is_external = false %}
+      {% if card.url contains "://" %}
+        {% assign is_external = true %}
+      {% endif %}
+
+      {% capture card_href %}
+        {% if is_external %}
+          {{ card.url }}
+        {% else %}
+          {{ card.url | relative_url }}
+        {% endif %}
+      {% endcapture %}
+
+      <a href="{{ card_href | strip }}"
+         class="project-card-link"
+         {% if is_external %}target="_blank" rel="noopener"{% endif %}>
+        {{ card_inner }}
+      </a>
+    {% else %}
+      <div class="project-card-link project-card-link--static">
+        {{ card_inner }}
+      </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endfor %}
+
+<p class="h6 gray mt3 mb0">
+  Last updated: {{ site.time | date: "%B %-d, %Y" }}
+</p>

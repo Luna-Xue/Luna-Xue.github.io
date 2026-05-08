@@ -1,0 +1,184 @@
+<div class="clearfix mxn2">
+    <div class="col sm-col-12 px2">
+
+        <h3 class="mt0 mb1">About</h3>
+        <p class="justify small-line-height">
+            Xiaochan (Luna) Xue is a tenure-track Assistant Professor in the
+            <a class="link about" href="https://www.hawaii.edu/" target="_blank">University of Hawaiʻi at Mānoa</a>.
+            Her research lies at the intersection of wireless communication, cybersecurity, and artificial intelligence.
+        
+            Her group develops trustworthy AI-native wireless systems by bridging physical-layer security,
+            ISAC sensing, and learning at the RAN edge. Recent interests include privacy-preserving and resilient
+            AI-RAN/O-RAN prototyping, defenses against adaptive and generative AI threats, and ToM-inspired
+            network agents for intent-aware multi-stakeholder decision making.
+
+           <div class="bg-light-yellow h5 px2 py1 border-left">
+                <strong>Prospective Students:</strong>
+                Want to build something meaningful during your Ph.D.? I am recruiting self-motivated Ph.D. students to start in Fall 2026, Spring 2027, and beyond.
+                Please email <a class="link about" href="mailto:xxue@hawaii.edu">xxue@hawaii.edu</a> with:
+
+                <ul style="margin-top: 0.4rem; margin-bottom: 0;">
+                    <li>CV</li>
+                    <li>Transcripts</li>
+                    <li>A brief statement of research interests</li>
+                </ul>
+            </div>
+        </p>
+        
+    </div>
+</div>
+
+<!-- News -->
+<h3>News</h3>
+<div class="clearfix max-height-400 overflow-scroll">
+    <ul class="dark-gray" style="padding-left: 20px;">
+        {% for new in site.data.news %}
+        <li class="h5 header-font">[<b>{{new.date}}</b>] {{ new.title }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+<!-- Achievements Slideshow-->
+<!-- 
+<h3>Selected Achievements</h3>
+<div class="slideshow">
+    <div class="slideshow-track">
+        <div class="slide active">
+            <img src="/assets/img/projects/LAD225.jpg" alt="Best Paper Award at ICLAD 2025">
+            <div class="slide-caption">Best Paper Award — ICLAD 2025</div>
+        </div>
+        <div class="slide">
+            <img src="/assets/img/projects/best-paper-2023.png" alt="Best Paper Award at AAAI DCAA 2023">
+            <div class="slide-caption">Best Paper Award — AAAI DCAA Workshop 2023</div>
+        </div>
+        <div class="slide">
+            <img src="/assets/img/projects/ICCAD_2022_TinyML_Certificate_accuracy.jpg" alt="First Place Winner in Accuracy, 2022 TinyML Design Contest">
+            <div class="slide-caption">First Place in Accuracy — 2022 ACM/IEEE TinyML Design Contest at ICCAD</div>
+        </div>
+        <div class="slide">
+            <img src="/assets/img/projects/ICCAD_2022_TinyML_Certificate_4th.jpg" alt="Fourth Place Winner, 2022 TinyML Design Contest">
+            <div class="slide-caption">Fourth Place Overall — 2022 ACM/IEEE TinyML Design Contest at ICCAD</div>
+        </div>
+    </div>
+    <button class="slide-btn slide-prev" onclick="slideMove(-1)"><i class="fa fa-chevron-left"></i></button>
+    <button class="slide-btn slide-next" onclick="slideMove(1)"><i class="fa fa-chevron-right"></i></button>
+    <div class="slide-dots">
+        <span class="dot active" onclick="slideTo(0)"></span>
+        <span class="dot" onclick="slideTo(1)"></span>
+        <span class="dot" onclick="slideTo(2)"></span>
+        <span class="dot" onclick="slideTo(3)"></span>
+    </div>
+</div>
+
+<script>
+(function(){
+  var idx = 0, slides = document.querySelectorAll('.slideshow .slide'),
+      dots = document.querySelectorAll('.slideshow .dot'), timer;
+  function show(n) {
+    idx = (n + slides.length) % slides.length;
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].classList.toggle('active', i === idx);
+      dots[i].classList.toggle('active', i === idx);
+    }
+  }
+  window.slideMove = function(d) { show(idx + d); resetTimer(); };
+  window.slideTo = function(n) { show(n); resetTimer(); };
+  function resetTimer() { clearInterval(timer); timer = setInterval(function(){ show(idx+1); }, 5000); }
+  resetTimer();
+})();
+</script> -->
+
+<!-- Research Areas -->
+<h3>Research Areas</h3>
+<div class="clearfix mxn2">
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/research_nextg.png') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <a href="/pages/research/?tags=ml_systems">Intelligent Wireless Systems: Networking, Sensing, and IoT <i class="fa fa-external-link"></i></a>
+                </div>
+                <div class="card-desc">
+                    AI-native wireless networking and ISAC for intelligent IoT, focusing on AI-RAN architectures, real-time sensing–communication integration, and closed-loop system intelligence.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/research-security.png') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <a href="/pages/research/?tags=privacy_ml">Security, Privacy &amp; Trust <i class="fa fa-external-link"></i></a>
+                </div>
+                <div class="card-desc">
+                    Secure and privacy-preserving FutureG wireless intelligence, including AI-RAN/O-RAN security, ISAC-enabled sensing, confidential computing, federated learning, and robust edge AI.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/research-ai.png') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <a href="/pages/research/?tags=ml_for_eda">AI &amp; Language Model &amp; Agents <i class="fa fa-external-link"></i></a>
+                </div>
+                <div class="card-desc">
+                    Machine learning for electronic design automation, SLM/LLM-based Verilog generation,
+                    multi-agent systems for chip design and mathematical problem solving.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Facilities -->
+<h3 class="mt3">Facilities</h3>
+<div class="clearfix mxn2">
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/facilities/Testbed.svg') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <a target="_blank" rel="noopener">AI-RAN Testbed </i></a>
+                </div>
+                <div class="card-desc">
+                    AI-RAN/O-RAN testbed with USRP X310/X410/B210, OAI, O-CUDU, Open5GS, GPU servers, and 5G NR FR1/FR2 mmWave support.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/facilities/jetsonorin-nano-super-dev-kit.jpg') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <a target="_blank" rel="noopener">Edge Computing</i></a>
+                </div>
+                <div class="card-desc">
+                    Jetson Orin NX Super 16GB
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/facilities/Hiwonder_ROSOrin_Pro.png') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <a target="_blank" rel="noopener">Robot Car </i></a>
+                </div>
+                <div class="card-desc">
+                    Software-defined radio and sensing platforms for wireless security, ISAC, and OTA prototyping, with ToF LiDAR, 3D depth camera, ROS/Orin Pro, WiFi cards, and 5G communication kits.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Research Sponsors -->
+<h3>Research Sponsors</h3>
+<div class="clearfix mxn2">
+    <div class="col sm-col-12 px2">
+        <img src="" alt="Research Sponsors" style="max-width: 400px; width: 100%; height: auto;">
+    </div>
+</div>

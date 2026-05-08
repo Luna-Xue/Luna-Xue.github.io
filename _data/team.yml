@@ -1,0 +1,103 @@
+current:
+  postdoc: 
+  #   - name: Nuo Xu
+  #     area: Privacy Preserving Machine Learning, Efficient Machine Learning
+  #     photo: "NuoXu.png"
+  #     url: "https://www.linkedin.com/in/nuo-xu-a6a3a6106/?skipRedirect=true"
+
+  phd:
+    - name: Saurabh Parkar
+      area: ISAC, AI-native wireless systems, O-RAN
+      photo: "sparkar.jpg"
+      url: "https://srparkar.github.io/"
+  master:
+    - name: Thomas Yang
+      area: O-RAN/AI-RAN Buildup + Fake Base Station
+      photo: "Thomas.jpg"
+      url: ""
+
+    - name: Aris Carlos
+      area: O-RAN/AI-RAN Buildup +  Fake Base Station
+      photo: "Aris.png"
+      url: ""
+    
+    - name: Ethan Morrell
+      area: O-RAN/AI-RAN Buildup + System Fuzzing
+      photo: ""
+      url: ""
+    
+    - name: Matthew Matsuo
+      area: System Fuzzing
+      photo: "Matthew Matsuo.jpeg"
+      url: ""
+  
+  intern:
+    - name: Tomohiro Yamada
+      original_institution: "Undergraduate at Boston University"
+      area: ""
+      photo: ""
+      url: ""
+    
+    - name: XXX
+      original_institution: "High School Student at XXX"
+      area: "Smart Robot Car (JESSE 2026)"
+      photo: ""
+      url: ""
+    
+    - name: XXX
+      original_institution: "High School Student at XXX"
+      area: "Smart Robot Car (JESSE 2026)"
+      photo: ""
+      url: ""
+    
+    - name: XXX
+      original_institution: "High School Student at XXX"
+      area: "Smart Robot Car (JESSE 2026)"
+      photo: ""
+      url: ""
+    # - name: Ben Mechels 
+    #   area: ML System
+    #   photo: "BenMechels.jpg"
+    #   url: "https://www.linkedin.com/in/mechels/"
+
+
+alumni:
+  # phd:
+  #   - name: Hongwu Peng
+  #     year: "2024"
+  #     position: Research Scientist at Adobe Research
+  #     url: "https://harveyp123.github.io/"
+  #   - name: Shanglin Zhou
+  #     year: "2024"
+  #     position: Senior Data Scientist at Walmart AI Lab
+  #     url: ""
+  #   - name: Shaoyi Huang
+  #     year: "2024"
+  #     position: Tenure-track Assistant Professor at Stevens Institute of Technology
+  #     url: ""
+  #   - name: Deniz Gurevin
+  #     note: Co-supervision with Prof. Omer Khan
+  #     position: Synopsys
+  #     url: ""
+   
+
+  other:
+    - name: Lenny Yanza
+      area: AFRL SDR Challenge 2025/2026
+      role: Undergraduate Researcher
+      position: ""
+      photo: "LennyY.jpg"
+      url: ""
+    - name: Karen Caguana
+      area: AFRL SDR Challenge 2025/2026
+      role: Undergraduate Researcher
+      position: ""
+      photo: "KarenC.png"
+      url: ""
+    - name: Shaun George
+      area: AFRL SDR Challenge 2025/2026
+      role: Undergraduate Researcher
+      position: ""
+      photo: "ShaunG.jpg"
+      url: ""
+

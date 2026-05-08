@@ -1,0 +1,85 @@
+{% capture project_title_element %}{% if include.project_title_element %}{{ include.project_title_element }}{% else %}h4{% endif %}{% endcapture %}
+
+<div
+  class="mxn2 clearfix mt1 py1{% unless include.exclude_divider %} border-bottom border-light-gray {% endunless %} filterDiv show {{ include.project.cate | join: ' ' }}"
+  id="{{ include.project.name | downcase | replace:' ','-' | remove:',' }}">
+
+  <div class="col sm-col-4 px2">
+    {% capture image_path %}projects/{{ include.project.image }}{% endcapture %}
+
+    {% if include.project.details and include.project.details != "" %}
+    <a href="{{ include.project.details }}" target="_blank" rel="noopener">
+      {% include image.html path=image_path alt=include.project.name %}
+    </a>
+    {% else %}
+      {% include image.html path=image_path alt=include.project.name %}
+    {% endif %}
+  </div>
+
+  <div class="col sm-col-8 px2">
+    {% if include.project.details and include.project.details != "" %}
+    <a href="{{ include.project.details }}" target="_blank" rel="noopener"
+       name="{{ include.project.name | downcase | replace:' ','-' | remove:',' }}">
+      <{{ project_title_element }} class="mt0 mb0 h4">{{ include.project.name }}</{{ project_title_element }}>
+    </a>
+    {% else %}
+    <span name="{{ include.project.name | downcase | replace:' ','-' | remove:',' }}">
+      <{{ project_title_element }} class="mt0 mb0 h4">{{ include.project.name }}</{{ project_title_element }}>
+    </span>
+    {% endif %}
+
+    {% if include.project.authors %}
+    <p class="left-align mb0">{{ include.project.authors }}</p>
+    {% endif %}
+
+    {% if include.project.cate %}
+    <p class="left-align mb0">
+      {% for tag in include.project.cate %}
+      <span class="paper-tag {{ tag }} active">
+        <i class="fa fa-fw fa-tag"></i>
+        {% case tag %}
+          {% when "ai_ran" %}AI-RAN
+          {% when "isac" %}ISAC
+          {% when "wireless_security" %}Wireless Security
+          {% when "federated_learning" %}Federated Learning
+          {% when "smart_agents" %}Smart Agents
+          {% when "spectrum_wireless" %}Spectrum & Wireless
+          {% else %}{{ tag | replace: '_', ' ' | capitalize }}
+        {% endcase %}
+      </span>
+      {% endfor %}
+    </p>
+    {% endif %}
+
+    {% if include.project.publish %}
+    <p class="left-align mb0"><b>{{ include.project.publish }}</b></p>
+    {% endif %}
+
+    {% if include.project.attach %}
+    <div class="paper-attach-row" style="color:#555; margin-top:4px;">
+      {% for item in include.project.attach %}
+
+        {% if item.type == "bibtex" %}
+        <a href="javascript:void(0);"
+           class="black hint--top h5 paper-attach"
+           onclick="copyBibtex(this)"
+           data-hint="Click to copy BibTeX"
+           data-bibtex="{{ item.content | strip | escape }}">
+          <i class="fa fa-fw fa-lg fa-quote-right"></i>
+          CITE
+        </a>
+
+        {% else %}
+        <a href="{{ item.url }}" target="_blank" rel="noopener"
+           class="black hint--top h5 paper-attach"
+           data-hint="{{ item.label }}">
+          <i class="fa fa-fw fa-lg fa-{{ item.icon }}"></i>
+          {{ item.label | upcase }}
+        </a>
+        {% endif %}
+
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</div>

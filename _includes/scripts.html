@@ -1,0 +1,6 @@
+<script type="text/javascript" src="/assets/js/main.js"></script>
+{% if page.extra_scripts %}
+  {% for script in page.extra_scripts %}
+    <script type="text/javascript" src="{{ script }}"></script>
+  {% endfor %}
+{% endif %}

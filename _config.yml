@@ -1,40 +1,67 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Website settings
+baseurl: ""
+url: "https://luna-xue.github.io"
+icon: "/assets/img/icons/x.png"
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-baseurl: "" # the subpath of your site, e.g. /blog
+# Internal nav
+nav:
+  main:
+    Publications: "/pages/research"
+    "UHM WINGS Lab": "/pages/team"
+    Teaching: "/pages/teaching"
+    Projects: "/pages/projects"
+    "Awards & Activities": "/pages/awards"
+    Docs: "/pages/docs"
 
-# Build settings
-markdown: kramdown
+# Bio settings
+name: "Xiaochan Xue"
+description: "Assistant Professor at University of Hawaiʻi at Mānoa. Research in wireless communication, cybersecurity, and AI-native trustworthy wireless systems."
+thumbnail_path: "XXC.png"   # 你需要把头像放到 assets/img/luna.jpg 或改成现有文件名
+website_repo_url: "https://github.com/luna-xue"
+contact_urls:
+  # CV: 
+  #   url: "assets/files/CV_Xiaochan.pdf"
+  #   label: "CV"
+  #   icon: "file-text-o"
+  email:
+    url: "mailto:xxue@hawaii.edu"
+    label: "Email"
+    value: "xxue@hawaii.edu"
+    icon: "envelope-square"
+  scholar:
+    url: "https://scholar.google.com/citations?user=rhcjOdQAAAAJ"
+    label: "Google Scholar"
+    icon: "graduation-cap"
+  github:
+    url: "https://github.com/luna-xue"
+    label: "GitHub"
+    icon: "github-square"
+  linkedin:
+    url: "https://www.linkedin.com/in/xiaochan-xue-2b7b75227/"
+    label: "LinkedIn"
+    icon: "linkedin-square"
+  orcid:
+    url: "https://orcid.org/0000-0003-0432-0581"
+    label: "ORCID"
+    icon: "orcid"
+  dblp:
+    url: "https://dblp.org/pid/245/3162.html"
+    label: "DBLP"
+    icon: "book"
+
+
+# Jekyll build settings
+paginate: 10
+paginate_path: "/writing/page:num"
+permalink: "/writing/:year/:month/:day/:title/"
+sass:
+  sass_dir: "/assets/css"
+  style: :compressed
+highlighter: rouge
+timezone: "America/Chicago"
+
+# Plugins (GitHub Pages only support a few)
 plugins:
-  - jekyll-email-protect
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-# timezone: Asia/Shanghai
-
-collections:
-  - publications
-  - news
-  - showcase
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-paginate

@@ -1,65 +1,44 @@
-items:
-  - term: "2026 Fall"
-    date: "2026-08-01"
-    course: "ECE 362: Discrete Math for Engineers"
-    school: "University of Hawaiʻi at Mānoa"
-    role: "Instructor"
-    links:
-      - name: "Course page"
-        url: "https://wings-uhm.github.io/Web/courses/ECE362/"
-      - name: "Official Website"
-        url: "https://ece.hawaii.edu/student/graduate/course-descriptions"
+# Teaching page — merged by course name. image: path from site root.
 
-  - term: "2026 Spring"
-    date: "2026-01-01"
-    course: "ECE 669: Wireless and Mobile Security"
-    school: "University of Hawaiʻi at Mānoa"
-    role: "Instructor"
-    links:
-      - name: "Course page"
-        url: "https://wings-uhm.github.io/Web/courses/ECE669/"
-      - name: "Official Website"
-        url: "https://ece.hawaii.edu/student/graduate/course-descriptions"
+courses:
+  - title: "ECE 362: Discrete Math for Engineers"
+    institution: "University of Hawaiʻi at Mānoa"
+    terms:
+      - "2026 Fall"
+    image: "/assets/img/courses/course-discrete-mathematics-engineer.jpg"
+    blurb: ""
+    url: "/teaching/ece-362/"
 
-  - term: "2025 Fall"
-    date: "2025-08-01"
-    course: "ECE 693E: Intelligent and Secure Wireless Networks"
-    school: "University of Hawaiʻi at Mānoa"
-    role: "Instructor"
-    note: "From Wireless Fundamentals to intelligent, secure, and programmable AI-driven Radio Access Networks."
-    links:
-      - name: "Course page"
-        url: "https://wings-uhm.github.io/Web/courses/ECE693E/"
+  - title: "ENGR 296: Sophomore Vertically Integrated Project (VIP)"
+    institution: "University of Hawaiʻi at Mānoa"
+    terms:
+      - "2026 Fall"
+    image: "/assets/img/courses/Logo_COE_border.svg"
+    blurb: ""
+    url: "/teaching/engr-296/"
 
-  - term: "2025 Spring"
-    date: "2025-01-01"
-    course: "CPE 691: Information Systems Security"
-    school: "Stevens Institute of Technology"
-    role: "Instructor"
-    links:
-      - name: "Course page"
-        url: "https://wings-uhm.github.io/Web/courses/CPE691/"
-      - name: "Official Website"
-        url: https://web.stevens.edu/catalog/archive/2024-2025/en/catalog/academic-catalog/courses/cpe-computer-engineering/600/cpe-691.html
-  
-  - term: "2024 Fall"
-    date: "2024-08-01"
-    course: "CPE 691: Information Systems Security"
-    school: "Stevens Institute of Technology"
-    role: "Instructor"
-    links:
-      - name: "Course page"
-        url: "https://wings-uhm.github.io/Web/courses/CPE691/"
-      - name: "Official Website"
-        url: https://web.stevens.edu/catalog/archive/2024-2025/en/catalog/academic-catalog/courses/cpe-computer-engineering/600/cpe-691.html
+  - title: "ECE 669: Wireless and Mobile Security"
+    institution: "University of Hawaiʻi at Mānoa"
+    terms:
+      - "2026 Spring"
+    image: "/assets/img/courses/course-wireless-security.png"
+    blurb: ""
+    url: "/teaching/ece-669/"
 
-  - term: "2024 Spring"
-    date: "2024-01-01"
-    course: "CPE 691: Information Systems Security"
-    school: "Stevens Institute of Technology"
-    role: "Instructor"
-    links:
-      - name: "Course page"
-        url: "https://wings-uhm.github.io/Web/courses/CPE691/"
-      - name: "Official Website"
-        url: https://web.stevens.edu/catalog/archive/2024-2025/en/catalog/academic-catalog/courses/cpe-computer-engineering/600/cpe-691.html
+  - title: "ECE 693E: Intelligent and Secure Wireless Networks"
+    institution: "University of Hawaiʻi at Mānoa"
+    terms:
+      - "2025 Fall"
+    image: "/assets/img/courses/course-ai_ran.png"
+    blurb: "From wireless fundamentals to intelligent, secure, and programmable AI-driven radio access networks."
+    url: "/teaching/ece-693e/"
+
+  - title: "CPE 691: Information Systems Security"
+    institution: "Stevens Institute of Technology"
+    terms:
+      - "2025 Spring"
+      - "2024 Fall"
+      - "2024 Spring"
+    image: "/assets/img/courses/course-cybersecurity-triangle.svg"
+    blurb: ""
+    url: "/teaching/cpe-691/"

@@ -1,0 +1,27 @@
+---
+layout: default
+title: "Docs"
+header_title: Docs
+subtitle: "Open tutorials, checklists, and guides"
+include_header: page_header.html
+nav_item: Docs
+---
+
+<div class="docs-landing">
+    {% assign doc_groups = site.data.docs | group_by: "label" %}
+    {% for group in doc_groups %}
+    <section class="docs-card-section">
+        <h3>{{ group.name }}</h3>
+        <div class="docs-card-grid">
+            {% for doc in group.items %}
+            <a class="docs-topic-card" href="{{ '/pages/docs/' | append: doc.id | relative_url }}">
+                <span class="docs-topic-card-label">{{ doc.label }}</span>
+                <h4>{{ doc.title }}</h4>
+                <p>{{ doc.summary }}</p>
+                <span class="docs-topic-card-link">Open topic <i class="fa fa-arrow-right"></i></span>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+</div>

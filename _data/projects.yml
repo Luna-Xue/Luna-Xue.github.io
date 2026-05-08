@@ -1,0 +1,254 @@
+- name: "DomusMind: A Benchmark for Evaluating Lifelong Smart Home Agents Under Drift"
+  authors: "Rong Xu, Yinxin Wan, <strong>Xiaochan Xue#</strong>"
+  publish: "ICLR 2026 Workshop on Lifelong Agents: Learning, Aligning, Evolving"
+  type: "workshop"
+  image: "2026_iclrw.png"
+  details: "https://openreview.net/forum?id=dCBF23RZYJ"
+  cate: ["smart_agents"]
+  list_only: false
+  attach:
+    - label: "paper"
+      url: "https://openreview.net/forum?id=dCBF23RZYJ"
+      icon: "file-pdf-o"
+    - label: "poster"
+      url: "/assets/files/2026_iclrw_DomusMind.pdf"
+      icon: "file-image-o"
+    # - label: "project"
+    #   url: "https://wings-uhm.github.io/Web/2025/02/15/Smarthome-ToM/"
+    #   icon: "external-link"
+    - label: "cite"
+      type: "bibtex"
+      content: |
+        @inproceedings{xu2026domusmind,
+          title={DomusMind: A Benchmark for Evaluating Lifelong Smart Home Agents Under Drift},
+          author={Rong Xu and Yinxin Wan and Xiaochan Xue},
+          booktitle={ICLR 2026 Workshop on Lifelong Agents: Learning, Aligning, Evolving},
+          year={2026},
+          url={https://openreview.net/forum?id=dCBF23RZYJ}
+        }
+
+- name: "Waveform Design for ISAC: Trends and Future Directions"
+  authors: "<strong>Xiaochan Xue</strong>, Shucheng Yu, Saurabh Parkar, Jiarui Li"
+  publish: "IEEE International Conference on Computing, Networking and Communications (ICNC), 2026"
+  type: "conference"
+  image: ""
+  details: "/Web/papers/2026_ICNC_Waveform.pdf"
+  cate: ["isac", "spectrum_wireless"]
+  list_only: true
+  attach:
+    - label: "paper"
+      url: "/Web/papers/2026_ICNC_Waveform.pdf"
+      icon: "file-pdf-o"
+    - label: "cite"
+      type: "bibtex"
+      content: |
+        @inproceedings{Xue2026WaveformISAC,
+          author    = {Xiaochan Xue and Shucheng Yu and Saurabh Parkar and Jiarui Li},
+          title     = {Waveform Design for ISAC: Trends and Future Directions},
+          booktitle = {Proceedings of the IEEE International Conference on Computing, Networking and Communications (ICNC)},
+          year      = {2026}
+        }
+
+- name: "Adaptive Mode Selection in mmWave ISAC via Spectrally Disjoint Composite Waveforms"
+  authors: "Saurabh Parkar, <strong>Xiaochan Xue#</strong>, Shuang Li, Yao Zheng"
+  publish: "TechRxiv. Submitted to IoT-J. Under review, 2026"
+  type: "journal"
+  image: "TCCN.png"
+  details: "https://doi.org/10.36227/techrxiv.177156316.67611838/v1"
+  cate: ["isac", "spectrum_wireless"]
+  list_only: false
+  attach:
+    - label: "paper"
+      url: "https://doi.org/10.36227/techrxiv.177156316.67611838/v1"
+      icon: "file-pdf-o"
+    - label: "cite"
+      type: "bibtex"
+      content: |
+        @article{parkar2025adaptive,
+          title   = {Adaptive Mode Selection in mmWave ISAC via Spectrally Disjoint Composite Waveforms},
+          author  = {Parkar, Saurabh and Xue, Xiaochan and Li, Shuang and Zheng, Yao},
+          journal = {TechRxiv},
+          year    = {2026},
+          doi     = {10.36227/techrxiv.177156316.67611838/v1}
+        }
+
+- name: "AI-assisted Composite ISAC for mmWave Respiration Pattern Recognition"
+  authors: "<strong>Xiaochan Xue</strong>, Saurabh Parkar, Shucheng Yu, Yao Zheng"
+  publish: "IEEE Annual Congress on Artificial Intelligence of Things (AIoT), 2025"
+  type: "conference"
+  image: "AIoT_Breath.png"
+  details: "/Web/papers/2025_AIoT_Breathing.pdf"
+  cate: ["isac", "spectrum_wireless"]
+  list_only: false
+  attach:
+    - label: "paper"
+      url: "/Web/papers/2025_AIoT_Breathing.pdf"
+      icon: "file-pdf-o"
+    # - label: "project"
+    #   url: "https://wings-uhm.github.io/Web/2024/08/01/breathing/"
+    #   icon: "external-link"
+    - label: "cite"
+      type: "bibtex"
+      content: |
+        @inproceedings{Xue2025CompositeISACRespiration,
+          author    = {Xiaochan Xue and Saurabh Parkar and Shucheng Yu and Yao Zheng},
+          title     = {AI-assisted Composite ISAC for mmWave Respiration Pattern Recognition},
+          booktitle = {Proceedings of the IEEE Annual Congress on Artificial Intelligence of Things (AIoT)},
+          year      = {2025}
+        }
+
+- name: "ROISD: RIS and O-RAN Assisted Intelligent Sensing for UAV Detection"
+  authors: "<strong>Xiaochan Xue</strong>, Shucheng Yu, Saurabh Parkar, Yao Zheng"
+  publish: "IEEE Annual Congress on Artificial Intelligence of Things (AIoT), 2025"
+  type: "conference"
+  image: "AIoT_ORAN.png"
+  details: "/Web/papers/2025_AIoT_ROISD.pdf"
+  cate: ["isac", "ai_ran", "spectrum_wireless"]
+  list_only: false
+  attach:
+    - label: "paper"
+      url: "/Web/papers/2025_AIoT_ROISD.pdf"
+      icon: "file-pdf-o"
+    - label: "code"
+      url: "https://github.com/Luna-Xue"
+      icon: "github"
+    # - label: "project"
+    #   url: "https://wings-uhm.github.io/Web/2025/09/01/uav/"
+    #   icon: "external-link"
+    - label: "cite"
+      type: "bibtex"
+      content: |
+        @inproceedings{Xue2025ROISD,
+          author    = {Xiaochan Xue and Shucheng Yu and Saurabh Parkar and Yao Zheng},
+          title     = {ROISD: RIS and O-RAN Assisted Intelligent Sensing for UAV Detection},
+          booktitle = {Proceedings of the IEEE Annual Congress on Artificial Intelligence of Things (AIoT)},
+          year      = {2025}
+        }
+
+- name: "Cooperative NOMA-based Spectrum Leasing with Multiple Secondary Users"
+  authors: "Moh Khalid Hasan, <strong>Xiaochan Xue</strong>, Shucheng Yu, Min Song"
+  publish: "IEEE Transactions on Vehicular Technology (TVT), 2023"
+  type: "journal"
+  image: "TVT2023.png"
+  details: "https://ieeexplore.ieee.org/abstract/document/10160162/"
+  cate: ["spectrum_wireless"]
+  list_only: ture
+  attach:
+    - label: "paper"
+      url: "https://ieeexplore.ieee.org/abstract/document/10160162/"
+      icon: "file-pdf-o"
+    - label: "cite"
+      type: "bibtex"
+      content: |
+        @ARTICLE{10160162,
+          author={Hasan, Moh Khalid and Xue, Xiaochan and Yu, Shucheng and Song, Min},
+          journal={IEEE Transactions on Vehicular Technology},
+          title={Cooperative NOMA-Based Spectrum Leasing With Multiple Secondary Users},
+          year={2023},
+          volume={72},
+          number={11},
+          pages={14543-14558},
+          doi={10.1109/TVT.2023.3287230}
+        }
+
+- name: "Over-the-Air Federated Learning with Enhanced Privacy"
+  authors: "<strong>Xiaochan Xue</strong>, Moh Khalid Hasan, Shucheng Yu, Laxima Niure Kandel, Min Song"
+  publish: "IEEE International Conference on Communications (ICC), 2023"
+  type: "conference"
+  image: "ICC2023.png"
+  details: "https://ieeexplore.ieee.org/abstract/document/10278765/"
+  cate: ["federated_learning", "wireless_security"]
+  list_only: false
+  attach:
+    - label: "paper"
+      url: "https://ieeexplore.ieee.org/abstract/document/10278765/"
+      icon: "file-pdf-o"
+    - label: "cite"
+      type: "bibtex"
+      content: |
+        @INPROCEEDINGS{10278765,
+          author={Xue, Xiaochan and Hasan, Moh Khalid and Yu, Shucheng and Kandel, Laxima Niure and Song, Min},
+          booktitle={ICC 2023 - IEEE International Conference on Communications},
+          title={Over-the-Air Federated Learning with Enhanced Privacy},
+          year={2023},
+          pages={4546-4551},
+          doi={10.1109/ICC45041.2023.10278765}
+        }
+
+- name: "Secure Device Trust Bootstrapping Against Collaborative Signal Modification Attacks"
+  authors: "<strong>Xiaochan Xue</strong>, Shucheng Yu, Min Song"
+  publish: "IEEE Conference on Computer Communications (INFOCOM), 2023"
+  type: "conference"
+  image: "INFOCOM2023.png"
+  details: "https://ieeexplore.ieee.org/abstract/document/10229007"
+  cate: ["wireless_security"]
+  list_only: false
+  attach:
+    - label: "paper"
+      url: "https://ieeexplore.ieee.org/abstract/document/10229007"
+      icon: "file-pdf-o"
+    - label: "cite"
+      type: "bibtex"
+      content: |
+        @INPROCEEDINGS{10229007,
+          author={Xue, Xiaochan and Yu, Shucheng and Song, Min},
+          booktitle={IEEE INFOCOM 2023 - IEEE Conference on Computer Communications},
+          title={Secure Device Trust Bootstrapping Against Collaborative Signal Modification Attacks},
+          year={2023},
+          pages={1-10},
+          doi={10.1109/INFOCOM53939.2023.10229007}
+        }
+
+- name: "K-Group Random Channel Hopping (K-RCH) Rendezvous for Cognitive Radio Networks"
+  authors: "<strong>Xiaochan Xue</strong>, Shucheng Yu, Min Song, Chunsheng Xin"
+  publish: "IEEE International Conference on Communications (ICC), 2021"
+  type: "conference"
+  image: "ICC2021.jpg"
+  details: "https://ieeexplore.ieee.org/abstract/document/9500643/"
+  cate: ["spectrum_wireless", "wireless_security"]
+  list_only: true
+  attach:
+    - label: "paper"
+      url: "https://ieeexplore.ieee.org/abstract/document/9500643/"
+      icon: "file-pdf-o"
+    - label: "code"
+      url: "https://github.com/Luna-Xue"
+      icon: "github"
+    - label: "cite"
+      type: "bibtex"
+      content: |
+        @INPROCEEDINGS{9500643,
+          author={Xue, Xiaochan and Yu, Shucheng and Song, Min and Xin, Chunsheng},
+          booktitle={ICC 2021 - IEEE International Conference on Communications},
+          title={K-Group Random Channel Hopping (K-RCH) Rendezvous for Cognitive Radio Networks},
+          year={2021},
+          pages={1-6},
+          doi={10.1109/ICC42927.2021.9500643}
+        }
+
+- name: "Secrecy Performance of Hybrid Satellite-Terrestrial Relay Systems with Hardware Impairments"
+  authors: "Hang Wu, Yulong Zou, Jia Zhu, <strong>Xiaochan Xue</strong>, Theodoros Tsiftsis"
+  publish: "IEEE International Conference on Communications (ICC), 2019"
+  type: "conference"
+  image: ""
+  details: "https://ieeexplore.ieee.org/abstract/document/8761231/"
+  cate: ["wireless_security", "spectrum_wireless"]
+  list_only: true
+  attach:
+    - label: "paper"
+      url: "https://ieeexplore.ieee.org/abstract/document/8761231/"
+      icon: "file-pdf-o"
+    - label: "code"
+      url: "https://github.com/Luna-Xue"
+      icon: "github"
+    - label: "cite"
+      type: "bibtex"
+      content: |
+        @INPROCEEDINGS{8761231,
+          author={Wu, Hang and Zou, Yulong and Zhu, Jia and Xue, Xiaochan and Tsiftsis, Theodoros},
+          booktitle={ICC 2019 - 2019 IEEE International Conference on Communications (ICC)},
+          title={Secrecy Performance of Hybrid Satellite-Terrestrial Relay Systems with Hardware Impairments},
+          year={2019},
+          pages={1-6},
+          doi={10.1109/ICC.2019.8761231}
+        }

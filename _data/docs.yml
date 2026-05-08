@@ -1,0 +1,36 @@
+- id: release-checklist
+  title: "Open-Source Release Checklist"
+  label: "Checklist"
+  summary: "A practical checklist before publishing code, data, models, or experiment scripts."
+  sections:
+    - heading: "Before release"
+      steps:
+        - "Confirm that the artifact can be publicly shared under the intended license."
+        - "Remove credentials, private paths, unpublished reviewer comments, and institution-only data."
+        - "Add a README with installation, usage, citation, and contact information."
+    - heading: "Minimum package"
+      steps:
+        - "Provide environment files such as requirements.txt, environment.yml, Dockerfile, or scripts."
+        - "Include a tiny example that finishes quickly and verifies the main pipeline."
+        - "Document expected inputs, outputs, hardware assumptions, and runtime."
+
+- id: oran
+  title: "O-RAN/AI-RAN Testbed Tutorial"
+  label: "Tutorial"
+  summary: "Structured setup notes for the WINGS Lab O-RAN/AI-RAN testbed, including Kubernetes, Near RT-RIC, 5G core, and UE configuration."
+
+- id: contribution-guide
+  title: "Contribution Guide"
+  label: "Guide"
+  summary: "How students can add new tutorials, release notes, and reproducibility instructions."
+  sections:
+    - heading: "Add a new doc"
+      steps:
+        - "Add a new entry in _data/docs.yml with a unique id."
+        - "Write a concise summary for the left menu preview."
+        - "Break detailed instructions into short sections and ordered steps."
+    - heading: "Keep docs reusable"
+      steps:
+        - "Prefer commands and concrete expected outputs over long background paragraphs."
+        - "Mention hardware, dataset, and software versions when they affect reproducibility."
+        - "Update the doc whenever the corresponding repository changes."

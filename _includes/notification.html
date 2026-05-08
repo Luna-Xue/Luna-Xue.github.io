@@ -1,0 +1,8 @@
+{% assign note_class = "docs-note-info" %}
+{% if include.status == "is-warning" %}
+  {% assign note_class = "docs-note-warning" %}
+{% endif %}
+
+<div class="docs-note {{ note_class }}">
+  {{ include.message | markdownify }}
+</div>

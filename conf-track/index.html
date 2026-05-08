@@ -1,0 +1,1228 @@
+---
+layout: default
+title: "Conference Tracking"
+header_title: "Conference Deadline Tracker"
+subtitle: "Browse deadlines, filter by subject, export the current view, and save favorites."
+include_header: page_header.html
+show_sidebar: false
+permalink: /conf-track/
+---
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+<style>
+    .conf-track {
+        --conf-bg: #f7f7fb;
+        --conf-card: #ffffff;
+        --conf-text: #2b2f36;
+        --conf-muted: #6b7280;
+        --conf-accent: #3a86ff;
+        --conf-red: #e11d48;
+        --conf-orange: #f59e0b;
+        --conf-green: #10b981;
+        --conf-border: #e5e7eb;
+        --conf-shadow: 0 6px 24px rgba(16, 24, 40, 0.06);
+        --conf-card-max: 1100px;
+
+        color: var(--conf-text);
+        background: radial-gradient(1200px 600px at 50% -100px, rgba(58, 134, 255, 0.08), transparent 60%),
+            var(--conf-bg);
+        border-radius: 16px;
+        padding: 1.25rem;
+        margin: 1.5rem auto;
+    }
+
+    .conf-track *,
+    .conf-track *::before,
+    .conf-track *::after {
+        box-sizing: border-box;
+    }
+
+    .conf-track-shell {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .conf-track-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: linear-gradient(#fff0, #fff0), var(--conf-bg);
+        backdrop-filter: blur(6px);
+        border-radius: 12px 12px 0 0;
+    }
+
+    .conf-track-topbar {
+        padding: 0.25rem 0 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .conf-track-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .conf-track-brand h1,
+    .conf-track-brand .title {
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        color: var(--conf-text);
+    }
+
+    .conf-track-subtitle {
+        margin: 0.2rem 0 0;
+        color: var(--conf-muted);
+        font-size: 0.95rem;
+    }
+
+    .conf-track-chip {
+        font-size: 12px;
+        padding: 4px 8px;
+        border: 1px solid var(--conf-border);
+        border-radius: 999px;
+        color: var(--conf-muted);
+        background: var(--conf-card);
+        white-space: nowrap;
+    }
+
+    .conf-track-toolbar {
+        padding: 0 0 1rem;
+        display: grid;
+        gap: 8px;
+        align-items: center;
+        grid-template-columns: 1fr 1fr repeat(6, max-content);
+    }
+
+    .conf-track-toolbar input[type='search'],
+    .conf-track-toolbar select {
+        height: 36px;
+        padding: 0 10px;
+        border: 1px solid var(--conf-border);
+        border-radius: 10px;
+        background: var(--conf-card);
+        color: var(--conf-text);
+        min-width: 0;
+    }
+
+    .conf-track-toolbar input[type='search'] {
+        width: 100%;
+    }
+
+    .conf-track-btn {
+        border: 1px solid var(--conf-border);
+        background: var(--conf-card);
+        color: var(--conf-text);
+        height: 36px;
+        padding: 0 12px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .conf-track-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--conf-muted);
+        white-space: nowrap;
+    }
+
+    .conf-track-divider {
+        height: 1px;
+        background: var(--conf-border);
+    }
+
+    .conf-track-wrap {
+        width: 100%;
+    }
+
+    .conf-track-table-body {
+        padding: 16px 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .conf-track-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 10px;
+        padding: 14px;
+        border: 1px solid var(--conf-border);
+        border-radius: 12px;
+        background: var(--conf-card);
+        box-shadow: var(--conf-shadow);
+        margin-top: 12px;
+        transition: transform 0.06s ease;
+        width: min(var(--conf-card-max), 100%);
+    }
+
+    .conf-track-row:hover {
+        transform: translateY(-1px);
+    }
+
+    .conf-track-cell {
+        text-align: left;
+        padding: 2px 4px;
+        white-space: normal;
+        overflow: visible;
+    }
+
+    .conf-track-title {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .conf-track-link {
+        color: var(--conf-accent);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .conf-track-link:hover {
+        text-decoration: underline;
+    }
+
+    .conf-track-meta {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin-top: 0.35rem;
+    }
+
+    .conf-track-actions {
+        display: inline-flex;
+        gap: 6px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .conf-track-icon-btn {
+        border: 1px solid var(--conf-border);
+        background: transparent;
+        color: var(--conf-muted);
+        padding: 6px 8px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .conf-track-icon-btn:hover {
+        color: var(--conf-accent);
+        border-color: var(--conf-accent);
+    }
+
+    .conf-track-details {
+        display: grid;
+        grid-template-columns: 2fr 2fr 3fr;
+        gap: 8px;
+    }
+
+    .conf-track-detail {
+        padding: 6px 8px;
+        border: 1px dashed var(--conf-border);
+        border-radius: 10px;
+        color: var(--conf-muted);
+        background: color-mix(in oklab, var(--conf-card) 90%, transparent);
+    }
+
+    .conf-track-detail b {
+        color: var(--conf-text);
+        font-weight: 600;
+        margin-right: 6px;
+    }
+
+    .conf-track-detail.note {
+        grid-column: 1 / -1;
+    }
+
+    .conf-track-badge {
+        font-size: 12px;
+        padding: 1px 7px;
+        border-radius: 999px;
+        border: 1px solid var(--conf-border);
+        color: var(--conf-muted);
+        display: inline-block;
+    }
+
+    .conf-track-countdown {
+        font-weight: 700;
+    }
+
+    .conf-track-countdown.green {
+        color: var(--conf-green);
+    }
+    .conf-track-countdown.orange {
+        color: var(--conf-orange);
+    }
+    .conf-track-countdown.red {
+        color: var(--conf-red);
+    }
+
+    .conf-track-empty {
+        text-align: center;
+        color: var(--conf-muted);
+        margin: 16px auto 0;
+        padding: 24px;
+        border: 1px dashed var(--conf-border);
+        border-radius: 12px;
+        background: color-mix(in oklab, var(--conf-card) 86%, transparent);
+        max-width: var(--conf-card-max);
+    }
+
+    .conf-track-row.closed {
+        background: #f3f4f6;
+        border-color: #e5e7eb;
+        opacity: 0.85;
+    }
+
+    .conf-track-row.closed .conf-track-link,
+    .conf-track-row.closed .conf-track-detail,
+    .conf-track-row.closed .conf-track-badge,
+    .conf-track-row.closed .conf-track-countdown {
+        color: var(--conf-muted) !important;
+    }
+
+    @media (max-width: 980px) {
+        .conf-track-toolbar {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-auto-rows: min-content;
+        }
+
+        .conf-track-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .conf-track-details {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .conf-track-detail.note {
+            grid-column: auto;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .conf-track {
+            padding: 1rem 0.75rem;
+        }
+
+        .conf-track-toolbar {
+            grid-template-columns: 1fr;
+        }
+
+        .conf-track-topbar {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+</style>
+
+<section class="section">
+    <div
+        id="conf-track-app"
+        class="conf-track"
+    >
+        <div class="conf-track-shell">
+            <section class="conf-track-header" aria-label="Conference tracker header">
+                <div class="conf-track-topbar">
+                    <div class="conf-track-brand">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M4 12a8 8 0 1 1 16 0v6a2 2 0 0 1-2 2h-2v-8a4 4 0 1 0-8 0v8H6a2 2 0 0 1-2-2v-6Z" stroke="currentColor" stroke-width="1.5"></path>
+                        </svg>
+
+                        <div>
+                            <h1>Conference Tracker</h1>
+                        </div>
+                    </div>
+
+                    <span class="conf-track-chip" id="confTrackDataChip" title="Data sources"> Remote data </span>
+                </div>
+
+                <div class="conf-track-toolbar" role="region" aria-label="Filters and actions">
+                    <input
+                        id="confTrackSearch"
+                        type="search"
+                        placeholder="Search conferences, venue, acronym... (Ctrl/Cmd+K)"
+                        aria-label="Search conferences"
+                    >
+
+                    <select id="confTrackSubject">
+                        <option value="ALL">All Subjects</option>
+                    </select>
+
+                    <select id="confTrackSort">
+                        <option value="deadline-asc">Submission DDL (earliest)</option>
+                        <option value="deadline-desc">Submission DDL (latest)</option>
+                        <option value="name-asc">Name A-&gt;Z</option>
+                        <option value="name-desc">Name Z-&gt;A</option>
+                    </select>
+
+                    <label class="conf-track-toggle">
+                        <input type="checkbox" id="confTrackOnlyOpen">
+                        Only open
+                    </label>
+
+                    <label class="conf-track-toggle">
+                        <input type="checkbox" id="confTrackOnlyFav">
+                        Only favorites
+                    </label>
+
+                    <select id="confTrackTz">
+                        <option value="auto">Timezone: Auto</option>
+                        <option value="Pacific/Honolulu">Timezone: Pacific/Honolulu</option>
+                        <option value="America/Los_Angeles">Timezone: America/Los_Angeles</option>
+                        <option value="UTC">Timezone: UTC</option>
+                    </select>
+
+                    <button id="confTrackExportCsv" class="conf-track-btn" title="Export current view">
+                        Export CSV
+                    </button>
+                </div>
+
+                <div class="conf-track-divider"></div>
+            </section>
+
+            <div class="conf-track-wrap">
+                <section id="confTrackList" class="conf-track-table-body" aria-live="polite"></section>
+            </div>
+
+            <template id="confTrackRowTpl">
+                <article class="conf-track-row" role="article">
+                    <div class="conf-track-cell conf-track-title">
+                        <div>
+                            <a class="conf-track-link" target="_blank" rel="noopener noreferrer"></a>
+                            <div class="conf-track-meta"></div>
+                        </div>
+
+                        <div class="conf-track-actions">
+                            <span class="conf-track-notif" title="Notification date">-</span>
+                            <span class="conf-track-countdown">-</span>
+                            <button
+                                class="conf-track-icon-btn conf-track-fav"
+                                title="Toggle favorite"
+                                aria-label="Toggle favorite"
+                            >
+                                ☆
+                            </button>
+                            <button
+                                class="conf-track-icon-btn conf-track-ics"
+                                title="Add deadline to calendar"
+                                aria-label="Add deadline to calendar"
+                            >
+                                ICS
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="conf-track-details">
+                        <div class="conf-track-detail conf-track-loc"><b>Location:</b> <span class="v"></span></div>
+                        <div class="conf-track-detail conf-track-host"><b>Host:</b> <span class="v"></span></div>
+                        <div class="conf-track-detail conf-track-sub">
+                            <b>Submission DDL:</b> <span class="v"></span>
+                        </div>
+                        <div class="conf-track-detail note conf-track-note" hidden>
+                            <b>Note:</b> <span class="v"></span>
+                        </div>
+                    </div>
+                </article>
+            </template>
+
+            <section id="confTrackEmpty" class="conf-track-empty" hidden>
+                Failed to load data or no conferences match your filters.
+            </section>
+        </div>
+    </div>
+</section>
+
+<script>
+    (function () {
+        const app = document.getElementById('conf-track-app');
+        if (!app) return;
+
+        const CONFS_URL =
+            'https://raw.githubusercontent.com/WINGS-UHM/Conf_Track/refs/heads/main/data/conferences.json';
+        const TRACKS_URL = 'https://raw.githubusercontent.com/WINGS-UHM/Conf_Track/refs/heads/main/config/tracks.yaml';
+
+        const $ = (sel, el) => (el || document).querySelector(sel);
+        const $$ = (sel, el) => Array.from((el || document).querySelectorAll(sel));
+        const normSpace = (s) =>
+            String(s ?? '')
+                .replace(/\s+/g, ' ')
+                .trim();
+
+        const els = {
+            dataChip: $('#confTrackDataChip', app),
+            search: $('#confTrackSearch', app),
+            subject: $('#confTrackSubject', app),
+            sort: $('#confTrackSort', app),
+            onlyOpen: $('#confTrackOnlyOpen', app),
+            onlyFav: $('#confTrackOnlyFav', app),
+            tz: $('#confTrackTz', app),
+            exportCsv: $('#confTrackExportCsv', app),
+            list: $('#confTrackList', app),
+            tpl: $('#confTrackRowTpl', app),
+            empty: $('#confTrackEmpty', app),
+        };
+
+        function debounce(fn, wait) {
+            wait = wait || 250;
+            let t;
+            return function () {
+                const args = arguments;
+                clearTimeout(t);
+                t = setTimeout(() => fn.apply(null, args), wait);
+            };
+        }
+
+        const state = {
+            confs: [],
+            filtered: [],
+            subject: 'ALL',
+            sort: 'deadline-asc',
+            onlyOpen: false,
+            onlyFav: false,
+            search: '',
+            tz: 'auto',
+            favs: new Set(JSON.parse(localStorage.getItem('favConfs') || '[]')),
+            tracks: [],
+            labelOrder: new Map(),
+            aliasToLabel: new Map(),
+            subjects: [],
+        };
+
+        function saveFavs() {
+            localStorage.setItem('favConfs', JSON.stringify(Array.from(state.favs)));
+        }
+
+        function normAliasKey(s) {
+            return normSpace(String(s ?? ''))
+                .toLowerCase()
+                .replace(/\u2013|\u2014|\u2212/g, '-');
+        }
+
+        function installTracks(tracksObj) {
+            const tracks = Array.isArray(tracksObj?.tracks) ? tracksObj.tracks : [];
+            state.tracks = tracks
+                .filter((t) => t && typeof t === 'object' && t.label)
+                .map((t) => ({
+                    id: String(t.id ?? ''),
+                    label: String(t.label ?? '').trim(),
+                    order: Number.isFinite(Number(t.order)) ? Number(t.order) : 999,
+                    aliases: Array.isArray(t.aliases) ? t.aliases.map((x) => String(x)) : [],
+                }))
+                .sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
+
+            state.labelOrder = new Map();
+            state.aliasToLabel = new Map();
+
+            for (const tr of state.tracks) {
+                state.labelOrder.set(tr.label, tr.order);
+                state.aliasToLabel.set(normAliasKey(tr.label), tr.label);
+
+                for (const a of tr.aliases) {
+                    const k = normAliasKey(a);
+                    if (!k) continue;
+                    if (!state.aliasToLabel.has(k)) state.aliasToLabel.set(k, tr.label);
+                }
+            }
+
+            state.subjects = state.tracks.map((t) => t.label);
+            buildSubjectOptions();
+        }
+
+        async function loadTracks() {
+            els.dataChip.textContent = 'Loading tracks...';
+            els.dataChip.title = TRACKS_URL;
+
+            const res = await fetch(TRACKS_URL + '?ts=' + Date.now(), { cache: 'no-store' });
+            if (!res.ok) throw new Error('Failed to load tracks.yaml: ' + res.status);
+
+            const text = await res.text();
+
+            if (!window.jsyaml || !window.jsyaml.load) {
+                throw new Error('Missing YAML parser (js-yaml).');
+            }
+
+            const obj = window.jsyaml.load(text);
+            installTracks(obj);
+            els.dataChip.textContent = 'Tracks loaded';
+        }
+
+        function canonicalizeSubject(label) {
+            const s0 = normSpace(label);
+            const m = s0.match(/^CCF\s+\w+\s*\((.+)\)$/i);
+            const s = m ? normSpace(m[1]) : s0;
+
+            const key = normAliasKey(s);
+            if (state.aliasToLabel.has(key)) return state.aliasToLabel.get(key);
+
+            return s;
+        }
+
+        function sortSubs(subs) {
+            return subs.slice().sort((a, b) => {
+                const oa = state.labelOrder.has(a) ? state.labelOrder.get(a) : 9999;
+                const ob = state.labelOrder.has(b) ? state.labelOrder.get(b) : 9999;
+                return oa - ob || a.localeCompare(b);
+            });
+        }
+
+        function normalizeSubs(conf) {
+            const raw =
+                conf.sub != null
+                    ? conf.sub
+                    : conf.category != null
+                    ? conf.category
+                    : conf.CATEGORY != null
+                    ? conf.CATEGORY
+                    : '';
+
+            let arr = [];
+            if (Array.isArray(raw)) arr = raw;
+            else if (typeof raw === 'string' && raw.trim()) arr = [raw.trim()];
+
+            const out = [];
+            const seen = new Set();
+
+            for (const x of arr) {
+                const v = canonicalizeSubject(x);
+                if (!v) continue;
+                if (!seen.has(v)) {
+                    seen.add(v);
+                    out.push(v);
+                }
+            }
+
+            const fallback = state.aliasToLabel.get(normAliasKey('Uncategorized')) || 'Uncategorized';
+            conf.sub = out.length ? sortSubs(out) : [fallback];
+            return conf.sub;
+        }
+
+        function buildSubjectOptions(extraLabels) {
+            const sel = els.subject;
+            const keep = state.subject;
+            sel.innerHTML = '';
+
+            const optAll = document.createElement('option');
+            optAll.value = 'ALL';
+            optAll.textContent = 'All Subjects';
+            sel.appendChild(optAll);
+
+            for (const lab of state.subjects) {
+                const opt = document.createElement('option');
+                opt.value = lab;
+                opt.textContent = lab;
+                sel.appendChild(opt);
+            }
+
+            if (extraLabels && extraLabels.length) {
+                const group = document.createElement('optgroup');
+                group.label = 'Other (unmapped)';
+                for (const lab of extraLabels) {
+                    const opt = document.createElement('option');
+                    opt.value = lab;
+                    opt.textContent = lab;
+                    group.appendChild(opt);
+                }
+                sel.appendChild(group);
+            }
+
+            if (keep !== 'ALL') {
+                const allOpts = Array.from(sel.querySelectorAll('option')).map((o) => o.value);
+                if (!allOpts.includes(keep)) state.subject = 'ALL';
+            }
+
+            sel.value = state.subject;
+        }
+
+        function rebuildSubjectsFromTracksPlusExtras() {
+            const known = new Set(state.subjects);
+            const extras = new Set();
+
+            for (const c of state.confs) {
+                const subs = Array.isArray(c.sub) ? c.sub : c.sub ? [c.sub] : [];
+                for (const s of subs) {
+                    if (!known.has(s)) extras.add(s);
+                }
+            }
+
+            buildSubjectOptions(Array.from(extras).sort((a, b) => a.localeCompare(b)));
+        }
+
+        async function loadConfs() {
+            els.dataChip.textContent = 'Loading conferences...';
+            els.dataChip.title = CONFS_URL;
+
+            const res = await fetch(CONFS_URL + '?ts=' + Date.now(), { cache: 'no-store' });
+            if (!res.ok) throw new Error('Failed to load conferences.json: ' + res.status);
+
+            const data = await res.json();
+            state.confs = Array.isArray(data) ? data : [];
+
+            for (const c of state.confs) normalizeSubs(c);
+
+            rebuildSubjectsFromTracksPlusExtras();
+
+            els.dataChip.textContent = 'Remote data';
+            els.dataChip.title = 'Confs: ' + CONFS_URL + '\nTracks: ' + TRACKS_URL;
+        }
+
+        function cleanDateStr(s) {
+            if (!s) return '';
+            return String(s)
+                .replace(/<\/?strike>/g, '')
+                .trim();
+        }
+
+        function parseDate(s) {
+            if (!s) return null;
+            s = cleanDateStr(s);
+            const iso = Date.parse(s);
+            if (!Number.isNaN(iso)) return new Date(iso);
+            const m = s.match(/^(\w{3,})\s(\d{1,2}),?\s(\d{4})$/);
+            if (m) return new Date(m[1] + ' ' + m[2] + ', ' + m[3]);
+            return null;
+        }
+
+        function _effectiveTimeZone() {
+            if (state.tz && state.tz !== 'auto') return state.tz;
+            return Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+        }
+
+        function _monthToNumber(name) {
+            if (!name) return null;
+            const k = String(name).trim().slice(0, 3).toLowerCase();
+            const map = {
+                jan: 1,
+                feb: 2,
+                mar: 3,
+                apr: 4,
+                may: 5,
+                jun: 6,
+                jul: 7,
+                aug: 8,
+                sep: 9,
+                oct: 10,
+                nov: 11,
+                dec: 12,
+            };
+            return map[k] || null;
+        }
+
+        function _tzParts(date, timeZone) {
+            const dtf = new Intl.DateTimeFormat('en-US', {
+                timeZone,
+                hour12: false,
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+            });
+
+            const parts = dtf.formatToParts(date);
+            const out = {};
+
+            for (const p of parts) {
+                if (p.type !== 'literal') out[p.type] = p.value;
+            }
+
+            return {
+                year: Number(out.year),
+                month: Number(out.month),
+                day: Number(out.day),
+                hour: Number(out.hour),
+                minute: Number(out.minute),
+                second: Number(out.second),
+            };
+        }
+
+        function _zonedTimeToUtcMs(year, month, day, hour, minute, second, timeZone) {
+            let utc = Date.UTC(year, month - 1, day, hour, minute, second);
+
+            for (let i = 0; i < 3; i++) {
+                const parts = _tzParts(new Date(utc), timeZone);
+                const asUtc = Date.UTC(parts.year, parts.month - 1, parts.day, parts.hour, parts.minute, parts.second);
+                const desiredAsUtc = Date.UTC(year, month - 1, day, hour, minute, second);
+                utc += desiredAsUtc - asUtc;
+            }
+
+            return utc;
+        }
+
+        function parseDeadlineMs(deadStr) {
+            if (!deadStr) return null;
+            const s = cleanDateStr(deadStr);
+
+            if (/[Tt]\d{2}:\d{2}/.test(s) || /Z$/i.test(s) || /[+-]\d{2}:?\d{2}$/.test(s) || /\d{2}:\d{2}/.test(s)) {
+                const msIso = Date.parse(s);
+                if (!Number.isNaN(msIso)) return msIso;
+            }
+
+            let y = null,
+                mo = null,
+                d = null;
+
+            const m1 = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+            if (m1) {
+                y = Number(m1[1]);
+                mo = Number(m1[2]);
+                d = Number(m1[3]);
+            } else {
+                const m2 = s.match(/^([A-Za-z]{3,9})\s+(\d{1,2}),?\s+(\d{4})$/);
+                if (m2) {
+                    mo = _monthToNumber(m2[1]);
+                    d = Number(m2[2]);
+                    y = Number(m2[3]);
+                }
+            }
+
+            if (!(y && mo && d)) return null;
+
+            return _zonedTimeToUtcMs(y, mo, d, 23, 59, 59, _effectiveTimeZone());
+        }
+
+        function fmtDateTimeMs(ms) {
+            if (ms == null) return '';
+            const tz = state.tz === 'auto' ? undefined : state.tz;
+            const d = new Date(ms);
+            const dateOpt = { year: 'numeric', month: 'short', day: '2-digit' };
+            const timeOpt = { hour: '2-digit', minute: '2-digit', hour12: false };
+
+            try {
+                if (tz) {
+                    dateOpt.timeZone = tz;
+                    timeOpt.timeZone = tz;
+                }
+                return d.toLocaleDateString('en-US', dateOpt) + ' ' + d.toLocaleTimeString('en-US', timeOpt);
+            } catch (e) {
+                return (
+                    d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' }) +
+                    ' ' +
+                    d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })
+                );
+            }
+        }
+
+        function fmtHost(start, end) {
+            const s = parseDate(start);
+            const e = parseDate(end);
+            if (!s || !e) return '';
+
+            const tz = state.tz === 'auto' ? undefined : state.tz;
+            const month = s.toLocaleDateString('en-US', { month: 'short', timeZone: tz });
+            const sd = s.toLocaleDateString('en-US', { day: '2-digit', timeZone: tz });
+            const ed = e.toLocaleDateString('en-US', { day: '2-digit', timeZone: tz });
+            const year = s.toLocaleDateString('en-US', { year: 'numeric', timeZone: tz });
+
+            return month + ' ' + sd + '-' + ed + ', ' + year;
+        }
+
+        function daysLeft(deadStr) {
+            const ms = parseDeadlineMs(deadStr);
+            if (ms == null) return { text: '-', cls: '', closed: false, ms: null };
+
+            const diffMs = ms - Date.now();
+            const closed = diffMs < 0;
+            if (closed) return { text: 'Closed', cls: 'red', closed: true, ms };
+
+            const secTotal = Math.floor(diffMs / 1000);
+            const days = Math.floor(secTotal / 86400);
+            const hours = Math.floor((secTotal % 86400) / 3600);
+            const mins = Math.floor((secTotal % 3600) / 60);
+            const secs = secTotal % 60;
+            const pad2 = (n) => String(n).padStart(2, '0');
+
+            const text = `${days} day ${pad2(hours)} h ${pad2(mins)} m ${pad2(secs)} s`;
+
+            let cls = 'green';
+            if (days <= 3) cls = 'red';
+            else if (days <= 20) cls = 'orange';
+
+            return { text, cls, closed: false, ms };
+        }
+
+        function icsFor(conf) {
+            const name = conf.name || conf.Conference || 'Conference';
+            const dlStr = conf['Submission Deadline'] || conf.deadline || '';
+            const ms = parseDeadlineMs(dlStr);
+            if (ms == null) return null;
+
+            const d = new Date(ms);
+            const pad = (n) => String(n).padStart(2, '0');
+            const y = d.getUTCFullYear();
+            const m = pad(d.getUTCMonth() + 1);
+            const day = pad(d.getUTCDate());
+            const DTSTART = `${y}${m}${day}`;
+            const UID = `${DTSTART}-${encodeURIComponent(name)}@conftracker`;
+            const desc = `Submission deadline for ${name}. ${conf.link ? 'Link: ' + conf.link : ''}`.trim();
+
+            const ics =
+                'BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//ConfTracker//EN\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\n' +
+                'BEGIN:VEVENT\nUID:' +
+                UID +
+                '\nDTSTAMP:' +
+                DTSTART +
+                'T000000Z\nDTSTART;VALUE=DATE:' +
+                DTSTART +
+                '\n' +
+                'SUMMARY:Submission DDL - ' +
+                name +
+                '\nDESCRIPTION:' +
+                desc.replace(/\n/g, ' ') +
+                '\nEND:VEVENT\nEND:VCALENDAR';
+
+            return new Blob([ics], { type: 'text/calendar' });
+        }
+
+        function toCSV(rows) {
+            const header = [
+                'Conference',
+                'Host Time',
+                'Location',
+                'Subjects',
+                'Abstract DDL',
+                'Submission DDL',
+                'Notification',
+                'Time Left',
+            ];
+
+            const esc = (s) => '"' + String(s ?? '').replace(/"/g, '""') + '"';
+            const lines = [header.join(',')];
+
+            for (const r of rows) {
+                const dl = daysLeft(r['Submission Deadline'] || r.deadline);
+                const absMs = parseDeadlineMs(r['Abstract Deadline'] || '');
+                const subMs = parseDeadlineMs(r['Submission Deadline'] || r.deadline || '');
+
+                lines.push(
+                    [
+                        r.name || r.Conference || '',
+                        fmtHost(r['Start Date'], r['End Date']),
+                        r.Location || '',
+                        Array.isArray(r.sub) ? r.sub.join(' | ') : r.sub || '',
+                        absMs == null ? '' : fmtDateTimeMs(absMs),
+                        subMs == null ? '' : fmtDateTimeMs(subMs),
+                        r.Notification || '',
+                        dl.text,
+                    ]
+                        .map(esc)
+                        .join(',')
+                );
+            }
+
+            return new Blob([lines.join('\n')], { type: 'text/csv' });
+        }
+
+        function extractAcronyms(name) {
+            if (!name) return [];
+            const s = String(name).toUpperCase();
+            const arr = [];
+            const mParen = s.match(/\(([A-Z&\.]{2,})\)/g) || [];
+            for (const x of mParen) arr.push(x.replace(/[()]/g, ''));
+
+            const toks = s.split(/[^A-Z0-9&\.]+/);
+            for (const t of toks) {
+                if (t && /[A-Z]/.test(t) && t.length >= 2) arr.push(t);
+            }
+
+            const out = [];
+            for (const x of arr) {
+                if (!x) continue;
+                if (x === 'IEEE' || x === 'ACM') continue;
+                out.push(x);
+            }
+
+            const seen = new Set();
+            const uniq = [];
+            for (const v of out) {
+                if (v && !seen.has(v)) {
+                    seen.add(v);
+                    uniq.push(v);
+                }
+            }
+
+            return uniq;
+        }
+
+        function buildSearchText(c) {
+            const parts = [];
+            const nm = c.name || c.Conference || '';
+            parts.push(nm);
+
+            if (c.Location) parts.push(c.Location);
+
+            if (c.sub) {
+                const subs = Array.isArray(c.sub) ? c.sub : [c.sub];
+                for (const s of subs) parts.push(s);
+            }
+
+            for (const a of extractAcronyms(nm)) parts.push(a);
+            return parts.join(' ').toLowerCase();
+        }
+
+        function ddlTs(c) {
+            const ms = parseDeadlineMs(c['Submission Deadline'] || c.deadline);
+            return ms == null ? null : ms;
+        }
+
+        function applyFilters() {
+            const q = state.search.trim().toLowerCase();
+
+            const rows = state.confs.filter((c) => {
+                const hay = buildSearchText(c);
+                const subs = Array.isArray(c.sub) ? c.sub : c.sub ? [c.sub] : [];
+                const okSub = state.subject === 'ALL' || subs.includes(state.subject);
+                const okSearch = !q || hay.includes(q);
+                const dl = daysLeft(c['Submission Deadline'] || c.deadline);
+                const okOpen = !state.onlyOpen || !dl.closed;
+                const favKey = c.link || c.name || c.Conference || '';
+                const okFav = !state.onlyFav || state.favs.has(favKey);
+                return okSub && okSearch && okOpen && okFav;
+            });
+
+            const keyers = {
+                'deadline-asc': (c) => {
+                    const t = ddlTs(c);
+                    return t == null ? 9e15 : t;
+                },
+                'deadline-desc': (c) => {
+                    const t = ddlTs(c);
+                    return t == null ? 0 : -t;
+                },
+                'name-asc': (c) => (c.name || c.Conference || '').toLowerCase(),
+                'name-desc': (c) => '\uFFFF' + (c.name || c.Conference || '').toLowerCase(),
+            };
+
+            const keyer = keyers[state.sort] || keyers['deadline-asc'];
+
+            rows.sort((a, b) => {
+                const dla = daysLeft(a['Submission Deadline'] || a.deadline);
+                const dlb = daysLeft(b['Submission Deadline'] || b.deadline);
+                if (dla.closed !== dlb.closed) return dla.closed ? 1 : -1;
+                const ka = keyer(a),
+                    kb = keyer(b);
+                return ka > kb ? 1 : ka < kb ? -1 : 0;
+            });
+
+            state.filtered = rows;
+            renderList();
+        }
+
+        function renderList() {
+            els.list.innerHTML = '';
+
+            if (!state.filtered.length) {
+                els.empty.hidden = false;
+                els.empty.textContent = 'No conferences match your filters, or remote data failed to load.';
+                return;
+            }
+
+            els.empty.hidden = true;
+            const frag = document.createDocumentFragment();
+
+            for (const c of state.filtered) {
+                const el = els.tpl.content.cloneNode(true);
+
+                const title = $('.conf-track-link', el);
+                const meta = $('.conf-track-meta', el);
+                const host = $('.conf-track-host .v', el);
+                const loc = $('.conf-track-loc .v', el);
+                const noteV = $('.conf-track-note .v', el);
+                const subV = $('.conf-track-sub .v', el);
+                const notiTop = $('.conf-track-notif', el);
+                const left = $('.conf-track-countdown', el);
+                const favBtn = $('.conf-track-fav', el);
+                const icsBtn = $('.conf-track-ics', el);
+
+                const name = c.name || c.Conference || '-';
+                title.textContent = name;
+                title.href = c.link || '#';
+
+                meta.innerHTML = '';
+                const subs = Array.isArray(c.sub) ? sortSubs(c.sub) : c.sub ? [c.sub] : [];
+                for (const s of subs) {
+                    const b = document.createElement('span');
+                    b.className = 'conf-track-badge';
+                    b.textContent = s;
+                    meta.appendChild(b);
+                }
+
+                host.textContent = fmtHost(c['Start Date'], c['End Date']);
+                loc.textContent = c.Location || '';
+
+                const absStr = c['Abstract Deadline'] || '';
+                const absMs = parseDeadlineMs(absStr);
+                const noteBox = $('.conf-track-note', el);
+
+                if (absMs != null) {
+                    noteBox.hidden = false;
+                    noteV.textContent = 'Abstract DDL: ' + fmtDateTimeMs(absMs);
+                    noteBox.title = 'Raw: ' + cleanDateStr(absStr);
+                } else {
+                    noteBox.hidden = true;
+                    noteV.textContent = '';
+                    noteBox.title = '';
+                }
+
+                const subStr = c['Submission Deadline'] || c.deadline || '';
+                const subMs = parseDeadlineMs(subStr);
+                subV.textContent = subMs == null ? '' : fmtDateTimeMs(subMs);
+                $('.conf-track-sub', el).title = 'Raw: ' + cleanDateStr(subStr);
+
+                notiTop.textContent = c.Notification ? String(c.Notification) : '';
+
+                const dl = daysLeft(subStr);
+                left.textContent = dl.text;
+                left.className = 'conf-track-countdown ' + (dl.cls || '');
+
+                const article = $('.conf-track-row', el);
+                if (dl.closed) article.classList.add('closed');
+
+                const favKey = c.link || c.name || c.Conference || '';
+                const favOn = state.favs.has(favKey);
+                favBtn.textContent = favOn ? '★' : '☆';
+                favBtn.setAttribute('aria-pressed', String(favOn));
+
+                favBtn.addEventListener('click', () => {
+                    if (state.favs.has(favKey)) state.favs.delete(favKey);
+                    else state.favs.add(favKey);
+                    saveFavs();
+                    applyFilters();
+                });
+
+                icsBtn.addEventListener('click', () => {
+                    const blob = icsFor(c);
+                    if (!blob) {
+                        alert('No valid submission deadline to add.');
+                        return;
+                    }
+
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = (name || 'conf').replace(/[^a-z0-9]+/gi, '_') + '_submission_ddl.ics';
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    setTimeout(() => URL.revokeObjectURL(url), 2000);
+                });
+
+                frag.appendChild(el);
+            }
+
+            els.list.appendChild(frag);
+        }
+
+        function startTicker() {
+            setInterval(() => {
+                const rows = $$('.conf-track-row', els.list);
+                for (let i = 0; i < rows.length; i++) {
+                    const row = rows[i];
+                    const c = state.filtered[i];
+                    if (!c) continue;
+
+                    const dl = daysLeft(c['Submission Deadline'] || c.deadline);
+                    const leftEl = $('.conf-track-countdown', row);
+
+                    if (leftEl) {
+                        leftEl.textContent = dl.text;
+                        leftEl.className = 'conf-track-countdown ' + (dl.cls || '');
+                    }
+
+                    if (dl.closed) row.classList.add('closed');
+                    else row.classList.remove('closed');
+                }
+            }, 1000);
+        }
+
+        els.search.addEventListener(
+            'input',
+            debounce((e) => {
+                state.search = e.target.value;
+                applyFilters();
+            }, 120)
+        );
+
+        els.subject.addEventListener('change', (e) => {
+            state.subject = e.target.value;
+            applyFilters();
+        });
+
+        els.sort.addEventListener('change', (e) => {
+            state.sort = e.target.value;
+            applyFilters();
+        });
+
+        els.onlyOpen.addEventListener('change', (e) => {
+            state.onlyOpen = e.target.checked;
+            applyFilters();
+        });
+
+        els.onlyFav.addEventListener('change', (e) => {
+            state.onlyFav = e.target.checked;
+            applyFilters();
+        });
+
+        els.exportCsv.addEventListener('click', () => {
+            const blob = toCSV(state.filtered);
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'conferences.csv';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 1500);
+        });
+
+        const hawaiiTZ = 'Pacific/Honolulu';
+        const tzGuess = Intl.DateTimeFormat().resolvedOptions().timeZone || 'auto';
+        if (tzGuess === hawaiiTZ) {
+            els.tz.value = hawaiiTZ;
+            state.tz = hawaiiTZ;
+        } else {
+            state.tz = 'auto';
+        }
+
+        els.tz.addEventListener('change', (e) => {
+            state.tz = e.target.value;
+            applyFilters();
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                els.search.focus();
+            }
+        });
+
+        (async function init() {
+            try {
+                await loadTracks();
+                await loadConfs();
+                applyFilters();
+                startTicker();
+            } catch (err) {
+                console.error(err);
+                els.empty.hidden = false;
+                els.empty.textContent = 'Failed to load remote data. Open DevTools -> Console for details.';
+                els.dataChip.textContent = 'Load failed';
+            }
+        })();
+    })();
+</script>

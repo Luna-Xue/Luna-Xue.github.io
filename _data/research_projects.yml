@@ -1,0 +1,31 @@
+- title: "Trustworthy AI-Native Wireless Systems"
+  sponsor: "University of Hawaiʻi at Mānoa / WINGS Lab"
+  sponsor_logo: ""
+  items:
+    - "Bridging physical-layer security, ISAC sensing, and learning at the RAN edge."
+    - "Privacy-preserving and resilient AI-RAN/O-RAN prototyping."
+    - "Security against adaptive and generative AI threats."
+    - "Intent-aware multi-stakeholder decision-making with ToM-inspired network agents."
+
+- title: "O-RAN Testbed and AI-RAN Prototyping"
+  sponsor: "WINGS Lab"
+  sponsor_logo: ""
+  items:
+    - "O-RAN testbed infrastructure and system integration."
+    - "End-to-end evaluation for secure and intelligent wireless networking."
+
+- title: "ISAC for Wireless Sensing"
+  sponsor: "WINGS Lab"
+  sponsor_logo: ""
+  items:
+    - "AI-assisted composite ISAC for mmWave respiration pattern recognition (AIoT 2025)."
+    - "RIS and O-RAN assisted intelligent sensing for UAV detection (AIoT 2025)."
+    - "Adaptive mode selection in mmWave ISAC via spectrally disjoint composite waveforms (under review)."
+
+- title: "Wireless Security and Privacy"
+  sponsor: "WINGS Lab"
+  sponsor_logo: ""
+  items:
+    - "Secure device trust bootstrapping against collaborative signal modification attacks (INFOCOM 2023)."
+    - "Over-the-air federated learning with enhanced privacy (ICC 2023)."
+    - "Cognitive radio and rendezvous protocol design (ICC 2021)."
