@@ -3,7 +3,7 @@
 # url: internal page path
 
 sections:
-  - heading: "Security, privacy & trust"
+  - heading: "Security, Privacy & Trust"
     cards:
       - title: "Fake Base Station"
         subtitle: "Physical-layer detection and defense for unauthorized cellular base stations"
@@ -43,7 +43,7 @@ sections:
         url: "/projects/edge-slm-iot/"
         status: "Ongoing"
 
-  - heading: "ISAC & wireless sensing"
+  - heading: "ISAC & Wireless sensing"
     cards:
       - title: "mmWave ISAC Vital Sign Detection"
         subtitle: "Spectrally disjoint composite waveforms and adaptive mode selection"
@@ -63,7 +63,7 @@ sections:
         url: ""
         status: "Planning"
 
-  - heading: "AI-RAN testbed & infrastructure"
+  - heading: "AI-RAN testbed & Infrastructure"
     cards:
       - title: "O-RAN/AI-RAN Testbed"
         subtitle: "Core infrastructure and system integration for secure intelligent networking"
