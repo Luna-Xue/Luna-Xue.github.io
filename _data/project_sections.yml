@@ -29,7 +29,7 @@ sections:
         url: "/projects/over-the-air-federated-learning/"
         status: "Finished"
 
-  - heading: "AI & Language Model Agents"
+  - heading: "AI & Language Model & Agents"
     cards:
       - title: "DomusMind - Inspired by Doraemon"
         subtitle: "Benchmarking lifelong smart home agents under concept drift and changing household contexts"
