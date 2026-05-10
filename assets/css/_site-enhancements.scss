@@ -486,8 +486,9 @@ table.styled-table {
 .alumni-name-cell {
   display: flex;
   align-items: center;
-  gap: .65rem;
-  min-width: 180px;
+  gap: .55rem;
+  min-width: 135px;
+  max-width: 100%;
 
   img,
   .alumni-photo-placeholder {
@@ -510,6 +511,11 @@ table.styled-table {
     background: $accent-light;
     color: $accent-primary;
     font-size: .9rem;
+  }
+
+  span {
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -685,48 +691,73 @@ table.styled-table {
   }
 
   table.styled-table {
-    display: block;
+    display: table;
+    table-layout: fixed;
     width: 100%;
     min-width: 0;
-    overflow: visible;
-    border-radius: 0;
-    box-shadow: none;
+    border-radius: 8px;
+    box-shadow: $card-shadow;
 
     thead {
-      display: none;
+      display: table-header-group;
     }
 
-    tbody,
-    tr,
-    td {
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
+    tbody {
+      display: table-row-group;
     }
 
     tr {
-      margin-bottom: .85rem;
-      border: 1px solid #e7ebee;
-      border-radius: 8px;
-      background: #fff;
-      box-shadow: $card-shadow;
-      overflow: hidden;
+      display: table-row;
+      margin-bottom: 0;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      overflow: visible;
     }
 
+    th,
     td {
-      padding: .75rem .85rem;
-      border-bottom: 1px solid #eef1f3;
+      display: table-cell;
+      box-sizing: border-box;
+      padding: .45rem .35rem;
+      font-size: .68rem;
+      line-height: 1.25;
       overflow-wrap: anywhere;
+      word-break: normal;
+      vertical-align: top;
+    }
 
-      &:last-child {
-        border-bottom: none;
-      }
+    th:first-child,
+    td:first-child {
+      width: 36%;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+      width: 32%;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+      width: 32%;
     }
   }
 
   .alumni-name-cell {
     min-width: 0;
-    align-items: flex-start;
+    gap: .3rem;
+    align-items: center;
+
+    img,
+    .alumni-photo-placeholder {
+      width: 26px;
+      height: 26px;
+      border-width: 1px;
+    }
+
+    .alumni-photo-placeholder {
+      font-size: .65rem;
+    }
   }
 }
 
