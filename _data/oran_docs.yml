@@ -26,7 +26,7 @@ sections:
 
   - heading: Core 5G
 
-  - title: Network Setup
+  - title: Installation
     id: nw-setup
     file: docs/oran/core-5g/nw-setup.md
 
@@ -37,15 +37,29 @@ sections:
   - title: gNB Deployment
     id: gNB-deployment
     file: docs/oran/core-5g/gnb-deployment.md
+  # TBC Parts
+  - title: MIMO Deployment
+    id: mimo-deployment
+    # file: docs/oran/core-5g/mimo-deployment.md
+    file: docs/tbc.md
+  - title: CU-DU Split Deployments
+    id: cu-du-split-deployments
+    # file: docs/oran/core-5g/cu-du-split-deployments.md
+    file: docs/tbc.md
 
   - heading: UE Configuration
 
+  - title: srsRAN UE Config
+    id: srsran-ue-config
+    # file: docs/oran/ue-config/srsran-ue-config.md
+    file: docs/tbc.md
+
   - title: SIM Card Config
     id: sim-card-config
-    # file: docs/oran/ue-config/sim-card-config.md
-    file: docs/tbc.md
+    file: docs/oran/ue-config/sim-card-config.md
+    # file: docs/tbc.md
 
   - title: COTS UE Config
     id: cots-ue-config
-    # file: docs/oran/ue-config/cots-ue-config.md
-    file: docs/tbc.md
+    file: docs/oran/ue-config/cots-ue-config.md
+    # file: docs/tbc.md
