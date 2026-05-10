@@ -28,21 +28,7 @@ sections:
         image: "/assets/img/research_wirelessFL.png"
         url: "/projects/over-the-air-federated-learning/"
         status: "Finished"
-
-  - heading: "AI & Language Model & Agents"
-    cards:
-      - title: "DomusMind - Inspired by Doraemon"
-        subtitle: "Benchmarking lifelong smart home agents under concept drift and changing household contexts"
-        image: "/assets/img/projects/2026_iclrw.png"
-        url: "/projects/lifelong-iot-agent/"
-        status: "Ongoing"
-      
-      - title: "EdgeSLM for Intelligent IoT"
-        subtitle: "Small language models for adaptive reasoning, automation, and privacy-aware edge intelligence"
-        image: "/assets/img/research-SLM.png"
-        url: "/projects/edge-slm-iot/"
-        status: "Ongoing"
-
+        
   - heading: "ISAC & Wireless sensing"
     cards:
       - title: "mmWave ISAC Vital Sign Detection"
@@ -62,6 +48,20 @@ sections:
         image: "/assets/img/projects/Sonnia.png"
         url: ""
         status: "Planning"
+
+  - heading: "AI & Language Model & Agents"
+    cards:
+      - title: "DomusMind - Inspired by Doraemon"
+        subtitle: "Benchmarking lifelong smart home agents under concept drift and changing household contexts"
+        image: "/assets/img/projects/2026_iclrw.png"
+        url: "/projects/lifelong-iot-agent/"
+        status: "Ongoing"
+      
+      - title: "EdgeSLM for Intelligent IoT"
+        subtitle: "Small language models for adaptive reasoning, automation, and privacy-aware edge intelligence"
+        image: "/assets/img/research-SLM.png"
+        url: "/projects/edge-slm-iot/"
+        status: "Ongoing"
 
   - heading: "AI-RAN testbed & Infrastructure"
     cards:
