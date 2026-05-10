@@ -1,5 +1,3 @@
-# _data/oran_docs.yml
-
 base_id: oran-panel
 
 sections:
@@ -42,10 +40,12 @@ sections:
 
   - heading: UE Configuration
 
-  - title: COTS UE Config
-    id: cots-ue-config
-    file: docs/oran/ue-config/cots-ue-config.md
-
   - title: SIM Card Config
     id: sim-card-config
-    file: docs/oran/ue-config/sim-card-config.md
+    # file: docs/oran/ue-config/sim-card-config.md
+    file: docs/tbc.md
+
+  - title: COTS UE Config
+    id: cots-ue-config
+    # file: docs/oran/ue-config/cots-ue-config.md
+    file: docs/tbc.md

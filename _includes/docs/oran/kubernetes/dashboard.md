@@ -77,7 +77,7 @@ sudo chmod +x /usr/local/bin/get-headlamp # Make it executable
 The dashboard will be hosted at [`localhost:8080`](localhost:8080).
 Use the login token from
 ```sh
-get-headlamp
+$ get-headlamp
 ```
 <img src="{{"/assets/img/docs/oran/get-headlamp.png"  | relative_url }}" 
        alt="Headlamp-Token" 
