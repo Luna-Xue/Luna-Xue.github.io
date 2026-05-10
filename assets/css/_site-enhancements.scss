@@ -246,6 +246,24 @@ img.circle.square-100 {
 }
 
 // ---------- Publication Filter Buttons ----------
+.publication-filter {
+  margin: 0 auto 1.25rem;
+  max-width: 920px;
+  text-align: center;
+}
+
+.publication-filter-label {
+  display: block;
+  margin-bottom: .65rem;
+}
+
+.publication-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
 .btn {
   border-radius: 20px !important;
   padding: 5px 14px !important;
@@ -262,6 +280,38 @@ img.circle.square-100 {
   &:hover {
     background: $accent-primary !important;
     color: #fff !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .publication-filter {
+    text-align: left;
+  }
+
+  .publication-filter-label {
+    font-size: .88rem;
+    line-height: 1.35;
+  }
+
+  .publication-filter-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  #myBtnContainer .btn {
+    width: 100%;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 7px 8px !important;
+    font-size: .72rem;
+    line-height: 1.2;
+    white-space: normal;
+    text-align: center;
+  }
+
+  #myBtnContainer .btn .fa {
+    display: none;
   }
 }
 
