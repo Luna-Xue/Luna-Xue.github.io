@@ -32,7 +32,7 @@
   publish: "IEEE International Conference on Computing, Networking and Communications (ICNC), 2026"
   type: "conference"
   image: ""
-  details: "/Web/papers/2026_ICNC_Waveform.pdf"
+  details: "/assets/files/2026_ICNC_Waveform.pdf"
   cate: ["isac", "spectrum_wireless"]
   list_only: true
   attach:
@@ -82,7 +82,7 @@
   list_only: false
   attach:
     - label: "paper"
-      url: "/Web/papers/2025_AIoT_Breathing.pdf"
+      url: "/assets/files/2025_AIoT_Breathing.pdf"
       icon: "file-pdf-o"
     # - label: "project"
     #   url: "https://wings-uhm.github.io/Web/2024/08/01/breathing/"
@@ -107,7 +107,7 @@
   list_only: false
   attach:
     - label: "paper"
-      url: "/Web/papers/2025_AIoT_ROISD.pdf"
+      url: "/assets/files/2025_AIoT_ROISD.pdf"
       icon: "file-pdf-o"
     - label: "code"
       url: "https://github.com/Luna-Xue"
