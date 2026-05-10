@@ -19,3 +19,8 @@ _site/
 
 # IntelliJ
 *.iml
+
+# Local deploy files
+.bundle/
+.jekyll-metadata
+vendor/

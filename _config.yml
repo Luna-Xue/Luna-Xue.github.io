@@ -56,9 +56,9 @@ paginate_path: "/writing/page:num"
 permalink: "/writing/:year/:month/:day/:title/"
 sass:
   sass_dir: "/assets/css"
-  style: :compressed
+  style: compressed
 highlighter: rouge
-timezone: "America/Chicago"
+timezone: "Pacific/Honolulu"
 
 # Plugins (GitHub Pages only support a few)
 plugins:
