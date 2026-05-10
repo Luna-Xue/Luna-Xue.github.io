@@ -1,0 +1,51 @@
+# _data/oran_docs.yml
+
+base_id: oran-panel
+
+sections:
+  - title: Overview
+    id: overview
+    file: docs/oran/overview.md
+
+  - heading: Kubernetes
+  - title: Installation
+    id: kubernetes-installation
+    file: docs/oran/kubernetes/installation.md
+
+  - title: Headlamp Dashboard
+    id: dashboard
+    file: docs/oran/kubernetes/dashboard.md
+
+  - heading: Deployment
+
+  - title: Near RT-RIC Deployment
+    id: deployment-installation
+    file: docs/oran/deployment/installation.md
+
+  - title: O-RAN Services
+    id: navigation
+    file: docs/oran/deployment/navigation.md
+
+  - heading: Core 5G
+
+  - title: Network Setup
+    id: nw-setup
+    file: docs/oran/core-5g/nw-setup.md
+
+  - title: Open5GS Core Network
+    id: open5gs-cn
+    file: docs/oran/core-5g/open5gs-cn.md
+
+  - title: gNB Deployment
+    id: gNB-deployment
+    file: docs/oran/core-5g/gnb-deployment.md
+
+  - heading: UE Configuration
+
+  - title: COTS UE Config
+    id: cots-ue-config
+    file: docs/oran/ue-config/cots-ue-config.md
+
+  - title: SIM Card Config
+    id: sim-card-config
+    file: docs/oran/ue-config/sim-card-config.md
