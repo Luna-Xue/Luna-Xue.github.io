@@ -406,11 +406,12 @@ table.styled-table {
 // ---------- Team Member Cards ----------
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
   gap: 1.8rem;
 }
 
 .team-member {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -459,6 +460,7 @@ table.styled-table {
 
 .team-info {
   min-width: 0;
+  max-width: 100%;
 }
 
 .team-name {
@@ -469,6 +471,7 @@ table.styled-table {
   a {
     color: #333;
     text-decoration: none;
+    overflow-wrap: anywhere;
     &:hover { color: $accent-primary; }
   }
 }
@@ -477,6 +480,7 @@ table.styled-table {
   font-size: .8rem;
   color: #777;
   line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .alumni-name-cell {
@@ -551,6 +555,7 @@ table.styled-table {
 .hero-lab-links {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: .65rem;
   margin-top: .75rem;
 }
@@ -584,11 +589,12 @@ table.styled-table {
 
 .lab-activity-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
   gap: 1.1rem;
 }
 
 .lab-activity-card {
+  min-width: 0;
   overflow: hidden;
   border-radius: 10px;
   border: 1px solid #e7ebee;
@@ -638,6 +644,89 @@ table.styled-table {
     color: #59645f;
     font-size: .86rem;
     line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 640px) {
+  .team-grid,
+  .lab-activity-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .team-member {
+    padding: 1.1rem .9rem;
+  }
+
+  .team-photo,
+  .team-photo img,
+  .team-photo-placeholder {
+    width: 132px;
+    height: 132px;
+  }
+
+  .hero-lab-links {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: .5rem;
+  }
+
+  .hero-lab-link {
+    width: 100%;
+    justify-content: center;
+    min-width: 0;
+    box-sizing: border-box;
+    white-space: normal;
+  }
+
+  table.styled-table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+    border-radius: 0;
+    box-shadow: none;
+
+    thead {
+      display: none;
+    }
+
+    tbody,
+    tr,
+    td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    tr {
+      margin-bottom: .85rem;
+      border: 1px solid #e7ebee;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: $card-shadow;
+      overflow: hidden;
+    }
+
+    td {
+      padding: .75rem .85rem;
+      border-bottom: 1px solid #eef1f3;
+      overflow-wrap: anywhere;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .alumni-name-cell {
+    min-width: 0;
+    align-items: flex-start;
   }
 }
 
