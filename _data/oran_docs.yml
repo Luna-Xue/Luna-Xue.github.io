@@ -51,8 +51,8 @@ sections:
 
   - title: srsRAN UE Config
     id: srsran-ue-config
-    # file: docs/oran/ue-config/srsran-ue-config.md
-    file: docs/tbc.md
+    file: docs/oran/ue-config/srsran-ue-config.md
+    # file: docs/tbc.md
 
   - title: SIM Card Config
     id: sim-card-config

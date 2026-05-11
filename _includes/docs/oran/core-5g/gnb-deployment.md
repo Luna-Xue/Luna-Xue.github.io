@@ -127,6 +127,9 @@ After changing the relevant parameters execute the gNB
 sudo gnb -c <path-to-your-config>
 # e.g. sudo gnb -c gnb_x310_n78_TDD_30Mhz.yml
 ```
+
+![gnb-deploy](/assets/img/docs/oran/gnb_deploy.png)
+
 {% include notification.html status="is-warning" message="Private cellular transmissions may be regulated in your region. Use low-power indoor deployments for testing, and avoid high transmit power or outdoor operation unless authorized, as this may interfere with licensed networks." %}
 
 ## Expert Configuration
