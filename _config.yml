@@ -15,6 +15,7 @@ nav:
 
 # Bio settings
 name: "Xiaochan Xue"
+title: "Xiaochan Xue"
 description: "Assistant Professor at University of Hawaiʻi at Mānoa. Research in wireless communication, cybersecurity, and AI-native trustworthy wireless systems."
 thumbnail_path: "XXC.png"   # 你需要把头像放到 assets/img/luna.jpg 或改成现有文件名
 website_repo_url: "https://github.com/luna-xue"

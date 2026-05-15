@@ -1,0 +1,415 @@
+// ---------- Tables (Team page, etc.) ----------
+table.styled-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: $card-shadow;
+
+  thead tr {
+    background: $accent-primary;
+    th {
+      color: #fff;
+      padding: 12px 16px;
+      font-family: "Open Sans", sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+  }
+  tbody tr {
+    transition: background .15s;
+    td {
+      padding: 11px 16px;
+      font-size: .9rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    &:nth-child(even) { background: #fafbfc; }
+    &:hover { background: $accent-light; }
+    &:last-child td { border-bottom: none; }
+  }
+}
+
+// ---------- Team Member Cards ----------
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  gap: 1.8rem;
+}
+
+.team-member {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: .8rem;
+  padding: 1.5rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: $card-shadow;
+  background: #fff;
+  transition: transform .2s, box-shadow .2s;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $card-shadow-hover;
+  }
+}
+
+.team-photo {
+  flex-shrink: 0;
+  width: 160px;
+  height: 160px;
+  img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    border: 3px solid #f0f0f0;
+  }
+}
+
+.team-photo-placeholder {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: $accent-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #f0f0f0;
+  i {
+    font-size: 3.5rem;
+    color: $accent-primary;
+    opacity: .5;
+  }
+}
+
+.team-info {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.team-name {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  margin-bottom: .2rem;
+  a {
+    color: #333;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    &:hover { color: $accent-primary; }
+  }
+}
+
+.team-area {
+  font-size: .8rem;
+  color: #777;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.alumni-name-cell {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  min-width: 135px;
+  max-width: 100%;
+
+  img,
+  .alumni-photo-placeholder {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #f0f0f0;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  .alumni-photo-placeholder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: $accent-light;
+    color: $accent-primary;
+    font-size: .9rem;
+  }
+
+  span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+.lab-links-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  align-items: center;
+}
+
+.lab-link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  min-height: 36px;
+  padding: .45rem .75rem;
+  border: 1px solid #e1e7ea;
+  border-radius: 6px;
+  background: #fff;
+  color: #26312d !important;
+  font-family: "Open Sans", sans-serif;
+  font-size: .88rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  box-shadow: $card-shadow;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+
+  &:hover {
+    border-color: rgba($accent-primary, .35);
+    transform: translateY(-2px);
+    box-shadow: $card-shadow-hover;
+  }
+
+  i {
+    font-size: 1.05rem;
+  }
+}
+
+.lab-link-website i { color: $accent-primary; }
+.lab-link-github i { color: #24292f; }
+.lab-link-youtube i { color: #ff0000; }
+
+.hero-lab-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .65rem;
+  margin-top: .75rem;
+}
+
+.hero-lab-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  min-height: 34px;
+  padding: .4rem .72rem;
+  border: 1px solid #dfe6e3;
+  border-radius: 6px;
+  background: #fff;
+  color: #26312d !important;
+  font-family: "Open Sans", sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  box-shadow: $card-shadow;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+
+  &:hover {
+    border-color: rgba($accent-primary, .35);
+    transform: translateY(-2px);
+    box-shadow: $card-shadow-hover;
+  }
+}
+
+.hero-lab-github i { color: #24292f; }
+.hero-lab-youtube i { color: #ff0000; }
+
+.lab-activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: 1.1rem;
+}
+
+.lab-activity-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #e7ebee;
+  background: #fff;
+  box-shadow: $card-shadow;
+  transition: transform .2s, box-shadow .2s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $card-shadow-hover;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: #eef3f0;
+  }
+}
+
+.lab-activity-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  background: $accent-light;
+  color: $accent-primary;
+
+  i {
+    font-size: 2rem;
+    opacity: .65;
+  }
+}
+
+.lab-activity-body {
+  padding: .95rem 1rem 1.05rem;
+
+  h4 {
+    margin: .25rem 0 .35rem;
+    color: #26312d;
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0;
+    color: #59645f;
+    font-size: .86rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 640px) {
+  .team-grid,
+  .lab-activity-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .team-member {
+    padding: 1.1rem .9rem;
+  }
+
+  .team-photo,
+  .team-photo img,
+  .team-photo-placeholder {
+    width: 132px;
+    height: 132px;
+  }
+
+  .hero-lab-links {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: .5rem;
+  }
+
+  .hero-lab-link {
+    width: 100%;
+    justify-content: center;
+    min-width: 0;
+    box-sizing: border-box;
+    white-space: normal;
+  }
+
+  table.styled-table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    min-width: 0;
+    border-radius: 8px;
+    box-shadow: $card-shadow;
+
+    thead {
+      display: table-header-group;
+    }
+
+    tbody {
+      display: table-row-group;
+    }
+
+    tr {
+      display: table-row;
+      margin-bottom: 0;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    th,
+    td {
+      display: table-cell;
+      box-sizing: border-box;
+      padding: .45rem .35rem;
+      font-size: .68rem;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+      word-break: normal;
+      vertical-align: top;
+    }
+
+    th:first-child,
+    td:first-child {
+      width: 36%;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+      width: 32%;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+      width: 32%;
+    }
+  }
+
+  .alumni-name-cell {
+    min-width: 0;
+    gap: .3rem;
+    align-items: center;
+
+    img,
+    .alumni-photo-placeholder {
+      width: 26px;
+      height: 26px;
+      border-width: 1px;
+    }
+
+    .alumni-photo-placeholder {
+      font-size: .65rem;
+    }
+  }
+}
+
+.lab-activity-date {
+  color: $accent-primary;
+  font-family: "Open Sans", sans-serif;
+  font-size: .76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.lab-activity-empty {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .9rem 1rem;
+  border: 1px dashed #cfd8d4;
+  border-radius: 8px;
+  background: #fbfcfc;
+  color: #66716d;
+  font-size: .9rem;
+
+  i {
+    color: $accent-primary;
+  }
+}

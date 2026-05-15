@@ -2,17 +2,19 @@
     <div class="col sm-col-12 px2">
 
         <h3 class="mt0 mb1">About</h3>
-        <p class="justify small-line-height">
+        <div class="justify small-line-height">
             Xiaochan (Luna) Xue is a tenure-track Assistant Professor in the
-            <a class="link about" href="https://www.hawaii.edu/" target="_blank">University of Hawaiʻi at Mānoa</a>.
+            <a class="link about" href="https://www.hawaii.edu/" target="_blank" rel="noopener">University of Hawaiʻi at Mānoa</a>.
             Her research lies at the intersection of wireless communication, cybersecurity, and artificial intelligence.
         
             Her group develops trustworthy AI-native wireless systems by bridging physical-layer security,
             ISAC sensing, and learning at the RAN edge. Recent interests include privacy-preserving and resilient
             AI-RAN/O-RAN prototyping, defenses against adaptive and generative AI threats, and ToM-inspired
-            network agents for intent-aware multi-stakeholder decision making.
+            network agents for intent-aware multi-stakeholder decision making. 
+            <!-- Added because lower banner was sticking to this paragraph -->
+            <p></p> 
 
-           <div class="bg-light-yellow h5 px2 py1 border-left">
+            <div class="bg-light-yellow h5 px2 py1 border-left">
                 <strong>Prospective Students:</strong>
                 Want to build something meaningful during your Ph.D.? I am recruiting self-motivated Ph.D. students to start in Fall 2026, Spring 2027, and beyond.
                 Please email <a class="link about" href="mailto:xxue@hawaii.edu">xxue@hawaii.edu</a> with:
@@ -23,7 +25,7 @@
                     <li>A brief statement of research interests</li>
                 </ul>
             </div>
-        </p>
+        </div>
         
     </div>
 </div>
@@ -37,7 +39,6 @@
         {% endfor %}
     </ul>
 </div>
-
 
 <!-- Achievements Slideshow-->
 <!-- 
@@ -140,7 +141,7 @@
         <div class="research-card" style="background: url('/assets/img/facilities/Testbed.svg') center/cover; height: 200px;">
             <div class="card-overlay">
                 <div class="card-title">
-                    <a target="_blank" rel="noopener">AI-RAN Testbed </i></a>
+                    <span>AI-RAN Testbed</span>
                 </div>
                 <div class="card-desc">
                     AI-RAN/O-RAN testbed with USRP X310/X410/B210, OAI, O-CUDU, Open5GS, GPU servers, and 5G NR FR1/FR2 mmWave support.
@@ -153,7 +154,7 @@
         <div class="research-card" style="background: url('/assets/img/facilities/jetsonorin-nano-super-dev-kit.jpg') center/cover; height: 200px;">
             <div class="card-overlay">
                 <div class="card-title">
-                    <a target="_blank" rel="noopener">Edge Computing</i></a>
+                    <span>Edge Computing</span>
                 </div>
                 <div class="card-desc">
                     Jetson Orin NX Super 16GB
@@ -166,7 +167,7 @@
         <div class="research-card" style="background: url('/assets/img/facilities/Hiwonder_ROSOrin_Pro.png') center/cover; height: 200px;">
             <div class="card-overlay">
                 <div class="card-title">
-                    <a target="_blank" rel="noopener">Robot Car </i></a>
+                    <span>Robot Car</span>
                 </div>
                 <div class="card-desc">
                     Software-defined radio and sensing platforms for wireless security, ISAC, and OTA prototyping, with ToF LiDAR, 3D depth camera, ROS/Orin Pro, WiFi cards, and 5G communication kits.</div>

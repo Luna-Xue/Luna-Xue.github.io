@@ -24,3 +24,5 @@ _site/
 .bundle/
 .jekyll-metadata
 vendor/
+codex/
+.gitignore

@@ -1,44 +1,50 @@
 # Teaching page — merged by course name. image: path from site root.
+# Sections and courses render in the order listed here, top first.
 
-courses:
-  - title: "ECE 362: Discrete Math for Engineers"
-    institution: "University of Hawaiʻi at Mānoa"
-    terms:
-      - "2026 Fall"
-    image: "/assets/img/courses/course-discrete-mathematics-engineer.jpg"
-    blurb: ""
-    url: "/teaching/ece-362/"
+sections:
+  - heading: "Fall 2026"
+    courses:
+      - title: "ECE 362: Discrete Math for Engineers"
+        institution: "University of Hawaiʻi at Mānoa"
+        term: "2026 Fall"
+        image: "/assets/img/courses/course-discrete-mathematics-engineer.jpg"
+        blurb: ""
+        url: "/teaching/ece-362/"
 
-  - title: "ENGR 296: Sophomore Vertically Integrated Project (VIP)"
-    institution: "University of Hawaiʻi at Mānoa"
-    terms:
-      - "2026 Fall"
-    image: "/assets/img/courses/Logo_COE_border.svg"
-    blurb: ""
-    url: "/teaching/engr-296/"
+      - title: "ENGR 296: Sophomore Vertically Integrated Project (VIP)"
+        institution: "University of Hawaiʻi at Mānoa"
+        term: "2026 Fall"
+        image: "/assets/img/courses/Logo_COE_border.svg"
+        blurb: ""
+        url: "/teaching/engr-296/"
 
-  - title: "ECE 669: Wireless and Mobile Security"
-    institution: "University of Hawaiʻi at Mānoa"
-    terms:
-      - "2026 Spring"
-    image: "/assets/img/courses/course-wireless-security.png"
-    blurb: ""
-    url: "/teaching/ece-669/"
+  - heading: "Spring 2026"
+    courses:
+      - title: "ECE 669: Wireless and Mobile Security"
+        institution: "University of Hawaiʻi at Mānoa"
+        term: "2026 Spring"
+        image: "/assets/img/courses/course-wireless-security.png"
+        blurb: ""
+        url: "/teaching/ece-669/"
 
-  - title: "ECE 693E: Intelligent and Secure Wireless Networks"
-    institution: "University of Hawaiʻi at Mānoa"
-    terms:
-      - "2025 Fall"
-    image: "/assets/img/courses/course-ai_ran.png"
-    blurb: "From wireless fundamentals to intelligent, secure, and programmable AI-driven radio access networks."
-    url: "/teaching/ece-693e/"
+  - heading: "Fall 2025"
+    courses:
+      - title: "ECE 693E: Intelligent and Secure Wireless Networks"
+        institution: "University of Hawaiʻi at Mānoa"
+        term: "2025 Fall"
+        image: "/assets/img/courses/course-ai_ran.png"
+        blurb: "From wireless fundamentals to intelligent, secure, and programmable AI-driven radio access networks."
+        url: "/teaching/ece-693e/"
 
-  - title: "CPE 691: Information Systems Security"
-    institution: "Stevens Institute of Technology"
-    terms:
-      - "2025 Spring"
-      - "2024 Fall"
-      - "2024 Spring"
-    image: "/assets/img/courses/course-cybersecurity-triangle.svg"
-    blurb: ""
-    url: "/teaching/cpe-691/"
+  - heading: "Spring 2025"
+    courses:
+      # Use `terms` for one card covering repeated offerings; use separate entries when syllabus/content/timeline differs.
+      - title: "CPE 691: Information Systems Security"
+        institution: "Stevens Institute of Technology"
+        terms:
+          - "2025 Spring"
+          - "2024 Fall"
+          - "2024 Spring"
+        image: "/assets/img/courses/course-cybersecurity-triangle.svg"
+        blurb: ""
+        url: "/teaching/cpe-691/"

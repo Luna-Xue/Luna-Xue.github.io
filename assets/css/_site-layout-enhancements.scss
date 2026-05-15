@@ -1,0 +1,82 @@
+// ---------- Global Refinements ----------
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: $accent-light;
+  color: $accent-dark;
+}
+
+// Font Awesome 4.3 does not include ORCID, so render a local fallback.
+.fa-orcid {
+  width: 1.28571429em;
+  height: 1.28571429em;
+  border-radius: 50%;
+  background: #a6ce39;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: .95em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.28571429em;
+  text-align: center;
+  vertical-align: -8%;
+
+  &::before {
+    content: "iD";
+  }
+}
+
+.page-description a[data-hint="Email"] .fa {
+  color: #c5221f;
+}
+
+.page-description a[data-hint="Google Scholar"] .fa {
+  color: #4285f4;
+}
+
+.page-description a[data-hint="GitHub"] .fa {
+  color: #24292f;
+}
+
+.page-description a[data-hint="LinkedIn"] .fa {
+  color: #0a66c2;
+}
+
+.page-description a[data-hint="DBLP"] .fa {
+  color: #004f9f;
+}
+
+.page-description a[data-hint="ORCID"] .fa-orcid {
+  background: #a6ce39;
+  color: #fff;
+}
+
+// ---------- Navigation Bar ----------
+nav.border-bottom {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  .nav-button {
+    transition: color .2s, background .2s;
+    border-radius: 4px;
+  }
+  .nav-button:hover {
+    background: $accent-light;
+    color: $accent-primary !important;
+  }
+  .nav-button.link-color {
+    color: $accent-primary !important;
+    border-bottom: 2px solid $accent-primary;
+    border-radius: 0;
+  }
+  // site name in nav
+  span.nav-button {
+    font-weight: 800;
+    letter-spacing: .02em;
+  }
+}

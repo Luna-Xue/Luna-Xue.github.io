@@ -1,0 +1,7 @@
+<aside class="section-jump-nav" aria-label="{{ include.aria_label | default: include.title }}">
+  <div class="section-jump-nav-title">{{ include.title }}</div>
+  {% for section in include.sections %}
+  {% assign section_id = section.heading | slugify | prepend: include.id_prefix %}
+  <a href="#{{ section_id }}">{{ section.heading }}</a>
+  {% endfor %}
+</aside>

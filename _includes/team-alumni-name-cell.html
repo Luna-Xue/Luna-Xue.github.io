@@ -1,0 +1,16 @@
+{% assign member = include.member %}
+<div class="alumni-name-cell">
+    {% if member.photo and member.photo != "" %}
+    <img src="/assets/img/team/{{ member.photo }}" alt="{{ member.name }}">
+    {% else %}
+    <span class="alumni-photo-placeholder"><i class="fa fa-user"></i></span>
+    {% endif %}
+    <span>
+        {% if member.url and member.url != "" %}
+        <a href="{{ member.url }}" target="_blank" rel="noopener">{{ member.name }}</a>
+        {% else %}
+        {{ member.name }}
+        {% endif %}
+        {% if include.show_note and member.note %} <span class="gray h6">({{ member.note }})</span>{% endif %}
+    </span>
+</div>

@@ -9,7 +9,11 @@ nav_item: Projects
 
 {% assign default_thumb = "/assets/img/research-ml-systems.jpg" %}
 
+<div class="sectioned-page-layout">
+  <div class="sectioned-page-content">
 {% for section in site.data.project_sections.sections %}
+{% assign section_id = section.heading | slugify | prepend: "project-" %}
+<section id="{{ section_id }}" class="sectioned-page-section">
 <h2 class="project-section-heading mt3 mb2">{{ section.heading }}</h2>
 
 <div class="project-card-grid">
@@ -64,8 +68,13 @@ nav_item: Projects
   </div>
   {% endfor %}
 </div>
+</section>
 {% endfor %}
 
 <p class="h6 gray mt3 mb0">
   Last updated: {{ site.time | date: "%B %-d, %Y" }}
 </p>
+  </div>
+
+  {% include section-jump-nav.html sections=site.data.project_sections.sections id_prefix="project-" title="Topics" aria_label="Project topics" %}
+</div>

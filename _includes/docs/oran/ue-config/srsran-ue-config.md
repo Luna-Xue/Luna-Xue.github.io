@@ -1,4 +1,7 @@
 
+---
+toc: true
+---
 ## srsRAN UE
 The USRP-based UE setup is included here mainly for PoC validation and initial testing. It can be useful for basic bring-up checks, RF sanity testing, and early experimentation, but it should not be treated as the preferred UE option for complete 5G SA testbed operation.
 

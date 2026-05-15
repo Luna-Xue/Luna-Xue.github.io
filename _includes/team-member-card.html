@@ -1,0 +1,32 @@
+{% assign member = include.member %}
+<div class="team-member">
+    <div class="team-photo">
+        {% if member.photo and member.photo != "" %}
+        <img src="/assets/img/team/{{ member.photo }}" alt="{{ member.name }}">
+        {% else %}
+        <div class="team-photo-placeholder">
+            <i class="fa fa-user"></i>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="team-info">
+        <div class="team-name">
+            {% if member.url and member.url != "" %}
+            <a href="{{ member.url }}" target="_blank" rel="noopener">{{ member.name }} <i class="fa fa-external-link" style="font-size:.7rem;opacity:.5;"></i></a>
+            {% else %}
+            {{ member.name }}
+            {% endif %}
+        </div>
+
+        {% if member.area and member.area != "" %}
+        <div class="team-area">{{ member.area }}</div>
+        {% endif %}
+
+        {% if member.original_institution and member.original_institution != "" %}
+        <div class="team-institution" style="font-size:0.72rem; color:#777; line-height:1.2; margin-top:2px;">
+            {{ member.original_institution }}
+        </div>
+        {% endif %}
+    </div>
+</div>

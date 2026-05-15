@@ -1,0 +1,123 @@
+// ---------- Publication Filter Buttons ----------
+.publication-filter {
+  margin: 0 auto 1.25rem;
+  max-width: 920px;
+  text-align: center;
+}
+
+.publication-filter-label {
+  display: block;
+  margin-bottom: .65rem;
+}
+
+.publication-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn {
+  border-radius: 20px !important;
+  padding: 5px 14px !important;
+  font-size: .78rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  transition: all .2s;
+  margin: 3px !important;
+}
+.btn.active {
+  border: 2px solid $accent-primary !important;
+  color: $accent-primary !important;
+  background: #fff !important;
+  &:hover {
+    background: $accent-primary !important;
+    color: #fff !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .publication-filter {
+    text-align: left;
+  }
+
+  .publication-filter-label {
+    font-size: .88rem;
+    line-height: 1.35;
+  }
+
+  .publication-filter-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  #myBtnContainer .btn {
+    width: 100%;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 7px 8px !important;
+    font-size: .72rem;
+    line-height: 1.2;
+    white-space: normal;
+    text-align: center;
+  }
+
+  #myBtnContainer .btn .fa {
+    display: none;
+  }
+}
+
+// ---------- Publication Cards ----------
+.filterDiv {
+  border-radius: 6px;
+  transition: background .2s;
+  padding: .6rem 0 !important;
+  &:hover {
+    background: #fafbfc;
+  }
+}
+
+.paper-tag {
+  font-size: .78rem !important;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  border-radius: 20px !important;
+  padding: 5px 14px !important;
+  display: inline-block;
+  margin: 3px !important;
+  border: 2px solid transparent;
+  transition: all .2s;
+  text-transform: capitalize;
+}
+
+// ---------- Publication Tag Colors (Xue Research Areas) ----------
+.paper-tag.wireless_security.active  { background: #fce8e6; color: #c5221f; border-color: #f5b7b1; }
+.paper-tag.ai_ran.active             { background: #e8f4fd; color: #1a73e8; border-color: #b3d7f7; }
+.paper-tag.isac.active               { background: #e0f2f1; color: #00695c; border-color: #80cbc4; }
+.paper-tag.federated_learning.active { background: #f3e8fd; color: #7b1fa2; border-color: #d1a3f0; }
+.paper-tag.smart_agents.active       { background: #fbe9e7; color: #bf360c; border-color: #ffab91; }
+.paper-tag.spectrum_wireless.active  { background: #e8eaf6; color: #283593; border-color: #9fa8da; }
+
+
+.bibtex-box {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 6px;
+  font-size: .85rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  white-space: pre-wrap;
+}
+
+// Attachment links
+.filterDiv p a.black {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background .2s;
+  &:hover {
+    background: #f0f0f0;
+  }
+}

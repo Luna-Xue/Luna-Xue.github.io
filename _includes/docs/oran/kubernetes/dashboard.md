@@ -1,3 +1,6 @@
+---
+toc: true
+---
 ## Headlamp Access Service
 
 To make the Headlamp Kubernetes UI automatically accessible from the host machine, a systemd service is used to maintain a persistent port-forward to the Headlamp service.
@@ -74,7 +77,7 @@ EOF
 
 sudo chmod +x /usr/local/bin/get-headlamp # Make it executable
 ```
-The dashboard will be hosted at [`localhost:8080`](localhost:8080).
+The dashboard will be hosted at [`localhost:8080`](http://localhost:8080).
 Use the login token from
 ```sh
 $ get-headlamp

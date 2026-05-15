@@ -1,4 +1,8 @@
-## Overview
+---
+toc: true
+---
+
+## Installation
 ```sh
 git clone https://github.com/WINGS-UHM/O-RAN.git
 cd O-RAN/NearRT-RIC

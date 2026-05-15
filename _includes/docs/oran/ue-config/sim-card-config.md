@@ -1,3 +1,6 @@
+---
+toc: true
+---
 ## Physical SIM/ISIM setup
 ![cots-ue](/assets/img/docs/oran/cots-ue.jpg)
 
@@ -18,7 +21,7 @@ A22,001010123456781,00112233445566778899AABBCCDDEEFF,opc,63BFA50EE6523365FF14C1F
 
 For the sim card we used a `sysmoISIM-SJA5-9FV SIM` and a `HID OMNIKEY 3121` sim reader/programming tool. 
 
-### Reading/Writing to SIM
+## Reading/Writing to SIM
 sysmocom SIM cards support programming sim values through their python library. Install the pySim library
 ```sh
 git clone https://github.com/osmocom/pysim

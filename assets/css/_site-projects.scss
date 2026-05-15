@@ -1,0 +1,296 @@
+// ---------- Projects page (card grid) ----------
+.project-section-heading {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #222;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid $accent-primary;
+}
+
+.project-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: .5rem;
+}
+
+.project-card-cell {
+  min-width: 0;
+}
+
+.project-card-link {
+  display: block;
+  text-decoration: none !important;
+  color: inherit !important;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: $card-shadow;
+  background: #fff;
+  transition: transform .22s, box-shadow .22s;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $card-shadow-hover;
+  }
+
+  &--static {
+    cursor: default;
+    &:hover {
+      transform: none;
+      box-shadow: $card-shadow;
+    }
+  }
+}
+
+.project-card-thumb {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  background-color: #e8ecf0;
+}
+
+.project-card-body {
+  padding: 1rem 1.05rem 1.15rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.project-status-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  margin: 0 0 .55rem;
+  padding: .18rem .55rem;
+  border-radius: 999px;
+  font-family: "Open Sans", sans-serif;
+  font-size: .68rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.project-status-ongoing {
+  background: $accent-light;
+  color: $accent-dark;
+}
+
+.project-status-finished {
+  background: #eef1f5;
+  color: #48525e;
+}
+
+.project-status-planning {
+  background: #fff4d8;
+  color: #7a4b00;
+}
+
+.project-card-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 .4rem;
+  color: #1a1a1a;
+}
+
+.project-card-subtitle {
+  font-size: .82rem;
+  line-height: 1.45;
+  color: #555;
+  margin: 0;
+}
+
+.teaching-course-card .project-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.teaching-card-meta {
+  font-size: .82rem;
+  color: #555;
+  margin: 0 0 .25rem;
+  line-height: 1.4;
+}
+
+.teaching-card-term {
+  margin-bottom: .5rem !important;
+}
+
+.teaching-card-links {
+  font-size: .85rem;
+  margin-top: auto;
+  padding-top: .35rem;
+}
+
+.sectioned-page-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.sectioned-page-content {
+  min-width: 0;
+}
+
+.sectioned-page-section {
+  scroll-margin-top: 90px;
+}
+
+.section-jump-nav {
+  position: sticky;
+  top: 76px;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  padding: .75rem 0;
+}
+
+.section-jump-nav-title {
+  margin-bottom: .35rem;
+  color: #6f7b96;
+  font-family: "Open Sans", sans-serif;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.section-jump-nav a {
+  display: block;
+  padding: .55rem .75rem;
+  border-radius: 6px;
+  color: #404854 !important;
+  font-family: "Open Sans", sans-serif;
+  font-size: .86rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none !important;
+  transition: background .2s, color .2s;
+
+  &:hover {
+    background: $accent-light;
+    color: $accent-primary !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .sectioned-page-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .section-jump-nav {
+    position: static;
+    order: -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: .45rem;
+    padding: .25rem 0 1rem;
+  }
+
+  .section-jump-nav-title {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  .section-jump-nav a {
+    padding: .55rem .65rem;
+    background: #f7f9fb;
+  }
+}
+
+// ---------- Project Entries ----------
+.project-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.project-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-sponsor {
+  font-size: .85rem;
+  color: #666;
+  margin-top: -.3rem;
+  i { margin-right: .3rem; color: $accent-primary; }
+}
+
+.project-logo {
+  flex-shrink: 0;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.5rem;
+  img {
+    max-width: 100px;
+    max-height: 60px;
+    object-fit: contain;
+  }
+}
+
+.project-logo-placeholder {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background: #f5f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #ddd;
+  i {
+    font-size: 1.3rem;
+    color: #ccc;
+  }
+}
+
+// ---------- Awards List ----------
+.awards-list {
+  list-style: none;
+  padding-left: 0;
+  li {
+    position: relative;
+    padding: .5rem 0 .5rem 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: .95rem;
+    &::before {
+      content: '\f091'; // trophy icon
+      font-family: FontAwesome;
+      position: absolute;
+      left: 0;
+      color: $accent-primary;
+      font-size: .8rem;
+    }
+    &:last-child { border-bottom: none; }
+  }
+}
+
+// ---------- Teaching Items ----------
+.teaching-section {
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+  }
+  ul {
+    padding-left: 1.2rem;
+    li {
+      padding: .25rem 0;
+      line-height: 1.5;
+    }
+  }
+  .teaching-role {
+    display: inline-block;
+    background: $accent-light;
+    color: $accent-primary;
+    font-weight: 600;
+    font-size: .8rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-bottom: .3rem;
+  }
+}

@@ -13,7 +13,7 @@
   {% elsif layout.include_header %}
     {% include header.html include_header=layout.include_header %}
   {% endif %}
-  <main class="container block p3">
+  <main class="container block p3{% if page.wide_docs %} docs-wide-container{% endif %}">
     {{ content }}
   </main>
   {% if layout.bottom_include %}

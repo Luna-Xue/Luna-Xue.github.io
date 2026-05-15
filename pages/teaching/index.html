@@ -13,9 +13,17 @@ nav_item: Teaching
 
 {% assign default_thumb = "/assets/img/research-ml-systems.jpg" %}
 
+<div class="sectioned-page-layout">
+  <div class="sectioned-page-content">
+{% for section in site.data.teaching.sections %}
+{% assign section_id = section.heading | slugify | prepend: "teaching-" %}
+<section id="{{ section_id }}" class="sectioned-page-section">
+<h2 class="project-section-heading mt3 mb2">{{ section.heading }}</h2>
+
 <div class="project-card-grid">
-  {% for c in site.data.teaching.courses %}
+  {% for c in section.courses %}
   {% assign thumb = c.image | default: default_thumb %}
+  {% assign card_term = c.term | default: section.heading %}
 
   <div class="project-card-cell">
     {% if c.url and c.url != "" %}
@@ -44,6 +52,10 @@ nav_item: Teaching
             {% endfor %}
           </em>
         </p>
+        {% elsif card_term and card_term != "" %}
+        <p class="teaching-card-term h6 gray mt0 mb1">
+          <em>{{ card_term }}</em>
+        </p>
         {% endif %}
 
         {% if c.blurb and c.blurb != "" %}
@@ -60,7 +72,13 @@ nav_item: Teaching
 
   {% endfor %}
 </div>
+</section>
+{% endfor %}
 
 <p class="h6 gray mt3 mb0">
   <em>Last updated: {{ site.time | date: "%b %Y" }}</em>
 </p>
+  </div>
+
+  {% include section-jump-nav.html sections=site.data.teaching.sections id_prefix="teaching-" title="Semesters" aria_label="Teaching terms" %}
+</div>

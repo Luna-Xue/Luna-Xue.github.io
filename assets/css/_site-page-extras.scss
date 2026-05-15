@@ -1,0 +1,39 @@
+// ---------- News Page (full) ----------
+.news-full-list li {
+  padding: .55rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 1.55;
+  &:last-child { border-bottom: none; }
+  b { color: $accent-primary; }
+}
+
+// ---------- Footer ----------
+.sticky-footer {
+  background: #f9fafb;
+  color: #888;
+  font-family: "Open Sans", sans-serif;
+}
+
+// ---------- Sponsor Image ----------
+img[alt="Research Sponsors"] {
+  border-radius: 8px;
+  box-shadow: $card-shadow;
+  padding: 8px;
+  background: #fff;
+}
+
+// ---------- Subtle page transition ----------
+main.container {
+  animation: fadeIn .35s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// ---------- Print-friendly ----------
+@media print {
+  nav, .sticky-footer, .btn { display: none !important; }
+  .container { max-width: 100%; }
+  a { color: #000 !important; text-decoration: underline; }
+}

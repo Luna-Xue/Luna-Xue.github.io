@@ -1,9 +1,9 @@
 current:
   postdoc: 
-  #   - name: Nuo Xu
-  #     area: Privacy Preserving Machine Learning, Efficient Machine Learning
-  #     photo: "NuoXu.png"
-  #     url: "https://www.linkedin.com/in/nuo-xu-a6a3a6106/?skipRedirect=true"
+  #   - name: 
+  #     area: 
+  #     photo:
+  #     url: 
 
   phd:
     - name: Saurabh Parkar
@@ -14,7 +14,7 @@ current:
     - name: Thomas Yang
       area: O-RAN/AI-RAN Buildup + Fake Base Station
       photo: "Thomas.jpg"
-      url: https://www2.hawaii.edu/~yaozheng/team/thomas-yang/"
+      url: "https://www2.hawaii.edu/~yaozheng/team/thomas-yang/"
 
     - name: Aris Carlos
       area: O-RAN/AI-RAN Buildup +  Fake Base Station
@@ -62,25 +62,23 @@ current:
 
 
 alumni:
-  # phd:
-  #   - name: Hongwu Peng
-  #     year: "2024"
-  #     position: Research Scientist at Adobe Research
-  #     url: "https://harveyp123.github.io/"
-  #   - name: Shanglin Zhou
-  #     year: "2024"
-  #     position: Senior Data Scientist at Walmart AI Lab
-  #     url: ""
-  #   - name: Shaoyi Huang
-  #     year: "2024"
-  #     position: Tenure-track Assistant Professor at Stevens Institute of Technology
-  #     url: ""
-  #   - name: Deniz Gurevin
-  #     note: Co-supervision with Prof. Omer Khan
-  #     position: Synopsys
-  #     url: ""
-   
-
+  phd:
+    # - name: Hongwu Peng
+    #   year: "2024"
+    #   position: Research Scientist at Adobe Research
+    #   url: "https://harveyp123.github.io/"
+    # - name: Shanglin Zhou
+    #   year: "2024"
+    #   position: Senior Data Scientist at Walmart AI Lab
+    #   url: ""
+    # - name: Shaoyi Huang
+    #   year: "2024"
+    #   position: Tenure-track Assistant Professor at Stevens Institute of Technology
+    #   url: ""
+    # - name: Deniz Gurevin
+    #   note: Co-supervision with Prof. Omer Khan
+    #   position: Synopsys
+    #   url: ""
   other:
     - name: Lenny Yanza
       area: AFRL SDR Challenge 2025/2026
@@ -100,4 +98,3 @@ alumni:
       position: ""
       photo: "ShaunG.jpg"
       url: ""
-

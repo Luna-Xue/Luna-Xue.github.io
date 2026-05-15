@@ -4,7 +4,8 @@
             <!-- <a href="{{ site.base_url }}"> -->
             {% include image.html path=site.thumbnail_path alt=site.name class="border bg-white p1 border-light-gray
             circle
-            square-100" %}
+            square-100
+            home-profile-photo" %}
             <!-- </a> -->
         </div>
 
@@ -37,7 +38,7 @@
 
             <div class="page-description">
                 <br />
-                <a href="assets/files/CV_Xiaochan.pdf" target="_blank" class="dark-gray"
+                <a href="assets/files/CV_Xiaochan.pdf" target="_blank" rel="noopener" class="dark-gray"
                    style="text-decoration: none; font-weight: bold;">Curriculum Vitae</a>
                 &nbsp;|&nbsp;
                 <a href="/conf-track/" class="dark-gray"
@@ -49,7 +50,7 @@
                 Connect with
                 {% for external_url_hash in site.contact_urls %}
                 {% assign external_url = external_url_hash[1] %}
-                <a href="{{ external_url.url }}" target="_blank" class="dark-gray hint--top"
+                <a href="{{ external_url.url }}" target="_blank" rel="noopener" class="dark-gray hint--top"
                     data-hint="{{ external_url.label }}">
                     <i class="fa fa-fw fa-lg fa-{{ external_url.icon }}"></i>
                 </a>
