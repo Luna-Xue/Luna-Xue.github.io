@@ -32,33 +32,29 @@ current:
       url: ""
   
   intern:
-    # - name: Tomohiro Yamada
-    #   original_institution: "Undergraduate at Boston University"
-    #   area: ""
-    #   photo: ""
-    #   url: ""
+    - name: Tomohiro Yamada
+      original_institution: "Undergraduate at Boston University"
+      area: ""
+      photo: ""
+      url: ""
     
-    # - name: XXX
-    #   original_institution: "High School Student at XXX"
-    #   area: "Smart Robot Car (JESSE 2026)"
-    #   photo: ""
-    #   url: ""
+    - name: Kensei Narahara
+      original_institution: "High School Student at XXX"
+      area: "Smart Robot Car (JESSE 2026)"
+      photo: ""
+      url: ""
     
-    # - name: XXX
-    #   original_institution: "High School Student at XXX"
-    #   area: "Smart Robot Car (JESSE 2026)"
-    #   photo: ""
-    #   url: ""
+    - name: Tim He
+      original_institution: "High School Student at XXX"
+      area: "Smart Robot Car (JESSE 2026)"
+      photo: ""
+      url: ""
     
-    # - name: XXX
-    #   original_institution: "High School Student at XXX"
-    #   area: "Smart Robot Car (JESSE 2026)"
-    #   photo: ""
-    #   url: ""
-    # - name: Ben Mechels 
-    #   area: ML System
-    #   photo: "BenMechels.jpg"
-    #   url: "https://www.linkedin.com/in/mechels/"
+    - name: Jayden Lau
+      original_institution: "High School Student at XXX"
+      area: "Smart Robot Car (JESSE 2026)"
+      photo: ""
+      url: ""
 
 
 alumni:
