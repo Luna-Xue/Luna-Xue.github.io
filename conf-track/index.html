@@ -95,7 +95,10 @@ permalink: /conf-track/
         display: grid;
         gap: 8px;
         align-items: center;
-        grid-template-columns: 1fr 1fr repeat(6, max-content);
+        grid-template-columns: minmax(280px, 2fr) minmax(180px, 1fr) minmax(220px, 1fr) repeat(4, max-content);
+        grid-template-areas:
+            "search subject sort sort sort sort sort"
+            "open fav tz tz tz export export";
     }
 
     .conf-track-toolbar input[type='search'],
@@ -111,6 +114,35 @@ permalink: /conf-track/
 
     .conf-track-toolbar input[type='search'] {
         width: 100%;
+    }
+
+    #confTrackSearch {
+        grid-area: search;
+    }
+
+    #confTrackSubject {
+        grid-area: subject;
+    }
+
+    #confTrackSort {
+        grid-area: sort;
+    }
+
+    .conf-track-toggle:has(#confTrackOnlyOpen) {
+        grid-area: open;
+    }
+
+    .conf-track-toggle:has(#confTrackOnlyFav) {
+        grid-area: fav;
+    }
+
+    #confTrackTz {
+        grid-area: tz;
+    }
+
+    #confTrackExportCsv {
+        grid-area: export;
+        justify-self: start;
     }
 
     .conf-track-btn {
@@ -295,6 +327,17 @@ permalink: /conf-track/
         .conf-track-toolbar {
             grid-template-columns: 1fr 1fr 1fr;
             grid-auto-rows: min-content;
+            grid-template-areas: none;
+        }
+
+        #confTrackSearch,
+        #confTrackSubject,
+        #confTrackSort,
+        .conf-track-toggle:has(#confTrackOnlyOpen),
+        .conf-track-toggle:has(#confTrackOnlyFav),
+        #confTrackTz,
+        #confTrackExportCsv {
+            grid-area: auto;
         }
 
         .conf-track-title {
