@@ -228,6 +228,20 @@ table.styled-table {
   gap: 1.1rem;
 }
 
+.lab-activity-sections {
+  display: grid;
+  gap: 1.8rem;
+}
+
+.lab-activity-section-title {
+  margin: 0 0 .75rem;
+  color: #26312d;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: left;
+}
+
 .lab-activity-card {
   min-width: 0;
   overflow: hidden;
