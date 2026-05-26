@@ -10,35 +10,27 @@ sections:
     id: getting-started
     file: docs/xapp/getting-started/getting-started.md
   
-  - title: XAPP Development
-    id: xapp-development
-    file: docs/xapp/getting-started/xapp-development.md
+  # - title: XAPP Development
+  #   id: xapp-development
+  #   file: docs/xapp/getting-started/xapp-development.md
   
-  - title: RMR Messaging
-    id: rmr-messaging
-    file: docs/xapp/getting-started/rmr-messaging.md
+  # - title: RMR Messaging
+  #   id: rmr-messaging
+  #   file: docs/xapp/getting-started/rmr-messaging.md
 
-  - title: REST API Setup
-    id: rest-api
-    file: docs/xapp/getting-started/rest-api.md
+  # - title: REST API Setup
+  #   id: rest-api
+  #   file: docs/xapp/getting-started/rest-api.md
   
-  - title: XAPP configuration
-    id: xapp-configuration
-    file: docs/xapp/getting-started/xapp-configuration.md
+  # - title: XAPP configuration
+  #   id: xapp-configuration
+  #   file: docs/xapp/getting-started/xapp-configuration.md
   
-  - heading: XAPP Deployment
-  - title: Installing XAPPs
-    id: installing-xapps
-    file: docs/xapp/deployment/installing-xapps.md
+  # - heading: XAPP Deployment
+  # - title: Installing XAPPs
+  #   id: installing-xapps
+  #   file: docs/xapp/deployment/installing-xapps.md
 
-  - title: Running XAPPs
-    id: running-xapps
-    file: docs/xapp/deployment/running-xapps.md
-  
-
-  
-  
-
-  
-
-  
+  # - title: Running XAPPs
+  #   id: running-xapps
+  #   file: docs/xapp/deployment/running-xapps.md
