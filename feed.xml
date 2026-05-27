@@ -1,27 +1,40 @@
 ---
+layout: null
+permalink: /feed.xml
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>    
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
-      <item>
-        <title>{{ post.title | xml_escape }}</title>
-        {% if post.author.name %}
-          <dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
-        {% endif %}        
-        {% if post.excerpt %}
-          <description>{{ post.excerpt | xml_escape }}</description>
-        {% else %}
-          <description>{{ post.content | xml_escape }}</description>
-        {% endif %}
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{% include canonical-url.html url=post.url %}</link>
-        <guid isPermaLink="true">{% include canonical-url.html url=post.url %}</guid>
-      </item>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <language>en-us</language>
+    <generator>Jekyll</generator>
+    {% if site.contact_urls.email.value %}
+    <managingEditor>{{ site.contact_urls.email.value | xml_escape }} ({{ site.name | xml_escape }})</managingEditor>
+    <webMaster>{{ site.contact_urls.email.value | xml_escape }} ({{ site.name | xml_escape }})</webMaster>
+    {% endif %}
+    {% if site.icon %}
+    <image>
+      <url>{{ site.url }}{{ site.baseurl }}{{ site.icon }}</url>
+      <title>{{ site.name | xml_escape }}</title>
+      <link>{{ site.url }}{{ site.baseurl }}/</link>
+    </image>
+    {% endif %}
+    {% for item in site.data.news limit:20 %}
+    {% assign item_title = item.title | strip_html | normalize_whitespace %}
+    {% assign item_date = item.date | date_to_rfc822 %}
+    <item>
+      <title>{{ item_title | xml_escape }}</title>
+      <dc:creator>{{ site.name | xml_escape }}</dc:creator>
+      <category>{{ item.label | default: "news" | xml_escape }}</category>
+      <description><![CDATA[{{ item.title }}]]></description>
+      <pubDate>{{ item_date }}</pubDate>
+      <link>{{ site.url }}{{ site.baseurl }}/</link>
+      <guid isPermaLink="false">{{ site.url }}/news/{{ item.date | slugify }}-{{ forloop.index }}</guid>
+    </item>
     {% endfor %}
   </channel>
 </rss>

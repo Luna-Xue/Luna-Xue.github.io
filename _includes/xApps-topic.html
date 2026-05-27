@@ -1,0 +1,156 @@
+{% assign docs_topic = site.data.xapp_docs` %}
+{% assign first_panel = docs_topic.sections | where_exp: "item", "item.id" | first %}
+
+<div class="docs-topic-layout docs-topic-layout-wide" data-docs-topic>
+    <aside class="docs-topic-sidebar" aria-label="O-RAN tutorial menu">
+        <a class="docs-back-link" href="{{ '/pages/docs' | relative_url }}">
+            <i class="fa fa-arrow-left"></i> All Docs
+        </a>
+
+        <div class="docs-topic-menu" role="tablist" aria-orientation="vertical">
+            {% for item in docs_topic.sections %}
+            {% if item.heading %}
+            <div class="docs-topic-menu-heading">{{ item.heading }}</div>
+            {% else %}
+            {% assign is_active = false %}
+            {% if item.id == first_panel.id %}
+            {% assign is_active = true %}
+            {% endif %}
+
+            <button class="docs-topic-menu-item{% if is_active %} active{% endif %}" type="button" role="tab"
+                aria-selected="{% if is_active %}true{% else %}false{% endif %}"
+                aria-controls="{{ docs_topic.base_id }}-{{ item.id }}" data-topic-target="{{ item.id }}">
+                <span>{{ item.title }}</span>
+            </button>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </aside>
+
+    <section class="docs-topic-content docs-markdown-content">
+        {% for item in docs_topic.sections %}
+        {% unless item.heading %}
+        {% assign is_active = false %}
+        {% if item.id == first_panel.id %}
+        {% assign is_active = true %}
+        {% endif %}
+        {% capture include_path %}{{ item.file }}{% endcapture %}
+        {% capture panel_md %}
+        {% include {{ include_path }} %}
+        {% endcapture %}
+        {% assign raw_panel_md = panel_md | strip %}
+        {% assign panel_body = raw_panel_md %}
+        {% assign panel_toc = false %}
+        {% if raw_panel_md contains "toc: true" %}
+        {% assign frontmatter_parts = raw_panel_md | split: "---" %}
+        {% assign frontmatter = frontmatter_parts[1] | strip %}
+        {% if frontmatter contains "toc: true" %}
+        {% assign panel_toc = true %}
+        {% assign panel_body = frontmatter_parts[2] | strip %}
+        {% endif %}
+        {% endif %}
+
+        <article class="docs-topic-panel{% if is_active %} active{% endif %}{% if panel_toc %} docs-topic-panel-with-toc{% endif %}"
+            id="{{ docs_topic.base_id }}-{{ item.id }}" data-topic-panel="{{ item.id }}" role="tabpanel">
+            <div class="docs-panel-layout{% if panel_toc %} docs-panel-layout-with-toc{% endif %}">
+                <div class="docs-panel-body">
+                    {{ panel_body | markdownify }}
+                </div>
+                {% if panel_toc %}
+                <nav class="docs-panel-toc" aria-label="{{ item.title }} page sections" data-panel-toc></nav>
+                {% endif %}
+            </div>
+        </article>
+        {% endunless %}
+        {% endfor %}
+    </section>
+</div>
+
+<script>
+    (function () {
+        var root = document.querySelector('[data-docs-topic]');
+        if (!root) return;
+
+        var buttons = root.querySelectorAll('[data-topic-target]');
+        var panels = root.querySelectorAll('[data-topic-panel]');
+
+        function slugify(text) {
+            return text.toLowerCase()
+                .replace(/&/g, ' and ')
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+        }
+
+        function buildPanelToc(panel) {
+            var toc = panel.querySelector('[data-panel-toc]');
+            var body = panel.querySelector('.docs-panel-body');
+            if (!toc || !body || toc.getAttribute('data-built') === 'true') return;
+
+            var headings = body.querySelectorAll('h2, h3, h4, h5, h6');
+            if (!headings.length) {
+                toc.parentNode.removeChild(toc);
+                return;
+            }
+
+            var title = document.createElement('div');
+            title.className = 'docs-panel-toc-title';
+            title.textContent = 'On this page';
+            toc.appendChild(title);
+
+            var usedIds = {};
+            for (var i = 0; i < headings.length; i++) {
+                var heading = headings[i];
+                var baseId = heading.id || slugify(heading.textContent);
+                var id = baseId || 'section';
+                var count = usedIds[id] || 0;
+                usedIds[id] = count + 1;
+                if (count > 0) id = id + '-' + count;
+                heading.id = id;
+
+                var link = document.createElement('a');
+                link.href = '#' + id;
+                link.textContent = heading.textContent;
+                link.className = 'docs-panel-toc-link docs-panel-toc-' + heading.tagName.toLowerCase();
+                toc.appendChild(link);
+            }
+
+            toc.setAttribute('data-built', 'true');
+        }
+
+        function showSection(id, updateHash) {
+            for (var i = 0; i < buttons.length; i++) {
+                var active = buttons[i].getAttribute('data-topic-target') === id;
+                buttons[i].classList.toggle('active', active);
+                buttons[i].setAttribute('aria-selected', active ? 'true' : 'false');
+            }
+
+            for (var j = 0; j < panels.length; j++) {
+                var panelActive = panels[j].getAttribute('data-topic-panel') === id;
+                panels[j].classList.toggle('active', panelActive);
+                if (panelActive) buildPanelToc(panels[j]);
+            }
+
+            if (updateHash && window.history) {
+                window.history.replaceState(null, '', '#' + id);
+            }
+        }
+
+        for (var k = 0; k < buttons.length; k++) {
+            buttons[k].addEventListener('click', function () {
+                showSection(this.getAttribute('data-topic-target'), true);
+            });
+        }
+
+        var initial = window.location.hash ? window.location.hash.replace('#', '') : '';
+        if (initial && root.querySelector('[data-topic-target="' + initial + '"]')) {
+            showSection(initial, false);
+        } else {
+            for (var m = 0; m < panels.length; m++) {
+                if (panels[m].classList.contains('active')) {
+                    buildPanelToc(panels[m]);
+                    break;
+                }
+            }
+        }
+    })();
+</script>

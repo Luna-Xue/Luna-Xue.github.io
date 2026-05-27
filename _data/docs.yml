@@ -19,6 +19,11 @@
   label: "Tutorial"
   summary: "Structured setup notes for the WINGS Lab O-RAN/AI-RAN testbed, including Kubernetes, Near RT-RIC, 5G core, and UE configuration."
 
+- id: xApps
+  title: "xApps Development Tutorial"
+  label: "Tutorial"
+  summary: "A step-by-step guide to developing and deploying xApps in the O-RAN ecosystem."
+
 - id: contribution-guide
   title: "Contribution Guide"
   label: "Guide"
