@@ -49,28 +49,30 @@
           year      = {2026}
         }
 
-- name: "Adaptive Mode Selection in mmWave ISAC via Spectrally Disjoint Composite Waveforms"
+- name: "SPECTRA: Spectrally Disjoint OFDM–FMCW mmWave ISAC with Utility-Driven Mode Selection"
   authors: "Saurabh Parkar, <strong>Xiaochan Xue#</strong>, Shuang Li, Yao Zheng"
-  publish: "TechRxiv. Submitted to IoT-J. Under review, 2026"
+  publish: "PrePrint. Submitted to IoT-J. Under review, 2026"
   type: "journal"
   image: "TCCN.png"
-  details: "https://doi.org/10.36227/techrxiv.177156316.67611838/v1"
+  # details: "https://doi.org/10.36227/techrxiv.177156316.67611838/v1"
+  details: "/assets/files/2026_IOT_J_SPECTRA.pdf"
   cate: ["isac", "spectrum_wireless"]
   list_only: false
   attach:
     - label: "paper"
-      url: "https://doi.org/10.36227/techrxiv.177156316.67611838/v1"
+      # url: "https://doi.org/10.36227/techrxiv.177156316.67611838/v1"
+      url: "/assets/files/2026_IOT_J_SPECTRA.pdf"
       icon: "file-pdf-o"
     - label: "cite"
       type: "bibtex"
       content: |
-        @article{parkar2025adaptive,
-          title   = {Adaptive Mode Selection in mmWave ISAC via Spectrally Disjoint Composite Waveforms},
+        @article{parkar2025spectra,
+          title   = {SPECTRA: Spectrally Disjoint OFDM–FMCW mmWave ISAC with Utility-Driven Mode Selection},
           author  = {Parkar, Saurabh and Xue, Xiaochan and Li, Shuang and Zheng, Yao},
           journal = {TechRxiv},
           year    = {2026},
-          doi     = {10.36227/techrxiv.177156316.67611838/v1}
         }
+      # doi     = {10.36227/techrxiv.177156316.67611838/v1}
 
 - name: "AI-assisted Composite ISAC for mmWave Respiration Pattern Recognition"
   authors: "<strong>Xiaochan Xue</strong>, Saurabh Parkar, Shucheng Yu, Yao Zheng"

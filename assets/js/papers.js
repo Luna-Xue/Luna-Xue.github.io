@@ -100,6 +100,71 @@ function w3RemoveClass(element, name) {
   element.className = arr.join(" ");
 }
 
+function setCopyHint(el, message) {
+  if (!el) return;
+
+  var originalHint = el.getAttribute('data-original-hint') || el.getAttribute('data-hint') || '';
+  if (!el.getAttribute('data-original-hint')) {
+    el.setAttribute('data-original-hint', originalHint);
+  }
+
+  el.setAttribute('data-hint', message);
+
+  window.clearTimeout(el.copyHintTimer);
+  el.copyHintTimer = window.setTimeout(function() {
+    el.setAttribute('data-hint', originalHint);
+  }, 1600);
+}
+
+function fallbackCopyText(text) {
+  var textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'fixed';
+  textarea.style.top = '-9999px';
+  textarea.style.left = '-9999px';
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
+
+  var copied = false;
+  try {
+    copied = document.execCommand('copy');
+  } catch (e) {
+    copied = false;
+  }
+
+  document.body.removeChild(textarea);
+  return copied;
+}
+
+function copyBibtex(el) {
+  var bibtex = el ? el.getAttribute('data-bibtex') : '';
+  if (!bibtex) {
+    setCopyHint(el, 'No BibTeX available');
+    return;
+  }
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(bibtex).then(function() {
+      setCopyHint(el, 'BibTeX copied');
+    }).catch(function() {
+      if (fallbackCopyText(bibtex)) {
+        setCopyHint(el, 'BibTeX copied');
+      } else {
+        setCopyHint(el, 'Copy failed');
+      }
+    });
+    return;
+  }
+
+  if (fallbackCopyText(bibtex)) {
+    setCopyHint(el, 'BibTeX copied');
+  } else {
+    setCopyHint(el, 'Copy failed');
+  }
+}
+
 // Initialize on page load
 filterSelection(allTags.slice());
 

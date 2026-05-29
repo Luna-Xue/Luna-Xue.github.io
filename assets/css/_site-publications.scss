@@ -22,7 +22,7 @@
   padding: 5px 14px !important;
   font-size: .78rem;
   font-family: "Open Sans", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   transition: all .2s;
   margin: 3px !important;
 }
@@ -66,6 +66,26 @@
   #myBtnContainer .btn .fa {
     display: none;
   }
+}
+
+.publication-note {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .35rem .65rem;
+  border-left: 3px solid $accent-primary;
+  border-radius: 0 6px 6px 0;
+  background: rgba($accent-primary, .06);
+  color: #59645f;
+  font-family: "Open Sans", sans-serif;
+  font-size: .86rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.publication-note-marker {
+  color: $accent-primary;
+  font-weight: 800;
 }
 
 // ---------- Publication Cards ----------
