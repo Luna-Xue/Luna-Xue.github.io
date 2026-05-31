@@ -1,0 +1,56 @@
+<h3>Lab Activities</h3>
+{% if site.data.lab_activities and site.data.lab_activities.size > 0 %}
+{% assign lab_activities = site.data.lab_activities | sort: "start_date" | reverse %}
+{% assign lab_activity_groups = lab_activities | group_by_exp: "activity", "activity.start_date | date: '%B %Y'" %}
+<div class="lab-activity-sections mb3">
+    {% for group in lab_activity_groups %}
+    <section class="lab-activity-section">
+        <h4 class="lab-activity-section-title">{{ group.name }}</h4>
+        <div class="lab-activity-grid">
+            {% for activity in group.items %}
+            <article class="lab-activity-card">
+                {% if activity.image and activity.image != "" %}
+                <img src="/assets/img/lab/{{ activity.image }}" alt="{{ activity.title }}">
+                {% else %}
+                <div class="lab-activity-placeholder">
+                    <i class="fa fa-camera"></i>
+                </div>
+                {% endif %}
+                <div class="lab-activity-body">
+                    {% if activity.start_date and activity.start_date != "" %}
+                    {% assign start_month_year = activity.start_date | date: "%B %Y" %}
+                    {% assign start_day = activity.start_date | date: "%-d" %}
+                    {% assign start_month_day = activity.start_date | date: "%B %-d" %}
+                    {% assign start_year = activity.start_date | date: "%Y" %}
+                    {% assign start_display = activity.start_date | date: "%B %-d, %Y" %}
+                    {% assign activity_date = start_display %}
+                    {% if start_day == "1" and activity.end_date == nil %}
+                    {% assign activity_date = start_month_year %}
+                    {% endif %}
+                    {% if activity.end_date and activity.end_date != "" and activity.end_date != activity.start_date %}
+                    {% assign end_month_year = activity.end_date | date: "%B %Y" %}
+                    {% assign end_day = activity.end_date | date: "%-d" %}
+                    {% assign end_display = activity.end_date | date: "%B %-d, %Y" %}
+                    {% if start_month_year == end_month_year %}
+                    {% assign activity_date = start_month_day | append: "-" | append: end_day | append: ", " | append: start_year %}
+                    {% else %}
+                    {% assign activity_date = start_month_day | append: " - " | append: end_display %}
+                    {% endif %}
+                    {% endif %}
+                    <div class="lab-activity-date">{{ activity_date }}</div>
+                    {% endif %}
+                    <h4>{{ activity.title }}</h4>
+                    <p>{{ activity.description }}</p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+</div>
+{% else %}
+<div class="lab-activity-empty mb3">
+    <i class="fa fa-camera"></i>
+    <span>Lab activity and student outreach photos will be added here.</span>
+</div>
+{% endif %}

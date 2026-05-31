@@ -31,11 +31,11 @@
 </div>
 
 <!-- News -->
-<h3>News</h3>
+<h3 id="news">News</h3>
 <div class="clearfix max-height-400 overflow-scroll">
     <ul class="dark-gray" style="padding-left: 20px;">
         {% for new in site.data.news %}
-        <li class="h5 header-font">[<b>{{new.date}}</b>] {{ new.title }}</li>
+        <li id="news-{{ new.date | slugify }}-{{ forloop.index }}" class="h5 header-font">[<b>{{new.date}}</b>] {{ new.title }}</li>
         {% endfor %}
     </ul>
 </div>

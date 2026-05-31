@@ -6,7 +6,7 @@
 <head>
   {% include head.html %}
 </head>
-<body>
+<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
   {% include nav.html %}
   {% if page.include_header %}
     {% include header.html include_header=page.include_header %}

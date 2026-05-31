@@ -1,0 +1,61 @@
+<script>
+(function() {
+    var header = document.querySelector('.team-lab-page > header');
+    var nav = document.querySelector('nav.site-nav');
+    if (!header) return;
+    var title = header.querySelector('.page-title');
+    var titleLink = title ? title.closest('a') : null;
+    var labLinks = header.querySelector('.hero-lab-links');
+    if (!title || !labLinks) return;
+
+    var compactHeader = document.createElement('div');
+    compactHeader.className = 'team-compact-header';
+    compactHeader.setAttribute('aria-hidden', 'true');
+
+    var compactInner = document.createElement('div');
+    compactInner.className = 'team-compact-header-inner';
+
+    var compactTitle = document.createElement('a');
+    compactTitle.className = 'team-compact-title';
+    compactTitle.href = titleLink ? titleLink.href : window.location.href;
+    compactTitle.textContent = title.textContent.replace(/\s+/g, ' ').trim();
+
+    var compactLinks = labLinks.cloneNode(true);
+    compactLinks.className = 'team-compact-links';
+
+    compactInner.appendChild(compactTitle);
+    compactInner.appendChild(compactLinks);
+    compactHeader.appendChild(compactInner);
+    document.body.appendChild(compactHeader);
+
+    var ticking = false;
+
+    function updateCompactTop() {
+        var navHeight = nav ? nav.getBoundingClientRect().height : 0;
+        document.documentElement.style.setProperty('--team-compact-top', navHeight + 'px');
+    }
+
+    function updateTeamHeader() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+        var shouldShow = scrollTop > header.offsetHeight * 0.7;
+        compactHeader.classList.toggle('is-visible', shouldShow);
+        compactHeader.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+
+        ticking = false;
+    }
+
+    function requestTeamHeaderUpdate() {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateTeamHeader);
+    }
+
+    updateCompactTop();
+    updateTeamHeader();
+    window.addEventListener('scroll', requestTeamHeaderUpdate, { passive: true });
+    window.addEventListener('resize', function() {
+        updateCompactTop();
+        requestTeamHeaderUpdate();
+    });
+})();
+</script>

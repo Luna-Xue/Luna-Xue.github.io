@@ -222,6 +222,85 @@ table.styled-table {
 .hero-lab-github i { color: #24292f; }
 .hero-lab-youtube i { color: #ff0000; }
 
+.team-compact-header {
+  position: fixed;
+  top: var(--team-compact-top, 48px);
+  left: 0;
+  right: 0;
+  z-index: 95;
+  border-bottom: 1px solid #e7ebee;
+  background: linear-gradient(135deg, #f7f9fb 0%, #edf1f5 100%);
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: opacity .18s ease, transform .24s ease;
+}
+
+.team-compact-header::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #f7f9fb;
+}
+
+.team-compact-header.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.team-compact-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+  max-width: 65em;
+  margin: 0 auto;
+  padding: .55rem 1rem;
+}
+
+.team-compact-title {
+  min-width: 0;
+  color: $accent-primary !important;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.team-compact-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: .45rem;
+}
+
+.team-compact-links .hero-lab-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  min-height: 34px;
+  padding: 0;
+  font-size: 0;
+  line-height: 1;
+}
+
+.team-compact-links .hero-lab-link i {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
 .lab-activity-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
@@ -231,6 +310,39 @@ table.styled-table {
 .lab-activity-sections {
   display: grid;
   gap: 1.8rem;
+}
+
+.lab-activities-callout {
+  display: flex;
+  justify-content: center;
+  padding: .95rem 1rem;
+  border: 1px solid #dfe8e4;
+  border-radius: 6px;
+  background: #f7faf8;
+
+  a {
+    color: $accent-primary !important;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none !important;
+  }
+
+  a::after {
+    content: "\2197";
+    display: inline-block;
+    margin-left: .25rem;
+    font-size: .72em;
+    line-height: 1;
+    vertical-align: super;
+  }
+
+  a:hover,
+  a:focus {
+    color: #111 !important;
+    text-decoration: none !important;
+  }
 }
 
 .lab-activity-section-title {
@@ -331,6 +443,10 @@ table.styled-table {
     min-width: 0;
     box-sizing: border-box;
     white-space: normal;
+  }
+
+  .team-compact-header {
+    display: none;
   }
 
   table.styled-table {

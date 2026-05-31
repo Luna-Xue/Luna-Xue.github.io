@@ -24,4 +24,35 @@
   "use strict";
 
   responsiveNav('.nav-collapse');
+
+  var labDropdown = document.querySelector('.site-nav-dropdown');
+  if (!labDropdown) return;
+
+  var labToggle = labDropdown.querySelector('.site-nav-dropdown-toggle');
+  var touchDropdownQuery = window.matchMedia && window.matchMedia('(hover: none) and (min-width: 45.01em)');
+
+  function closeLabDropdown() {
+    labDropdown.classList.remove('is-open');
+    if (labToggle) labToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function openLabDropdown() {
+    labDropdown.classList.add('is-open');
+    if (labToggle) labToggle.setAttribute('aria-expanded', 'true');
+  }
+
+  if (labToggle && touchDropdownQuery) {
+    labToggle.addEventListener('click', function(event) {
+      if (!touchDropdownQuery.matches) return;
+
+      if (!labDropdown.classList.contains('is-open')) {
+        event.preventDefault();
+        openLabDropdown();
+      }
+    });
+
+    document.addEventListener('click', function(event) {
+      if (!labDropdown.contains(event.target)) closeLabDropdown();
+    });
+  }
 })();
