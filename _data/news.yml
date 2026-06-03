@@ -1,5 +1,9 @@
+- label: paper
+  title: "One paper submitted to <strong>IEEE ISAC 2026</strong>"
+  date: Jun, 2026
+
 - label: other
-  title: "WINGS Lab will hold the <a class='news-link' href='https://www.eng.hawaii.edu/outreach/jesse/' target='_blank' rel='noopener'><strong>Junior Engineers Summer STEM Experience (JESSE) 2026</strong></a> at UH Manoa, Saurabh Parkar will lead the program."
+  title: "WINGS Lab is hosting the <a class='news-link' href='https://www.eng.hawaii.edu/outreach/jesse/' target='_blank' rel='noopener'><strong>Junior Engineers Summer STEM Experience (JESSE) 2026</strong></a> at UH Manoa, Saurabh Parkar will lead the program."
   date: Jun, 2026
 
 - label: other
@@ -9,6 +13,10 @@
 - label: other
   title: "I will attend <a class='news-link' href='https://ims-ieee.org/ims2026-boston' target='_blank' rel='noopener'><strong>IMS 2026 Boston</strong></a>"
   date: Jun, 2026
+
+- label: paper
+  title: "Saurabh Parkar submit one paper to <strong>IEEE Internet of Things Journal (IoT-J)</strong>"
+  date: May, 2026
 
 - label: other
   title: "I will attend the <strong>International ISAC Innovation Forum</strong> at GMU"
