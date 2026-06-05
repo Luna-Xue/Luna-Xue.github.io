@@ -23,19 +23,23 @@ permalink: /teaching/ece-362/
     line-height: 1.5;
   }
 
-  /* ---- Weekly schedule table (has a header row) ---- */
+  /* ---- Weekly schedule table (Week + Mon/Wed/Fri grid) ---- */
+  .course-schedule-table {
+    table-layout: fixed;
+  }
+
   .course-schedule-table thead th {
     background-color: #00693e;
     color: #fff;
     font-weight: 700;
-    text-align: left;
+    text-align: center;
     padding: 12px;
   }
 
   .course-schedule-table td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
-    text-align: left;
+    text-align: center;
     vertical-align: top;
   }
 
@@ -43,17 +47,10 @@ permalink: /teaching/ece-362/
     background-color: #f2f2f2;
   }
 
-  /* Narrow, centered "Week" column */
+  /* Narrow "Week" column; Monday / Wednesday / Friday share the rest equally */
   .course-schedule-table th:first-child,
   .course-schedule-table td:first-child {
-    width: 60px;
-    text-align: center;
-  }
-
-  /* Keep the date range on a single line */
-  .course-schedule-table th:nth-child(2),
-  .course-schedule-table td:nth-child(2) {
-    white-space: nowrap;
+    width: 64px;
   }
 
   /* ---- Course information table (key / value rows) ---- */
@@ -130,116 +127,114 @@ permalink: /teaching/ece-362/
   <thead>
     <tr>
       <th>Week</th>
-      <th>Dates</th>
-      <th>Class Meetings</th>
-      <th>Notes</th>
+      <th>Monday</th>
+      <th>Wednesday</th>
+      <th>Friday</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>1</td>
-      <td>Aug 24-Aug 30</td>
-      <td>Mon | Wed | Fri</td>
-      <td></td>
+      <td>Aug 24</td>
+      <td>Aug 26</td>
+      <td>Aug 28</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>Aug 31-Sep 6</td>
-      <td>Mon | Wed | Fri</td>
-      <td></td>
+      <td>Aug 31</td>
+      <td>Sep 2</td>
+      <td>Sep 4</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>Sep 7-Sep 13</td>
-      <td><span class="no-class">Mon: No class</span> | Wed | Fri</td>
-      <td></td>
+      <td>Sep 7 <span class="no-class">· No class (Labor Day)</span></td>
+      <td>Sep 9</td>
+      <td>Sep 11</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>Sep 14-Sep 20</td>
-      <td>Mon | Wed | Fri</td>
-      <td></td>
+      <td>Sep 14</td>
+      <td>Sep 16</td>
+      <td>Sep 18</td>
     </tr>
     <tr>
       <td>5</td>
-      <td>Sep 21-Sep 27</td>
-      <td>Mon | Wed | Fri</td>
-      <td></td>
+      <td>Sep 21</td>
+      <td>Sep 23</td>
+      <td>Sep 25</td>
     </tr>
     <tr>
       <td>6</td>
-      <td>Sep 28-Oct 4</td>
-      <td>Mon | Wed | Fri</td>
-      <td></td>
+      <td>Sep 28</td>
+      <td>Sep 30</td>
+      <td>Oct 2</td>
     </tr>
     <tr>
       <td>7</td>
-      <td>Oct 5-Oct 11</td>
-      <td>Mon | Wed | Fri</td>
-      <td></td>
+      <td>Oct 5</td>
+      <td>Oct 7</td>
+      <td>Oct 9</td>
     </tr>
     <tr>
       <td>8</td>
-      <td>Oct 12-Oct 18</td>
-      <td>Mon | Wed | Fri</td>
-      <td></td>
+      <td>Oct 12</td>
+      <td>Oct 14</td>
+      <td>Oct 16</td>
     </tr>
     <tr>
       <td>9</td>
-      <td>Oct 19-Oct 25</td>
-      <td>Mon | Wed | Fri</td>
-      <td></td>
+      <td>Oct 19</td>
+      <td>Oct 21</td>
+      <td>Oct 23</td>
     </tr>
     <tr>
       <td>10</td>
-      <td>Oct 26-Nov 1</td>
-      <td>Mon | Wed | Fri</td>
-      <td></td>
+      <td>Oct 26</td>
+      <td>Oct 28</td>
+      <td>Oct 30</td>
     </tr>
     <tr>
       <td>11</td>
-      <td>Nov 2-Nov 8</td>
-      <td>Mon | Wed | Fri</td>
-      <td></td>
+      <td>Nov 2</td>
+      <td>Nov 4</td>
+      <td>Nov 6</td>
     </tr>
     <tr>
       <td>12</td>
-      <td>Nov 9-Nov 15</td>
-      <td>Mon | <span class="no-class">Wed: No class</span> | Fri</td>
-      <td></td>
+      <td>Nov 9</td>
+      <td>Nov 11 <span class="no-class">· No class (Veterans Day)</span></td>
+      <td>Nov 13</td>
     </tr>
     <tr>
       <td>13</td>
-      <td>Nov 16-Nov 22</td>
-      <td>Mon | Wed | Fri</td>
-      <td></td>
+      <td>Nov 16</td>
+      <td>Nov 18</td>
+      <td>Nov 20</td>
     </tr>
     <tr>
       <td>14</td>
-      <td>Nov 23-Nov 29</td>
-      <td>Mon | Wed | <span class="no-class">Fri: No class</span></td>
-      <td></td>
+      <td>Nov 23</td>
+      <td>Nov 25</td>
+      <td>Nov 27 <span class="no-class">· No class (Thanksgiving)</span></td>
     </tr>
     <tr>
       <td>15</td>
-      <td>Nov 30-Dec 6</td>
-      <td>Mon | Wed | Fri</td>
-      <td></td>
+      <td>Nov 30</td>
+      <td>Dec 2</td>
+      <td>Dec 4</td>
     </tr>
     <tr>
       <td>16</td>
-      <td>Dec 7-Dec 13</td>
-      <td>Mon | Wed | <span class="no-class">Fri: No class</span></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Finals</td>
-      <td>Dec 14-Dec 18</td>
-      <td>Final exam: Monday, 12:00-2:00 PM</td>
-      <td></td>
+      <td>Dec 7</td>
+      <td>Dec 9</td>
+      <td>Dec 11 <span class="no-class">· No class (Study period)</span></td>
     </tr>
   </tbody>
 </table>
+
+<p>
+  <strong>Final exam:</strong> Monday, December 14, 2026, 12:00-2:00 PM.
+</p>
 
 <h2>Important Academic Dates</h2>
 
