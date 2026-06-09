@@ -43,7 +43,7 @@ sections:
         url: "/projects/reconfigurable-intelligent-surface/"
         status: "Ongoing"
 
-      - title: "Sionna-enabled UH Manoa Campus-Scale Ray Tracing for AI-RAN/ISAC"
+      - title: "Sionna-enabled Scale Ray Tracing for AI-RAN/ISAC"
         subtitle: "Measurement-calibrated urban RF modeling for AI-native RAN control, ISAC evaluation, and wireless digital twins"
         image: "/assets/img/projects/Sonnia.png"
         url: ""
