@@ -27,9 +27,21 @@ nav_item: Projects
          aria-label="{{ card.title | xml_escape }}"></div>
 
     <div class="project-card-body">
-      {% if card.status and card.status != "" %}
-      {% assign status_class = card.status | downcase | replace: " ", "-" %}
-      <div class="project-status-badge project-status-{{ status_class }}">{{ card.status }}</div>
+      {% assign has_status = false %}
+      {% if card.status and card.status != "" %}{% assign has_status = true %}{% endif %}
+      {% assign has_funding = false %}
+      {% if card.funding and card.funding != "" %}{% assign has_funding = true %}{% endif %}
+
+      {% if has_status or has_funding %}
+      <div class="project-badge-row">
+        {% if has_status %}
+        {% assign status_class = card.status | downcase | replace: " ", "-" %}
+        <span class="project-status-badge project-status-{{ status_class }}">{{ card.status }}</span>
+        {% endif %}
+        {% if has_funding %}
+        <span class="project-funding-badge"><i class="fa fa-certificate" aria-hidden="true"></i>{{ card.funding }} Funded</span>
+        {% endif %}
+      </div>
       {% endif %}
 
       <div class="project-card-title">{{ card.title }}</div>
