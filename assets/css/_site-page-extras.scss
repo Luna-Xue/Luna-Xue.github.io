@@ -18,14 +18,14 @@
 .research-sponsors {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 1.5rem;
   margin: 0.5rem 0 1rem;
 
   img {
-    width: 140px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
     object-position: center;
     border-radius: 8px;
