@@ -14,12 +14,26 @@
   font-family: "Open Sans", sans-serif;
 }
 
-// ---------- Sponsor Image ----------
-img[alt="Research Sponsors"] {
-  border-radius: 8px;
-  box-shadow: $card-shadow;
-  padding: 8px;
-  background: #fff;
+// ---------- Research Sponsors ----------
+.research-sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0.5rem 0 1rem;
+
+  img {
+    width: 140px;
+    height: 80px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+    box-shadow: $card-shadow;
+    padding: 8px;
+    background: #fff;
+    box-sizing: border-box;
+  }
 }
 
 // ---------- Subtle page transition ----------
