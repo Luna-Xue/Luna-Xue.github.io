@@ -137,7 +137,7 @@ sudo gnb -c <path-to-your-config>
 
 ## Expert Configuration
 
-***OCUDU*** fills many omitted configuration parameters with built-in defaults, so most basic deployments only require the main radio, cell, core network, and E2 settings. This keeps the configuration lightweight for standard testbed bring-up.
+***OCUDU*** fills many omitted configuration parameters with built-in defaults, so most basic deployments only require the main radio parameters (`ru_sdr`), cell, core network, E2 settings, and metrics paramteres. This keeps the configuration lightweight for standard testbed bring-up.
 
 For more advanced experiments, OCUDU also supports detailed control over scheduler behavior, slicing policies, slot allocation, TDD patterns, and other RAN parameters. These options are useful when tuning the gNB for specific traffic profiles, uplink/downlink balance, latency requirements, or controlled research experiments.
 

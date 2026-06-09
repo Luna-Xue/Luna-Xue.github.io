@@ -19,7 +19,7 @@ NEAR-RT-RIC/
 ```
 
 ## NGINX Setup
-`nginx.sh` sets up a installs NGINX and configures a simple reverse proxy with basic authentication to securely expose the Kubernetes dashboard proxy running on the local machine.
+`nginx.sh` sets up and installs NGINX and configures a simple reverse proxy with basic authentication to securely expose the Kubernetes dashboard proxy running on the local machine.
 
 The proxy forwards requests from a public port to the local kubectl proxy service. The script uses a default username and password for convenience in closed lab environments. Users may change these credentials if the service is exposed outside the local network.
 
@@ -38,7 +38,7 @@ sudo htpasswd -cb /etc/nginx/htpasswd admin admin123
 **Users Should modify following parameters according to their environment.**
  - **Add your local Node IP Address in**
     ```sh 
-    NODE_IP="${NODE_IP:-192.168.50.103}"
+    NODE_IP="${NODE_IP:-192.168.50.103}" # This will be the eno1, eth0 interface of your host PC, also make sure this IP will be static on router.
     ```
  - **Change Ansible username to the username of host pc**
     ```sh
@@ -52,8 +52,8 @@ sudo htpasswd -cb /etc/nginx/htpasswd admin admin123
     Interface name should be your internet interface name usually `eno1/eth0`
  - **Metallb IP Pool**
     
-    This IP range should be removed from the router's DHCP allocation to prevent conflicts with other devices on the network.
-    MetalLB assigns addresses from this range to Kubernetes services.
+    This IP range should be removed from the **router's DHCP allocation** to prevent conflicts with other devices on the network.
+    MetalLB assigns addresses from this range to Kubernetes services requiring external nodes access.
     ```sh
     METALLB_POOL="${METALLB_POOL:-192.168.50.245-192.168.50.246}"
     ```

@@ -38,14 +38,14 @@ sections:
     id: gNB-deployment
     file: docs/oran/core-5g/gnb-deployment.md
   # TBC Parts
-  - title: MIMO Deployment
-    id: mimo-deployment
-    # file: docs/oran/core-5g/mimo-deployment.md
-    file: docs/tbc.md
-  - title: CU-DU Split Deployments
-    id: cu-du-split-deployments
-    # file: docs/oran/core-5g/cu-du-split-deployments.md
-    file: docs/tbc.md
+  # - title: MIMO Deployment
+  #   id: mimo-deployment
+  #   # file: docs/oran/core-5g/mimo-deployment.md
+  #   file: docs/tbc.md
+  # - title: CU-DU Split Deployments
+  #   id: cu-du-split-deployments
+  #   # file: docs/oran/core-5g/cu-du-split-deployments.md
+  #   file: docs/tbc.md
 
   - heading: UE Configuration
 
