@@ -1,3 +1,7 @@
+- label: award
+  title: "Our proposal has been selected for the <strong>NVIDIA Academic Grant Program</strong>; our lab will receive <strong>four NVIDIA RTX PRO 6000 Blackwell GPUs</strong> to support AI-native wireless, O-RAN, cybersecurity, edge AI, and ISAC research"
+  date: Jun, 2026
+
 - label: paper
   title: "One paper submitted to <strong>IEEE ISAC 2026</strong>"
   date: Jun, 2026
