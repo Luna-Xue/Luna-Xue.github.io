@@ -63,6 +63,7 @@ sections:
         image: "/assets/img/research-SLM.png"
         url: "/projects/edge-slm-iot/"
         status: "Ongoing"
+        funding: "NVIDIA"
 
   - heading: "AI-RAN testbed & Infrastructure"
     cards:
