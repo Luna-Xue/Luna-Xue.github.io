@@ -1,1 +1,15 @@
 // Site enhancement partials are imported from main.scss.
+
+pre,
+pre code,
+.highlight pre,
+.highlight code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+pre,
+.highlight {
+  overflow-x: hidden;
+}
