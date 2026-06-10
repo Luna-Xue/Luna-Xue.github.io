@@ -3,6 +3,17 @@
 <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
 <meta name="description" content="{{ site.description }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{% assign google_analytics_id = site.google_analytics | default: "" | strip %}
+{% if google_analytics_id != "" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics_id | url_encode }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ google_analytics_id | escape }}');
+</script>
+{% endif %}
 {% include share-meta.html %}
 <link rel="canonical" href="{% include canonical-url.html %}">
 <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ '/feed.xml' | absolute_url }}">
