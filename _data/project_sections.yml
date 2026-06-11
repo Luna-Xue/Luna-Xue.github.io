@@ -45,7 +45,7 @@ sections:
 
       - title: "Sionna-enabled Scale Ray Tracing for AI-RAN/ISAC"
         subtitle: "Measurement-calibrated urban RF modeling for AI-native RAN control, ISAC evaluation, and wireless digital twins"
-        image: "/assets/img/projects/Sonnia.png"
+        image: "/assets/img/Research_shipyard2.gif"
         url: "/projects/sionna-scale-ray-tracing/"
         status: "Planning"
         funding: "NVIDIA"
