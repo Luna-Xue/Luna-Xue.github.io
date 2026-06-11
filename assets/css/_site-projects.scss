@@ -127,61 +127,44 @@
   margin: 0;
 }
 
-.project-feature-figure,
-.project-visual-grid figure {
-  margin: 1.1rem 0;
+.project-inline-figure {
+  width: 260px;
+  max-width: 42%;
+  margin: .2rem 0 1rem;
   background: #fff;
-  border: 1px solid #edf0f3;
-  border-radius: 8px;
+  border: 1px solid #e7ebee;
+  border-radius: 10px;
   box-shadow: $card-shadow;
   overflow: hidden;
 
   img {
     display: block;
     width: 100%;
-    height: auto;
-  }
-
-  figcaption {
-    margin: 0;
-    padding: .7rem .85rem .8rem;
-    color: #555;
-    font-size: .86rem;
-    line-height: 1.45;
-    background: #fafbfc;
-    border-top: 1px solid #edf0f3;
-  }
-}
-
-.project-feature-figure {
-  img {
-    max-height: 420px;
-    object-fit: cover;
-    object-position: center;
-  }
-}
-
-.project-visual-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin: .75rem 0 1.4rem;
-
-  figure {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-  }
-
-  img {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     object-position: center;
+    background: #eef3f0;
   }
 
   figcaption {
-    flex: 1;
+    margin: 0;
+    padding: .65rem .75rem .75rem;
+    color: #59645f;
+    font-size: .78rem;
+    line-height: 1.45;
+    background: #fff;
+    border-top: 1px solid #e7ebee;
   }
+}
+
+.project-inline-figure--left {
+  float: left;
+  margin-right: 1.25rem;
+}
+
+.project-inline-figure--right {
+  float: right;
+  margin-left: 1.25rem;
 }
 
 .teaching-course-card .project-card-body {
@@ -283,8 +266,11 @@
     background: #f7f9fb;
   }
 
-  .project-visual-grid {
-    grid-template-columns: minmax(0, 1fr);
+  .project-inline-figure {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem 0;
   }
 }
 

@@ -8,42 +8,51 @@ nav_item: Projects
 permalink: /projects/sionna-scale-ray-tracing/
 ---
 
+<figure class="project-inline-figure project-inline-figure--right">
+  <img src="/assets/img/Research_shipyard2.gif" alt="Sionna ray tracing over a shipyard-scale wireless scene">
+  <figcaption>Geometry-aware ray tracing over a shipyard-scale scene.</figcaption>
+</figure>
+
 <p>
   This project develops Sionna-enabled large-scale ray tracing workflows for
   AI-RAN and integrated sensing and communication research. The work focuses on
   measurement-calibrated urban RF modeling, wireless digital twins, and simulation
   pipelines that connect realistic propagation behavior with AI-native RAN control
-  and ISAC evaluation.
+  and ISAC evaluation. Instead of treating the simulator as a standalone channel
+  generator, the project uses ray tracing as a bridge between physical layout,
+  semantic context, and AI-driven wireless decision making.
 </p>
 
-<figure class="project-feature-figure">
-  <img src="/assets/img/Research_shipyard2.gif" alt="Sionna ray tracing over a shipyard-scale wireless scene">
-  <figcaption>
-    Large-scale ray tracing provides geometry-aware propagation views for AI-RAN
-    control and ISAC scenario evaluation.
-  </figcaption>
-</figure>
-
 <h2>Digital Twin Workflow</h2>
+
+<figure class="project-inline-figure project-inline-figure--left">
+  <img src="/assets/img/Research_shipyard1.gif" alt="Shipyard wireless digital twin scene">
+  <figcaption>Wireless digital twin scene for realistic RF simulation.</figcaption>
+</figure>
 
 <p>
   The workflow combines scene-level geometry, semantic environment information,
   and Sionna-based ray tracing outputs. This makes it possible to connect physical
   layouts and object classes with channel behavior, sensing coverage, and RAN
-  decision-making policies.
+  decision-making policies. A digital twin can be used to generate repeatable
+  experiments for beam selection, blockage-aware control, sensing viewpoint
+  selection, and AI-RAN policy evaluation before moving to field measurements.
 </p>
 
-<div class="project-visual-grid">
-  <figure>
-    <img src="/assets/img/Research_shipyard1.gif" alt="Shipyard wireless digital twin scene">
-    <figcaption>Environment-scale wireless digital twin for realistic RF simulation.</figcaption>
-  </figure>
+<figure class="project-inline-figure project-inline-figure--right">
+  <img src="/assets/img/Research_Semantic.png" alt="Semantic map for AI-RAN and ISAC environment modeling">
+  <figcaption>Semantic representation for context-aware AI-RAN and ISAC models.</figcaption>
+</figure>
 
-  <figure>
-    <img src="/assets/img/Research_Semantic.png" alt="Semantic map for AI-RAN and ISAC environment modeling">
-    <figcaption>Semantic scene representation for linking propagation with context-aware AI models.</figcaption>
-  </figure>
-</div>
+<p>
+  The semantic representation adds another layer to the propagation model. By
+  identifying object classes and spatial context, the system can reason about why
+  a link or sensing path changes, not only that it changes. This is useful for
+  training AI models that need to generalize across environments and for building
+  explainable control loops in AI-RAN and ISAC systems.
+</p>
+
+<div class="clearfix"></div>
 
 <h2>Research Focus</h2>
 
