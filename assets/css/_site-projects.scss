@@ -159,6 +159,12 @@
   }
 }
 
+.project-inline-figure--stacked {
+  img + img {
+    border-top: 1px solid #e7ebee;
+  }
+}
+
 .project-inline-figure--left {
   float: left;
   margin-right: 1.25rem;
