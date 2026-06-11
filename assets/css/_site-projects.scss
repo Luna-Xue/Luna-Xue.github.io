@@ -128,8 +128,9 @@
 }
 
 .project-inline-figure {
-  width: 260px;
-  max-width: 42%;
+  width: 33%;
+  max-width: 300px;
+  min-width: 220px;
   margin: .2rem 0 1rem;
   background: #fff;
   border: 1px solid #e7ebee;
@@ -140,8 +141,8 @@
   img {
     display: block;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     object-position: center;
     background: #eef3f0;
   }
