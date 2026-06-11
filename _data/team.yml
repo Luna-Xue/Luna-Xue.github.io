@@ -32,28 +32,28 @@ current:
       url: ""
   
   intern:
-    - name: Tomohiro Yamada
-      original_institution: "Undergraduate at Boston University"
-      area: ""
-      photo: ""
-      url: ""
+    # - name: Tomohiro Yamada
+    #   original_institution: "Undergraduate at Boston University"
+    #   area: ""
+    #   photo: ""
+    #   url: ""
     
     - name: Kensei Narahara
       original_institution: "High School Student"
       area: "Smart Robot Car (JESSE 2026)"
-      photo: ""
+      photo: "kensein.jpeg"
       url: ""
     
     - name: Tim He
       original_institution: "High School Student"
       area: "Smart Robot Car (JESSE 2026)"
-      photo: ""
+      photo: "timh.jpeg"
       url: ""
     
     - name: Jayden Lau
       original_institution: "High School Student"
       area: "Smart Robot Car (JESSE 2026)"
-      photo: ""
+      photo: "jaydenl.jpeg"
       url: ""
 
 
