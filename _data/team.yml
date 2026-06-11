@@ -41,19 +41,19 @@ current:
     - name: Kensei Narahara
       original_institution: "High School Student"
       area: "Smart Robot Car (JESSE 2026)"
-      photo: "kensein.jpg"
+      photo: "kensein.png"
       url: ""
     
     - name: Tim He
       original_institution: "High School Student"
       area: "Smart Robot Car (JESSE 2026)"
-      photo: "timh.jpg"
+      photo: "timh.png"
       url: ""
     
     - name: Jayden Lau
       original_institution: "High School Student"
       area: "Smart Robot Car (JESSE 2026)"
-      photo: "jaydenl.jpg"
+      photo: "jaydenl.png"
       url: ""
 
 
