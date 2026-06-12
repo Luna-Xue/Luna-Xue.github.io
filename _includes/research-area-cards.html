@@ -1,0 +1,18 @@
+{% for area in site.data.research_areas %}
+<div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+    <div class="research-card" style="background: url('{{ area.image | escape }}') center/cover; height: 200px;">
+        <div class="card-overlay">
+            <div class="card-title">
+                {% if area.url and area.url != "" %}
+                <a href="{{ area.url }}">{{ area.title | escape }} <i class="fa fa-external-link"></i></a>
+                {% else %}
+                <span>{{ area.title | escape }}</span>
+                {% endif %}
+            </div>
+            <div class="card-desc">
+                {{ area.description | escape }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

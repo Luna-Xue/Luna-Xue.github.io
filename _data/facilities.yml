@@ -1,0 +1,24 @@
+# Facility cards shown on the home page and lab landing page.
+# Fields:
+# - title: Card heading shown over the image.
+# - image: Background image path, usually under /assets/img/facilities/.
+# - description: Short hover text shown inside the card overlay.
+- title: "AI-RAN Testbed"
+  image: "/assets/img/facilities/Testbed.svg"
+  description: "AI-RAN/O-RAN testbed with USRP X310/X410/B210, OAI, O-CUDU, Open5GS, GPU servers, and 5G NR FR1/FR2 mmWave support."
+
+- title: "Jetson Orin NX Super 16GB"
+  image: "/assets/img/facilities/jetsonorin-nano-super-dev-kit.jpg"
+  description: "Embedded edge computing platform for smart-car control and AI-RAN experimentation."
+
+- title: "NVIDIA RTX PRO 6000"
+  image: "/assets/img/facilities/nvidia-geforce-rtx-pro-6000-og-1200x630.jpg"
+  description: "Four NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition GPUs for AI-native wireless, cybersecurity, and edge AI research."
+
+- title: "ROSOrin Pro ROS2 Smart Car"
+  image: "/assets/img/facilities/Hiwonder_ROSOrin_Pro.png"
+  description: "Robotics and sensing platform with ToF LiDAR, 3D depth camera, ROS/Orin Pro, WiFi cards, and 5G communication kits for wireless security and ISAC prototyping."
+
+- title: "USRP Software Defined Radio (SDR)"
+  image: "/assets/img/facilities/USRP.png"
+  description: "USRP X410, X310, and multiple B210 radios for software-defined wireless experimentation."

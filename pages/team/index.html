@@ -41,105 +41,14 @@ body_class: team-lab-page
 
 <h3>Research Areas</h3>
 <div class="clearfix mxn2">
-    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
-        <div class="research-card" style="background: url('/assets/img/research_nextg.png') center/cover; height: 200px;">
-            <div class="card-overlay">
-                <div class="card-title">
-                    <a href="/pages/research/?tags=ml_systems">Intelligent Wireless Systems: Networking, Sensing, and IoT <i class="fa fa-external-link"></i></a>
-                </div>
-                <div class="card-desc">
-                    AI-native wireless networking and ISAC for intelligent IoT, with AI-RAN architectures,
-                    real-time sensing-communication integration, and closed-loop system intelligence.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
-        <div class="research-card" style="background: url('/assets/img/research-security.png') center/cover; height: 200px;">
-            <div class="card-overlay">
-                <div class="card-title">
-                    <a href="/pages/research/?tags=privacy_ml">Security, Privacy &amp; Trust <i class="fa fa-external-link"></i></a>
-                </div>
-                <div class="card-desc">
-                    Secure and privacy-preserving FutureG wireless intelligence, including AI-RAN/O-RAN
-                    security, ISAC-enabled sensing, federated learning, and robust edge AI.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
-        <div class="research-card" style="background: url('/assets/img/research-ai.png') center/cover; height: 200px;">
-            <div class="card-overlay">
-                <div class="card-title">
-                    <a href="/pages/research/?tags=ml_for_eda">AI &amp; Language Model &amp; Agents <i class="fa fa-external-link"></i></a>
-                </div>
-                <div class="card-desc">
-                    SLM/LLM-based design automation, multi-agent systems, and AI agents for wireless,
-                    chip-design, and mathematical reasoning workflows.
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Research area cards are rendered from _data/research_areas.yml so shared pages stay in sync. -->
+    {% include research-area-cards.html %}
 </div>
 
 <h3 class="mt3">Facilities</h3>
 <div class="clearfix mxn2">
-    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
-        <div class="research-card" style="background: url('/assets/img/facilities/Testbed.svg') center/cover; height: 200px;">
-            <div class="card-overlay">
-                <div class="card-title">
-                    <span>AI-RAN Testbed</span>
-                </div>
-                <div class="card-desc">
-                    AI-RAN/O-RAN testbed with USRP X310/X410/B210, OAI, O-CUDU, Open5GS,
-                    GPU servers, and 5G NR FR1/FR2 mmWave support.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
-        <div class="research-card" style="background: url('/assets/img/facilities/jetsonorin-nano-super-dev-kit.jpg') center/cover; height: 200px;">
-            <div class="card-overlay">
-                <div class="card-title">
-                    <span>Jetson Orin NX Super 16GB</span>
-                </div>
-                <div class="card-desc">
-                    Embedded edge computing platform for smart-car control and AI-RAN experimentation.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
-        <div class="research-card" style="background: url('/assets/img/facilities/nvidia-geforce-rtx-pro-6000-og-1200x630.jpg') center/cover; height: 200px;">
-            <div class="card-overlay">
-                <div class="card-title">
-                    <span>NVIDIA RTX PRO 6000</span>
-                </div>
-                <div class="card-desc">
-                    Four NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition GPUs for
-                    AI-native wireless, cybersecurity, and edge AI research.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
-        <div class="research-card" style="background: url('/assets/img/facilities/Hiwonder_ROSOrin_Pro.png') center/cover; height: 200px;">
-            <div class="card-overlay">
-                <div class="card-title">
-                    <span>ROSOrin Pro ROS2 Smart Car</span>
-                </div>
-                <div class="card-desc">
-                    Robotics and sensing platform with ToF LiDAR, 3D depth camera, ROS/Orin Pro,
-                    WiFi cards, and 5G communication kits for wireless security and ISAC prototyping.
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Facility cards are rendered from _data/facilities.yml so shared pages stay in sync. -->
+    {% include facility-cards.html %}
 </div>
 
 {% include team-compact-header-script.html %}

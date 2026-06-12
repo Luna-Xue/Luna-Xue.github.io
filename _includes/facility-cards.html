@@ -1,0 +1,14 @@
+{% for facility in site.data.facilities %}
+<div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+    <div class="research-card" style="background: url('{{ facility.image | escape }}') center/cover; height: 200px;">
+        <div class="card-overlay">
+            <div class="card-title">
+                <span>{{ facility.title | escape }}</span>
+            </div>
+            <div class="card-desc">
+                {{ facility.description | escape }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

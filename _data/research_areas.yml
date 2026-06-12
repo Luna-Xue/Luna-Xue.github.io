@@ -1,0 +1,20 @@
+# Research area cards shown on the home page and lab landing page.
+# Fields:
+# - title: Card heading shown over the image.
+# - url: Optional link target. Leave blank or remove if the card should not link.
+# - image: Background image path, usually under /assets/img/.
+# - description: Short hover text shown inside the card overlay.
+- title: "Intelligent Wireless Systems: Networking, Sensing, and IoT"
+  url: "/pages/research/?tags=ml_systems"
+  image: "/assets/img/research_nextg.png"
+  description: "AI-native wireless networking and ISAC for intelligent IoT, focusing on AI-RAN architectures, real-time sensing-communication integration, and closed-loop system intelligence."
+
+- title: "Security, Privacy & Trust"
+  url: "/pages/research/?tags=privacy_ml"
+  image: "/assets/img/research-security.png"
+  description: "Secure and privacy-preserving FutureG wireless intelligence, including AI-RAN/O-RAN security, ISAC-enabled sensing, confidential computing, federated learning, and robust edge AI."
+
+- title: "AI & Language Model & Agents"
+  url: "/pages/research/?tags=ml_for_eda"
+  image: "/assets/img/research-ai.png"
+  description: "Machine learning for electronic design automation, SLM/LLM-based Verilog generation, multi-agent systems for chip design and mathematical problem solving."
