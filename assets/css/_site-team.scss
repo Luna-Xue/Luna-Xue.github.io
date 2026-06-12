@@ -363,6 +363,43 @@ table.styled-table {
   }
 }
 
+.lab-section-heading-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  h3 {
+    margin: 0 0 .8rem;
+  }
+}
+
+.lab-section-more {
+  color: $accent-primary !important;
+  font-family: "Open Sans", sans-serif;
+  font-size: .85rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  white-space: nowrap;
+
+  &::after {
+    content: "\2192";
+    margin-left: .3rem;
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-dark !important;
+    text-decoration: none !important;
+  }
+}
+
+.lab-home-activity-preview {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 1.2rem;
+}
+
 .lab-activity-section-title {
   margin: 0 0 .75rem;
   color: #26312d;

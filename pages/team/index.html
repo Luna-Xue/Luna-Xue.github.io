@@ -39,16 +39,53 @@ body_class: team-lab-page
 <p class="lab-news-empty">Lab-specific news will appear here as updates are added.</p>
 {% endif %}
 
-<h3>Research Areas</h3>
-<div class="clearfix mxn2">
-    <!-- Research area cards are rendered from _data/research_areas.yml so shared pages stay in sync. -->
-    {% include research-area-cards.html %}
+<div class="lab-section-heading-row">
+    <h3>Activities</h3>
+    <a href="/pages/team/lab-activities/" class="lab-section-more">More</a>
 </div>
-
-<h3 class="mt3">Facilities</h3>
-<div class="clearfix mxn2">
-    <!-- Facility cards are rendered from _data/facilities.yml so shared pages stay in sync. -->
-    {% include facility-cards.html %}
+{% assign lab_home_activities = site.data.lab_activities | sort: "start_date" | reverse %}
+{% assign lab_home_activity_count = 0 %}
+<div class="lab-activity-grid lab-home-activity-preview">
+    {% for activity in lab_home_activities %}
+    {% if lab_home_activity_count < 3 and activity.description contains "Saurabh Parkar" %}
+    {% assign lab_home_activity_count = lab_home_activity_count | plus: 1 %}
+    {% if activity.start_date and activity.start_date != "" %}
+    {% assign start_display = activity.start_date | date: "%B %-d, %Y" %}
+    {% assign activity_date = start_display %}
+    {% if activity.end_date and activity.end_date != "" and activity.end_date != activity.start_date %}
+    {% assign end_month_year = activity.end_date | date: "%B %Y" %}
+    {% assign start_month_year = activity.start_date | date: "%B %Y" %}
+    {% assign start_month_day = activity.start_date | date: "%B %-d" %}
+    {% assign start_year = activity.start_date | date: "%Y" %}
+    {% assign end_day = activity.end_date | date: "%-d" %}
+    {% assign end_display = activity.end_date | date: "%B %-d, %Y" %}
+    {% if start_month_year == end_month_year %}
+    {% assign activity_date = start_month_day | append: "-" | append: end_day | append: ", " | append: start_year %}
+    {% else %}
+    {% assign activity_date = start_month_day | append: " - " | append: end_display %}
+    {% endif %}
+    {% endif %}
+    {% else %}
+    {% assign activity_date = "" %}
+    {% endif %}
+    <article class="lab-activity-card">
+        {% if activity.image and activity.image != "" %}
+        <img src="/assets/img/lab/{{ activity.image }}" alt="{{ activity.title }}">
+        {% else %}
+        <div class="lab-activity-placeholder">
+            <i class="fa fa-camera"></i>
+        </div>
+        {% endif %}
+        <div class="lab-activity-body">
+            {% if activity_date != "" %}
+            <div class="lab-activity-date">{{ activity_date }}</div>
+            {% endif %}
+            <h4>{{ activity.title }}</h4>
+            <p>{{ activity.description }}</p>
+        </div>
+    </article>
+    {% endif %}
+    {% endfor %}
 </div>
 
 {% include team-compact-header-script.html %}
