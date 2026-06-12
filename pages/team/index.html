@@ -2,96 +2,144 @@
 layout: default
 title: "UHM WINGS Lab"
 header_title: Wireless Intelligent Networks for FutureG with Security Lab
-subtitle: '<span class="hero-lab-links"><a href="https://github.com/WINGS-UHM" target="_blank" rel="noopener" class="hero-lab-link hero-lab-github"><i class="fa fa-github"></i> WINGS GitHub</a><a href="https://www.youtube.com/@WINGSLABUHM" target="_blank" rel="noopener" class="hero-lab-link hero-lab-youtube"><i class="fa fa-youtube-play"></i> WINGS YouTube</a></span>'
+subtitle: '<span class="hero-lab-links"><a href="https://github.com/WINGS-UHM" target="_blank" rel="noopener" class="hero-lab-link hero-lab-github"><i class="fa fa-github"></i> WINGS GitHub</a><a href="https://www.youtube.com/@WINGSLABUHM" target="_blank" rel="noopener" class="hero-lab-link hero-lab-youtube"><i class="fa fa-youtube-play"></i> WINGS YouTube</a><a href="/pages/team/members" class="hero-lab-link hero-lab-team"><i class="fa fa-users"></i> Meet the Team</a><a href="/pages/team/lab-activities" class="hero-lab-link hero-lab-activities"><i class="fa fa-camera"></i> Lab Activities</a></span>'
 include_header: page_header.html
 nav_item: UHM WINGS Lab
 body_class: team-lab-page
 ---
-<h3>Current Members</h3>
+<section class="lab-landing-intro">
+    <h3 class="mt0">About WINGS Lab</h3>
+    <p>
+        The Wireless Intelligent Networks for FutureG with Security Lab develops trustworthy
+        AI-native wireless systems at the intersection of wireless communication,
+        cybersecurity, and artificial intelligence.
+    </p>
+    <p>
+        Our work bridges physical-layer security, integrated sensing and communication,
+        learning at the RAN edge, and practical AI-RAN/O-RAN prototyping. Current directions
+        include privacy-preserving and resilient wireless intelligence, defenses against
+        adaptive and generative AI threats, and intent-aware network agents for
+        multi-stakeholder decision making.
+    </p>
+</section>
 
-{% assign current_groups = "postdoc:Post-doc|phd:Ph.D. Students|master:Master Students|undergrad:Undergraduate Students|intern:Research Interns" | split: "|" %}
-{% for group_config in current_groups %}
-{% assign group_parts = group_config | split: ":" %}
-{% assign group_key = group_parts[0] %}
-{% assign group_title = group_parts[1] %}
-{% assign members = site.data.team.current[group_key] %}
-{% if members and members.size > 0 %}
-<h4 class="mt2">{{ group_title }}</h4>
-<div class="team-grid mb3">
-    {% for member in members %}
-    {% include team-member-card.html member=member %}
-    {% endfor %}
+<h3>Lab News</h3>
+{% assign lab_news_count = 0 %}
+<div class="clearfix max-height-400 overflow-scroll lab-news-list">
+    <ul class="dark-gray" style="padding-left: 20px;">
+        {% for new in site.data.news %}
+        {% if new.lab == true %}
+        {% assign lab_news_count = lab_news_count | plus: 1 %}
+        <li class="h5 header-font">[<b>{{ new.date }}</b>] {{ new.title }}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
 </div>
-{% endif %}
-{% endfor %}
-
-{% assign has_phd_alumni = false %}
-{% if site.data.team.alumni.phd and site.data.team.alumni.phd.size > 0 %}
-  {% assign has_phd_alumni = true %}
+{% if lab_news_count == 0 %}
+<p class="lab-news-empty">Lab-specific news will appear here as updates are added.</p>
 {% endif %}
 
-{% assign has_other_alumni = false %}
-{% if site.data.team.alumni.other and site.data.team.alumni.other.size > 0 %}
-  {% assign has_other_alumni = true %}
-{% endif %}
+<h3>Research Areas</h3>
+<div class="clearfix mxn2">
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/research_nextg.png') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <a href="/pages/research/?tags=ml_systems">Intelligent Wireless Systems: Networking, Sensing, and IoT <i class="fa fa-external-link"></i></a>
+                </div>
+                <div class="card-desc">
+                    AI-native wireless networking and ISAC for intelligent IoT, with AI-RAN architectures,
+                    real-time sensing-communication integration, and closed-loop system intelligence.
+                </div>
+            </div>
+        </div>
+    </div>
 
-{% if has_phd_alumni or has_other_alumni %}
-<hr class="mt3 mb3">
-<h3>Alumni</h3>
-{% endif %}
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/research-security.png') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <a href="/pages/research/?tags=privacy_ml">Security, Privacy &amp; Trust <i class="fa fa-external-link"></i></a>
+                </div>
+                <div class="card-desc">
+                    Secure and privacy-preserving FutureG wireless intelligence, including AI-RAN/O-RAN
+                    security, ISAC-enabled sensing, federated learning, and robust edge AI.
+                </div>
+            </div>
+        </div>
+    </div>
 
-{% if has_phd_alumni %}
-<h4 class="mt2">Ph.D. Alumni</h4>
-<div class="clearfix mb2">
-    <table class="styled-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>First Employment</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for member in site.data.team.alumni.phd %}
-            <tr>
-                <td>
-                    {% include team-alumni-name-cell.html member=member show_note=true %}
-                </td>
-                <td>{{ member.position }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/research-ai.png') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <a href="/pages/research/?tags=ml_for_eda">AI &amp; Language Model &amp; Agents <i class="fa fa-external-link"></i></a>
+                </div>
+                <div class="card-desc">
+                    SLM/LLM-based design automation, multi-agent systems, and AI agents for wireless,
+                    chip-design, and mathematical reasoning workflows.
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-{% endif %}
 
-{% if has_other_alumni %}
-<h4 class="mt2">Undergraduate, Masters, Visiting Scholars &amp; Post-doc Alumni</h4>
-<div class="clearfix mb2">
-    <table class="styled-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Role</th>
-                <th>Current Position</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for member in site.data.team.alumni.other %}
-            <tr>
-                <td>
-                    {% include team-alumni-name-cell.html member=member %}
-                </td>
-                <td>{{ member.role }}</td>
-                <td>{% if member.position %}{{ member.position }}{% endif %}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-{% endif %}
+<h3 class="mt3">Facilities</h3>
+<div class="clearfix mxn2">
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/facilities/Testbed.svg') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <span>AI-RAN Testbed</span>
+                </div>
+                <div class="card-desc">
+                    AI-RAN/O-RAN testbed with USRP X310/X410/B210, OAI, O-CUDU, Open5GS,
+                    GPU servers, and 5G NR FR1/FR2 mmWave support.
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="lab-activities-callout mt3 mb2">
-    <a href="/pages/team/lab-activities">Explore recent lab activities and outreach photos.</a>
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/facilities/jetsonorin-nano-super-dev-kit.jpg') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <span>Jetson Orin NX Super 16GB</span>
+                </div>
+                <div class="card-desc">
+                    Embedded edge computing platform for smart-car control and AI-RAN experimentation.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/facilities/nvidia-geforce-rtx-pro-6000-og-1200x630.jpg') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <span>NVIDIA RTX PRO 6000</span>
+                </div>
+                <div class="card-desc">
+                    Four NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition GPUs for
+                    AI-native wireless, cybersecurity, and edge AI research.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col md-col-4 sm-col-6 xs-col-12 px1 mb2">
+        <div class="research-card" style="background: url('/assets/img/facilities/Hiwonder_ROSOrin_Pro.png') center/cover; height: 200px;">
+            <div class="card-overlay">
+                <div class="card-title">
+                    <span>ROSOrin Pro ROS2 Smart Car</span>
+                </div>
+                <div class="card-desc">
+                    Robotics and sensing platform with ToF LiDAR, 3D depth camera, ROS/Orin Pro,
+                    WiFi cards, and 5G communication kits for wireless security and ISAC prototyping.
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% include team-compact-header-script.html %}

@@ -5,71 +5,89 @@
 - label: award
   title: "Our proposal has been selected for the <strong>NVIDIA Academic Grant Program</strong>; our lab will receive <strong>four NVIDIA RTX PRO 6000 Blackwell GPUs</strong> to support AI-native wireless, AI-RAN, cybersecurity, edge AI, and Semantic ISAC research"
   date: Jun, 2026
+  lab: true
 
 - label: paper
   title: "One paper submitted to <strong>IEEE ISAC 2026</strong>"
   date: Jun, 2026
+  lab: false
 
 - label: other
   title: "WINGS Lab is hosting the <a class='news-link' href='https://www.eng.hawaii.edu/outreach/jesse/' target='_blank' rel='noopener'><strong>Junior Engineers Summer STEM Experience (JESSE) 2026</strong></a> at UH Manoa, Saurabh Parkar will lead the program."
   date: Jun, 2026
+  lab: true
 
 - label: other
   title: "I will participate in the <strong>GW AI in Cybersecurity Education Faculty Development Institute</strong> from June 1 to July 11, 2026"
   date: Jun, 2026
+  lab: false
 
 - label: other
   title: "I will attend <a class='news-link' href='https://ims-ieee.org/ims2026-boston' target='_blank' rel='noopener'><strong>IMS 2026 Boston</strong></a>"
   date: Jun, 2026
+  lab: false
 
 - label: paper
   title: "Saurabh Parkar submitted one paper to <strong>IEEE Internet of Things Journal (IoT-J)</strong>"
   date: May, 2026
+  lab: true
 
 - label: other
   title: "I will attend the <strong>International ISAC Innovation Forum</strong> at GMU"
   date: May, 2026
+  lab: false
 
 - label: service
   title: "I am honored to serve as a <a class='news-link' href='https://n2women.comsoc.org/officers/2026-2/' target='_blank' rel='noopener'><strong>2026 N²Women Board Member and Geo-diversity Co-Chair</strong></a>"
   date: May, 2026
+  lab: false
 
 - label: service
   title: "I was invited to serve on the Technical Program Committee for the <strong>2027 IEEE Symposium on Security and Privacy (S&P)</strong>"
   date: Apr, 2026
+  lab: false
 
 - label: paper
   title: "One paper accepted by <strong>ICLR 2026 Lifelong Agents Workshop</strong>"
   date: Mar, 2026
+  lab: false
 
 - label: service
   title: "I was invited to serve on the Technical Program Committee for the <strong>IEEE/ACM CHASE 2026, mHealth Security Workshop 2026</strong>"
   date: Mar, 2026
+  lab: false
 
 - label: service
   title: "I was invited to serve as Session Chair for <strong>IEEE ICNC 2026</strong>"
   date: Mar, 2026
+  lab: false
 
 - label: service
   title: "I will serve as Demo/Posters Chair for <strong>IEEE HealthCom 2026</strong>"
   date: Jan, 2026
+  lab: false
 
 - label: service
   title: "I was invited to the <strong>SaTC Aspiring PI Workshop 2025</strong> in Washington, D.C."
   date: Dec, 2025
+  lab: false
 
 - label: other
   title: "I was invited to serve on the Technical Program Committee for the <strong>INFOCOM 2026 ISAC-FutureG Workshop</strong>"
   date: Dec, 2025
+  lab: false
 
 - label: paper
   title: "One paper accepted by <strong>ICNC 2026</strong>"
   date: Nov, 2025
+  lab: false
 
 - label: paper
   title: "Two papers accepted by <strong>IEEE AIoT 2025</strong>"
   date: Oct, 2025
+  lab: false
 
 - label: job
   title: "Joined University of Hawaiʻi at Mānoa as a <strong>Tenure-Track Assistant Professor</strong>"
   date: Aug, 2025
+  lab: false

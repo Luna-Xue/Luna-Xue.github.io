@@ -1,0 +1,91 @@
+---
+layout: default
+title: "WINGS Lab Team"
+nav_item: UHM WINGS Lab
+---
+<h3>Current Members</h3>
+
+{% assign current_groups = "postdoc:Post-doc|phd:Ph.D. Students|master:Master Students|undergrad:Undergraduate Students|intern:Research Interns" | split: "|" %}
+{% for group_config in current_groups %}
+{% assign group_parts = group_config | split: ":" %}
+{% assign group_key = group_parts[0] %}
+{% assign group_title = group_parts[1] %}
+{% assign members = site.data.team.current[group_key] %}
+{% if members and members.size > 0 %}
+<h4 class="mt2">{{ group_title }}</h4>
+<div class="team-grid mb3">
+    {% for member in members %}
+    {% include team-member-card.html member=member %}
+    {% endfor %}
+</div>
+{% endif %}
+{% endfor %}
+
+{% assign has_phd_alumni = false %}
+{% if site.data.team.alumni.phd and site.data.team.alumni.phd.size > 0 %}
+  {% assign has_phd_alumni = true %}
+{% endif %}
+
+{% assign has_other_alumni = false %}
+{% if site.data.team.alumni.other and site.data.team.alumni.other.size > 0 %}
+  {% assign has_other_alumni = true %}
+{% endif %}
+
+{% if has_phd_alumni or has_other_alumni %}
+<hr class="mt3 mb3">
+<h3>Alumni</h3>
+{% endif %}
+
+{% if has_phd_alumni %}
+<h4 class="mt2">Ph.D. Alumni</h4>
+<div class="clearfix mb2">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>First Employment</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in site.data.team.alumni.phd %}
+            <tr>
+                <td>
+                    {% include team-alumni-name-cell.html member=member show_note=true %}
+                </td>
+                <td>{{ member.position }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+{% if has_other_alumni %}
+<h4 class="mt2">Undergraduate, Masters, Visiting Scholars &amp; Post-doc Alumni</h4>
+<div class="clearfix mb2">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Current Position</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in site.data.team.alumni.other %}
+            <tr>
+                <td>
+                    {% include team-alumni-name-cell.html member=member %}
+                </td>
+                <td>{{ member.role }}</td>
+                <td>{% if member.position %}{{ member.position }}{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+<div class="lab-activities-callout mt3 mb2">
+    <a href="/pages/team/lab-activities">Explore recent lab activities and outreach photos.</a>
+</div>

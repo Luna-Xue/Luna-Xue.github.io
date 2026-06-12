@@ -14,9 +14,23 @@ Edit `_data/news.yml`. Add a new entry at the **top** of the file:
 - label: paper
   title: "One paper accepted to <strong>VENUE 2026</strong>"
   date: Mar, 2026
+  lab: false
 ```
 
 Labels can be: `paper`, `award`, `job`, `service`, `other`.
+
+The home page shows all news entries. The lab landing page shows only entries with `lab: true`.
+
+For lab-specific updates, such as student papers, lab grants, lab events, outreach activities, testbed milestones, or team achievements, set `lab: true`:
+
+```yaml
+- label: award
+  title: "WINGS Lab received <strong>Example Award</strong> for AI-RAN research"
+  date: Jun, 2026
+  lab: true
+```
+
+Use `lab: false` for PI-level or general professional updates that should appear only in the main news list.
 
 ### Add a Publication
 

@@ -221,6 +221,24 @@ table.styled-table {
 
 .hero-lab-github i { color: #24292f; }
 .hero-lab-youtube i { color: #ff0000; }
+.hero-lab-team i { color: $accent-primary; }
+.hero-lab-activities i { color: #5f6f96; }
+
+.lab-landing-intro {
+  margin-bottom: 1.6rem;
+
+  p {
+    max-width: 58rem;
+    color: #404a46;
+    line-height: 1.62;
+  }
+}
+
+.lab-news-list:empty,
+.lab-news-empty {
+  color: #59645f;
+  font-size: .92rem;
+}
 
 .team-compact-header {
   position: fixed;
@@ -377,6 +395,20 @@ table.styled-table {
   }
 }
 
+.lab-activity-card[data-image] {
+  cursor: pointer;
+}
+
+.lab-activity-image-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
 .lab-activity-placeholder {
   display: flex;
   align-items: center;
@@ -517,6 +549,168 @@ table.styled-table {
     .alumni-photo-placeholder {
       font-size: .65rem;
     }
+  }
+}
+
+.lab-activity-modal-open {
+  overflow: hidden;
+}
+
+.lab-activity-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lab-activity-modal.is-open {
+  display: flex;
+}
+
+.lab-activity-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 16, .78);
+}
+
+.lab-activity-modal-dialog {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  width: min(1120px, 100%);
+  max-height: min(760px, calc(100vh - 4rem));
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .96);
+  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+}
+
+.lab-activity-modal-media {
+  position: relative;
+  display: flex;
+  min-height: 420px;
+  align-items: center;
+  justify-content: center;
+  background: #050709;
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 4rem);
+    object-fit: contain;
+  }
+}
+
+.lab-activity-modal-close,
+.lab-activity-modal-nav {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,.88);
+  color: #1f2724;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,.22);
+}
+
+.lab-activity-modal-close {
+  top: .85rem;
+  right: .85rem;
+  width: 34px;
+  height: 34px;
+}
+
+.lab-activity-modal-nav {
+  top: 50%;
+  width: 42px;
+  height: 42px;
+  transform: translateY(-50%);
+}
+
+.lab-activity-modal-prev {
+  left: .85rem;
+}
+
+.lab-activity-modal-next {
+  right: .85rem;
+}
+
+.lab-activity-modal-nav:disabled {
+  cursor: default;
+  opacity: .38;
+}
+
+.lab-activity-modal-info {
+  position: relative;
+  overflow: auto;
+  padding: 3.1rem 1.45rem 1.35rem;
+  background: rgba(255,255,255,.97);
+
+  h4 {
+    margin: .25rem 0 .6rem;
+    color: #26312d;
+    font-size: 1.15rem;
+    line-height: 1.35;
+  }
+
+  p {
+    margin: .85rem 0 0;
+    color: #4d5854;
+    line-height: 1.58;
+  }
+}
+
+.lab-activity-modal-album,
+.lab-activity-modal-count {
+  color: #6f7b96;
+  font-family: "Open Sans", sans-serif;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.lab-activity-modal-date {
+  color: $accent-primary;
+  font-family: "Open Sans", sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.lab-activity-modal-count {
+  margin-top: 1rem;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 760px) {
+  .lab-activity-modal {
+    padding: .75rem;
+  }
+
+  .lab-activity-modal-dialog {
+    grid-template-columns: minmax(0, 1fr);
+    max-height: calc(100vh - 1.5rem);
+    overflow: auto;
+  }
+
+  .lab-activity-modal-media {
+    min-height: 260px;
+
+    img {
+      max-height: 58vh;
+    }
+  }
+
+  .lab-activity-modal-info {
+    padding: 1rem;
   }
 }
 

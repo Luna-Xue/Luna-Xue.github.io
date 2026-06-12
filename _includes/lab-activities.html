@@ -6,37 +6,50 @@
     {% for group in lab_activity_groups %}
     <section class="lab-activity-section">
         <h4 class="lab-activity-section-title">{{ group.name }}</h4>
-        <div class="lab-activity-grid">
+        <div class="lab-activity-grid" data-lab-album="{{ group.name | slugify }}">
             {% for activity in group.items %}
-            <article class="lab-activity-card">
+            {% if activity.start_date and activity.start_date != "" %}
+            {% assign start_month_year = activity.start_date | date: "%B %Y" %}
+            {% assign start_day = activity.start_date | date: "%-d" %}
+            {% assign start_month_day = activity.start_date | date: "%B %-d" %}
+            {% assign start_year = activity.start_date | date: "%Y" %}
+            {% assign start_display = activity.start_date | date: "%B %-d, %Y" %}
+            {% assign activity_date = start_display %}
+            {% if start_day == "1" and activity.end_date == nil %}
+            {% assign activity_date = start_month_year %}
+            {% endif %}
+            {% if activity.end_date and activity.end_date != "" and activity.end_date != activity.start_date %}
+            {% assign end_month_year = activity.end_date | date: "%B %Y" %}
+            {% assign end_day = activity.end_date | date: "%-d" %}
+            {% assign end_display = activity.end_date | date: "%B %-d, %Y" %}
+            {% if start_month_year == end_month_year %}
+            {% assign activity_date = start_month_day | append: "-" | append: end_day | append: ", " | append: start_year %}
+            {% else %}
+            {% assign activity_date = start_month_day | append: " - " | append: end_display %}
+            {% endif %}
+            {% endif %}
+            {% else %}
+            {% assign activity_date = "" %}
+            {% endif %}
+            <article class="lab-activity-card"
+                     data-lab-activity
+                     data-album="{{ group.name | slugify }}"
+                     data-album-title="{{ group.name | escape }}"
+                     data-title="{{ activity.title | escape }}"
+                     data-date="{{ activity_date | escape }}"
+                     data-description="{{ activity.description | escape }}"
+                     {% if activity.image and activity.image != "" %}data-image="/assets/img/lab/{{ activity.image | escape }}"{% endif %}>
                 {% if activity.image and activity.image != "" %}
-                <img src="/assets/img/lab/{{ activity.image }}" alt="{{ activity.title }}">
+                <button class="lab-activity-image-button" type="button" aria-label="Open {{ activity.title | escape }} photo">
+                    <img src="/assets/img/lab/{{ activity.image }}" alt="{{ activity.title }}">
+                </button>
                 {% else %}
                 <div class="lab-activity-placeholder">
                     <i class="fa fa-camera"></i>
                 </div>
                 {% endif %}
                 <div class="lab-activity-body">
-                    {% if activity.start_date and activity.start_date != "" %}
-                    {% assign start_month_year = activity.start_date | date: "%B %Y" %}
-                    {% assign start_day = activity.start_date | date: "%-d" %}
-                    {% assign start_month_day = activity.start_date | date: "%B %-d" %}
-                    {% assign start_year = activity.start_date | date: "%Y" %}
-                    {% assign start_display = activity.start_date | date: "%B %-d, %Y" %}
-                    {% assign activity_date = start_display %}
-                    {% if start_day == "1" and activity.end_date == nil %}
-                    {% assign activity_date = start_month_year %}
-                    {% endif %}
-                    {% if activity.end_date and activity.end_date != "" and activity.end_date != activity.start_date %}
-                    {% assign end_month_year = activity.end_date | date: "%B %Y" %}
-                    {% assign end_day = activity.end_date | date: "%-d" %}
-                    {% assign end_display = activity.end_date | date: "%B %-d, %Y" %}
-                    {% if start_month_year == end_month_year %}
-                    {% assign activity_date = start_month_day | append: "-" | append: end_day | append: ", " | append: start_year %}
-                    {% else %}
-                    {% assign activity_date = start_month_day | append: " - " | append: end_display %}
-                    {% endif %}
-                    {% endif %}
+                    {% if activity_date != "" %}
                     <div class="lab-activity-date">{{ activity_date }}</div>
                     {% endif %}
                     <h4>{{ activity.title }}</h4>
@@ -48,6 +61,109 @@
     </section>
     {% endfor %}
 </div>
+<div class="lab-activity-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Lab activity photo viewer">
+    <div class="lab-activity-modal-backdrop" data-lab-modal-close></div>
+    <div class="lab-activity-modal-dialog">
+        <div class="lab-activity-modal-media">
+            <button class="lab-activity-modal-nav lab-activity-modal-prev" type="button" data-lab-modal-prev aria-label="Previous photo">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+            <img src="" alt="">
+            <button class="lab-activity-modal-nav lab-activity-modal-next" type="button" data-lab-modal-next aria-label="Next photo">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+        <aside class="lab-activity-modal-info">
+            <button class="lab-activity-modal-close" type="button" data-lab-modal-close aria-label="Close photo viewer">
+                <i class="fa fa-times"></i>
+            </button>
+            <div class="lab-activity-modal-album"></div>
+            <h4></h4>
+            <div class="lab-activity-modal-date"></div>
+            <p></p>
+            <div class="lab-activity-modal-count"></div>
+        </aside>
+    </div>
+</div>
+<script>
+(function() {
+    var modal = document.querySelector('.lab-activity-modal');
+    if (!modal) return;
+
+    var image = modal.querySelector('.lab-activity-modal-media img');
+    var album = modal.querySelector('.lab-activity-modal-album');
+    var title = modal.querySelector('.lab-activity-modal-info h4');
+    var date = modal.querySelector('.lab-activity-modal-date');
+    var description = modal.querySelector('.lab-activity-modal-info p');
+    var count = modal.querySelector('.lab-activity-modal-count');
+    var prevButton = modal.querySelector('[data-lab-modal-prev]');
+    var nextButton = modal.querySelector('[data-lab-modal-next]');
+    var activeItems = [];
+    var activeIndex = 0;
+
+    function getItemsForAlbum(albumId) {
+        return Array.prototype.slice.call(document.querySelectorAll('[data-lab-activity][data-album="' + albumId + '"][data-image]'));
+    }
+
+    function renderItem() {
+        var item = activeItems[activeIndex];
+        if (!item) return;
+
+        image.src = item.getAttribute('data-image');
+        image.alt = item.getAttribute('data-title') || '';
+        album.textContent = item.getAttribute('data-album-title') || '';
+        title.textContent = item.getAttribute('data-title') || '';
+        date.textContent = item.getAttribute('data-date') || '';
+        description.textContent = item.getAttribute('data-description') || '';
+        count.textContent = (activeIndex + 1) + ' of ' + activeItems.length;
+        prevButton.disabled = activeItems.length < 2;
+        nextButton.disabled = activeItems.length < 2;
+    }
+
+    function openModal(item) {
+        activeItems = getItemsForAlbum(item.getAttribute('data-album'));
+        activeIndex = activeItems.indexOf(item);
+        if (activeIndex < 0) activeIndex = 0;
+
+        renderItem();
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lab-activity-modal-open');
+    }
+
+    function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('lab-activity-modal-open');
+        image.src = '';
+    }
+
+    function move(step) {
+        if (activeItems.length < 2) return;
+        activeIndex = (activeIndex + step + activeItems.length) % activeItems.length;
+        renderItem();
+    }
+
+    document.addEventListener('click', function(event) {
+        var trigger = event.target.closest('[data-lab-activity][data-image]');
+        if (trigger) {
+            openModal(trigger);
+            return;
+        }
+
+        if (event.target.closest('[data-lab-modal-close]')) closeModal();
+        if (event.target.closest('[data-lab-modal-prev]')) move(-1);
+        if (event.target.closest('[data-lab-modal-next]')) move(1);
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (!modal.classList.contains('is-open')) return;
+        if (event.key === 'Escape') closeModal();
+        if (event.key === 'ArrowLeft') move(-1);
+        if (event.key === 'ArrowRight') move(1);
+    });
+})();
+</script>
 {% else %}
 <div class="lab-activity-empty mb3">
     <i class="fa fa-camera"></i>
