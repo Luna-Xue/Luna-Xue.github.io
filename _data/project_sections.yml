@@ -77,6 +77,6 @@ sections:
     cards:
       - title: "Smart Robot Car"
         subtitle: "AI-RAN-assisted communication control for remote robot driving"
-        image: "/assets/img/facilities/Hiwonder_ROSOrin_Pro.png"
+        image: "/assets/img/facilities/research-g923-robotic.png"
         url: "/projects/smart-robot-car/"
         status: "Ongoing"
