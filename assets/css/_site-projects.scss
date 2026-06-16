@@ -631,7 +631,7 @@
   .course-file-tabs:has(##{$semester}-syllabus:checked) > .course-file-panel:not(.course-file-panel-syllabus),
   .course-file-tabs:has(##{$semester}-work:checked) > .course-file-panel:not(.course-file-panel-work),
   .course-file-tabs:has(##{$semester}-materials:checked) > .course-file-panel:not(.course-file-panel-materials),
-  .course-file-tabs:has(##{$semester}-policy:checked) > .course-file-panel:not(.course-file-panel-policy) {
+  .course-file-tabs:has(##{$semester}-schedule:checked) > .course-file-panel:not(.course-file-panel-schedule) {
     display: none;
   }
 
@@ -647,7 +647,7 @@
     display: block;
   }
 
-  ##{$semester}-policy:checked ~ .course-file-panel-policy {
+  ##{$semester}-schedule:checked ~ .course-file-panel-schedule {
     display: block;
   }
 }

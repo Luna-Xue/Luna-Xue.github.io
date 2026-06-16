@@ -1,5 +1,5 @@
 {% assign course_semesters = page.course_semesters %}
-{% assign course_tabs = "syllabus:Syllabus|work:Homework|materials:Materials|policy:Policy" | split: "|" %}
+{% assign course_tabs = "syllabus:Syllabus|work:Homework|materials:Materials|schedule:Schedule" | split: "|" %}
 
 {% if page.course_summary and page.course_summary != "" %}
 <p>{{ page.course_summary }}</p>
@@ -68,8 +68,8 @@
       {% assign tab_items = semester.work %}
       {% elsif tab_key == "materials" %}
       {% assign tab_items = semester.materials %}
-      {% elsif tab_key == "policy" %}
-      {% assign tab_items = semester.policy %}
+      {% elsif tab_key == "schedule" %}
+      {% assign tab_items = semester.schedule %}
       {% else %}
       {% assign tab_items = nil %}
       {% endif %}
@@ -85,8 +85,8 @@
         <p class="course-empty-note">To be updated.</p>
         {% endif %}
 
-        {% if tab_key == "syllabus" and semester.syllabus_include and semester.syllabus_include != "" %}
-        {% if semester.syllabus_include == "teaching/ece-362-fall-2026-materials.html" %}
+        {% if tab_key == "schedule" and semester.schedule_include and semester.schedule_include != "" %}
+        {% if semester.schedule_include == "teaching/ece-362-fall-2026-materials.html" %}
         {% include teaching/ece-362-fall-2026-materials.html %}
         {% endif %}
         {% endif %}
