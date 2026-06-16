@@ -385,7 +385,7 @@
   min-height: 52px;
   padding: .45rem .45rem 0;
   border-bottom: 0;
-  background: linear-gradient(180deg, rgba($accent-primary, .06) 0%, $accent-light 100%);
+  background: transparent;
 }
 
 .course-semester-tab {
@@ -474,8 +474,8 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: end;
-  gap: .18rem;
-  padding-top: .35rem;
+  gap: .28rem;
+  padding-top: .65rem;
   border-bottom: 0;
 }
 
@@ -484,18 +484,19 @@
   align-items: center;
   justify-content: center;
   min-width: 0;
-  min-height: 34px;
+  min-height: 46px;
   margin-bottom: -2px;
-  padding: .38rem .55rem;
+  padding: .54rem .75rem .48rem;
   border: 2px solid rgba($accent-primary, .18);
   border-bottom-color: rgba($accent-primary, .18);
-  border-radius: 12px 12px 0 0;
+  border-radius: 18px 18px 0 0;
   background: rgba($accent-primary, .065);
-  color: $accent-dark;
+  color: rgba($accent-dark, .82);
   cursor: pointer;
   font-family: "Open Sans", sans-serif;
-  font-size: .8rem;
+  font-size: 1.02rem;
   font-weight: 800;
+  letter-spacing: .02em;
   text-align: center;
   box-shadow: none;
   transition: background .18s, box-shadow .18s, color .18s, transform .18s;
@@ -537,7 +538,7 @@
   background: #fff;
   color: $accent-primary;
   border-bottom-color: #fff;
-  box-shadow: 0 -3px 8px rgba($accent-primary, .08);
+  box-shadow: 0 -5px 14px rgba($accent-primary, .11);
   transform: translateY(-2px);
   z-index: 2;
 }
