@@ -384,8 +384,8 @@
   gap: .18rem;
   min-height: 52px;
   padding: .45rem .45rem 0;
-  border-bottom: 2px solid #cfdad4;
-  background: linear-gradient(180deg, #f8faf9 0%, #eef3f0 100%);
+  border-bottom: 0;
+  background: linear-gradient(180deg, rgba($accent-primary, .06) 0%, $accent-light 100%);
 }
 
 .course-semester-tab {
@@ -395,11 +395,11 @@
   min-width: 108px;
   margin-bottom: -2px;
   padding: .66rem .78rem .6rem;
-  border: 2px solid #cfdad4;
-  border-bottom-color: #cfdad4;
+  border: 2px solid rgba($accent-primary, .22);
+  border-bottom-color: rgba($accent-primary, .22);
   border-radius: 14px 14px 0 0;
-  background: #f4f7f5;
-  color: #3d4843;
+  background: $accent-light;
+  color: $accent-dark;
   cursor: pointer;
   font-family: "Open Sans", sans-serif;
   font-weight: 800;
@@ -408,7 +408,7 @@
   transition: background .18s, box-shadow .18s, color .18s, transform .18s;
 
   small {
-    color: #69756f;
+    color: rgba($accent-dark, .7);
     font-size: .68rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -425,8 +425,8 @@
   display: none;
   position: relative;
   padding: 1.25rem;
-  border: 2px solid #cfdad4;
-  border-top: 0;
+  border: 2px solid rgba($accent-primary, .22);
+  border-top: 2px solid rgba($accent-primary, .22);
   border-radius: 0 0 7px 7px;
   background: #fff;
   box-shadow: 0 12px 24px rgba(38, 49, 45, .08);
@@ -437,7 +437,7 @@
 
   h2 {
     margin: 0 0 .75rem;
-    color: #24312b;
+    color: $accent-dark;
     font-size: 1.25rem;
   }
 
@@ -450,13 +450,13 @@
 
   div {
     padding: .7rem .8rem;
-    border: 1px solid #e7ebee;
+    border: 1px solid rgba($accent-primary, .14);
     border-radius: 6px;
-    background: #f8faf9;
+    background: rgba($accent-primary, .045);
   }
 
   dt {
-    color: #69756f;
+    color: rgba($accent-dark, .72);
     font-family: "Open Sans", sans-serif;
     font-size: .72rem;
     font-weight: 800;
@@ -475,8 +475,8 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: end;
   gap: .18rem;
-  padding-top: .45rem;
-  border-bottom: 2px solid #d9dfd7;
+  padding-top: .35rem;
+  border-bottom: 0;
 }
 
 .course-file-tab {
@@ -487,11 +487,11 @@
   min-height: 34px;
   margin-bottom: -2px;
   padding: .38rem .55rem;
-  border: 2px solid #d9dfd7;
-  border-bottom-color: #d9dfd7;
+  border: 2px solid rgba($accent-primary, .18);
+  border-bottom-color: rgba($accent-primary, .18);
   border-radius: 12px 12px 0 0;
-  background: #f7f9f6;
-  color: #4a5751;
+  background: rgba($accent-primary, .065);
+  color: $accent-dark;
   cursor: pointer;
   font-family: "Open Sans", sans-serif;
   font-size: .8rem;
@@ -501,7 +501,7 @@
   transition: background .18s, box-shadow .18s, color .18s, transform .18s;
 
   &:hover {
-    background: #fffdf8;
+    background: #fff;
     color: $accent-primary;
     transform: translateY(-2px);
   }
@@ -511,21 +511,21 @@
   display: none;
   grid-column: 1 / -1;
   min-height: 220px;
-  margin-top: 0;
+  margin-top: -2px;
   padding: 1.1rem 1.2rem;
-  border: 2px solid #d9dfd7;
-  border-top: 0;
+  border: 2px solid rgba($accent-primary, .18);
+  border-top: 2px solid rgba($accent-primary, .18);
   border-radius: 0 0 7px 7px;
-  background: #fffdf8;
+  background: #fff;
 
   h3 {
     margin-top: 0;
-    color: #26312d;
+    color: $accent-dark;
   }
 
   h4 {
     margin: 1.1rem 0 .55rem;
-    color: #26312d;
+    color: $accent-dark;
   }
 
   ul {
@@ -534,16 +534,16 @@
 }
 
 .course-file-input:checked + .course-file-tab {
-  background: #fffdf8;
+  background: #fff;
   color: $accent-primary;
-  border-bottom-color: #fffdf8;
-  box-shadow: 0 -3px 8px rgba(38, 49, 45, .08);
-  transform: translateY(-3px);
+  border-bottom-color: #fff;
+  box-shadow: 0 -3px 8px rgba($accent-primary, .08);
+  transform: translateY(-2px);
   z-index: 2;
 }
 
 .course-empty-note {
-  color: #69756f;
+  color: rgba($accent-dark, .72);
   font-style: italic;
 }
 
@@ -615,12 +615,13 @@
     border-bottom-color: #fff;
     color: $accent-primary;
     box-shadow: 0 -4px 10px rgba(38, 49, 45, .09);
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     z-index: 2;
   }
 
   #semester-#{$semester}:checked ~ .course-semester-panel-#{$semester} {
     display: block;
+    margin-top: -2px;
   }
 
   .course-file-tabs:has(##{$semester}-syllabus:checked) > .course-file-panel:not(.course-file-panel-syllabus),
