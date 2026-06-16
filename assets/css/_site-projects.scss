@@ -381,9 +381,9 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  gap: .35rem;
-  min-height: 58px;
-  padding: .45rem .55rem 0;
+  gap: .18rem;
+  min-height: 52px;
+  padding: .45rem .45rem 0;
   border-bottom: 2px solid #cfdad4;
   background: linear-gradient(180deg, #f8faf9 0%, #eef3f0 100%);
 }
@@ -392,12 +392,12 @@
   display: inline-flex;
   flex-direction: column;
   gap: .12rem;
-  min-width: 142px;
+  min-width: 108px;
   margin-bottom: -2px;
-  padding: .78rem 1.05rem .7rem;
+  padding: .66rem .78rem .6rem;
   border: 2px solid #cfdad4;
   border-bottom-color: #cfdad4;
-  border-radius: 5px 5px 0 0;
+  border-radius: 4px 4px 0 0;
   background: #e7eee9;
   color: #3d4843;
   cursor: pointer;
@@ -423,7 +423,8 @@
 
 .course-semester-panel {
   display: none;
-  padding: 1.35rem;
+  position: relative;
+  padding: 1.25rem;
   border: 2px solid #cfdad4;
   border-top: 0;
   border-radius: 0 0 7px 7px;
@@ -471,9 +472,9 @@
 
 .course-file-tabs {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, max-content);
   align-items: end;
-  gap: .35rem;
+  gap: .18rem;
   padding-top: .45rem;
   border-bottom: 2px solid #d9dfd7;
 }
@@ -482,9 +483,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
+  min-width: 92px;
+  min-height: 42px;
   margin-bottom: -2px;
-  padding: .7rem .85rem;
+  padding: .58rem .72rem;
   border: 2px solid #d9dfd7;
   border-bottom-color: #d9dfd7;
   border-radius: 4px 4px 0 0;
@@ -534,8 +536,8 @@
   background: #fffdf8;
   color: $accent-primary;
   border-bottom-color: #fffdf8;
-  box-shadow: 0 -7px 16px rgba(38, 49, 45, .13);
-  transform: translateY(-7px);
+  box-shadow: 0 -5px 12px rgba(38, 49, 45, .12);
+  transform: translateY(-5px);
   z-index: 2;
 }
 
@@ -611,8 +613,8 @@
     background: #fff;
     border-bottom-color: #fff;
     color: $accent-primary;
-    box-shadow: 0 -8px 18px rgba(38, 49, 45, .14);
-    transform: translateY(-8px);
+    box-shadow: 0 -6px 14px rgba(38, 49, 45, .13);
+    transform: translateY(-6px);
     z-index: 2;
   }
 
@@ -646,8 +648,8 @@
 
 @media (max-width: 760px) {
   .course-semester-tab {
-    min-width: 112px;
-    padding: .65rem .75rem;
+    min-width: 98px;
+    padding: .6rem .65rem;
   }
 
   .course-semester-panel {
@@ -655,7 +657,8 @@
   }
 
   .course-file-tabs {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, max-content);
+    overflow-x: auto;
   }
 
   .course-schedule-table {
