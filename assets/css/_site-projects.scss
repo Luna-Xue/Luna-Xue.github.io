@@ -381,28 +381,31 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  gap: .25rem;
-  padding: 0 .25rem;
-  border-bottom: 1px solid #d7dfda;
+  gap: .35rem;
+  min-height: 58px;
+  padding: .45rem .55rem 0;
+  border-bottom: 2px solid #cfdad4;
+  background: linear-gradient(180deg, #f8faf9 0%, #eef3f0 100%);
 }
 
 .course-semester-tab {
   display: inline-flex;
   flex-direction: column;
   gap: .12rem;
-  min-width: 126px;
-  margin-bottom: -1px;
-  padding: .72rem 1rem .66rem;
-  border: 1px solid #d7dfda;
-  border-bottom-color: #d7dfda;
-  border-radius: 8px 8px 0 0;
-  background: #eef3f0;
+  min-width: 142px;
+  margin-bottom: -2px;
+  padding: .78rem 1.05rem .7rem;
+  border: 2px solid #cfdad4;
+  border-bottom-color: #cfdad4;
+  border-radius: 5px 5px 0 0;
+  background: #e7eee9;
   color: #3d4843;
   cursor: pointer;
   font-family: "Open Sans", sans-serif;
   font-weight: 800;
   line-height: 1.15;
-  transition: background .18s, color .18s, transform .18s;
+  box-shadow: inset 0 -8px 12px rgba(38, 49, 45, .04);
+  transition: background .18s, box-shadow .18s, color .18s, transform .18s;
 
   small {
     color: #69756f;
@@ -414,17 +417,18 @@
   &:hover {
     background: #f7faf8;
     color: $accent-primary;
+    transform: translateY(-3px);
   }
 }
 
 .course-semester-panel {
   display: none;
-  padding: 1.25rem;
-  border: 1px solid #d7dfda;
+  padding: 1.35rem;
+  border: 2px solid #cfdad4;
   border-top: 0;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 7px 7px;
   background: #fff;
-  box-shadow: $card-shadow;
+  box-shadow: 0 12px 24px rgba(38, 49, 45, .08);
 }
 
 .course-semester-summary {
@@ -469,34 +473,46 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: end;
-  gap: 0;
+  gap: .35rem;
+  padding-top: .45rem;
+  border-bottom: 2px solid #d9dfd7;
 }
 
 .course-file-tab {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: .65rem .7rem;
-  border: 1px solid #dfe7e2;
-  border-bottom: 0;
-  border-radius: 7px 7px 0 0;
-  background: #f2f5f3;
+  min-height: 48px;
+  margin-bottom: -2px;
+  padding: .7rem .85rem;
+  border: 2px solid #d9dfd7;
+  border-bottom-color: #d9dfd7;
+  border-radius: 4px 4px 0 0;
+  background: #f0f2ec;
   color: #4a5751;
   cursor: pointer;
   font-family: "Open Sans", sans-serif;
   font-size: .86rem;
   font-weight: 800;
   text-align: center;
+  box-shadow: inset 0 -7px 10px rgba(38, 49, 45, .04);
+  transition: background .18s, box-shadow .18s, color .18s, transform .18s;
+
+  &:hover {
+    color: $accent-primary;
+    transform: translateY(-3px);
+  }
 }
 
 .course-file-panel {
   display: none;
   grid-column: 1 / -1;
   min-height: 220px;
-  padding: 1.05rem 1.15rem;
-  border: 1px solid #dfe7e2;
-  border-radius: 0 0 8px 8px;
+  margin-top: 0;
+  padding: 1.1rem 1.2rem;
+  border: 2px solid #d9dfd7;
+  border-top: 0;
+  border-radius: 0 0 7px 7px;
   background: #fffdf8;
 
   h3 {
@@ -518,6 +534,9 @@
   background: #fffdf8;
   color: $accent-primary;
   border-bottom-color: #fffdf8;
+  box-shadow: 0 -7px 16px rgba(38, 49, 45, .13);
+  transform: translateY(-7px);
+  z-index: 2;
 }
 
 .course-empty-note {
@@ -592,16 +611,34 @@
     background: #fff;
     border-bottom-color: #fff;
     color: $accent-primary;
-    transform: translateY(-2px);
+    box-shadow: 0 -8px 18px rgba(38, 49, 45, .14);
+    transform: translateY(-8px);
+    z-index: 2;
   }
 
   #semester-#{$semester}:checked ~ .course-semester-panel-#{$semester} {
     display: block;
   }
 
-  ##{$semester}-syllabus:checked ~ .course-file-panel-syllabus,
-  ##{$semester}-work:checked ~ .course-file-panel-work,
-  ##{$semester}-materials:checked ~ .course-file-panel-materials,
+  .course-file-tabs:has(##{$semester}-syllabus:checked) > .course-file-panel:not(.course-file-panel-syllabus),
+  .course-file-tabs:has(##{$semester}-work:checked) > .course-file-panel:not(.course-file-panel-work),
+  .course-file-tabs:has(##{$semester}-materials:checked) > .course-file-panel:not(.course-file-panel-materials),
+  .course-file-tabs:has(##{$semester}-policy:checked) > .course-file-panel:not(.course-file-panel-policy) {
+    display: none;
+  }
+
+  ##{$semester}-syllabus:checked ~ .course-file-panel-syllabus {
+    display: block;
+  }
+
+  ##{$semester}-work:checked ~ .course-file-panel-work {
+    display: block;
+  }
+
+  ##{$semester}-materials:checked ~ .course-file-panel-materials {
+    display: block;
+  }
+
   ##{$semester}-policy:checked ~ .course-file-panel-policy {
     display: block;
   }
