@@ -472,7 +472,7 @@
 
 .course-file-tabs {
   display: grid;
-  grid-template-columns: repeat(4, max-content);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: end;
   gap: .18rem;
   padding-top: .45rem;
@@ -483,10 +483,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 92px;
-  min-height: 42px;
+  min-width: 0;
+  min-height: 34px;
   margin-bottom: -2px;
-  padding: .58rem .72rem;
+  padding: .38rem .55rem;
   border: 2px solid #d9dfd7;
   border-bottom-color: #d9dfd7;
   border-radius: 4px 4px 0 0;
@@ -494,7 +494,7 @@
   color: #4a5751;
   cursor: pointer;
   font-family: "Open Sans", sans-serif;
-  font-size: .86rem;
+  font-size: .8rem;
   font-weight: 800;
   text-align: center;
   box-shadow: inset 0 -7px 10px rgba(38, 49, 45, .04);
@@ -657,7 +657,7 @@
   }
 
   .course-file-tabs {
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     overflow-x: auto;
   }
 
