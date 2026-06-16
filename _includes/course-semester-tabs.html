@@ -1,0 +1,99 @@
+{% assign course_semesters = page.course_semesters %}
+{% assign course_tabs = "syllabus:Syllabus|work:Project/Homework|materials:Materials|policy:Policy" | split: "|" %}
+
+{% if page.course_summary and page.course_summary != "" %}
+<p>{{ page.course_summary }}</p>
+{% endif %}
+
+{% if course_semesters and course_semesters.size > 0 %}
+<div class="course-archive">
+  {% for semester in course_semesters %}
+  {% assign semester_id = semester.term | slugify %}
+  <input type="radio"
+         id="semester-{{ semester_id }}"
+         name="semester-tabs-{{ page.permalink | slugify }}"
+         class="course-tab-input"
+         {% if forloop.first %}checked{% endif %}>
+  {% endfor %}
+
+  <div class="course-semester-tabs" role="tablist" aria-label="Course semesters">
+    {% for semester in course_semesters %}
+    {% assign semester_id = semester.term | slugify %}
+    <label for="semester-{{ semester_id }}" class="course-semester-tab">
+      <span>{{ semester.term }}</span>
+      {% if semester.status and semester.status != "" %}
+      <small>{{ semester.status }}</small>
+      {% endif %}
+    </label>
+    {% endfor %}
+  </div>
+
+  {% for semester in course_semesters %}
+  {% assign semester_id = semester.term | slugify %}
+  <section class="course-semester-panel course-semester-panel-{{ semester_id }}">
+    <div class="course-semester-summary">
+      <h2>{{ semester.term }}</h2>
+      {% if semester.details and semester.details.size > 0 %}
+      <dl>
+        {% for detail in semester.details %}
+        <div>
+          <dt>{{ detail.label }}</dt>
+          <dd>{{ detail.value }}</dd>
+        </div>
+        {% endfor %}
+      </dl>
+      {% endif %}
+    </div>
+
+    <div class="course-file-tabs" role="tablist" aria-label="{{ semester.term }} course files">
+      {% for tab_pair in course_tabs %}
+      {% assign tab_parts = tab_pair | split: ":" %}
+      {% assign tab_key = tab_parts[0] %}
+      {% assign tab_label = tab_parts[1] %}
+      <input type="radio"
+             id="{{ semester_id }}-{{ tab_key }}"
+             name="course-file-tabs-{{ page.permalink | slugify }}-{{ semester_id }}"
+             class="course-file-input"
+             {% if forloop.first %}checked{% endif %}>
+      <label for="{{ semester_id }}-{{ tab_key }}" class="course-file-tab">{{ tab_label }}</label>
+      {% endfor %}
+
+      {% for tab_pair in course_tabs %}
+      {% assign tab_parts = tab_pair | split: ":" %}
+      {% assign tab_key = tab_parts[0] %}
+      {% assign tab_label = tab_parts[1] %}
+      {% if tab_key == "syllabus" %}
+      {% assign tab_items = semester.syllabus %}
+      {% elsif tab_key == "work" %}
+      {% assign tab_items = semester.work %}
+      {% elsif tab_key == "materials" %}
+      {% assign tab_items = semester.materials %}
+      {% elsif tab_key == "policy" %}
+      {% assign tab_items = semester.policy %}
+      {% else %}
+      {% assign tab_items = nil %}
+      {% endif %}
+      <div class="course-file-panel course-file-panel-{{ tab_key }}">
+        <h3>{{ tab_label }}</h3>
+        {% if tab_items and tab_items.size > 0 %}
+        <ul>
+          {% for item in tab_items %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p class="course-empty-note">To be updated.</p>
+        {% endif %}
+
+        {% if tab_key == "materials" and semester.materials_include and semester.materials_include != "" %}
+        {% if semester.materials_include == "teaching/ece-362-fall-2026-materials.html" %}
+        {% include teaching/ece-362-fall-2026-materials.html %}
+        {% endif %}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+{% endif %}

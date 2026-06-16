@@ -2,250 +2,35 @@
 layout: default
 title: "ECE 362: Discrete Math for Engineers"
 header_title: "ECE 362: Discrete Math for Engineers"
-subtitle: "Fall 2026 · University of Hawaiʻi at Mānoa"
+subtitle: "University of Hawaiʻi at Mānoa"
 include_header: page_header.html
 nav_item: Teaching
 permalink: /teaching/ece-362/
+course_summary: "This page archives teaching materials for ECE 362: Discrete Math for Engineers at the University of Hawaiʻi at Mānoa."
+course_semesters:
+  - term: "Fall 2026"
+    status: "Upcoming"
+    details:
+      - label: "Instructor"
+        value: "Xiaochan Xue"
+      - label: "Meeting Time"
+        value: "Monday, Wednesday, Friday, 11:30 AM-12:20 PM"
+      - label: "Location"
+        value: "Kuykendall Hall 310"
+      - label: "Schedule Type"
+        value: "Lecture"
+    syllabus:
+      - "Course syllabus will be posted before the semester begins."
+      - "Core topics include logic, proof techniques, sets, relations, functions, counting, graphs, and discrete structures for engineering."
+    work:
+      - "Homework assignments and project notes will be posted by week."
+      - "Students should check the course learning platform for official submission instructions and deadlines."
+    materials:
+      - "Lecture materials, reading notes, and schedule updates will be archived here."
+    materials_include: "teaching/ece-362-fall-2026-materials.html"
+    policy:
+      - "Students are expected to follow UHM academic integrity policies."
+      - "Late work, collaboration, accessibility, and grading policies will follow the official syllabus."
 ---
 
-<style>
-  /* ECE 362 tables — styled after the schedule tables at
-     https://gwu-ai-cyber-edu.github.io/schedule/ : a solid header bar with
-     white bold text, zebra-striped rows, generous padding, and light row
-     separators. The header color uses this site's UHM-green accent (#00693e)
-     instead of the reference's navy so the tables match the existing UI. */
-  .course-info-table,
-  .course-schedule-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.25rem 0 1.75rem 0;
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  /* ---- Weekly schedule table (Week + Mon/Wed/Fri grid) ---- */
-  .course-schedule-table {
-    table-layout: fixed;
-  }
-
-  .course-schedule-table thead th {
-    background-color: #00693e;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-    padding: 12px;
-  }
-
-  .course-schedule-table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-    vertical-align: top;
-  }
-
-  .course-schedule-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-
-  /* Narrow "Week" column; Monday / Wednesday / Friday share the rest equally */
-  .course-schedule-table th:first-child,
-  .course-schedule-table td:first-child {
-    width: 64px;
-  }
-
-  /* ---- Course information table (key / value rows) ---- */
-  .course-info-table th {
-    background-color: #00693e;
-    color: #fff;
-    font-weight: 700;
-    text-align: left;
-    padding: 12px;
-    width: 170px;
-    vertical-align: top;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  }
-
-  .course-info-table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    vertical-align: top;
-  }
-
-  .course-info-table tbody tr:nth-child(even) td {
-    background-color: #f2f2f2;
-  }
-
-  /* "No class" markers inside schedule cells */
-  .no-class {
-    color: #777;
-    font-style: italic;
-  }
-</style>
-
-<p>
-  This page summarizes my teaching of <strong>ECE 362: Discrete Math for Engineers</strong>
-  at the University of Hawaiʻi at Mānoa.
-</p>
-
-<h2>Course Information</h2>
-
-<table class="course-info-table">
-  <tbody>
-    <tr>
-      <th>Instructor</th>
-      <td>Xiaochan Xue</td>
-    </tr>
-    <tr>
-      <th>Meeting Time</th>
-      <td>Monday, Wednesday, Friday, 11:30 AM-12:20 PM</td>
-    </tr>
-    <tr>
-      <th>Location</th>
-      <td>Kuykendall Hall 310</td>
-    </tr>
-    <tr>
-      <th>Term</th>
-      <td>Fall 2026, August 24-December 18, 2026</td>
-    </tr>
-    <tr>
-      <th>Schedule Type</th>
-      <td>Lecture</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2>Weekly Course Schedule</h2>
-
-<p>
-  The tentative weekly schedule below follows the official
-  <a href="https://manoa.hawaii.edu/registrar/academic-calendar/fall-2026/" target="_blank" rel="noopener">
-    UHM Fall 2026 Academic Calendar
-  </a>.
-</p>
-
-<table class="course-schedule-table">
-  <thead>
-    <tr>
-      <th>Week</th>
-      <th>Monday</th>
-      <th>Wednesday</th>
-      <th>Friday</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Aug 24</td>
-      <td>Aug 26</td>
-      <td>Aug 28</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Aug 31</td>
-      <td>Sep 2</td>
-      <td>Sep 4</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Sep 7 <span class="no-class">· No class (Labor Day)</span></td>
-      <td>Sep 9</td>
-      <td>Sep 11</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Sep 14</td>
-      <td>Sep 16</td>
-      <td>Sep 18</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Sep 21</td>
-      <td>Sep 23</td>
-      <td>Sep 25</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>Sep 28</td>
-      <td>Sep 30</td>
-      <td>Oct 2</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>Oct 5</td>
-      <td>Oct 7</td>
-      <td>Oct 9</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>Oct 12</td>
-      <td>Oct 14</td>
-      <td>Oct 16</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>Oct 19</td>
-      <td>Oct 21</td>
-      <td>Oct 23</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>Oct 26</td>
-      <td>Oct 28</td>
-      <td>Oct 30</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>Nov 2</td>
-      <td>Nov 4</td>
-      <td>Nov 6</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td>Nov 9</td>
-      <td>Nov 11 <span class="no-class">· No class (Veterans Day)</span></td>
-      <td>Nov 13</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>Nov 16</td>
-      <td>Nov 18</td>
-      <td>Nov 20</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>Nov 23</td>
-      <td>Nov 25</td>
-      <td>Nov 27 <span class="no-class">· No class (Thanksgiving)</span></td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>Nov 30</td>
-      <td>Dec 2</td>
-      <td>Dec 4</td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td>Dec 7</td>
-      <td>Dec 9</td>
-      <td>Dec 11 <span class="no-class">· No class (Study period)</span></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-  <strong>Final exam:</strong> Monday, December 14, 2026, 12:00-2:00 PM.
-</p>
-
-<h2>Important Academic Dates</h2>
-
-<ul>
-  <li><strong>Aug 24:</strong> Semester begins.</li>
-  <li><strong>Sep 7:</strong> Labor Day, non-instructional day.</li>
-  <li><strong>Nov 11:</strong> Veterans Day, non-instructional day.</li>
-  <li><strong>Nov 26:</strong> Thanksgiving, non-instructional day.</li>
-  <li><strong>Nov 27:</strong> Non-instructional day.</li>
-  <li><strong>Dec 10:</strong> Last day of instruction.</li>
-  <li><strong>Dec 11-12:</strong> Study period.</li>
-  <li><strong>Dec 14-18:</strong> Final examination period.</li>
-  <li><strong>Dec 18:</strong> Semester ends.</li>
-</ul>
+{% include course-semester-tabs.html %}
