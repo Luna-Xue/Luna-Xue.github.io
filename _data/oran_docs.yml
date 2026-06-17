@@ -37,6 +37,10 @@ sections:
   - title: gNB Deployment
     id: gNB-deployment
     file: docs/oran/core-5g/gnb-deployment.md
+  
+  - title: gNB in Kubernetes
+    id: gNB-kubernetes
+    file: docs/oran/core-5g/kube-cn.md
   # TBC Parts
   # - title: MIMO Deployment
   #   id: mimo-deployment
