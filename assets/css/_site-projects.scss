@@ -613,7 +613,7 @@
   }
 }
 
-@each $semester in fall-2026, spring-2026, fall-2025, spring-2025, fall-2024, spring-2024 {
+@each $semester in spring-2027, fall-2026, spring-2026, fall-2025, spring-2025, fall-2024, spring-2024 {
   #semester-#{$semester}:checked ~ .course-semester-tabs label[for="semester-#{$semester}"] {
     background: #fff;
     border-bottom-color: #fff;
