@@ -88,6 +88,8 @@
         {% if tab_key == "schedule" and semester.schedule_include and semester.schedule_include != "" %}
         {% if semester.schedule_include == "teaching/ece-362-fall-2026-materials.html" %}
         {% include teaching/ece-362-fall-2026-materials.html %}
+        {% elsif semester.schedule_include == "teaching/ece-669-spring-2027-materials.html" %}
+        {% include teaching/ece-669-spring-2027-materials.html %}
         {% endif %}
         {% endif %}
       </div>
