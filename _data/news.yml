@@ -1,4 +1,9 @@
-- label: service"
+- label: service
+  title: "I am serving as a <strong>Local Organizing Chair</strong> for <a class='news-link' href='https://infocom2027.ieee-infocom.org/' target='_blank' rel='noopener'><strong>IEEE INFOCOM 2027</strong></a>at Honolulu, Hawaiʻi!"
+  date: Jun, 2026
+  lab: false
+
+- label: service
   title: "I was invited to serve on the Technical Program Committee for the International Performance, Computing and Communications Conference (IPCCC) 2026"
   date: Jun, 2026
   lab: false
