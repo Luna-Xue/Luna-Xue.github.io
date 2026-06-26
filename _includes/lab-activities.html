@@ -31,13 +31,18 @@
             {% else %}
             {% assign activity_date = "" %}
             {% endif %}
+            {% assign activity_description = activity.description %}
+            {% assign activity_person = activity.person | default: "" | strip %}
+            {% if activity_person != "" %}
+            {% assign activity_description = activity_description | append: " -- " | append: activity_person %}
+            {% endif %}
             <article class="lab-activity-card"
                      data-lab-activity
                      data-album="{{ group.name | slugify }}"
                      data-album-title="{{ group.name | escape }}"
                      data-title="{{ activity.title | escape }}"
                      data-date="{{ activity_date | escape }}"
-                     data-description="{{ activity.description | escape }}"
+                     data-description="{{ activity_description | escape }}"
                      {% if activity.image and activity.image != "" %}data-image="/assets/img/lab/{{ activity.image | escape }}"{% endif %}>
                 {% if activity.image and activity.image != "" %}
                 <button class="lab-activity-image-button" type="button" aria-label="Open {{ activity.title | escape }} photo">
@@ -53,7 +58,7 @@
                     <div class="lab-activity-date">{{ activity_date }}</div>
                     {% endif %}
                     <h4>{{ activity.title }}</h4>
-                    <p>{{ activity.description }}</p>
+                    <p>{{ activity_description }}</p>
                 </div>
             </article>
             {% endfor %}

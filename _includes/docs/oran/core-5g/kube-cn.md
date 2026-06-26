@@ -1,9 +1,13 @@
+---
+toc: true
+---
+
 ## Deploying Core Network in Kubernetes
 
 Additionally Core Network can also be deployed in the Kubernetes Cluster besides ORAN services.
 
 
-1. Verify MetalLB IP availability and edit `RECIPE_EXAMPLE/example_recipe_5g_core.yaml`
+### Verify MetalLB IP availability and edit `RECIPE_EXAMPLE/example_recipe_5g_core.yaml`
 
    ```sh
    cd O-RAN/kube-cn
@@ -17,14 +21,14 @@ Additionally Core Network can also be deployed in the Kubernetes Cluster besides
    upfAdvertiseIP: <free-metallb-ip>
    ```
 
-2. Verify gNB metrics source:
+### Verify gNB metrics source:
 
    ```yml
    metrics:
        wsUrl: <gnb-host-ip>:8001
    ```
 
-3. Build and push images:
+## Build and push images:
 
    ```sh
    docker build -t registry.local:5000/ocudu/open5gs-5gc:v2.7.6-kube --target open5gs --build-arg OS_VERSION=22.04 --build-arg OPEN5GS_VERSION=v2.7.6 ./open5gs
@@ -36,13 +40,13 @@ Additionally Core Network can also be deployed in the Kubernetes Cluster besides
    docker push registry.local:5000/ocudu/grafana:12.0.2-kube
    ```
 
-4. Install to Kubernetes:
+### Install to Kubernetes:
 
    ```sh
    ./install -f RECIPE_EXAMPLE/example_recipe_5g_core.yaml
    ```
 
-5. Verify:
+### Verify:
 
    ```sh
    kubectl get pods -n 5g-core -o wide
@@ -55,8 +59,7 @@ Additionally Core Network can also be deployed in the Kubernetes Cluster besides
 
    {% include notification.html status="is-info" message="Replace the  `addr` field under `cu_cp.amf` in the gNB configuation file with the `EXTERNAL IP` that is set for `open5gs-5gc` service to connect with core network deployment in kubernetes." %}
 
-{:start="6"}
-6. Access WebUIs:
+### Access WebUIs:
 
    **Open5GS WebUI**: `http://<free-metallb-ip>:9999`.
    For **Grafana** metrics dashboard, install/start the port-forward service:
@@ -71,8 +74,8 @@ Additionally Core Network can also be deployed in the Kubernetes Cluster besides
 
    {% include notification.html status="is-warning" message="`<HOST-IP>` is the the IP address for the Host PC and not the above mentioned `<free-metallb-ip>` that is provided to core network service" %}
 
-{:start="7"}
-7. View `Core-Network` logs
+
+### View `Core-Network` logs
 
    ```sh
    kubectl logs -f -n 5g-core -l app.kubernetes.io/component=open5gs-5gc

@@ -1,26 +1,36 @@
 - title: "CyberTraining: O-RAN-Based Cyberinfrastructure Training"
   start_date: "2025-06-01"
   image: "Cyber1.JPG"
+  person: ""
+  featured: false
   description: "Saurabh Parkar showing the breathing data collection process to the mentees."
 
 - title: "CyberTraining: O-RAN-Based Cyberinfrastructure Training"
   start_date: "2025-06-01"
   image: "Cyber2.jpg"
+  person: ""
+  featured: false
   description: "Group photo with Dr. Shucheng Yu, Dr. Xiaochan Xue, Saurabh Parkar, and Lenny Yanza."
 
 - title: "Invited Seminar at Yeshiva University"
   start_date: "2025-12-10"
   image: "YU1.JPG"
+  person: ""
+  featured: false
   description: "Discussion with the Yeshiva University group."
 
 - title: "Invited Seminar at Yeshiva University"
   start_date: "2025-12-10"
   image: "YU2.JPG"
+  person: ""
+  featured: false
   description: "Presenting recent work during the invited seminar."
 
 - title: "Invited Seminar at Yeshiva University"
   start_date: "2025-12-10"
   image: "YU3.JPG"
+  person: ""
+  featured: false
   description: "Visiting Mr. Robot at Yeshiva's lab with Abby Xu, Dr. Shucheng Yu, and Dr. Honggang Wang."
 
 # - title: "SaTC 2.0 Workshop"
@@ -37,34 +47,54 @@
   start_date: "2025-12-15"
   end_date: "2025-12-16"
   image: "SaTC3.JPG"
+  person: ""
+  featured: false
   description: "SaTC 2.0 Workshop at George Washington University."
 
 - title: "CyberPOWDER Fellows Program 2026"
   start_date: "2026-04-27"
   end_date: "2026-05-01"
   image: "CyberPOWDER2.jpg"
-  description: "CyberPOWDER fellows' research presentation. -- Saurabh Parkar"
+  person: "Saurabh Parkar"
+  featured: true
+  description: "CyberPOWDER fellows' research presentation."
 
 - title: "CyberPOWDER Fellows Program 2026"
   start_date: "2026-04-27"
   end_date: "2026-05-01"
   image: "CyberPOWDER1.jpg"
-  description: "Visit at UoU's Datacenter and CloudLab facility. -- Saurabh Parkar"
+  person: "Saurabh Parkar"
+  featured: true
+  description: "Visit at UoU's Datacenter and CloudLab facility."
 
 - title: "CyberPOWDER Fellows Program 2026"
   start_date: "2026-04-27"
   end_date: "2026-05-01"
   image: "CyberPOWDER3.jpg"
-  description: "Group photo of CyberPOWDER fellows and mentors. -- Saurabh Parkar"
+  person: "Saurabh Parkar"
+  featured: true
+  description: "Group photo of CyberPOWDER fellows and mentors."
 
 - title: "International ISAC Innovation Forum 2026"
   start_date: "2026-05-21"
   end_date: "2026-05-22"
   image: "ISAC_1.jpg"
+  person: ""
+  featured: false
   description: "Forum at George Mason University"
 
 - title: "International ISAC Innovation Forum 2026"
   start_date: "2026-05-21"
   end_date: "2026-05-22"
   image: "ISAC_2.jpg"
+  person: ""
+  featured: false
   description: "Forum at George Mason University"
+
+- title: "JESSE Workshop Summer 2026"
+  start_date: "2026-06-01"
+  end_date: "2026-07-09"
+  image: "Jesse1.jpg"
+  person: ""
+  featured: true
+  description: "JESSE Workshop: Remote Robot Control over O-RAN Network using steering console"

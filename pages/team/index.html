@@ -47,8 +47,13 @@ body_class: team-lab-page
 {% assign lab_home_activity_count = 0 %}
 <div class="lab-activity-grid lab-home-activity-preview">
     {% for activity in lab_home_activities %}
-    {% if lab_home_activity_count < 3 and activity.description contains "Saurabh Parkar" %}
+    {% if lab_home_activity_count < 3 and activity.featured == true %}
     {% assign lab_home_activity_count = lab_home_activity_count | plus: 1 %}
+    {% assign activity_description = activity.description %}
+    {% assign activity_person = activity.person | default: "" | strip %}
+    {% if activity_person != "" %}
+    {% assign activity_description = activity_description | append: " -- " | append: activity_person %}
+    {% endif %}
     {% if activity.start_date and activity.start_date != "" %}
     {% assign start_display = activity.start_date | date: "%B %-d, %Y" %}
     {% assign activity_date = start_display %}
@@ -81,7 +86,7 @@ body_class: team-lab-page
             <div class="lab-activity-date">{{ activity_date }}</div>
             {% endif %}
             <h4>{{ activity.title }}</h4>
-            <p>{{ activity.description }}</p>
+            <p>{{ activity_description }}</p>
         </div>
     </article>
     {% endif %}
