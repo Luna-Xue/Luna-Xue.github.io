@@ -4,6 +4,11 @@
     radial-gradient(circle at 14% 12%, rgba(255, 214, 125, .32), transparent 18rem),
     linear-gradient(180deg, #fff7dc 0%, #f9edc8 48%, #efe1bb 100%);
   color: #5a4634;
+  cursor: url('/assets/img/games/cursor-icon.png') 4 0, default !important;
+
+  * {
+    cursor: url('/assets/img/games/cursor-icon.png') 4 0, default !important;
+  }
 
   nav.border-bottom {
     display: none;
