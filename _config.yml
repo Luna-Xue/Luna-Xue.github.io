@@ -13,6 +13,7 @@ nav:
     Projects: "/pages/projects"
     "Awards & Activities": "/pages/awards"
     Docs: "/pages/docs"
+    Games: "/pages/games"
 
 # Bio settings
 name: "Xiaochan Xue"

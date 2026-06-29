@@ -1,0 +1,137 @@
+---
+layout: default
+title: "Games"
+nav_item: Games
+body_class: games-page
+---
+
+<div class="games-loading" aria-live="polite" aria-label="Entering games world">
+  <div class="games-loading-card">
+    <div class="games-loading-island" aria-hidden="true">
+      <span></span>
+    </div>
+    <p class="games-loading-enter">Boarding the island...</p>
+    <p class="games-loading-exit">Bye bye. Remember to return to the island.</p>
+  </div>
+</div>
+
+<a class="games-earth-button" href="{{ '/' | relative_url }}">Return to Earth</a>
+
+<section class="games-hero" aria-labelledby="games-title">
+  <div class="games-hero-content">
+    <p class="games-kicker">Island Playbook</p>
+    <h1 id="games-title">Games</h1>
+    <p class="games-hero-copy">
+      This is my game world: a place for imagining the future, where realities, choices, and will can be tested and reflected through play. Explore hard, become what you want to become, and keep building no matter what shape the world takes.
+    </p>
+    <div class="games-hero-actions" aria-label="Games page sections">
+      <a href="#playable" class="games-action">Playable</a>
+      <a href="#design-notes" class="games-action games-action-secondary">Design notes</a>
+    </div>
+  </div>
+  <div class="games-status-panel" aria-label="Games archive status">
+    <span class="games-status-dot"></span>
+    <span>Island board open</span>
+  </div>
+</section>
+
+<script>
+  (function() {
+    window.setTimeout(function() {
+      document.body.classList.add('games-loaded');
+      var loading = document.querySelector('.games-loading');
+      if (loading) loading.classList.add('is-hidden');
+    }, 1250);
+
+    var earthButton = document.querySelector('.games-earth-button');
+    if (!earthButton) return;
+
+    earthButton.addEventListener('click', function(event) {
+      var loading = document.querySelector('.games-loading');
+      if (!loading) return;
+
+      event.preventDefault();
+      document.body.classList.remove('games-loaded');
+      document.body.classList.add('games-leaving');
+      loading.classList.remove('is-hidden');
+
+      window.setTimeout(function() {
+        window.location.href = earthButton.href;
+      }, 1250);
+    });
+  })();
+</script>
+
+<section class="games-section" id="playable">
+  <div class="games-section-heading">
+    <p class="games-kicker">Coming Collection</p>
+    <h2>Prototype meadow</h2>
+  </div>
+  <div class="games-card-grid">
+    <article class="games-card games-card-featured">
+      <div class="games-card-visual games-card-visual-arena" aria-hidden="true">
+        <span></span>
+      </div>
+      <div class="games-card-body">
+        <p class="games-card-meta">Prototype plot 01</p>
+        <h3>Signal Garden</h3>
+        <p>
+          A future space for wireless puzzles, resource loops, and teaching demos that make invisible signals feel playful.
+        </p>
+        <span class="games-card-tag">Design seed</span>
+      </div>
+    </article>
+
+    <article class="games-card">
+      <div class="games-card-visual games-card-visual-signal" aria-hidden="true">
+        <span></span>
+      </div>
+      <div class="games-card-body">
+        <p class="games-card-meta">Prototype plot 02</p>
+        <h3>Trust Orchard</h3>
+        <p>
+          A compact idea slot for security decisions, cooperative defenses, and systems that reward careful observation.
+        </p>
+        <span class="games-card-tag">Concept</span>
+      </div>
+    </article>
+
+    <article class="games-card">
+      <div class="games-card-visual games-card-visual-agent" aria-hidden="true">
+        <span></span>
+      </div>
+      <div class="games-card-body">
+        <p class="games-card-meta">Prototype plot 03</p>
+        <h3>Agent Workshop</h3>
+        <p>
+          A place for experimental AI-agent mechanics, simulation toys, and tiny worlds that can be tuned over time.
+        </p>
+        <span class="games-card-tag">Open slot</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="games-section games-design-section" id="design-notes">
+  <div class="games-section-heading">
+    <p class="games-kicker">Design Noticeboard</p>
+    <h2>Notes, worlds, mechanics</h2>
+  </div>
+  <div class="games-design-grid">
+    <div class="games-design-item">
+      <span class="games-design-index">01</span>
+      <h3>Mechanics</h3>
+      <p>Core loops, player choices, win conditions, resource systems, and interaction sketches.</p>
+    </div>
+    <div class="games-design-item">
+      <span class="games-design-index">02</span>
+      <h3>Worlds</h3>
+      <p>Fictional systems, cyber-physical spaces, research-inspired settings, and moodboards.</p>
+    </div>
+    <div class="games-design-item">
+      <span class="games-design-index">03</span>
+      <h3>Dev logs</h3>
+      <p>Build notes, iteration snapshots, postmortems, and links to playable experiments.</p>
+    </div>
+  </div>
+</section>
