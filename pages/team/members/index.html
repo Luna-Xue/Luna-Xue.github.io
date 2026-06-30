@@ -89,3 +89,50 @@ nav_item: UHM WINGS Lab
 <div class="lab-activities-callout mt3 mb2">
     <a href="/pages/team/lab-activities">Explore recent lab activities and outreach photos.</a>
 </div>
+
+<script>
+(function() {
+    var mobileQuery = window.matchMedia('(max-width: 640px)');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.team-member--expandable'));
+    if (!cards.length) return;
+
+    function closeCards(exceptCard) {
+        cards.forEach(function(card) {
+            if (card !== exceptCard) card.classList.remove('is-expanded');
+        });
+    }
+
+    function resetDesktopState() {
+        if (!mobileQuery.matches) closeCards();
+    }
+
+    cards.forEach(function(card) {
+        card.addEventListener('click', function(event) {
+            if (!mobileQuery.matches || event.target.closest('a')) return;
+            card.classList.toggle('is-expanded');
+            if (!card.classList.contains('is-expanded')) card.blur();
+            closeCards(card);
+        });
+
+        card.addEventListener('keydown', function(event) {
+            if (!mobileQuery.matches || event.target.closest('a')) return;
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            event.preventDefault();
+            card.classList.toggle('is-expanded');
+            if (!card.classList.contains('is-expanded')) card.blur();
+            closeCards(card);
+        });
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!mobileQuery.matches || event.target.closest('.team-member--expandable')) return;
+        closeCards();
+    });
+
+    if (mobileQuery.addEventListener) {
+        mobileQuery.addEventListener('change', resetDesktopState);
+    } else {
+        mobileQuery.addListener(resetDesktopState);
+    }
+})();
+</script>

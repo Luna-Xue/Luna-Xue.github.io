@@ -10,26 +10,51 @@ current:
       area: ISAC, AI-native wireless systems, O-RAN
       photo: "sparkar.jpg"
       url: "https://srparkar.github.io/"
+      github: "https://github.com/nexuseli18"
+      linkedin: "https://www.linkedin.com/in/saurabhparkar25/"
+      email: "sparkar@hawaii.edu"
+      about: "Saurabh is a Ph.D. student whose work focuses on building intelligent, secure, and adaptable next-generation wireless systems. His interests connect sensing, communication, AI, and real-time experimentation for applications in autonomy, IoT, healthcare, smart environments, and resilient cyber-physical systems."
+      expand: true
   master:
     - name: Thomas Yang
       area: O-RAN/AI-RAN Buildup + Fake Base Station
       photo: "Thomas.jpg"
       url: "https://www2.hawaii.edu/~yaozheng/team/thomas-yang/"
+      github: ""
+      linkedin: ""
+      email: ""
+      about: ""
+      expand: false
 
     - name: Aris Carlos
       area: O-RAN/AI-RAN Buildup +  Fake Base Station
       photo: "Aris.png"
-      url: ""
+      url: "https://aris-carlos.github.io"
+      github: "https://github.com/aris-carlos"
+      linkedin: "https://www.linkedin.com/in/aris-carlos"
+      email: "atcarlos@hawaii.edu"
+      about: "Graduate Student majoring in Computer Science"
+      expand: true
     
     - name: Ethan Morrell
       area: O-RAN/AI-RAN Buildup + System Fuzzing
       photo: "Ethan.png"
       url: ""
+      github: ""
+      linkedin: ""
+      email: ""
+      about: ""
+      expand: false
     
     - name: Matthew Matsuo
       area: System Fuzzing
       photo: "Matthew Matsuo.jpeg"
       url: ""
+      github: ""
+      linkedin: ""
+      email: ""
+      about: ""
+      expand: false
   
   intern:
     # - name: Tomohiro Yamada
@@ -43,18 +68,33 @@ current:
       area: "Smart Robot Car (JESSE 2026)"
       photo: "kensein.png"
       url: ""
+      github: ""
+      linkedin: ""
+      email: ""
+      about: ""
+      expand: false
     
     - name: Tim He
       original_institution: "High School Student"
       area: "Smart Robot Car (JESSE 2026)"
       photo: "timh.png"
       url: ""
+      github: ""
+      linkedin: ""
+      email: ""
+      about: ""
+      expand: false
     
     - name: Jayden Lau
       original_institution: "High School Student"
       area: "Smart Robot Car (JESSE 2026)"
       photo: "jaydenl.png"
       url: ""
+      github: ""
+      linkedin: ""
+      email: ""
+      about: ""
+      expand: false
 
 
 alumni:

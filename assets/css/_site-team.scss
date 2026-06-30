@@ -50,10 +50,123 @@ table.styled-table {
   border-radius: 10px;
   box-shadow: $card-shadow;
   background: #fff;
-  transition: transform .2s, box-shadow .2s;
+  transition: transform .28s ease, box-shadow .28s ease;
   &:hover {
     transform: translateY(-3px);
     box-shadow: $card-shadow-hover;
+  }
+}
+
+.team-member--expandable {
+  overflow: hidden;
+  outline: none;
+  transition: grid-column .65s cubic-bezier(.16, 1, .3, 1), transform .35s ease, box-shadow .35s ease;
+}
+
+.team-member-detail {
+  width: 0;
+  max-width: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  text-align: left;
+  transition: max-width .62s cubic-bezier(.16, 1, .3, 1), max-height .62s cubic-bezier(.16, 1, .3, 1), margin-top .5s ease, opacity .38s ease .1s;
+}
+
+.team-member--expandable:hover,
+.team-member--expandable:focus-within,
+.team-member--expandable:focus,
+.team-member--expandable.is-expanded {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1.15rem;
+  transform: none;
+}
+
+.team-member--expandable:hover .team-info,
+.team-member--expandable:focus-within .team-info,
+.team-member--expandable:focus .team-info,
+.team-member--expandable.is-expanded .team-info {
+  flex: 1 1 auto;
+  max-width: 330px;
+}
+
+.team-member--expandable:hover .team-photo,
+.team-member--expandable:hover .team-photo img,
+.team-member--expandable:hover .team-photo-placeholder,
+.team-member--expandable:focus-within .team-photo,
+.team-member--expandable:focus-within .team-photo img,
+.team-member--expandable:focus-within .team-photo-placeholder,
+.team-member--expandable:focus .team-photo,
+.team-member--expandable:focus .team-photo img,
+.team-member--expandable:focus .team-photo-placeholder,
+.team-member--expandable.is-expanded .team-photo,
+.team-member--expandable.is-expanded .team-photo img,
+.team-member--expandable.is-expanded .team-photo-placeholder {
+  width: 128px;
+  height: 128px;
+}
+
+.team-member--expandable:hover .team-member-detail,
+.team-member--expandable:focus-within .team-member-detail,
+.team-member--expandable:focus .team-member-detail,
+.team-member--expandable.is-expanded .team-member-detail {
+  width: auto;
+  max-width: 100%;
+  max-height: 320px;
+  margin-top: .8rem;
+  opacity: 1;
+}
+
+.team-member-detail-section {
+  margin-bottom: .8rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h5 {
+    margin: 0 0 .25rem;
+    color: #26312d;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0;
+    color: #5c6862;
+    font-size: .8rem;
+    line-height: 1.45;
+  }
+}
+
+.team-member-socials {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  flex-wrap: wrap;
+
+  a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $accent-primary;
+    background: $accent-light;
+    text-decoration: none;
+    transition: color .15s, background .15s, transform .15s;
+
+    &:hover {
+      color: #fff;
+      background: $accent-primary;
+      transform: translateY(-1px);
+    }
   }
 }
 
@@ -61,6 +174,7 @@ table.styled-table {
   flex-shrink: 0;
   width: 160px;
   height: 160px;
+  transition: width .62s cubic-bezier(.16, 1, .3, 1), height .62s cubic-bezier(.16, 1, .3, 1);
   img {
     width: 160px;
     height: 160px;
@@ -68,6 +182,7 @@ table.styled-table {
     object-fit: cover;
     object-position: center 20%;
     border: 3px solid #f0f0f0;
+    transition: width .62s cubic-bezier(.16, 1, .3, 1), height .62s cubic-bezier(.16, 1, .3, 1), border-color .35s ease;
   }
 }
 
@@ -80,6 +195,7 @@ table.styled-table {
   align-items: center;
   justify-content: center;
   border: 3px solid #f0f0f0;
+  transition: width .62s cubic-bezier(.16, 1, .3, 1), height .62s cubic-bezier(.16, 1, .3, 1), border-color .35s ease;
   i {
     font-size: 3.5rem;
     color: $accent-primary;
@@ -103,6 +219,24 @@ table.styled-table {
     overflow-wrap: anywhere;
     &:hover { color: $accent-primary; }
   }
+}
+
+.team-name-plain {
+  display: none;
+}
+
+.team-member--expandable:hover .team-name-link,
+.team-member--expandable:focus-within .team-name-link,
+.team-member--expandable:focus .team-name-link,
+.team-member--expandable.is-expanded .team-name-link {
+  display: none;
+}
+
+.team-member--expandable:hover .team-name-plain,
+.team-member--expandable:focus-within .team-name-plain,
+.team-member--expandable:focus .team-name-plain,
+.team-member--expandable.is-expanded .team-name-plain {
+  display: inline;
 }
 
 .team-area {
@@ -487,6 +621,62 @@ table.styled-table {
 
   .team-member {
     padding: 1.1rem .9rem;
+  }
+
+  .team-member--expandable,
+  .team-member--expandable:hover,
+  .team-member--expandable:focus-within,
+  .team-member--expandable:focus,
+  .team-member--expandable.is-expanded {
+    grid-column: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-member--expandable:hover .team-info,
+  .team-member--expandable:focus-within .team-info,
+  .team-member--expandable:focus .team-info,
+  .team-member--expandable.is-expanded .team-info {
+    flex: 0 1 auto;
+    max-width: 100%;
+  }
+
+  .team-member-detail {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .team-member--expandable.is-expanded {
+    align-items: stretch;
+    text-align: left;
+    cursor: default;
+  }
+
+  .team-member--expandable.is-expanded .team-member-detail {
+    max-height: 420px;
+    margin-top: .8rem;
+    opacity: 1;
+  }
+
+  .team-member--expandable:not(.is-expanded) {
+    cursor: pointer;
+  }
+
+  .team-member--expandable:not(.is-expanded) .team-member-detail {
+    max-height: 0;
+    margin-top: 0;
+    opacity: 0;
+  }
+
+  .team-member--expandable:not(.is-expanded) .team-name-link {
+    display: inline;
+  }
+
+  .team-member--expandable:not(.is-expanded) .team-name-plain {
+    display: none;
   }
 
   .team-photo,

@@ -1,5 +1,6 @@
 {% assign member = include.member %}
-<div class="team-member">
+{% assign member_expand = member.expand | default: false %}
+<div class="team-member{% if member_expand == true %} team-member--expandable{% endif %}"{% if member_expand == true %} tabindex="0"{% endif %}>
     <div class="team-photo">
         {% if member.photo and member.photo != "" %}
         <img src="/assets/img/team/{{ member.photo }}" alt="{{ member.name }}">
@@ -12,10 +13,15 @@
 
     <div class="team-info">
         <div class="team-name">
+            {% if member_expand == true and member.url and member.url != "" %}
+            <a class="team-name-link" href="{{ member.url }}" target="_blank" rel="noopener">{{ member.name }} <i class="fa fa-external-link" style="font-size:.7rem;opacity:.5;"></i></a>
+            <span class="team-name-plain">{{ member.name }}</span>
+            {% else %}
             {% if member.url and member.url != "" %}
             <a href="{{ member.url }}" target="_blank" rel="noopener">{{ member.name }} <i class="fa fa-external-link" style="font-size:.7rem;opacity:.5;"></i></a>
             {% else %}
             {{ member.name }}
+            {% endif %}
             {% endif %}
         </div>
 
@@ -26,6 +32,50 @@
         {% if member.original_institution and member.original_institution != "" %}
         <div class="team-institution" style="font-size:0.72rem; color:#777; line-height:1.2; margin-top:2px;">
             {{ member.original_institution }}
+        </div>
+        {% endif %}
+
+        {% if member_expand == true %}
+        <div class="team-member-detail" aria-label="Additional details for {{ member.name }}">
+        {% if member.about and member.about != "" %}
+        <section class="team-member-detail-section">
+            <h5>About</h5>
+            <p>{{ member.about }}</p>
+        </section>
+        {% endif %}
+
+        {% assign has_socials = false %}
+        {% if member.url and member.url != "" %}
+        {% assign has_socials = true %}
+        {% endif %}
+        {% if member.email and member.email != "" %}
+        {% assign has_socials = true %}
+        {% endif %}
+        {% if member.linkedin and member.linkedin != "" %}
+        {% assign has_socials = true %}
+        {% endif %}
+        {% if member.github and member.github != "" %}
+        {% assign has_socials = true %}
+        {% endif %}
+        {% if has_socials %}
+        <section class="team-member-detail-section">
+            <h5>Socials</h5>
+            <div class="team-member-socials">
+                {% if member.url and member.url != "" %}
+                <a href="{{ member.url }}" target="_blank" rel="noopener" aria-label="{{ member.name }} website"><i class="fa fa-globe"></i></a>
+                {% endif %}
+                {% if member.email and member.email != "" %}
+                <a href="mailto:{{ member.email }}" aria-label="Email {{ member.name }}"><i class="fa fa-envelope"></i></a>
+                {% endif %}
+                {% if member.linkedin and member.linkedin != "" %}
+                <a href="{{ member.linkedin }}" target="_blank" rel="noopener" aria-label="{{ member.name }} LinkedIn"><i class="fa fa-linkedin"></i></a>
+                {% endif %}
+                {% if member.github and member.github != "" %}
+                <a href="{{ member.github }}" target="_blank" rel="noopener" aria-label="{{ member.name }} GitHub"><i class="fa fa-github"></i></a>
+                {% endif %}
+            </div>
+        </section>
+        {% endif %}
         </div>
         {% endif %}
     </div>
