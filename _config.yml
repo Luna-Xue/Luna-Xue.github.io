@@ -2,7 +2,7 @@
 baseurl: ""
 url: "https://luna-xue.github.io"
 icon: "/assets/img/icons/x.png"
-google_analytics: "" # Example: G-XXXXXXXXXX
+google_analytics: "G-63PD2VQQDE" # Example: G-XXXXXXXXXX
 
 # Internal nav
 nav:
