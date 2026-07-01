@@ -5,7 +5,7 @@
 # - description: Short hover text shown inside the card overlay.
 - title: "AI-RAN Testbed"
   image: "/assets/img/facilities/Testbed.svg"
-  description: "AI-RAN/O-RAN testbed with USRP X310/X410/B210, OAI, O-CUDU, Open5GS, GPU servers, and 5G NR FR1/FR2 mmWave support."
+  description: "AI-RAN/O-RAN testbed with USRP X310/X410/B210, OAI, OCUDU, Open5GS, OAI, Free5GC, GPU servers, and 5G NR FR1/FR2 mmWave support."
 
 - title: "Jetson Orin NX Super 16GB"
   image: "/assets/img/facilities/jetsonorin-nano-super-dev-kit.jpg"
@@ -17,7 +17,7 @@
 
 - title: "ROSOrin Pro ROS2 Smart Car"
   image: "/assets/img/facilities/Hiwonder_ROSOrin_Pro_G923.png"
-  description: "Logitech G9223 and Robotics and sensing platform with ToF LiDAR, 3D depth camera, ROS/Orin Pro, WiFi cards, and 5G communication kits for wireless security and ISAC prototyping."
+  description: "Logitech G923 and Robotics and sensing platform with ToF LiDAR, 3D depth camera, ROS/Orin Pro, WiFi cards, and 5G communication kits for wireless security and ISAC prototyping."
 
 - title: "USRP Software Defined Radio (SDR)"
   image: "/assets/img/facilities/USRP.png"
