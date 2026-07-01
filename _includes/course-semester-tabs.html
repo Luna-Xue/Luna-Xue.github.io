@@ -85,6 +85,31 @@
         <p class="course-empty-note">To be updated.</p>
         {% endif %}
 
+        {% if tab_key == "materials" and semester.material_chapters and semester.material_chapters.size > 0 %}
+        <table class="course-materials-table">
+          <thead>
+            <tr>
+              <th>Chapter</th>
+              <th>Topic</th>
+              <th>Focus</th>
+              <th>Materials</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for chapter in semester.material_chapters %}
+            <tr>
+              <td>{{ chapter.chapter }}</td>
+              <td>{{ chapter.title }}</td>
+              <td>{{ chapter.focus }}</td>
+              <td>
+                <a href="{{ chapter.url }}" target="_blank" rel="noopener">Open chapter</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+
         {% if tab_key == "schedule" and semester.schedule_include and semester.schedule_include != "" %}
         {% if semester.schedule_include == "teaching/ece-362-fall-2026-materials.html" %}
         {% include teaching/ece-362-fall-2026-materials.html %}
