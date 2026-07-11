@@ -1,4 +1,9 @@
 - label: other
+  title: "Congratulations to the three <a class='news-link' href='/pages/team/lab-activities/'><strong>JESSE</strong></a> interns on completing the program, and thanks to their mentor <strong>Saurabh Parkar</strong> for leading and supporting their work."
+  date: Jul, 2026
+  lab: true
+
+- label: other
   title: "UHM WINGS Lab joins <a class='news-link' href='https://ocudu.org/' target='_blank' rel='noopener'><strong>OCUDU</strong></a> and <strong>Linux Foundation</strong> as an associate member."
   date: Jun, 2026
   lab: true
