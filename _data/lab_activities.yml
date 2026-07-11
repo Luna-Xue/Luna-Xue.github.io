@@ -124,14 +124,14 @@
   start_date: "2026-07-01"
   image: "2026_JESSE_Symposium-2.jpg"
   person: ""
-  featured: false
+  featured: true
   description: "JESSE Symposium activity photo."
 
 - title: "JESSE Symposium 2026"
   start_date: "2026-07-01"
   image: "2026_JESSE_Symposium-3.jpg"
   person: ""
-  featured: false
+  featured: true
   description: "JESSE Symposium activity photo."
 
 - title: "JESSE Symposium 2026"
