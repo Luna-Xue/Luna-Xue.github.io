@@ -73,7 +73,7 @@ table.styled-table {
   transition: max-width .62s cubic-bezier(.16, 1, .3, 1), max-height .62s cubic-bezier(.16, 1, .3, 1), margin-top .5s ease, opacity .38s ease .1s;
 }
 
-.team-member--expandable:hover,
+.team-member--expandable.is-hovered,
 .team-member--expandable:focus-within,
 .team-member--expandable:focus,
 .team-member--expandable.is-expanded {
@@ -85,7 +85,7 @@ table.styled-table {
   transform: none;
 }
 
-.team-member--expandable:hover .team-info,
+.team-member--expandable.is-hovered .team-info,
 .team-member--expandable:focus-within .team-info,
 .team-member--expandable:focus .team-info,
 .team-member--expandable.is-expanded .team-info {
@@ -93,9 +93,9 @@ table.styled-table {
   max-width: 330px;
 }
 
-.team-member--expandable:hover .team-photo,
-.team-member--expandable:hover .team-photo img,
-.team-member--expandable:hover .team-photo-placeholder,
+.team-member--expandable.is-hovered .team-photo,
+.team-member--expandable.is-hovered .team-photo img,
+.team-member--expandable.is-hovered .team-photo-placeholder,
 .team-member--expandable:focus-within .team-photo,
 .team-member--expandable:focus-within .team-photo img,
 .team-member--expandable:focus-within .team-photo-placeholder,
@@ -109,7 +109,7 @@ table.styled-table {
   height: 128px;
 }
 
-.team-member--expandable:hover .team-member-detail,
+.team-member--expandable.is-hovered .team-member-detail,
 .team-member--expandable:focus-within .team-member-detail,
 .team-member--expandable:focus .team-member-detail,
 .team-member--expandable.is-expanded .team-member-detail {
@@ -225,14 +225,14 @@ table.styled-table {
   display: none;
 }
 
-.team-member--expandable:hover .team-name-link,
+.team-member--expandable.is-hovered .team-name-link,
 .team-member--expandable:focus-within .team-name-link,
 .team-member--expandable:focus .team-name-link,
 .team-member--expandable.is-expanded .team-name-link {
   display: none;
 }
 
-.team-member--expandable:hover .team-name-plain,
+.team-member--expandable.is-hovered .team-name-plain,
 .team-member--expandable:focus-within .team-name-plain,
 .team-member--expandable:focus .team-name-plain,
 .team-member--expandable.is-expanded .team-name-plain {
@@ -624,6 +624,7 @@ table.styled-table {
   }
 
   .team-member--expandable,
+  .team-member--expandable.is-hovered,
   .team-member--expandable:hover,
   .team-member--expandable:focus-within,
   .team-member--expandable:focus,
@@ -634,6 +635,7 @@ table.styled-table {
     text-align: center;
   }
 
+  .team-member--expandable.is-hovered .team-info,
   .team-member--expandable:hover .team-info,
   .team-member--expandable:focus-within .team-info,
   .team-member--expandable:focus .team-info,

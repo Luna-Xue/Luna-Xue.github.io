@@ -94,19 +94,51 @@ nav_item: UHM WINGS Lab
 (function() {
     var mobileQuery = window.matchMedia('(max-width: 640px)');
     var cards = Array.prototype.slice.call(document.querySelectorAll('.team-member--expandable'));
+    var lastPointer = { x: 0, y: 0 };
+    var hoverCloseTimers = new WeakMap();
     if (!cards.length) return;
 
     function closeCards(exceptCard) {
         cards.forEach(function(card) {
-            if (card !== exceptCard) card.classList.remove('is-expanded');
+            if (card !== exceptCard) card.classList.remove('is-expanded', 'is-hovered');
         });
     }
 
     function resetDesktopState() {
-        if (!mobileQuery.matches) closeCards();
+        closeCards();
+    }
+
+    function clearHoverClose(card) {
+        var timer = hoverCloseTimers.get(card);
+        if (timer) window.clearTimeout(timer);
+        hoverCloseTimers.delete(card);
+    }
+
+    function pointerWithinCard(card, margin) {
+        var rect = card.getBoundingClientRect();
+        return lastPointer.x >= rect.left - margin &&
+            lastPointer.x <= rect.right + margin &&
+            lastPointer.y >= rect.top - margin &&
+            lastPointer.y <= rect.bottom + margin;
     }
 
     cards.forEach(function(card) {
+        card.addEventListener('mouseenter', function() {
+            if (mobileQuery.matches) return;
+            clearHoverClose(card);
+            closeCards(card);
+            card.classList.add('is-hovered');
+        });
+
+        card.addEventListener('mouseleave', function() {
+            if (mobileQuery.matches) return;
+            clearHoverClose(card);
+            hoverCloseTimers.set(card, window.setTimeout(function() {
+                if (!pointerWithinCard(card, 12)) card.classList.remove('is-hovered');
+                hoverCloseTimers.delete(card);
+            }, 120));
+        });
+
         card.addEventListener('click', function(event) {
             if (!mobileQuery.matches || event.target.closest('a')) return;
             card.classList.toggle('is-expanded');
@@ -127,6 +159,11 @@ nav_item: UHM WINGS Lab
     document.addEventListener('click', function(event) {
         if (!mobileQuery.matches || event.target.closest('.team-member--expandable')) return;
         closeCards();
+    });
+
+    document.addEventListener('mousemove', function(event) {
+        lastPointer.x = event.clientX;
+        lastPointer.y = event.clientY;
     });
 
     if (mobileQuery.addEventListener) {
