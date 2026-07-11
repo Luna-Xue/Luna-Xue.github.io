@@ -85,6 +85,20 @@
         <p class="course-empty-note">To be updated.</p>
         {% endif %}
 
+        {% if tab_key == "syllabus" and semester.syllabus_pdf and semester.syllabus_pdf != "" %}
+        <div class="course-pdf-preview">
+          <object data="{{ semester.syllabus_pdf | relative_url }}"
+                  type="application/pdf"
+                  class="course-pdf-object"
+                  aria-label="{{ semester.term }} syllabus PDF preview">
+            <p>
+              PDF preview is unavailable.
+              <a href="{{ semester.syllabus_pdf | relative_url }}" target="_blank" rel="noopener">Open the syllabus PDF</a>.
+            </p>
+          </object>
+        </div>
+        {% endif %}
+
         {% if tab_key == "materials" and semester.material_chapters and semester.material_chapters.size > 0 %}
         <table class="course-materials-table">
           <thead>
