@@ -98,3 +98,52 @@
   person: ""
   featured: true
   description: "JESSE Workshop: Remote Robot Control over O-RAN Network using steering console"
+
+- title: "Robot Car Demonstration"
+  start_date: "2026-06-01"
+  image: "robot_car_1.jpeg"
+  person: ""
+  featured: false
+  description: "Robot car activity photo."
+
+- title: "Robot Car Demonstration"
+  start_date: "2026-06-01"
+  image: "robot_car_2.jpeg"
+  person: ""
+  featured: false
+  description: "Robot car activity photo."
+
+- title: "JESSE Symposium 2026"
+  start_date: "2026-07-01"
+  image: "2026_JESSE_Symposium-1.jpg"
+  person: ""
+  featured: false
+  description: "JESSE Symposium activity photo."
+
+- title: "JESSE Symposium 2026"
+  start_date: "2026-07-01"
+  image: "2026_JESSE_Symposium-2.jpg"
+  person: ""
+  featured: false
+  description: "JESSE Symposium activity photo."
+
+- title: "JESSE Symposium 2026"
+  start_date: "2026-07-01"
+  image: "2026_JESSE_Symposium-3.jpg"
+  person: ""
+  featured: false
+  description: "JESSE Symposium activity photo."
+
+- title: "JESSE Symposium 2026"
+  start_date: "2026-07-01"
+  image: "2026_JESSE_Symposium-4.jpg"
+  person: ""
+  featured: false
+  description: "JESSE Symposium activity photo."
+
+- title: "JESSE Symposium 2026"
+  start_date: "2026-07-01"
+  image: "2026_JESSE_Symposium-5.jpg"
+  person: ""
+  featured: false
+  description: "JESSE Symposium activity photo."
