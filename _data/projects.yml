@@ -4,7 +4,7 @@
   type: "conference"
   image: "2026_globecom_tadd_system.png"
   details: "https://edas.info/showPaper.php?m=1571288524"
-  cate: ["ai_ran", "federated_learning", "spectrum_wireless"]
+  cate: ["ai_ran", "distributed_learning", "spectrum_wireless"]
   list_only: false
   attach:
     - label: "paper"
