@@ -3,6 +3,7 @@ var allTags = [
   'ai_ran',
   'isac',
   'federated_learning',
+  'distributed_learning',
   'smart_agents',
   'spectrum_wireless'
 ];
