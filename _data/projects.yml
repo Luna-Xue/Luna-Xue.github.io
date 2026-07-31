@@ -1,6 +1,6 @@
 - name: "TADD: Topology-Aware Distributed Distillation in AI-Native 6G RAN"
-  authors: "<a href='https://edas.info/showPerson.php?p=1597795&c=34312' target='_blank' rel='noopener'><strong>Xiaochan Xue#</strong></a>, <a href='https://edas.info/showPerson.php?p=1681795&c=34312' target='_blank' rel='noopener'>Zhuosheng Zhang</a>, <a href='https://edas.info/showPerson.php?p=317075&c=34312' target='_blank' rel='noopener'>Shucheng Yu</a>"
-  publish: "IEEE Global Communications Conference (Globecom), 2026"
+  authors: "<strong>Xiaochan Xue#</strong>, Zhuosheng Zhang, Shucheng Yu"
+  publish: "IEEE Global Communications Conference (GLOBECOM), 2026"
   type: "conference"
   image: "2026_globecom_tadd_system.png"
   details: "https://edas.info/showPaper.php?m=1571288524"

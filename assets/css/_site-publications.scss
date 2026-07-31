@@ -36,6 +36,22 @@
   }
 }
 
+.btn.wireless_security.active  { border-color: #f5b7b1 !important; color: #c5221f !important; }
+.btn.ai_ran.active             { border-color: #b3d7f7 !important; color: #1a73e8 !important; }
+.btn.isac.active               { border-color: #80cbc4 !important; color: #00695c !important; }
+.btn.federated_learning.active { border-color: #d1a3f0 !important; color: #7b1fa2 !important; }
+.btn.distributed_learning.active { border-color: #f2ca68 !important; color: #8a5a00 !important; }
+.btn.smart_agents.active       { border-color: #ffab91 !important; color: #bf360c !important; }
+.btn.spectrum_wireless.active  { border-color: #9fa8da !important; color: #283593 !important; }
+
+.btn.wireless_security.active:hover  { background: #c5221f !important; color: #fff !important; }
+.btn.ai_ran.active:hover             { background: #1a73e8 !important; color: #fff !important; }
+.btn.isac.active:hover               { background: #00695c !important; color: #fff !important; }
+.btn.federated_learning.active:hover { background: #7b1fa2 !important; color: #fff !important; }
+.btn.distributed_learning.active:hover { background: #8a5a00 !important; color: #fff !important; }
+.btn.smart_agents.active:hover       { background: #bf360c !important; color: #fff !important; }
+.btn.spectrum_wireless.active:hover  { background: #283593 !important; color: #fff !important; }
+
 @media (max-width: 520px) {
   .publication-filter {
     text-align: left;
