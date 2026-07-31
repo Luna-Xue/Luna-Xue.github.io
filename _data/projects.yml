@@ -16,7 +16,7 @@
         @inproceedings{xue2026tadd,
           title     = {TADD: Topology-Aware Distributed Distillation in AI-Native 6G RAN},
           author    = {Xiaochan Xue and Zhuosheng Zhang and Shucheng Yu},
-          booktitle = {Proceedings of the IEEE Global Communications Conference (Globecom)},
+          booktitle = {Proceedings of the IEEE Global Communications Conference (GLOBECOM)},
           year      = {2026}
         }
 

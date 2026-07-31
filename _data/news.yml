@@ -1,6 +1,6 @@
 - label: paper
-  title: "Our paper <a class='news-link' href='https://edas.info/showPaper.php?m=1571288524' target='_blank' rel='noopener'><strong><em>TADD: Topology-Aware Distributed Distillation in AI-Native 6G RAN</em></strong></a> has been accepted by <a class='news-link' href='https://edas.info/index.php?c=34312' target='_blank' rel='noopener'><strong>IEEE Globecom 2026</strong></a>."
-  date: Jul 31, 2026
+  title: "Our paper <a class='news-link' href='' target='_blank' rel='noopener'><strong><em>TADD: Topology-Aware Distributed Distillation in AI-Native 6G RAN</em></strong></a> has been accepted by <a class='news-link' href='https://edas.info/index.php?c=34312' target='_blank' rel='noopener'><strong>IEEE GLOBECOM 2026</strong></a>."
+  date: Jul, 2026
   lab: false
 
 - label: other
