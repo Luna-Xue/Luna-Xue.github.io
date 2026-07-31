@@ -3,7 +3,7 @@
   publish: "IEEE Global Communications Conference (GLOBECOM), 2026"
   type: "conference"
   image: "2026_globecom_tadd_system.png"
-  details: "https://edas.info/showPaper.php?m=1571288524"
+  details: ""
   cate: ["ai_ran", "distributed_learning", "spectrum_wireless"]
   list_only: false
   attach:
