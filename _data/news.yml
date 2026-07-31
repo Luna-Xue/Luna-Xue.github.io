@@ -1,3 +1,8 @@
+- label: paper
+  title: "Our paper <a class='news-link' href='https://edas.info/showPaper.php?m=1571288524' target='_blank' rel='noopener'><strong><em>TADD: Topology-Aware Distributed Distillation in AI-Native 6G RAN</em></strong></a> has been accepted by <a class='news-link' href='https://edas.info/index.php?c=34312' target='_blank' rel='noopener'><strong>IEEE Globecom 2026</strong></a>."
+  date: Jul 31, 2026
+  lab: false
+
 - label: other
   title: "Congratulations to the three <a class='news-link' href='/pages/team/lab-activities/'><strong>JESSE</strong></a> interns on completing the program, and thanks to their mentor <strong>Saurabh Parkar</strong> for leading and supporting their work."
   date: Jul, 2026

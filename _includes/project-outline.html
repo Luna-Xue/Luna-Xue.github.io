@@ -70,12 +70,19 @@
         </a>
 
         {% else %}
+        {% if item.url and item.url != "" %}
         <a href="{{ item.url }}" target="_blank" rel="noopener"
            class="black hint--top h5 paper-attach"
            data-hint="{{ item.label }}">
           <i class="fa fa-fw fa-lg fa-{{ item.icon }}"></i>
           {{ item.label | upcase }}
         </a>
+        {% else %}
+        <span class="black h5 paper-attach paper-attach--empty" aria-label="{{ item.label }} link coming soon">
+          <i class="fa fa-fw fa-lg fa-{{ item.icon }}"></i>
+          {{ item.label | upcase }}
+        </span>
+        {% endif %}
         {% endif %}
 
       {% endfor %}
