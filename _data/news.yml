@@ -1,4 +1,9 @@
 - label: paper
+  title: "<strong>Saurabh Parkar</strong> submitted a paper to <strong>IEEE INFOCOM 2027</strong>. Good luck!"
+  date: Jul, 2026
+  lab: true
+
+- label: paper
   title: "Our paper <a class='news-link' href='' target='_blank' rel='noopener'><strong><em>TADD: Topology-Aware Distributed Distillation in AI-Native 6G RAN</em></strong></a> has been accepted by <a class='news-link' href='https://edas.info/index.php?c=34312' target='_blank' rel='noopener'><strong>IEEE GLOBECOM 2026</strong></a>."
   date: Jul, 2026
   lab: false
