@@ -5,8 +5,8 @@
 sections:
   - heading: "Security, Privacy & Trust"
     cards:
-      - title: "5G Access Security and Rogue Base Station Defense"
-        subtitle: "Trust assessment, detection, and defense for unauthorized 5G cellular infrastructure"
+      - title: "Systematic Cellular Protocol Security Analysis"
+        subtitle: "Specification-driven analysis and stateful implementation testing for cellular network security"
         image: "/assets/img/research-FBS.png"
         url: "/projects/fake-base-station/"
         status: "Ongoing"

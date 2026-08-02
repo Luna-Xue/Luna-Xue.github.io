@@ -34,7 +34,7 @@
   lab: false
 
 - label: award
-  title: "<span class='news-inline-icon news-inline-icon-nvidia' aria-label='NVIDIA'>N</span> Our proposal has been selected for the <strong>NVIDIA Academic Grant Program</strong>; our lab will receive <strong>four NVIDIA RTX PRO 6000 Blackwell GPUs</strong> to support AI-native wireless, AI-RAN, cybersecurity, edge AI, and Semantic ISAC research"
+  title: "<span class='news-inline-icon news-inline-icon-nvidia' aria-label='NVIDIA'>NVIDIA</span> Our proposal has been selected for the <strong>NVIDIA Academic Grant Program</strong>; our lab will receive <strong>four NVIDIA RTX PRO 6000 Blackwell GPUs</strong> to support AI-native wireless, AI-RAN, cybersecurity, edge AI, and Semantic ISAC research"
   date: Jun, 2026
   lab: true
 

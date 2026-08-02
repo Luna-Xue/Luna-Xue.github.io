@@ -1,33 +1,46 @@
 ---
 layout: default
-title: "5G Access Security and Rogue Base Station Defense"
-header_title: "5G Access Security and Rogue Base Station Defense"
-subtitle: "Trust assessment, detection, and defense for unauthorized 5G cellular infrastructure"
+title: "Systematic Cellular Protocol Security Analysis"
+header_title: "Systematic Cellular Protocol Security Analysis"
+subtitle: "Specification-driven analysis and stateful testing for cellular network security"
 include_header: page_header.html
 nav_item: Projects
 permalink: /projects/fake-base-station/
 ---
 
 <p>
-  This project investigates 5G access security threats caused by rogue base stations,
-  unauthorized cellular infrastructure, and suspicious radio access behavior. The goal is
-  to develop physical-layer, protocol-aware, and AI-assisted techniques for identifying
-  untrusted network access points and improving the security of cellular connectivity.
+  This project studies cellular protocol security through systematic analysis of
+  standards, protocol models, and real implementations. The goal is to identify security
+  gaps in cellular procedures and validate whether deployed 4G/5G systems handle
+  adversarial protocol states, malformed behavior, and unexpected transitions safely.
 </p>
 
-<h2>Research Focus</h2>
+<h2>Research Topics</h2>
 
 <ul>
-  <li>Rogue base station detection and attack characterization in 5G networks</li>
-  <li>Physical-layer signal fingerprints for cellular trust assessment</li>
-  <li>Cross-layer defense mechanisms for secure wireless access</li>
-  <li>AI-assisted detection under dynamic and adversarial wireless environments</li>
+  <li>
+    <strong>Specification and model based analysis:</strong>
+    extracting security-relevant assumptions from cellular standards and using protocol
+    models to reason about authentication, registration, mobility, and access control.
+  </li>
+  <li>
+    <strong>Stateful implementation testing:</strong>
+    testing real cellular components across protocol states to expose inconsistent
+    handling of edge cases, invalid transitions, and adversarial message sequences.
+  </li>
 </ul>
 
-<h2>Resources</h2>
+<h2>Course Project Example</h2>
+
+<p>
+  <strong>Fake Base Station</strong> is a course project example under this broader
+  research direction. It explores rogue cellular infrastructure, base-station
+  impersonation, and practical detection workflows for understanding cellular access
+  security threats.
+</p>
 
 <p>
   <a href="https://github.com/WINGS-UHM/Fake-Base-Station" target="_blank" rel="noopener" class="btn active">
-    <i class="fa fa-github"></i> Project GitHub
+    <i class="fa fa-github"></i> Course Project GitHub
   </a>
 </p>

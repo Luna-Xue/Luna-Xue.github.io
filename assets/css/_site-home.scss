@@ -96,13 +96,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.05em;
-  height: 1.05em;
+  width: auto;
+  height: 1em;
+  padding: 0 .28em;
   margin-right: .35em;
-  border-radius: .18em;
-  vertical-align: -.12em;
+  border-radius: .16em;
+  vertical-align: -.04em;
   font-family: "Open Sans", sans-serif;
-  font-size: .9em;
+  font-size: .76em;
   font-weight: 800;
   line-height: 1;
 }
