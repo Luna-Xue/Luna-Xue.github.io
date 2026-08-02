@@ -5,8 +5,8 @@
 sections:
   - heading: "Security, Privacy & Trust"
     cards:
-      - title: "Fake Base Station"
-        subtitle: "Physical-layer detection and defense for unauthorized cellular base stations"
+      - title: "5G Access Security and Rogue Base Station Defense"
+        subtitle: "Trust assessment, detection, and defense for unauthorized 5G cellular infrastructure"
         image: "/assets/img/research-FBS.png"
         url: "/projects/fake-base-station/"
         status: "Ongoing"
