@@ -26,3 +26,4 @@ _site/
 vendor/
 codex/
 .gitignore
+*.mp4
