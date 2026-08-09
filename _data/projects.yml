@@ -1,14 +1,14 @@
 - name: "TADD: Topology-Aware Distributed Distillation in AI-Native 6G RAN"
   authors: "<strong>Xiaochan Xue#</strong>, Zhuosheng Zhang, Shucheng Yu"
-  publish: "IEEE Global Communications Conference (GLOBECOM), 2026"
+  publish: "IEEE Global Communications Conference (GLOBECOM), Macau, China, 2026"
   type: "conference"
   image: "2026_globecom_tadd_system.png"
-  details: ""
+  details: "/assets/files/2026_GLOBECOM_TADD.pdf"
   cate: ["ai_ran", "distributed_learning", "spectrum_wireless"]
   list_only: false
   attach:
     - label: "paper"
-      url: ""
+      url: "/assets/files/2026_GLOBECOM_TADD.pdf"
       icon: "file-pdf-o"
     - label: "cite"
       type: "bibtex"
@@ -17,6 +17,7 @@
           title     = {TADD: Topology-Aware Distributed Distillation in AI-Native 6G RAN},
           author    = {Xiaochan Xue and Zhuosheng Zhang and Shucheng Yu},
           booktitle = {Proceedings of the IEEE Global Communications Conference (GLOBECOM)},
+          address   = {Macau, China},
           year      = {2026}
         }
 
