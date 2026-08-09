@@ -118,15 +118,15 @@
   end_date: "2026-07-11"
   image: "GWU1.JPG"
   person: ""
-  featured: true
+  featured: false
   description: "Faculty development institute activity at George Washington University."
 
 - title: "GW AI in Cybersecurity Education Faculty Development Institute"
-  start_date: "2026-07-01"
-  end_date: "2026-07-11"
+  start_date: "2026-06-01"
+  end_date: "2026-06-19"
   image: "GWU2.JPG"
   person: ""
-  featured: false
+  featured: true
   description: "Faculty development institute activity at George Washington University."
 
 - title: "JESSE Symposium 2026"
