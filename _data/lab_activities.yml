@@ -113,6 +113,22 @@
   featured: false
   description: "Robot car activity photo."
 
+- title: "GW AI in Cybersecurity Education Faculty Development Institute"
+  start_date: "2026-07-01"
+  end_date: "2026-07-11"
+  image: "GWU1.JPG"
+  person: ""
+  featured: true
+  description: "Faculty development institute activity at George Washington University."
+
+- title: "GW AI in Cybersecurity Education Faculty Development Institute"
+  start_date: "2026-07-01"
+  end_date: "2026-07-11"
+  image: "GWU2.JPG"
+  person: ""
+  featured: false
+  description: "Faculty development institute activity at George Washington University."
+
 - title: "JESSE Symposium 2026"
   start_date: "2026-07-01"
   image: "2026_JESSE_Symposium-1.jpg"
@@ -131,7 +147,7 @@
   start_date: "2026-07-01"
   image: "2026_JESSE_Symposium-3.jpg"
   person: ""
-  featured: true
+  featured: false
   description: "JESSE Symposium activity photo."
 
 - title: "JESSE Symposium 2026"
