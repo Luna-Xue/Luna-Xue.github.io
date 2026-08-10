@@ -75,7 +75,7 @@ body_class: team-lab-page
     {% endif %}
     <article class="lab-activity-card">
         {% if activity.image and activity.image != "" %}
-        <img src="/assets/img/lab/{{ activity.image }}" alt="{{ activity.title }}">
+        <img src="/assets/img/lab/thumbs/{{ activity.image }}" alt="{{ activity.title }}" loading="lazy" decoding="async">
         {% else %}
         <div class="lab-activity-placeholder">
             <i class="fa fa-camera"></i>
