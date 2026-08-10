@@ -85,15 +85,16 @@ The right-side status and log pane updates as commands are accepted, camera mode
 changed, and video freshness is reported. The lower control pane tracks live steering,
 throttle, brake, and arm-servo values while the robot is operated.
 
-<!--
-<figure style="max-width: 980px; margin: 1.25rem auto;">
-  <iframe src="/assets/img/merged_demo_web.mp4" title="Smart Robot Car split-view demo" loading="lazy" allowfullscreen style="display: block; width: 100%; aspect-ratio: 1280 / 506; margin: 0 auto; border: 0; border-radius: 10px; box-shadow: 0 6px 22px rgba(0, 0, 0, .12);"></iframe>
-  <figcaption style="margin-top: .55rem; text-align: center; font-size: .92rem;">Split-view demo showing the robot in motion alongside the operator POV. <a href="/assets/img/merged_demo_web.mp4">Open video</a>.</figcaption>
-</figure>
--->
+The following demo shows how this interface translates into operation: the robot
+motion is shown alongside the operator's point of view during remote driving.
 
-The dashboard also supports multiple video modes so the operator can switch between
-standard camera feedback, sensing views, and AI-assisted perception.
+<figure style="max-width: 980px; margin: 1.25rem auto;">
+  <iframe src="https://www.youtube.com/embed/M1iJpMhH46o?mute=1" title="Smart Robot Car split-view demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display: block; width: 100%; aspect-ratio: 16 / 9; margin: 0 auto; border: 0; border-radius: 10px; box-shadow: 0 6px 22px rgba(0, 0, 0, .12);"></iframe>
+  <figcaption style="margin-top: .55rem; text-align: center; font-size: .92rem;">Split-view demo showing the robot in motion alongside the operator POV.</figcaption>
+</figure>
+
+During operation, the same dashboard can switch the incoming robot feed between
+standard camera feedback, sensing views, and AI-assisted perception modes.
 
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; max-width: 980px; margin: 1rem auto 0;">
   <figure style="margin: 0;">
