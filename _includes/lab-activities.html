@@ -46,7 +46,7 @@
                      {% if activity.image and activity.image != "" %}data-image="/assets/img/lab/{{ activity.image | escape }}"{% endif %}>
                 {% if activity.image and activity.image != "" %}
                 <button class="lab-activity-image-button" type="button" aria-label="Open {{ activity.title | escape }} photo">
-                    <img src="/assets/img/lab/{{ activity.image }}" alt="{{ activity.title }}">
+                    <img src="/assets/img/lab/thumbs/{{ activity.image }}" alt="{{ activity.title }}" loading="lazy" decoding="async">
                 </button>
                 {% else %}
                 <div class="lab-activity-placeholder">
