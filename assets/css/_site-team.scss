@@ -358,6 +358,62 @@ table.styled-table {
 .hero-lab-team i { color: $accent-primary; }
 .hero-lab-activities i { color: #5f6f96; }
 
+.team-lab-page .page-header-with-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  text-align: center;
+}
+
+.team-lab-page .page-header-logo-link {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.team-lab-page .page-header-logo {
+  display: block;
+  width: clamp(118px, 12vw, 150px);
+  height: auto;
+}
+
+.team-lab-page .page-header-copy {
+  max-width: none;
+  width: 100%;
+  min-width: 0;
+}
+
+.team-lab-page .page-header-copy .page-title {
+  line-height: 1.18;
+  white-space: nowrap;
+}
+
+.team-lab-page .page-header-copy .page-description {
+  margin-bottom: 0;
+}
+
+.team-lab-page .hero-lab-links {
+  justify-content: center;
+}
+
+@media (max-width: 720px) {
+  .team-lab-page .page-header-with-logo {
+    gap: .7rem;
+  }
+
+  .team-lab-page .page-header-logo {
+    width: clamp(104px, 34vw, 132px);
+  }
+
+  .team-lab-page .page-header-copy .page-title {
+    white-space: normal;
+  }
+}
+
 .lab-landing-intro {
   margin-bottom: 1.6rem;
 
