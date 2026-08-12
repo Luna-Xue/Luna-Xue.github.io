@@ -412,6 +412,25 @@ table.styled-table {
   .team-lab-page .page-header-copy .page-title {
     white-space: normal;
   }
+
+  .team-lab-page .hero-lab-links {
+    gap: .5rem;
+    margin-top: .6rem;
+  }
+
+  .team-lab-page .hero-lab-link {
+    width: 44px;
+    min-height: 44px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    font-size: 0;
+  }
+
+  .team-lab-page .hero-lab-link i {
+    font-size: 1.3rem;
+    line-height: 1;
+  }
 }
 
 .lab-landing-intro {
