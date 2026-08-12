@@ -765,20 +765,22 @@ table.styled-table {
 
   .hero-lab-links {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    width: 100%;
-    max-width: 280px;
+    grid-template-columns: repeat(4, 44px);
+    justify-content: center;
+    width: auto;
+    max-width: none;
     margin-left: auto;
     margin-right: auto;
     gap: .5rem;
   }
 
   .hero-lab-link {
-    width: 100%;
+    width: 44px;
+    height: 44px;
     justify-content: center;
     min-width: 0;
     box-sizing: border-box;
-    white-space: normal;
+    white-space: nowrap;
   }
 
   .team-compact-header {
