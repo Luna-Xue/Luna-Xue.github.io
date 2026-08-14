@@ -1,3 +1,8 @@
+- label: award
+  title: "<span class='news-inline-icon news-inline-icon-nvidia' aria-label='NVIDIA'>NVIDIA</span> Our lab finally received four NVIDIA supported <strong>NVIDIA RTX PRO 6000 Blackwell MaxQ GPUs</strong>."
+  date: Aug, 2026
+  lab: true
+
 - label: service
   title: "I will join the Technical Program Committee for <strong>IEEE INFOCOM 2027</strong> at <strong>Yeshiva University</strong>, New York City, NY, USA."
   date: Aug, 2026
