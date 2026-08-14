@@ -3,7 +3,7 @@
   image: "NVIDIA-GPU.png"
   person: ""
   featured: true
-  description: "收到了四张卡！"
+  description: "Received four NVIDIA GPU cards!"
 
 - title: "CyberTraining: O-RAN-Based Cyberinfrastructure Training"
   start_date: "2025-06-01"
