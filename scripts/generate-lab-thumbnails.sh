@@ -8,23 +8,9 @@ thumb_dir="${2:-assets/img/lab/thumbs}"
 max_width="${LAB_THUMB_WIDTH:-900}"
 quality="${LAB_THUMB_QUALITY:-78}"
 
-mkdir -p "$thumb_dir"
-
-find "$src_dir" -maxdepth 1 -type f \( \
-  -iname '*.jpg' -o \
-  -iname '*.jpeg' -o \
-  -iname '*.png' -o \
-  -iname '*.webp' \
-\) -print0 | while IFS= read -r -d '' src; do
-  filename="$(basename "$src")"
-  dest="$thumb_dir/$filename"
-
-  convert "$src" \
-    -auto-orient \
-    -strip \
-    -resize "${max_width}x${max_width}>" \
-    -quality "$quality" \
-    "$dest"
-
-  printf 'generated %s\n' "$dest"
-done
+python3 scripts/generate_lab_thumbnails.py \
+  --src-dir "$src_dir" \
+  --thumb-dir "$thumb_dir" \
+  --max-width "$max_width" \
+  --quality "$quality" \
+  --all
