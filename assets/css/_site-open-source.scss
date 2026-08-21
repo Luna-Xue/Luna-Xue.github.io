@@ -114,6 +114,79 @@
   margin: 0 auto;
 }
 
+.open-source-product-hero {
+  display: grid;
+  grid-template-columns: minmax(230px, 34%) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  margin: .25rem 0 2rem;
+  padding: 1.35rem 0 1.65rem;
+  border-top: 1px solid rgba(0, 0, 0, .08);
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
+}
+
+.open-source-product-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+
+  img {
+    display: block;
+    width: min(100%, 300px);
+    height: auto;
+  }
+}
+
+.open-source-product-copy {
+  max-width: 620px;
+
+  h2 {
+    margin: 0 0 .55rem;
+    color: #101820;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.9rem;
+    line-height: 1.15;
+  }
+
+  p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
+.open-source-product-copy .open-source-product-kicker {
+  margin: 0 0 .35rem;
+  color: $accent-primary;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.open-source-product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: .85rem;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: .2rem .65rem;
+    border: 1px solid rgba(0, 138, 138, .25);
+    border-radius: 999px;
+    color: #006f78;
+    background: rgba(0, 138, 138, .07);
+    font-size: .78rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+}
+
 .open-source-detail-hero {
   margin: .25rem 0 1.75rem;
   padding: 1.1rem;
@@ -145,11 +218,11 @@
 }
 
 .open-source-detail-links {
-  margin-top: 1rem;
+  margin-top: 1.05rem;
 }
 
 .open-source-founders-heading {
-  margin: 2.2rem 0 1rem;
+  margin: 2rem 0 1rem;
   color: #222;
   font-size: 1.25rem;
 }
@@ -232,8 +305,18 @@
     font-size: 1.55rem;
   }
 
-  .open-source-detail-hero {
-    padding: .55rem;
+  .open-source-product-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.15rem;
+    padding: 1.1rem 0 1.35rem;
+  }
+
+  .open-source-product-logo img {
+    width: min(100%, 260px);
+  }
+
+  .open-source-product-copy h2 {
+    font-size: 1.55rem;
   }
 
   .open-source-founder-grid {
