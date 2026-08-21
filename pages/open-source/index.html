@@ -1,0 +1,43 @@
+---
+layout: default
+title: "Open Source"
+header_title: Open Source
+subtitle: "Open-source tools and research software from UHM WINGS Lab"
+include_header: page_header.html
+nav_item: Open Source
+---
+
+<section class="open-source-section">
+  <h2 class="open-source-heading">Featured Open-source Projects</h2>
+
+  <div class="open-source-list">
+    {% for project in site.data.open_source %}
+    <article class="open-source-project">
+      <div class="open-source-logo" style="--open-source-accent: {{ project.accent | default: '#007199' }};">
+        <span class="open-source-logo-mark" aria-hidden="true">
+          <i class="fa fa-code-fork"></i>
+        </span>
+        <span class="open-source-logo-text">{{ project.logo | default: project.name }}</span>
+      </div>
+
+      <div class="open-source-body">
+        <p class="open-source-summary">
+          <strong>{{ project.name }}</strong> {{ project.summary | remove_first: project.name | strip }}
+        </p>
+
+        {% if project.links %}
+        <p class="open-source-links">
+          {% for link in project.links %}
+            {% if link.url and link.url != "" %}
+            <a href="{{ link.url }}" target="_blank" rel="noopener">[{{ link.label }}]</a>
+            {% else %}
+            <span>[{{ link.label }}]</span>
+            {% endif %}
+          {% endfor %}
+        </p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
