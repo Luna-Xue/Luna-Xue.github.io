@@ -31,6 +31,15 @@
   align-items: center;
   gap: .7rem;
   min-width: 0;
+  color: inherit;
+  text-decoration: none;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 310px;
+    height: auto;
+  }
 }
 
 .open-source-logo-mark {
@@ -68,6 +77,15 @@
   }
 }
 
+.open-source-title-link {
+  color: $accent-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .open-source-links {
   margin: 1.55rem 0 0;
   font-size: .95rem;
@@ -91,6 +109,90 @@
   }
 }
 
+.open-source-detail {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.open-source-detail-hero {
+  margin: .25rem 0 1.75rem;
+  padding: 1.1rem;
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: 8px;
+  background: #fff;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.open-source-detail-copy {
+  max-width: 760px;
+
+  h2 {
+    margin: 0 0 .55rem;
+    color: $accent-primary;
+    font-size: 1.7rem;
+  }
+
+  p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
+.open-source-detail-links {
+  margin-top: 1rem;
+}
+
+.open-source-founders-heading {
+  margin: 2.2rem 0 1rem;
+  color: #222;
+  font-size: 1.25rem;
+}
+
+.open-source-founder-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.open-source-founder-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: .75rem;
+  min-width: 0;
+  padding: .9rem;
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: 8px;
+  background: #fff;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #f4f7f8;
+  }
+
+  h4 {
+    margin: 0 0 .25rem;
+    color: #111;
+    font-size: .98rem;
+    line-height: 1.25;
+  }
+
+  p {
+    margin: 0;
+    color: #666;
+    font-size: .82rem;
+    line-height: 1.35;
+  }
+}
+
 @media (max-width: 720px) {
   .open-source-heading {
     text-align: left;
@@ -100,6 +202,10 @@
   .open-source-project {
     grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
+  }
+
+  .open-source-logo img {
+    max-width: 320px;
   }
 
   .open-source-logo-mark {
@@ -113,5 +219,19 @@
 
   .open-source-logo-text {
     font-size: 1.55rem;
+  }
+
+  .open-source-detail-hero {
+    padding: .55rem;
+  }
+
+  .open-source-founder-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .open-source-founder-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

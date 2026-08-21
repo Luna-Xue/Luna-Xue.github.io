@@ -1,5 +1,7 @@
 - name: "OpenISAC-Edge"
   logo: "OpenISAC Edge"
+  image: "/assets/img/open-source/OpenISAC-Edge.png"
+  url: "/pages/open-source/openisac-edge/"
   accent: "#008a8a"
   summary: "OpenISAC-Edge is an open-source edge platform for prototyping integrated sensing and communication workflows in AI-native wireless and O-RAN/6G testbeds."
   links:

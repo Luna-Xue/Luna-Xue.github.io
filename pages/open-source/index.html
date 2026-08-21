@@ -12,21 +12,28 @@ nav_item: Open Source
 
   <div class="open-source-list">
     {% for project in site.data.open_source %}
-    <article class="open-source-project">
-      <div class="open-source-logo" style="--open-source-accent: {{ project.accent | default: '#007199' }};">
+    <article class="open-source-project" style="--open-source-accent: {{ project.accent | default: '#007199' }};">
+      <a class="open-source-logo" href="{{ project.url | default: '#' }}">
+        {% if project.image and project.image != "" %}
+        <img src="{{ project.image }}" alt="{{ project.name }} logo">
+        {% else %}
         <span class="open-source-logo-mark" aria-hidden="true">
           <i class="fa fa-code-fork"></i>
         </span>
         <span class="open-source-logo-text">{{ project.logo | default: project.name }}</span>
-      </div>
+        {% endif %}
+      </a>
 
       <div class="open-source-body">
         <p class="open-source-summary">
-          <strong>{{ project.name }}</strong> {{ project.summary | remove_first: project.name | strip }}
+          <a class="open-source-title-link" href="{{ project.url | default: '#' }}"><strong>{{ project.name }}</strong></a> {{ project.summary | remove_first: project.name | strip }}
         </p>
 
         {% if project.links %}
         <p class="open-source-links">
+          {% if project.url and project.url != "" %}
+            <a href="{{ project.url }}">[project]</a>
+          {% endif %}
           {% for link in project.links %}
             {% if link.url and link.url != "" %}
             <a href="{{ link.url }}" target="_blank" rel="noopener">[{{ link.label }}]</a>
