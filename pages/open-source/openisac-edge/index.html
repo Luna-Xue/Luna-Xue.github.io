@@ -25,11 +25,11 @@ nav_item: Open Source
 
     <aside class="open-source-product-panel" aria-label="OpenISAC-Edge project snapshot">
       <img src="/assets/img/open-source/OpenISAC-Edge.png" alt="OpenISAC-Edge logo">
-      <div class="open-source-chip-motif" aria-hidden="true">
-        <span class="open-source-chip-core"></span>
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="open-source-hardware-tags" aria-label="OpenISAC-Edge technical areas">
+        <span><i class="fa fa-hdd-o" aria-hidden="true"></i> Hardware</span>
+        <span><i class="fa fa-lightbulb-o" aria-hidden="true"></i> AI</span>
+        <span><i class="fa fa-sitemap" aria-hidden="true"></i> Networking</span>
+        <span><i class="fa fa-crosshairs" aria-hidden="true"></i> Beamforming</span>
       </div>
       <dl>
         <div>
@@ -118,20 +118,20 @@ nav_item: Open Source
       <input type="hidden" name="request_type" id="open-source-request-type" value="General inquiry">
       <div class="open-source-form-row">
         <label>
-          <span>First name</span>
+          <span>First name <em aria-hidden="true">*</em></span>
           <input type="text" name="first_name" autocomplete="given-name" required>
         </label>
         <label>
-          <span>Last name</span>
+          <span>Last name <em aria-hidden="true">*</em></span>
           <input type="text" name="last_name" autocomplete="family-name" required>
         </label>
       </div>
       <label>
-        <span>Contact email</span>
+        <span>Contact email <em aria-hidden="true">*</em></span>
         <input type="email" name="contact_email" autocomplete="email" required>
       </label>
       <label>
-        <span>Query</span>
+        <span>Query <em aria-hidden="true">*</em></span>
         <textarea name="query" rows="5" required></textarea>
       </label>
       <button class="open-source-form-submit" type="submit">Send inquiry</button>

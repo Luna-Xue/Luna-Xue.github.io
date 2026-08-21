@@ -235,50 +235,39 @@
     margin: 0 auto .9rem;
   }
 
-  .open-source-chip-motif {
-    position: relative;
+  .open-source-hardware-tags {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: .38rem;
-    margin: .15rem 0 .9rem;
-    padding: .78rem;
-    border: 1px solid rgba(0, 138, 138, .16);
-    border-radius: 8px;
-    background:
-      linear-gradient(90deg, rgba(0, 138, 138, .08) 1px, transparent 1px),
-      linear-gradient(0deg, rgba(0, 138, 138, .08) 1px, transparent 1px),
-      #f7fbfb;
-    background-size: 18px 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .5rem;
+    margin: .15rem 0 1rem;
 
     span {
-      min-height: 32px;
-      border-radius: 5px;
-      background: rgba(11, 35, 73, .1);
-      box-shadow: inset 0 0 0 1px rgba(11, 35, 73, .07);
-    }
+      display: inline-flex;
+      align-items: center;
+      gap: .42rem;
+      min-width: 0;
+      min-height: 38px;
+      padding: .42rem .58rem;
+      border: 1px solid rgba(0, 138, 138, .18);
+      border-radius: 7px;
+      color: #183342;
+      background: #f7fbfb;
+      font-size: .76rem;
+      font-weight: 800;
+      line-height: 1.15;
 
-    .open-source-chip-core {
-      grid-column: span 2;
-      background: linear-gradient(135deg, #0b2349, #008a8a);
-      box-shadow: 0 8px 18px rgba(0, 80, 90, .18);
-    }
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      left: .85rem;
-      right: .85rem;
-      height: 1px;
-      background: rgba(0, 138, 138, .25);
-    }
-
-    &::before {
-      top: 50%;
-    }
-
-    &::after {
-      bottom: 1.2rem;
+      i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 22px;
+        height: 22px;
+        border-radius: 5px;
+        color: #006f78;
+        background: rgba(0, 138, 138, .1);
+        font-size: .82rem;
+      }
     }
   }
 
@@ -511,6 +500,12 @@
     font-size: .78rem;
     font-weight: 800;
     letter-spacing: .01em;
+
+    em {
+      color: #c9342f;
+      font-style: normal;
+      font-weight: 900;
+    }
   }
 
   input,
