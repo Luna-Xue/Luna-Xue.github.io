@@ -1,17 +1,18 @@
 ---
 layout: default
-title: "Smart Robot Car"
-header_title: "Smart Robot Car"
-subtitle: "AI-RAN-assisted communication control for remote robot driving"
+title: "Robotic Car Control (UHM VIP)"
+header_title: "Robotic Car Control (UHM VIP)"
+subtitle: "Physical AI test case for AI-RAN-assisted remote robot driving"
 include_header: page_header.html
 nav_item: Projects
 permalink: /projects/smart-robot-car/
 ---
 
-This high-school research project explores remote robot driving with AI-RAN-assisted
-communication control. The project combines a smart robot car, a gaming steering
-wheel, and wireless communication control to help students understand robotics,
-networking, and intelligent control.
+This Physical AI project explores remote robot driving with AI-RAN-assisted
+communication control through the UHM Vertically Integrated Project (VIP) setting.
+The project combines a smart robot car, a gaming steering wheel, and wireless
+communication control to help students understand robotics, networking, and
+intelligent control through an end-to-end physical system.
 
 Remote robots depend on wireless connectivity for command delivery, video feedback,
 and safe operation, especially when latency, congestion, coverage, and changing radio
@@ -24,7 +25,7 @@ and support future network-aware control.
 - Remote robot driving and control
 - Wireless communication for robotics
 - AI-assisted network adaptation
-- Hands-on learning for high-school research students
+- Hands-on learning for UHM VIP and outreach students
 
 ### Why O-RAN?
 
