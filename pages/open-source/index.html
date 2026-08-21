@@ -1,15 +1,13 @@
 ---
 layout: default
 title: "Open Source"
-header_title: Open Source
-subtitle: "Open-source tools and research software from UHM WINGS Lab"
+header_title: Featured Open-source Projects
+subtitle: ""
 include_header: page_header.html
 nav_item: Open Source
 ---
 
 <section class="open-source-section">
-  <h2 class="open-source-heading">Featured Open-source Projects</h2>
-
   <div class="open-source-list">
     {% for project in site.data.open_source %}
     <article class="open-source-project" style="--open-source-accent: {{ project.accent | default: '#007199' }};">
