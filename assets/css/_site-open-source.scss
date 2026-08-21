@@ -156,14 +156,15 @@
 
 .open-source-founder-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+  gap: .85rem;
+  max-width: 760px;
 }
 
 .open-source-founder-card {
   display: grid;
-  grid-template-rows: auto 1fr;
-  gap: .75rem;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
   min-width: 0;
   padding: .9rem;
   border: 1px solid rgba(0, 0, 0, .08);
@@ -171,8 +172,8 @@
   background: #fff;
 
   img {
-    width: 100%;
-    aspect-ratio: 1;
+    width: 88px;
+    height: 88px;
     object-fit: cover;
     border-radius: 6px;
     background: #f4f7f8;
@@ -201,21 +202,6 @@
     font-size: .82rem;
     line-height: 1.35;
   }
-}
-
-.open-source-founder-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: 6px;
-  color: #006f78;
-  background: linear-gradient(135deg, rgba(0, 138, 138, .12), rgba(0, 37, 97, .08));
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.6rem;
-  font-weight: 800;
-  letter-spacing: 0;
 }
 
 @media (max-width: 720px) {
@@ -251,12 +237,17 @@
   }
 
   .open-source-founder-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
   }
 }
 
 @media (max-width: 420px) {
-  .open-source-founder-grid {
-    grid-template-columns: minmax(0, 1fr);
+  .open-source-founder-card {
+    grid-template-columns: 68px minmax(0, 1fr);
+
+    img {
+      width: 68px;
+      height: 68px;
+    }
   }
 }
