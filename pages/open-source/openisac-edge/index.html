@@ -19,6 +19,8 @@ nav_item: Open Source
         <a class="open-source-action open-source-action-primary" href="https://github.com/WINGS-UHM/OpenISAC-Edge" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>
         <span class="open-source-action open-source-action-disabled"><i class="fa fa-file-text-o"></i> Paper</span>
         <span class="open-source-action open-source-action-disabled"><i class="fa fa-book"></i> Docs</span>
+        <button class="open-source-action open-source-action-demo" type="button" data-open-source-modal="demo"><i class="fa fa-calendar-check-o"></i> Get a Demo</button>
+        <button class="open-source-action open-source-action-contribute" type="button" data-open-source-modal="contribute"><i class="fa fa-code-fork"></i> Contribute</button>
       </div>
     </div>
 
@@ -94,3 +96,119 @@ nav_item: Open Source
     </article>
   </div>
 </section>
+
+<div class="open-source-modal" id="open-source-contact-modal" aria-hidden="true">
+  <div class="open-source-modal-backdrop" data-open-source-close></div>
+  <div class="open-source-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="open-source-modal-title">
+    <button class="open-source-modal-close" type="button" aria-label="Close" data-open-source-close>
+      <i class="fa fa-times"></i>
+    </button>
+    <p class="open-source-modal-kicker">OpenISAC-Edge</p>
+    <h3 id="open-source-modal-title">Get in touch</h3>
+    <p class="open-source-modal-copy" id="open-source-modal-copy">
+      Tell us a little about your interest and we will follow up.
+    </p>
+
+    <form class="open-source-contact-form" id="open-source-contact-form">
+      <input type="hidden" name="request_type" id="open-source-request-type" value="General inquiry">
+      <div class="open-source-form-row">
+        <label>
+          <span>First name</span>
+          <input type="text" name="first_name" autocomplete="given-name" required>
+        </label>
+        <label>
+          <span>Last name</span>
+          <input type="text" name="last_name" autocomplete="family-name" required>
+        </label>
+      </div>
+      <label>
+        <span>Contact email</span>
+        <input type="email" name="contact_email" autocomplete="email" required>
+      </label>
+      <label>
+        <span>Query</span>
+        <textarea name="query" rows="5" required></textarea>
+      </label>
+      <button class="open-source-form-submit" type="submit">Send inquiry</button>
+    </form>
+  </div>
+</div>
+
+<script>
+(function() {
+  var modal = document.getElementById('open-source-contact-modal');
+  var form = document.getElementById('open-source-contact-form');
+  if (!modal || !form) return;
+
+  var title = document.getElementById('open-source-modal-title');
+  var copy = document.getElementById('open-source-modal-copy');
+  var requestType = document.getElementById('open-source-request-type');
+  var lastTrigger = null;
+  var modalText = {
+    demo: {
+      title: 'Get a demo',
+      copy: 'Share your organization, use case, or testbed interest and we will follow up with a demo conversation.',
+      type: 'OpenISAC-Edge demo request'
+    },
+    contribute: {
+      title: 'Contribute',
+      copy: 'Tell us how you would like to contribute to OpenISAC-Edge or collaborate with the project team.',
+      type: 'OpenISAC-Edge contribution inquiry'
+    }
+  };
+
+  function openModal(kind, trigger) {
+    var content = modalText[kind] || modalText.demo;
+    lastTrigger = trigger;
+    title.textContent = content.title;
+    copy.textContent = content.copy;
+    requestType.value = content.type;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('open-source-modal-active');
+    window.setTimeout(function() {
+      var firstInput = form.querySelector('input[name="first_name"]');
+      if (firstInput) firstInput.focus();
+    }, 40);
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('open-source-modal-active');
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  document.querySelectorAll('[data-open-source-modal]').forEach(function(button) {
+    button.addEventListener('click', function() {
+      openModal(button.getAttribute('data-open-source-modal'), button);
+    });
+  });
+
+  modal.querySelectorAll('[data-open-source-close]').forEach(function(closeControl) {
+    closeControl.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var data = new FormData(form);
+    var subject = data.get('request_type');
+    var body = [
+      'Request type: ' + data.get('request_type'),
+      'First name: ' + data.get('first_name'),
+      'Last name: ' + data.get('last_name'),
+      'Contact email: ' + data.get('contact_email'),
+      '',
+      'Query:',
+      data.get('query')
+    ].join('\n');
+    window.location.href = 'mailto:xxue@hawaii.edu?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    closeModal();
+    form.reset();
+  });
+})();
+</script>
