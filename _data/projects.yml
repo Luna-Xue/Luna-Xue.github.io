@@ -79,6 +79,7 @@
   authors: "Saurabh Parkar, <strong>Xiaochan Xue#</strong>, Shuang Li, Yao Zheng"
   publish: "PrePrint. Submitted to IoT-J. Under review, 2026"
   type: "journal"
+  hidden: true
   image: "TCCN.png"
   # details: "https://doi.org/10.36227/techrxiv.177156316.67611838/v1"
   details: "/assets/files/2026_IOT_J_SPECTRA.pdf"

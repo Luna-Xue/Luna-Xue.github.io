@@ -43,8 +43,10 @@ extra_scripts:
 </div>
 
 {% for project in site.data.projects %}
+{% unless project.hidden %}
 {% unless project.list_only %}
 {% include project-outline.html project=project %}
+{% endunless %}
 {% endunless %}
 {% endfor %}
 
@@ -53,6 +55,7 @@ extra_scripts:
 <h3>Additional Conference Publications</h3>
 <ol reversed class="news-full-list">
 {% for project in site.data.projects %}
+{% unless project.hidden %}
 {% if project.list_only and project.type != "journal" and project.type != "workshop" %}
 <li>
   {% if project.details and project.details != "" %}
@@ -64,12 +67,14 @@ extra_scripts:
   <br><b>{{ project.publish }}</b>
 </li>
 {% endif %}
+{% endunless %}
 {% endfor %}
 </ol>
 
 <h3 class="mt3">Additional Journal Publications</h3>
 <ol reversed class="news-full-list">
 {% for project in site.data.projects %}
+{% unless project.hidden %}
 {% if project.list_only and project.type == "journal" %}
 <li>
   {% if project.details and project.details != "" %}
@@ -81,12 +86,14 @@ extra_scripts:
   <br><b>{{ project.publish }}</b>
 </li>
 {% endif %}
+{% endunless %}
 {% endfor %}
 </ol>
 
 <h3 class="mt3">Workshop &amp; Poster Publications</h3>
 <ol reversed class="news-full-list">
 {% for project in site.data.projects %}
+{% unless project.hidden %}
 {% if project.list_only and project.type == "workshop" %}
 <li>
   {% if project.details and project.details != "" %}
@@ -98,5 +105,6 @@ extra_scripts:
   <br><b>{{ project.publish }}</b>
 </li>
 {% endif %}
+{% endunless %}
 {% endfor %}
 </ol>
