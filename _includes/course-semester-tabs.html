@@ -99,6 +99,19 @@
         </div>
         {% endif %}
 
+        {% if tab_key == "syllabus" and semester.syllabus_include and semester.syllabus_include != "" %}
+        {% capture syllabus_markdown %}
+        {% if semester.syllabus_include == "teaching/ece-362-fall-2026-syllabus.md" %}
+        {% include teaching/ece-362-fall-2026-syllabus.md %}
+        {% endif %}
+        {% endcapture %}
+        {% if syllabus_markdown and syllabus_markdown != "" %}
+        <div class="course-syllabus-content">
+          {{ syllabus_markdown | markdownify }}
+        </div>
+        {% endif %}
+        {% endif %}
+
         {% if tab_key == "materials" and semester.material_chapters and semester.material_chapters.size > 0 %}
         <table class="course-materials-table">
           <thead>
