@@ -47,14 +47,12 @@ By the end of the course, students will be able to:
 |-----------|-------:|-------|
 | Homework (weekly) | 25% | Lowest score dropped. |
 | Module quizzes | 10% | Given at the end of each module; lowest score dropped. |
-| In class exercises | 6% | |
+| In-class exercises | 6% | |
 | Midterm 1 | 17% | Wed Sep 23 (Week 5) |
 | Midterm 2 | 17% | Fri Oct 30 (Week 10) |
 | Final exam (comprehensive) | 25% | **Mon, Dec 14, 2026, 12:00–2:00 PM** |
 
-**Grade scale:** A ≥ 90, B 80–89, C 70–79, D 60–69, F < 60. The scale may be adjusted downward (never up) at the instructor's discretion to reflect score variation.
-
-> *Weights above total 100%. If you prefer the site's simpler "weekly HW + final" model, drop quizzes/exercises and rebalance — but the fuller scheme is recommended and fully supported by existing materials.*
+**Grade scale:** A+ ≥ 95, A 90–94, B 80–89, C 70–79, D 60–69, F < 60. The scale may be adjusted downward (never up) at the instructor's discretion to reflect score variation.
 
 #### Homework
 
@@ -98,7 +96,7 @@ Two midterms during regular class time and one comprehensive final. No collabora
 | 9 · Oct 19–23 | Product/sum rules (M5·L1) | Pigeonhole (M5·L2) | Permutations & combinations (M5·L3) | Ch 6 | HW5 out |
 | 10 · Oct 26–30 | Binomial theorem, Pascal (M5·L4) | **Review** M3–M5 | **★ Midterm 2** | Ch 6 | M5 quiz · **Midterm 2** |
 | 11 · Nov 2–6 | Inclusion–exclusion (M5·L5) | Generating functions (M5·L6) | Recurrences: modeling (M6·L1) | Ch 8 | HW5 due |
-| 12 · Nov 9–13 | Linear homogeneous, characteristic eqn (M6·L2) | *Veterans Day — no class* | Repeated roots, Binet (M6·L2) | Ch 8 |  HW6 out |
+| 12 · Nov 9–13 | Linear homogeneous, characteristic eqn (M6·L2) | *Veterans Day — no class* | Repeated roots, Binet (M6·L2) | Ch 8 | HW6 out |
 | 13 · Nov 16–20 | Nonhomogeneous + Master theorem (M6·L3–4) | Formal languages (M7·L1) | Grammars, Chomsky hierarchy (M7·L2) | Ch 8, 13 | HW6 due · M6 quiz |
 | 14 · Nov 23–25 | Regular expressions (M7·L3) | Finite automata DFA/NFA (M7·L4) | *Thanksgiving — no class* | Ch 13 | HW7 out |
 | 15 · Nov 30–Dec 4 | NFA, Kleene's theorem (M7·L4) | Turing machines, halting problem (M7·L5) | Course tie-together (M7 wrap) | Ch 13 | HW7 due · M7 quiz |
