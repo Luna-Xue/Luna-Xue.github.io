@@ -53,7 +53,6 @@ By the end of the course, students will be able to:
 
 **Grade scale:** A ≥ 90, B 80–89, C 70–79, D 60–69, F < 60. The scale may be adjusted downward (never up) at the instructor's discretion to reflect score variation.
 
-> *Weights above total 100%. If you prefer the site's simpler "weekly HW + final" model, drop quizzes/exercises and rebalance — but the fuller scheme is recommended and fully supported by existing materials.*
 
 #### Homework
 
