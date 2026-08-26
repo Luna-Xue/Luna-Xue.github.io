@@ -106,21 +106,3 @@ Two midterms during regular class time and one comprehensive final. No collabora
 **No class:** Labor Day (Mon 9/7), Veterans Day (Wed 11/11), Thanksgiving (Thu 11/26–Fri 11/27). *(Verified against the published UH Mānoa Fall 2026 academic calendar; see CALENDAR_AUDIT.md for sources. 44 MWF sessions total — the schedule above uses all of them.)*
 
 ---
-
-### University Policies
-
-⚠️ *The four sections below must use UH Mānoa's current official language. Paste the up-to-date text from the UHM syllabus-template / Manoa Catalog. The summaries here are placeholders.*
-
-**Academic Integrity.** All work submitted must be your own. Cheating, plagiarism, and unauthorized collaboration are violations of the UH Mānoa **Student Conduct Code** and will be reported. *[Insert current UHM Student Conduct Code statement + link.]*
-
-**Disability Access (KOKUA).** Students with disabilities who need accommodations should contact the **KOKUA Program** (Student Services, UH Mānoa) and share their approved accommodations with the instructor as early as possible. *[Insert current KOKUA contact + link.]*
-
-**Title IX / Nondiscrimination.** UH Mānoa prohibits sex/gender-based discrimination and harassment. Faculty are generally mandatory reporters. Students seeking confidential support should contact *[UHM confidential advocate / counseling]*. *[Insert current Title IX statement + Office contact.]*
-
-**Attendance & Makeup Work.** Regular attendance and participation are expected. Makeup work is available only for documented, university-approved excused absences. *[Confirm UHM wording.]*
-
-**Mental Health & Student Support.** *[Optional but recommended: UHM Counseling and Student Development Center (CSDC) statement + contact.]*
-
----
-
-*Draft prepared 2026-07-09. Schedule and materials derived from the instructor's ECE 362 teaching-logic plan (backbone: Rosen 8e).*
