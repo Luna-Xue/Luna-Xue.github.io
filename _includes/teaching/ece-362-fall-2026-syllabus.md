@@ -1,8 +1,3 @@
-# ECE 362 — Discrete Math for Engineers
-## Syllabus · Fall 2026
-
----
-
 ### Course Information
 
 | | |
