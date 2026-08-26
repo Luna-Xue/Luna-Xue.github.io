@@ -642,7 +642,8 @@
   }
 }
 
-.course-materials-table {
+.course-materials-table,
+.course-textbook-table {
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
@@ -682,6 +683,24 @@
   th:last-child,
   td:last-child {
     width: 130px;
+  }
+}
+
+.course-textbook-table {
+  th:first-child,
+  td:first-child {
+    width: auto;
+    font-weight: 700;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 130px;
+  }
+
+  th:last-child,
+  td:last-child {
+    width: 140px;
   }
 }
 
@@ -769,7 +788,8 @@
   }
 
   .course-schedule-table,
-  .course-materials-table {
+  .course-materials-table,
+  .course-textbook-table {
     display: block;
     overflow-x: auto;
     table-layout: auto;

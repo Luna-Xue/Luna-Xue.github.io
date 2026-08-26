@@ -112,6 +112,29 @@
         {% endif %}
         {% endif %}
 
+        {% if tab_key == "materials" and semester.material_textbooks and semester.material_textbooks.size > 0 %}
+        <table class="course-textbook-table">
+          <thead>
+            <tr>
+              <th>Textbook</th>
+              <th>Version</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for textbook in semester.material_textbooks %}
+            <tr>
+              <td>{{ textbook.title }}</td>
+              <td>{{ textbook.version }}</td>
+              <td>
+                <a href="{{ textbook.url }}" target="_blank" rel="noopener">Open textbook</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+
         {% if tab_key == "materials" and semester.material_chapters and semester.material_chapters.size > 0 %}
         <table class="course-materials-table">
           <thead>

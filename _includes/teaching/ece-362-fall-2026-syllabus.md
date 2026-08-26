@@ -1,8 +1,6 @@
 # ECE 362 — Discrete Math for Engineers
 ## Syllabus · Fall 2026
 
-> **DRAFT.** Sections flagged with ⚠️ contain UH Mānoa policy language/offices you should verify against the current official templates (UHM boilerplate changes yearly). Everything else is ready to use.
-
 ---
 
 ### Course Information
