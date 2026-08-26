@@ -46,13 +46,15 @@ By the end of the course, students will be able to:
 | Component | Weight | Notes |
 |-----------|-------:|-------|
 | Homework (weekly) | 25% | Lowest score dropped. |
-| Module quizzes | 10% | Given at the end of each module; lowest score dropped. |
-| In-class exercises | 6% | |
+| Quizzes (weekly) | 10% | Lowest score dropped. |
+| In class exercises | 6% | |
 | Midterm 1 | 17% | Wed Sep 23 (Week 5) |
 | Midterm 2 | 17% | Fri Oct 30 (Week 10) |
 | Final exam (comprehensive) | 25% | **Mon, Dec 14, 2026, 12:00–2:00 PM** |
 
-**Grade scale:** A+ ≥ 95, A 90–94, B 80–89, C 70–79, D 60–69, F < 60. The scale may be adjusted downward (never up) at the instructor's discretion to reflect score variation.
+**Grade scale:** A ≥ 90, B 80–89, C 70–79, D 60–69, F < 60. The scale may be adjusted downward (never up) at the instructor's discretion to reflect score variation.
+
+> *Weights above total 100%. If you prefer the site's simpler "weekly HW + final" model, drop quizzes/exercises and rebalance — but the fuller scheme is recommended and fully supported by existing materials.*
 
 #### Homework
 
@@ -63,11 +65,11 @@ By the end of the course, students will be able to:
 
 #### Quizzes & Exercises
 
-Short quizzes are given only at the end of each module to check that you're keeping up with the reading and lectures. All quizzes are closed-book. In-class exercises are open-book collaborative problem-solving practice; students may use the textbook, notes, and course materials. Lowest score in each category is dropped.
+Short quizzes after each module to check that you're keeping up with the reading and lectures. In-class exercises are collaborative problem-solving practice. Lowest score in each category is dropped.
 
 #### Exams
 
-Two midterms during regular class time and one comprehensive final. All exams are closed-book, and no collaboration is permitted. Makeup exams only for documented, university-approved excuses arranged in advance.
+Two midterms during regular class time and one comprehensive final. No collaboration permitted. Makeup exams only for documented, university-approved excuses arranged in advance.
 
 ### Late Work & Regrading
 
@@ -81,25 +83,24 @@ Two midterms during regular class time and one comprehensive final. All exams ar
 
 ✅ *Dates verified against the published UH Mānoa Fall 2026 academic calendar (manoa.hawaii.edu/registrar) and the official final-exam schedule.* No class on university holidays: **Labor Day (Mon 9/7)**, **Veterans Day (Wed 11/11)**, **Thanksgiving (Thu 11/26 + non-instructional Fri 11/27)**. Election Day (Tue 11/3) is a UH holiday but does not affect MWF meetings. UH Mānoa does **not** observe Discoverers' Day — Mon Oct 12 meets as usual.
 
-*Per-class (M/W/F) plan. Module tags (M1–M7) reference the slide decks in `slides/`; `Lx` = that module's lecture x. The 50-min period = ~5 min recap + ~35 min material & board work + practice or discussion. Module quizzes are given at the end of each module. Calendar (dates/holidays/final) matches the official UH Mānoa Fall 2026 grid on the course site.*
 
 | Wk | Monday | Wednesday | Friday | Rosen | Milestones |
 |----|--------|-----------|--------|-------|-----------|
-| 1 · Aug 24–28 | Propositional logic (M1·L1) | Inference rules (M1·L2) | Predicate logic (M1·L3) | Ch 1 | HW1 out |
-| 2 · Aug 31–Sep 4 | Proof techniques (M1·L4) | Sets & operations (M2·L1) | Set identities, Cartesian product (M2·L1) | Ch 1–2 | HW1 due · M1 quiz |
-| 3 · Sep 9–11 | *Labor Day — no class* | Relations & properties (M2·L2) | Functions (M2·L3) | Ch 2, 9 | HW2 out |
-| 4 · Sep 14–18 | Floor/ceiling + cardinality (M2·L4–5) | Equivalence relations (M2·L6) | Partial orders, Hasse diagrams (M2·L7) | Ch 2, 9 | HW2 due · M2 quiz |
+| 1 · Aug 24–28 | Propositional logic (M1·L1) | Inference rules (M1·L2) | Predicate logic (M1·L3) | Ch 1 | HW1 out · Quiz 1 |
+| 2 · Aug 31–Sep 4 | Proof techniques (M1·L4) | Sets & operations (M2·L1) | Set identities, Cartesian product (M2·L1) | Ch 1–2 | HW1 due · Quiz 2 |
+| 3 · Sep 9–11 | *Labor Day — no class* | Relations & properties (M2·L2) | Functions (M2·L3) | Ch 2, 9 | HW2 out · Quiz 3 |
+| 4 · Sep 14–18 | Floor/ceiling + cardinality (M2·L4–5) | Equivalence relations (M2·L6) | Partial orders, Hasse diagrams (M2·L7) | Ch 2, 9 | HW2 due · Quiz 4 |
 | 5 · Sep 21–25 | **Review** M1–M2 | **★ Midterm 1** | Induction I (M3·L1) | Ch 9, 5 | **Midterm 1** *(no quiz)* · HW3 out |
-| 6 · Sep 28–Oct 2 | Strong induction (M3·L2) | Recursion & sums (M3·L3–4) | Big-O definition (M4·L1) | Ch 5, 2.4, 3 | HW3 due · M3 quiz |
-| 7 · Oct 5–9 | Big-Ω, Big-Θ (M4·L2) | Little-o, growth hierarchy (M4·L3) | Bounding sums (M4·L3) | Ch 3 | HW4 out |
-| 8 · Oct 12–16 | Algorithm analysis, cases (M4·L4) | Complexity classes (M4·L4) | Linear vs binary search (M4 wrap) | Ch 3 | HW4 due · M4 quiz |
-| 9 · Oct 19–23 | Product/sum rules (M5·L1) | Pigeonhole (M5·L2) | Permutations & combinations (M5·L3) | Ch 6 | HW5 out |
-| 10 · Oct 26–30 | Binomial theorem, Pascal (M5·L4) | **Review** M3–M5 | **★ Midterm 2** | Ch 6 | M5 quiz · **Midterm 2** |
-| 11 · Nov 2–6 | Inclusion–exclusion (M5·L5) | Generating functions (M5·L6) | Recurrences: modeling (M6·L1) | Ch 8 | HW5 due |
-| 12 · Nov 9–13 | Linear homogeneous, characteristic eqn (M6·L2) | *Veterans Day — no class* | Repeated roots, Binet (M6·L2) | Ch 8 | HW6 out |
-| 13 · Nov 16–20 | Nonhomogeneous + Master theorem (M6·L3–4) | Formal languages (M7·L1) | Grammars, Chomsky hierarchy (M7·L2) | Ch 8, 13 | HW6 due · M6 quiz |
-| 14 · Nov 23–25 | Regular expressions (M7·L3) | Finite automata DFA/NFA (M7·L4) | *Thanksgiving — no class* | Ch 13 | HW7 out |
-| 15 · Nov 30–Dec 4 | NFA, Kleene's theorem (M7·L4) | Turing machines, halting problem (M7·L5) | Course tie-together (M7 wrap) | Ch 13 | HW7 due · M7 quiz |
+| 6 · Sep 28–Oct 2 | Strong induction (M3·L2) | Recursion & sums (M3·L3–4) | Big-O definition (M4·L1) | Ch 5, 2.4, 3 | HW3 due · Quiz 5 |
+| 7 · Oct 5–9 | Big-Ω, Big-Θ (M4·L2) | Little-o, growth hierarchy (M4·L3) | Bounding sums (M4·L3) | Ch 3 | HW4 out · Quiz 6 |
+| 8 · Oct 12–16 | Algorithm analysis, cases (M4·L4) | Complexity classes (M4·L4) | Linear vs binary search (M4 wrap) | Ch 3 | HW4 due · Quiz 7 |
+| 9 · Oct 19–23 | Product/sum rules (M5·L1) | Pigeonhole (M5·L2) | Permutations & combinations (M5·L3) | Ch 6 | Quiz 8 · HW5 out |
+| 10 · Oct 26–30 | Binomial theorem, Pascal (M5·L4) | **Review** M3–M5 | **★ Midterm 2** | Ch 6 | **Midterm 2** *(no quiz)* |
+| 11 · Nov 2–6 | Inclusion–exclusion (M5·L5) | Generating functions (M5·L6) | Recurrences: modeling (M6·L1) | Ch 8 | HW5 due · Quiz 9 |
+| 12 · Nov 9–13 | Linear homogeneous, characteristic eqn (M6·L2) | *Veterans Day — no class* | Repeated roots, Binet (M6·L2) | Ch 8 |  HW6 out · Quiz 10 |
+| 13 · Nov 16–20 | Nonhomogeneous + Master theorem (M6·L3–4) | Formal languages (M7·L1) | Grammars, Chomsky hierarchy (M7·L2) | Ch 8, 13 | HW6 due · Quiz 11 |
+| 14 · Nov 23–25 | Regular expressions (M7·L3) | Finite automata DFA/NFA (M7·L4) · Quiz 12 | *Thanksgiving — no class* | Ch 13 | Quiz 12 *(Wed)* · HW7 out |
+| 15 · Nov 30–Dec 4 | NFA, Kleene's theorem (M7·L4) | Turing machines, halting problem (M7·L5) | Course tie-together (M7 wrap) | Ch 13 | HW7 due · Quiz 13 |
 | 16 · Dec 7–9 | **Review** M1–M4 | **Review** M5–M7 | *Study period begins 12/11* | — | — |
 | **Final** | **Mon Dec 14, 12:00–2:00 PM — Comprehensive final exam** | | | all | — |
 
