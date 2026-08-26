@@ -63,11 +63,11 @@ By the end of the course, students will be able to:
 
 #### Quizzes & Exercises
 
-Short quizzes are given only at the end of each module to check that you're keeping up with the reading and lectures. In-class exercises are collaborative problem-solving practice. Lowest score in each category is dropped.
+Short quizzes are given only at the end of each module to check that you're keeping up with the reading and lectures. All quizzes are closed-book. In-class exercises are open-book collaborative problem-solving practice; students may use the textbook, notes, and course materials. Lowest score in each category is dropped.
 
 #### Exams
 
-Two midterms during regular class time and one comprehensive final. No collaboration permitted. Makeup exams only for documented, university-approved excuses arranged in advance.
+Two midterms during regular class time and one comprehensive final. All exams are closed-book, and no collaboration is permitted. Makeup exams only for documented, university-approved excuses arranged in advance.
 
 ### Late Work & Regrading
 
