@@ -57,7 +57,7 @@ By the end of the course, students will be able to:
 #### Homework
 
 - One assignment most weeks; posted on the course site with the due date.
-- Submissions via **Laulima** by the stated deadline. No email or paper submissions.
+- Submissions via **Lamaku** by the stated deadline. No email or paper submissions.
 - **Format:** Typed, legibly handwritten and scanned, single PDF.
 - **Collaboration:** You may discuss the *meaning* of problems and possible *approaches*, but you must write up every solution entirely on your own and cite any person, book, or web source you consulted. Copying solutions (in whole or part) is a violation of academic integrity.
 
