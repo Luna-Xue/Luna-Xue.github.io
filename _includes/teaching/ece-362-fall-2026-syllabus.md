@@ -51,7 +51,7 @@ By the end of the course, students will be able to:
 | Midterm 2 | 17% | Fri Oct 30 (Week 10) |
 | Final exam (comprehensive) | 25% | **Mon, Dec 14, 2026, 12:00–2:00 PM** |
 
-**Grade scale:** A ≥ 90, B 80–89, C 70–79, D 60–69, F < 60. The scale may be adjusted downward (never up) at the instructor's discretion to reflect score variation.
+**Grade scale:** A+ ≥ 95, A 90-94, B 80–89, C 70–79, D 60–69, F < 60. The scale may be adjusted downward (never up) at the instructor's discretion to reflect score variation.
 
 
 #### Homework
