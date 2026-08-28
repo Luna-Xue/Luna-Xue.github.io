@@ -85,21 +85,21 @@ Two midterms during regular class time and one comprehensive final. All exams ar
 | Wk | Monday | Wednesday | Friday | Rosen | Milestones |
 |----|--------|-----------|--------|-------|-----------|
 | 1 · Aug 24–28 | *No class — course starts Friday* | *No class — course starts Friday* | Propositional logic + inference rules (M1·L1–2) | Ch 1 | Course begins |
-| 2 · Aug 31–Sep 4 | Predicate logic (M1·L3) | Proof techniques (M1·L4) | Sets & operations (M2·L1) | Ch 1–2 | HW1 out · M1 quiz |
+| 2 · Aug 31–Sep 4 | Predicate logic (M1·L3) | Proof techniques (M1·L4) | Sets & operations (M2·L1) | Ch 1–2 | HW1 out · M1 quiz · HW1 due|
 | 3 · Sep 9–11 | *Labor Day — no class* | Set identities, Cartesian product (M2·L1) | Relations & properties (M2·L2) | Ch 2, 9 | HW2 out |
-| 4 · Sep 14–18 | Functions (M2·L3) | Floor/ceiling + cardinality (M2·L4–5) | Equivalence relations (M2·L6) | Ch 2, 9 | HW1 due |
+| 4 · Sep 14–18 | Functions (M2·L3) | Floor/ceiling + cardinality (M2·L4–5) | Equivalence relations (M2·L6) | Ch 2, 9 | HW2 due |
 | 5 · Sep 21–25 | Partial orders, Hasse diagrams (M2·L7) | **Review** M1–M2 | **★ Midterm 1** | Ch 2, 9 | M2 quiz · **Midterm 1** |
-| 6 · Sep 28–Oct 2 | Induction I (M3·L1) | Strong induction (M3·L2) | Recursion & sums (M3·L3–4) | Ch 5, 2.4 | HW2 due · HW3 out · M3 quiz |
-| 7 · Oct 5–9 | Big-O definition (M4·L1) | Big-Ω, Big-Θ (M4·L2) | Little-o, growth hierarchy (M4·L3) | Ch 3 | HW4 out |
-| 8 · Oct 12–16 | Bounding sums (M4·L3) | Algorithm analysis, cases (M4·L4) | Complexity classes; linear vs binary search (M4 wrap) | Ch 3 | HW3 due · M4 quiz |
-| 9 · Oct 19–23 | Product/sum rules (M5·L1) | Pigeonhole (M5·L2) | Permutations & combinations (M5·L3) | Ch 6 | HW5 out |
-| 10 · Oct 26–30 | Binomial theorem, Pascal (M5·L4) | Inclusion–exclusion (M5·L5) | Generating functions (M5·L6) | Ch 6, 8 | HW4 due · M5 quiz |
+| 6 · Sep 28–Oct 2 | Induction I (M3·L1) | Strong induction (M3·L2) | Recursion & sums (M3·L3–4) | Ch 5, 2.4 | HW3 out · M3 quiz |
+| 7 · Oct 5–9 | Big-O definition (M4·L1) | Big-Ω, Big-Θ (M4·L2) | Little-o, growth hierarchy (M4·L3) | Ch 3 | HW3 due |
+| 8 · Oct 12–16 | Bounding sums (M4·L3) | Algorithm analysis, cases (M4·L4) | Complexity classes; linear vs binary search (M4 wrap) | Ch 3 | HW4 out · M4 quiz |
+| 9 · Oct 19–23 | Product/sum rules (M5·L1) | Pigeonhole (M5·L2) | Permutations & combinations (M5·L3) | Ch 6 | HW4 due · HW5 out |
+| 10 · Oct 26–30 | Binomial theorem, Pascal (M5·L4) | Inclusion–exclusion (M5·L5) | Generating functions (M5·L6) | Ch 6, 8 | HW5 due · M5 quiz |
 | 11 · Nov 2–6 | **Review** M3–M5 | **★ Midterm 2** | Recurrences: modeling (M6·L1) | Ch 8 | **Midterm 2** · HW6 out |
-| 12 · Nov 9–13 | Linear homogeneous, characteristic eqn (M6·L2) | *Veterans Day — no class* | Repeated roots, Binet (M6·L2) | Ch 8 | HW5 due |
-| 13 · Nov 16–20 | Nonhomogeneous + Master theorem (M6·L3–4) | Formal languages (M7·L1) | Grammars, Chomsky hierarchy (M7·L2) | Ch 8, 13 | M6 quiz · HW7 out |
-| 14 · Nov 23–25 | Regular expressions (M7·L3) | Finite automata DFA/NFA (M7·L4) | *Thanksgiving — no class* | Ch 13 | HW6 due |
-| 15 · Nov 30–Dec 4 | NFA, Kleene's theorem (M7·L4) | Turing machines, halting problem (M7·L5) | Course tie-together (M7 wrap) | Ch 13 | HW7 due |
-| 16 · Dec 7–9 | M7 quiz; **Review** M1–M4 | **Review** M5–M7 | *Study period begins 12/11* | — | M7 quiz |
+| 12 · Nov 9–13 | Linear homogeneous, characteristic eqn (M6·L2) | *Veterans Day — no class* | Repeated roots, Binet (M6·L2) | Ch 8 | HW6 out |
+| 13 · Nov 16–20 | Nonhomogeneous + Master theorem (M6·L3–4) | Formal languages (M7·L1) | Grammars, Chomsky hierarchy (M7·L2) | Ch 8, 13 | HW6 due · M6 quiz · HW7 out |
+| 14 · Nov 23–25 | Regular expressions (M7·L3) | Finite automata DFA/NFA (M7·L4) | *Thanksgiving — no class* | Ch 13 | |
+| 15 · Nov 30–Dec 4 | NFA, Kleene's theorem (M7·L4) | Turing machines, halting problem (M7·L5) | Course tie-together (M7 wrap) | Ch 13 | HW7 due · M7 quiz|
+| 16 · Dec 7–9 | **Review** M1–M4 | **Review** M5–M7 | *Study period begins 12/11* | — | |
 | **Final** | **Mon Dec 14, 12:00–2:00 PM — Comprehensive final exam** | | | all | — |
 
 **Exam dates:** Midterm 1 — Fri **Sep 25**; Midterm 2 — Wed **Nov 4**; Final — Mon **Dec 14, 12:00–2:00 PM**.
