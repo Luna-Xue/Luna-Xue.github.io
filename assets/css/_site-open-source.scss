@@ -345,6 +345,213 @@
   }
 }
 
+.open-source-section-kicker {
+  margin: 0 0 .35rem;
+  color: $accent-primary;
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.open-source-product-overview {
+  display: grid;
+  grid-template-columns: minmax(220px, 32%) minmax(0, 1fr);
+  gap: 2.2rem;
+  margin: .6rem 0 2.35rem;
+  padding: 1.45rem 0 1.75rem;
+  border-top: 1px solid rgba(0, 0, 0, .08);
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
+
+  h3 {
+    margin: 0;
+    color: #101820;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.42rem;
+    line-height: 1.25;
+  }
+}
+
+.open-source-product-overview-copy {
+  display: grid;
+  gap: .8rem;
+
+  p {
+    margin: 0;
+    color: #3a4550;
+    font-size: .98rem;
+    line-height: 1.66;
+  }
+}
+
+.open-source-detail-section {
+  margin: 0 0 2.35rem;
+}
+
+.open-source-detail-section-heading {
+  max-width: 680px;
+  margin: 0 0 1rem;
+
+  h3 {
+    margin: 0;
+    color: #101820;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.28rem;
+    line-height: 1.25;
+  }
+}
+
+.open-source-stack-grid,
+.open-source-use-case-grid {
+  display: grid;
+  gap: .9rem;
+
+  article {
+    min-width: 0;
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: 8px;
+    background: #fff;
+  }
+
+  h4 {
+    margin: 0 0 .38rem;
+    color: #17212b;
+    font-size: .96rem;
+    line-height: 1.3;
+  }
+
+  p {
+    margin: 0;
+    color: #5d6873;
+    font-size: .84rem;
+    line-height: 1.48;
+  }
+}
+
+.open-source-stack-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  article {
+    padding: .95rem;
+  }
+
+  span {
+    display: inline-block;
+    margin-bottom: .6rem;
+    color: #008a8a;
+    font-family: "Open Sans", sans-serif;
+    font-size: .78rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+}
+
+.open-source-workflow-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: open-source-workflow;
+
+  li {
+    position: relative;
+    min-width: 0;
+    padding: 1rem .95rem .95rem;
+    border-top: 3px solid #008a8a;
+    background: #f7fbfb;
+    counter-increment: open-source-workflow;
+  }
+
+  li::before {
+    display: block;
+    margin-bottom: .5rem;
+    color: #008a8a;
+    content: "Step " counter(open-source-workflow);
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .03em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  strong {
+    display: block;
+    margin-bottom: .35rem;
+    color: #17212b;
+    font-size: .96rem;
+    line-height: 1.25;
+  }
+
+  p {
+    margin: 0;
+    color: #596671;
+    font-size: .83rem;
+    line-height: 1.48;
+  }
+}
+
+.open-source-use-case-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  article {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: .1rem .85rem;
+    align-items: start;
+    padding: .95rem;
+  }
+
+  i {
+    grid-row: span 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 7px;
+    color: #006f78;
+    background: rgba(0, 138, 138, .08);
+    font-size: .95rem;
+  }
+}
+
+.open-source-community-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.2rem;
+  align-items: center;
+  margin: .25rem 0 2.4rem;
+  padding: 1.2rem 1.25rem;
+  border-left: 4px solid #008a8a;
+  background: #f6fafb;
+
+  h3 {
+    margin: 0 0 .4rem;
+    color: #101820;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.16rem;
+    line-height: 1.28;
+  }
+
+  p {
+    max-width: 640px;
+    margin: 0;
+    color: #53616d;
+    font-size: .9rem;
+    line-height: 1.55;
+  }
+}
+
+.open-source-community-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  justify-content: flex-end;
+}
+
 .open-source-founders-heading {
   margin: 2.15rem 0 1rem;
   color: #222;
@@ -602,6 +809,22 @@
 
   .open-source-product-features {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .open-source-product-overview,
+  .open-source-community-band {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .9rem;
+  }
+
+  .open-source-stack-grid,
+  .open-source-workflow-list,
+  .open-source-use-case-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .open-source-community-actions {
+    justify-content: flex-start;
   }
 
   .open-source-form-row {
