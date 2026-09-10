@@ -29,7 +29,7 @@ sections:
 
   - heading: "Fall 2025"
     courses:
-      - title: "ECE 693E: Intelligent and Secure Wireless Networks"
+      - title: "ECE 693E: Agentic AI with Secure Wireless Networks"
         institution: "University of Hawaiʻi at Mānoa"
         term: "2025 Fall"
         image: "/assets/img/courses/course-ai_ran.png"
