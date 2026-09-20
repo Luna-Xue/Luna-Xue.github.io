@@ -93,28 +93,25 @@ Makeup exams are available for documented university-approved circumstances. Stu
 
 The schedule below may be adjusted as needed. Changes will be announced in class and posted on the course site.
 
-| Wk                | Monday                                                              | Wednesday                                              | Friday                                                 | Rosen      | Milestones                                               |
-| ----------------- | ------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------ | ---------- | -------------------------------------------------------- |
-| 1 · Aug 24–28     | **No class**                                                        | **Course introduction, syllabus, and course tools**    | Propositional logic + inference rules (M1·L1–2)        | Ch. 1      | —                                                        |
-| 2 · Aug 31–Sep 4  | Predicate logic (M1·L3)                                             | Proof techniques (M1·L4)                               | Sets (M2·L1)                                           | Ch. 1–2    | **M1 quiz 9/4 · HW1 assigned 9/1**                       |
-| 3 · Sep 7–11      | **Labor Day — no class**                                            | Set operations, identities, Cartesian products (M2·L2) | Relations and their properties (M2·L3)                 | Ch. 2, 9   | **HW1 due 9/9 · HW2 assigned 9/9**                       |
-| 4 · Sep 14–18     | Functions (M2·L4)                                                   | Floor/ceiling and cardinality (M2·L5)                  | Equivalence relations (M2·L6)                          | Ch. 2, 9   | **Quiz 2 on 9/14 · HW2 due 9/18 · Prep Set posted 9/18** |
-| 5 · Sep 21–25     | Partial orders and Hasse diagrams (M2·L7)                           | **Exam review**                                        | **Midterm 1**                                          | Ch. 1–2, 9 | **Midterm 1 on 9/25**                                    |
-| 6 · Sep 28–Oct 2  | Induction I (M3·L1)                                                 | Strong induction (M3·L2)                               | Recursion and sums (M3·L3–4)                           | Ch. 5, 2.4 | **HW3 assigned 9/28**                                    |
-| 7 · Oct 5–9       | Big-O definition (M4·L1)                                            | Big-Ω and Big-Θ (M4·L2)                                | Little-o and growth hierarchy (M4·L3)                  | Ch. 3      | **M3 quiz 10/5 · HW4 assigned 10/5 · HW3 due 10/9**      |
-| 8 · Oct 12–16     | Bounding sums (M4·L3)                                               | Algorithm analysis and cases (M4·L4)                   | Complexity classes; linear vs. binary search (M4 wrap) | Ch. 3      | —                                                        |
-| 9 · Oct 19–23     | Product and sum rules (M5·L1)                                       | Pigeonhole principle (M5·L2)                           | Permutations and combinations (M5·L3)                  | Ch. 6      | **M4 quiz 10/19 · HW4 due and HW5 assigned 10/19**       |
-| 10 · Oct 26–30    | Binomial theorem and Pascal's identity (M5·L4)                      | Inclusion–exclusion (M5·L5)                            | Generating functions (M5·L6)                           | Ch. 6, 8   | —                                                        |
-| 11 · Nov 2–6      | **Review M3–M5 + M5 quiz**                                          | **Midterm 2**                                          | Recurrences: modeling (M6·L1)                          | Ch. 8      | **HW5 due 11/2 · Midterm 2 on 11/4 · HW6 assigned 11/6** |
-| 12 · Nov 9–13     | Linear homogeneous recurrences and characteristic equations (M6·L2) | **Veterans Day — no class**                            | Repeated roots and Binet's formula (M6·L2)             | Ch. 8      | —                                                        |
-| 13 · Nov 16–20    | Nonhomogeneous recurrences + Master theorem (M6·L3–4)               | Formal languages (M7·L1)                               | Grammars and the Chomsky hierarchy (M7·L2)             | Ch. 8, 13  | **M6 quiz and HW7 assigned 11/18 · HW6 due 11/20**       |
-| 14 · Nov 23–27    | Regular expressions (M7·L3)                                         | Finite automata: DFA and NFA (M7·L4)                   | **No class**                                           | Ch. 13     | —                                                        |
-| 15 · Nov 30–Dec 4 | NFA and Kleene's theorem (M7·L4)                                    | Turing machines and the halting problem (M7·L5)        | Course review and connections (M7 wrap)                | Ch. 13     | **HW7 due and M7 quiz 12/4**                             |
-| 16 · Dec 7–10     | **Review M1–M4**                                                    | **Review M5–M7**                                       | —                                                      | —          | Comprehensive review                                     |
-
-### Final Examination
-
-**Monday, December 14, 2026, 12:00–2:00 PM**
+| Wk | Monday | Wednesday | Friday | Rosen | Milestones |
+|---|---|---|---|---|---|
+| 1 · Aug 24–28 | **No class** | **Course introduction, syllabus, and course tools** | Propositional logic + inference rules (M1·L1–2) | Ch. 1 | — |
+| 2 · Aug 31–Sep 4 | Predicate logic (M1·L3) | Proof techniques (M1·L4) | Sets (M2·L1) | Ch. 1–2 | **M1 quiz 9/4 · HW1 assigned 9/1** |
+| 3 · Sep 7–11 | **Labor Day — no class** | Set operations, identities, Cartesian products (M2·L2) | Relations and their properties (M2·L3) | Ch. 2, 9 | **HW1 due 9/9 · HW2 assigned 9/9** |
+| 4 · Sep 14–18 | Functions (M2·L4) | Floor/ceiling and cardinality (M2·L5) | Equivalence relations (M2·L6) | Ch. 2, 9 | **Quiz 2 (checkpoint) 9/14 · HW2 due 9/18 · Prep Set out 9/18** |
+| 5 · Sep 21–25 | Partial orders and Hasse diagrams (M2·L7) | Review · **Prep Set solutions posted** | **★ Midterm 1** | Ch. 1–2, 9 | **Midterm 1 on 9/25** |
+| 6 · Sep 28–Oct 2 | Induction I (M3·L1) | Strong induction (M3·L2) | Recursion and sums (M3·L3) | Ch. 5, 2.4 | **HW3 assigned 9/28** |
+| 7 · Oct 5–9 | Big-O definition (M4·L1) | Big-Ω and Big-Θ (M4·L2) | The growth hierarchy (M4·L3) | Ch. 3 | **M3 quiz 10/5 · HW4 assigned 10/5 · HW3 due 10/9** |
+| 8 · Oct 12–16 | Analyzing algorithms: model, cases, loops (M4·L4) | Complexity classes; linear vs. binary search (M4·L5) | M4 review and practice | Ch. 3 | — |
+| 9 · Oct 19–23 | Counting rules + generalized pigeonhole (M5·L1) | Permutations and combinations (M5·L2) | Combinatorial arguments; the binomial theorem and Pascal's identity (M5·L3) | Ch. 6 | **M4 quiz 10/19 · HW4 due and HW5 assigned 10/19** |
+| 10 · Oct 26–30 | Inclusion–exclusion (M5·L4) | Generating functions (M5·L5) | M5 review and practice | Ch. 6, 8 | — |
+| 11 · Nov 2–6 | **Review M3–M5 + M5 quiz** | **★ Midterm 2** | Recurrences: modeling (M6·L1) | Ch. 8 | **HW5 due 11/2 · Midterm 2 on 11/4 · HW6 assigned 11/6** |
+| 12 · Nov 9–13 | Linear homogeneous recurrences, characteristic roots, Binet's formula (M6·L2) | **Veterans Day — no class** | Nonhomogeneous recurrences (M6·L3) | Ch. 8 | — |
+| 13 · Nov 16–20 | Divide-and-conquer and the Master theorem (M6·L4) | Formal languages (M7·L1) | Grammars and the Chomsky hierarchy (M7·L2) | Ch. 8, 13 | **M6 quiz and HW7 assigned 11/18 · HW6 due 11/20** |
+| 14 · Nov 23–27 | Regular expressions (M7·L3) | Finite automata: DFA, NFA, and Kleene's theorem (M7·L4) | **Thanksgiving break — no class** | Ch. 13 | — |
+| 15 · Nov 30–Dec 4 | Turing machines and the halting problem (M7·L5) | M6–M7 review and practice · schedule buffer | Course synthesis and connections | Ch. 13 | **HW7 due and M7 quiz 12/4** |
+| 16 · Dec 7–10 | **Review M1–M4** | **Review M5–M7** | No meeting; study period begins 12/11 | — | Comprehensive review |
+| **Final** | **Mon Dec 14, 12:00–2:00 PM — Comprehensive final examination** | | | All | — |
 
 The final examination is comprehensive.
 
