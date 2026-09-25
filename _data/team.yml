@@ -43,6 +43,50 @@ current:
     #   photo: ""
     #   url: ""
 
+    - name: John Kirby Ramirez
+      original_institution: "Undergraduate Student"
+      area: "Undergraduate VIP Project"
+      photo: ""
+      url: ""
+      github: ""
+      linkedin: ""
+      email: ""
+      about: ""
+      expand: false
+
+    - name: Zachary Montondo
+      original_institution: "Undergraduate Student"
+      area: "Undergraduate VIP Project"
+      photo: ""
+      url: ""
+      github: ""
+      linkedin: ""
+      email: ""
+      about: ""
+      expand: false
+
+    - name: Josiah Farias
+      original_institution: "Undergraduate Student"
+      area: "Undergraduate VIP Project"
+      photo: ""
+      url: ""
+      github: ""
+      linkedin: ""
+      email: ""
+      about: ""
+      expand: false
+
+    - name: Trevor Suzuki
+      original_institution: "Undergraduate Student"
+      area: "Undergraduate VIP Project"
+      photo: ""
+      url: ""
+      github: ""
+      linkedin: ""
+      email: ""
+      about: ""
+      expand: false
+
 
 alumni:
   phd:
