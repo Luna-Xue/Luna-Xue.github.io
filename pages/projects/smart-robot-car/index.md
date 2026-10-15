@@ -6,6 +6,9 @@ subtitle: "AI-RAN-assisted communication control for remote robot driving"
 include_header: page_header.html
 nav_item: Projects
 permalink: /projects/smart-robot-car/
+share_image: "/assets/img/research-g923-robotic.png"
+share_description: >-
+  This high-school research project explores remote robot driving with AI-RAN-assisted communication control. The project combines a smart robot car, a gaming steering wheel, and wireless communication control to help students understand robotics, networking, and intelligent control.
 ---
 
 This high-school research project explores remote robot driving with AI-RAN-assisted

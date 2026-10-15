@@ -46,7 +46,7 @@ current:
     - name: John Kirby Ramirez
       original_institution: "Undergraduate Student"
       area: "Undergraduate VIP Project, AFRL SDR Challenge 2026"
-      photo: ""
+      photo: "jkr.png"
       url: ""
       github: ""
       linkedin: ""
@@ -57,7 +57,7 @@ current:
     - name: Jingkai Ni
       original_institution: "Undergraduate Student"
       area: "Undergraduate VIP Project, AFRL SDR Challenge 2026"
-      photo: ""
+      photo: "jkn.png"
       url: ""
       github: ""
       linkedin: ""
@@ -68,7 +68,7 @@ current:
     - name: Josiah Farias
       original_institution: "Undergraduate Student"
       area: "Undergraduate VIP Project, AFRL SDR Challenge 2026"
-      photo: ""
+      photo: "jf.png"
       url: ""
       github: ""
       linkedin: ""
@@ -76,16 +76,7 @@ current:
       about: ""
       expand: false
 
-    - name: Trevor Suzuki
-      original_institution: "Undergraduate Student"
-      area: "Undergraduate VIP Project, AFRL SDR Challenge 2026"
-      photo: ""
-      url: ""
-      github: ""
-      linkedin: ""
-      email: ""
-      about: ""
-      expand: false
+    
 
 
 alumni:

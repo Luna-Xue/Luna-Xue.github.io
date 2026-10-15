@@ -6,6 +6,9 @@ subtitle: "Physical AI test case for O-RAN-assisted remote robot driving"
 include_header: page_header.html
 nav_item: Projects
 permalink: /projects/robotic-car-control-vip/
+share_image: "/assets/img/research-g923-robotic.png"
+share_description: >-
+  This Physical AI project studies remote robotic control as a network-aware physical system. In the UHM Vertically Integrated Project (VIP) setting, students use a smart robot car, a steering console, live sensing feedback, and the WINGS O-RAN/AI-RAN testbed to explore how wireless network behavior affects embodied AI and real-time control.
 ---
 
 This Physical AI project studies remote robotic control as a network-aware

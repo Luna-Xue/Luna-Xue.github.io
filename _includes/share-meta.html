@@ -1,18 +1,22 @@
-{% capture image_path %}{% if page.thumbnail_path %}{{ page.thumbnail_path }}{% else %}{{ site.thumbnail_path }}{% endif %}{% endcapture %}
-{% capture image_url %}{% include image-url.html path=image_path absolute=true %}{% endcapture %}
-{% capture description %}{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+{% if page.share_image %}
+  {% capture image_url %}{{ page.share_image | absolute_url }}{% endcapture %}
+{% else %}
+  {% capture image_path %}{% if page.thumbnail_path %}{{ page.thumbnail_path }}{% else %}{{ site.thumbnail_path }}{% endif %}{% endcapture %}
+  {% capture image_url %}{% include image-url.html path=image_path absolute=true %}{% endcapture %}
+{% endif %}
+{% capture description %}{% if page.share_description != nil %}{{ page.share_description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="{% if page.share_image %}summary_large_image{% else %}summary{% endif %}" />
 <!-- <meta name="twitter:site" content="{{ site.contact_urls.twitter.username }}" /> -->
 <meta name="twitter:title" content="{{ page.title }}" />
 <meta name="twitter:url" content="{% include canonical-url.html %}" />
-<meta name="twitter:description" content="{{ description }}" />
+<meta name="twitter:description" content="{{ description | strip_html | strip_newlines | escape }}" />
 <meta name="twitter:image" content="{{ image_url }}" />
 
 <meta property="og:title" content="{{ page.title }}"/>
 <meta property="og:url" content="{% include canonical-url.html %}"/>
 <meta property="og:site_name" content="{{ site.name }}"/>
 <!-- <meta property="article:author" content="{{ site.contact_urls.facebook.url }}"/> -->
-<meta property="og:description" content="{{ description }}"/>
+<meta property="og:description" content="{{ description | strip_html | strip_newlines | escape }}"/>
 <meta property="og:image" content="{{ image_url }}"/>
 
