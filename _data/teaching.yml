@@ -2,6 +2,26 @@
 # Sections and courses render in the order listed here, top first.
 
 sections:
+  - heading: "Fall 2027"
+    courses:
+      - title: "ECE 669: Wireless and Mobile Security"
+        institution: "University of Hawaiʻi at Mānoa"
+        terms:
+          - "2027 Fall"
+          - "2026 Spring"
+        image: "/assets/img/courses/course-wireless-security.png"
+        blurb: ""
+        url: "/teaching/ece-669/"
+
+  - heading: "Spring 2027"
+    courses:
+      - title: "ECE 668: Telecommunication Networks"
+        institution: "University of Hawaiʻi at Mānoa"
+        term: "2027 Spring"
+        image: "/assets/img/courses/course-ai_ran.png"
+        blurb: "Agentic AI for Wireless Networks"
+        url: "/teaching/ece-668/"
+
   - heading: "Fall 2026"
     courses:
       - title: "ECE 362: Discrete Math for Engineers"
@@ -18,18 +38,9 @@ sections:
         blurb: ""
         url: "/teaching/engr-296/"
 
-  - heading: "Spring 2026"
-    courses:
-      - title: "ECE 669: Wireless and Mobile Security"
-        institution: "University of Hawaiʻi at Mānoa"
-        term: "2026 Spring"
-        image: "/assets/img/courses/course-wireless-security.png"
-        blurb: ""
-        url: "/teaching/ece-669/"
-
   - heading: "Fall 2025"
     courses:
-      - title: "ECE 693E: Agentic AI with Secure Wireless Networks"
+      - title: "ECE 693E: Agentic AI for Secure Wireless Networks"
         institution: "University of Hawaiʻi at Mānoa"
         term: "2025 Fall"
         image: "/assets/img/courses/course-ai_ran.png"
