@@ -1,14 +1,14 @@
 - name: "Programmable Transmitarray-Assisted near-Field ISAC for in-Cabin Occupancy Sensing"
-  authors: "C.-H. Yu, T. Yang, S. Parkar, H. Cai, Y. Pan, S. Wu, <strong>X. Xue</strong>, Y. Zheng"
+  authors: "Cho-Hao Yu, Thomas Yang, Saurabh Parkar, Haofan Cai, Yanjun Pan, Shuqiong Wu, <strong>Xiaochan Xue</strong>, Yao Zheng"
   publish: "2026 IEEE 1st Annual Integrated Sensing and Communication Conference (ISAC), Lisbon, Portugal"
   type: "conference"
   image: "ISAC2026.png"
-  details: "https://edas.info/showPaper.php?m=1571299170"
+  details: ""
   cate: ["isac", "spectrum_wireless"]
   list_only: false
   attach:
     - label: "paper"
-      url: "https://edas.info/showPaper.php?m=1571299170"
+      url: ""
       icon: "external-link"
     - label: "cite"
       type: "bibtex"
@@ -18,8 +18,7 @@
           title     = {Programmable Transmitarray-Assisted near-Field {ISAC} for in-Cabin Occupancy Sensing},
           booktitle = {2026 IEEE 1st Annual Integrated Sensing and Communication Conference (ISAC)},
           address   = {Lisbon, Portugal},
-          year      = {2026},
-          url       = {https://edas.info/showPaper.php?m=1571299170}
+          year      = {2026}
         }
 
 - name: "TADD: Topology-Aware Distributed Distillation in AI-Native 6G RAN"
