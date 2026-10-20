@@ -128,7 +128,7 @@
   authors: "<strong>Xiaochan Xue</strong>, Saurabh Parkar, Shucheng Yu, Yao Zheng"
   publish: "IEEE Annual Congress on Artificial Intelligence of Things (AIoT), 2025"
   type: "conference"
-  image: "AIoT_Breath.png"
+  image: "AIoT_Breath-cropped.png"
   details: "https://ieeexplore.ieee.org/abstract/document/11416194"
   cate: ["isac", "spectrum_wireless"]
   list_only: false
