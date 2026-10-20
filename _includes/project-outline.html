@@ -9,10 +9,10 @@
 
     {% if include.project.details and include.project.details != "" %}
     <a href="{{ include.project.details }}" target="_blank" rel="noopener">
-      {% include image.html path=image_path alt=include.project.name class="publication-image" %}
+      {% include image.html path=image_path alt=include.project.name %}
     </a>
     {% else %}
-      {% include image.html path=image_path alt=include.project.name class="publication-image" %}
+      {% include image.html path=image_path alt=include.project.name %}
     {% endif %}
   </div>
 

@@ -2,7 +2,7 @@
   authors: "Cho-Hao Yu, Thomas Yang, Saurabh Parkar, Haofan Cai, Yanjun Pan, Shuqiong Wu, <strong>Xiaochan Xue</strong>, Yao Zheng"
   publish: "2026 IEEE 1st Annual Integrated Sensing and Communication Conference (ISAC), Lisbon, Portugal"
   type: "conference"
-  image: "ISAC2026.png"
+  image: "ISAC2026-wide.png"
   details: ""
   cate: ["isac", "spectrum_wireless"]
   list_only: false
@@ -153,7 +153,7 @@
   authors: "<strong>Xiaochan Xue</strong>, Shucheng Yu, Saurabh Parkar, Yao Zheng"
   publish: "IEEE Annual Congress on Artificial Intelligence of Things (AIoT), 2025"
   type: "conference"
-  image: "AIoT_ORAN.png"
+  image: "AIoT_ORAN-wide.png"
   details: "https://par.nsf.gov/servlets/purl/10662511"
   cate: ["isac", "ai_ran", "spectrum_wireless"]
   list_only: false
@@ -207,7 +207,7 @@
   authors: "<strong>Xiaochan Xue</strong>, Moh Khalid Hasan, Shucheng Yu, Laxima Niure Kandel, Min Song"
   publish: "IEEE International Conference on Communications (ICC), 2023"
   type: "conference"
-  image: "ICC2023.png"
+  image: "ICC2023-wide.png"
   details: "https://ieeexplore.ieee.org/abstract/document/10278765/"
   cate: ["federated_learning", "wireless_security"]
   list_only: false
