@@ -104,8 +104,8 @@ The schedule below may be adjusted as needed. Changes will be announced in class
 | 7 · Oct 5–9 | **★ Midterm 1 Reassessment** | Big-O definition (M4·L1) | Big-Ω and Big-Θ (M4·L2) | Ch. 3 | **M3 quiz 10/7 · HW3 due 10/9 · HW4 assigned 10/9** |
 | 8 · Oct 12–16 | Analyzing algorithms: model, cases, loops (M4·L3) | Algorithmic complexity (M4·L4) | **No class — review** | Ch. 3 | — |
 | 9 · Oct 19–23 | Counting rules + generalized pigeonhole (M5·L1) | Permutations and combinations (M5·L2) | Combinatorial arguments; the binomial theorem and Pascal's identity (M5·L3) | Ch. 6 | **M4 quiz 10/19 · HW5 assigned 10/19 · HW4 due 10/23** |
-| 10 · Oct 26–30 | Inclusion–exclusion (M5·L4) | Generating functions (M5·L5) | M5 review and practice | Ch. 6, 8 | — |
-| 11 · Nov 2–6 | **Review M3–M5** | **★ Midterm 2** | Recurrences: modeling (M6·L1) | Ch. 8 | **HW5 due 11/2 · Midterm 2 on 11/4 · HW6 assigned 11/6** |
+| 10 · Oct 26–30 | Inclusion–exclusion (M5·L4) | Generating functions (M5·L5) | **No class — review** | Ch. 6, 8 | — |
+| 11 · Nov 2–6 | **No class — review** | **★ Midterm 2** | Recurrences: modeling (M6·L1) | Ch. 8 | **HW5 due 11/2 · Midterm 2 on 11/4 · HW6 assigned 11/6** |
 | 12 · Nov 9–13 | Linear homogeneous recurrences, characteristic roots, Binet's formula (M6·L2) | **Veterans Day — no class** | Nonhomogeneous recurrences (M6·L3) | Ch. 8 | — |
 | 13 · Nov 16–20 | Divide-and-conquer and the Master theorem (M6·L4) | Formal languages (M7·L1) | Grammars and the Chomsky hierarchy (M7·L2) | Ch. 8, 13 | **M6 quiz and HW7 assigned 11/18 · HW6 due 11/20** |
 | 14 · Nov 23–27 | Regular expressions (M7·L3) | Finite automata: DFA, NFA, and Kleene's theorem (M7·L4) | **Thanksgiving break — no class** | Ch. 13 | — |
