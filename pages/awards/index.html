@@ -9,6 +9,23 @@ share_description: "Awards, professional service, leadership, and academic activ
 ---
 
 <h3 class="mt2">Honors &amp; Awards</h3>
+{% if site.data.award_gallery.size > 0 %}
+<div class="award-gallery">
+    {% for award in site.data.award_gallery %}
+    <figure class="award-gallery-item">
+        <a class="award-gallery-image" href="{{ award.image | relative_url }}" target="_blank" rel="noopener"
+           aria-label="View full-size image: {{ award.alt | escape }}">
+            <img src="{{ award.image | relative_url }}" alt="{{ award.alt | escape }}" loading="lazy" decoding="async">
+        </a>
+        <figcaption>
+            <strong class="award-gallery-title">{{ award.title | escape }}</strong>
+            <span class="award-gallery-event">{{ award.event | escape }}</span>
+        </figcaption>
+    </figure>
+    {% endfor %}
+</div>
+{% endif %}
+
 <ul class="awards-list">
     <li>PI, <strong>NVIDIA Academic Grant Program</strong>, NVIDIA Corporation, 2026; awarded four NVIDIA RTX PRO 6000 Blackwell GPUs, approximately <strong>$70,000</strong> in value</li>
     <li>Co-PI, <strong>Genesis Mission Phase I</strong>, U.S. Department of Energy (DoE), 2026; awarded <strong></strong>$750,000</strong> (UH: <strong>$420,000</strong>).

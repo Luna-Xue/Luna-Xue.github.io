@@ -1,3 +1,8 @@
+- label: award
+  title: "I received an <strong>outstanding service award</strong> at <strong>IEEE Healthcom 2026</strong>, where I co-organized <strong>WCIHS 2026</strong> and the poster session with <strong>Yucheng Xie</strong>."
+  date: Oct, 2026
+  lab: false
+
 - label: paper
   title: "Our paper <strong><em>Programmable Transmitarray-Assisted near-Field ISAC for in-Cabin Occupancy Sensing</em></strong> has been accepted by the <a class='news-link' href='https://isac2026.isac-ieee.org/' target='_blank' rel='noopener'><strong>1st Annual IEEE ISAC 2026</strong></a>."
   date: Oct, 2026
