@@ -110,7 +110,7 @@ The schedule below may be adjusted as needed. Changes will be announced in class
 | 13 · Nov 16–20 | Divide-and-conquer and the Master theorem (M6·L4) | Formal languages (M7·L1) | Grammars and the Chomsky hierarchy (M7·L2) | Ch. 8, 13 | **M6 quiz and HW7 assigned 11/18 · HW6 due 11/20** |
 | 14 · Nov 23–27 | Regular expressions (M7·L3) | Finite automata: DFA, NFA, and Kleene's theorem (M7·L4) | **Thanksgiving break — no class** | Ch. 13 | — |
 | 15 · Nov 30–Dec 4 | Turing machines and the halting problem (M7·L5) | M6–M7 review and practice · schedule buffer | Course synthesis and connections | Ch. 13 | **HW7 due and M7 quiz 12/4** |
-| 16 · Dec 7–10 | **Review M1–M4** | **Review M5–M7** | No meeting; study period begins 12/11 | — | Comprehensive review |
+| 16 · Dec 7–10 | **No class — Study period** | **No class — Study period** | **No class — Study period** | — | Comprehensive review |
 | **Final** | **Mon Dec 14, 12:00–2:00 PM — Comprehensive final examination** | | | All | — |
 
 The final examination is comprehensive.
