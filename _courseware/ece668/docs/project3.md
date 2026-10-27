@@ -1,0 +1,116 @@
+# Project 3 · Learning Resource Allocation
+
+**Weeks 7–10 · 25% of the proposed course grade · Core environment: local simulation**
+
+An edge link serves an interactive class and a bulk-transfer class. A controller
+divides limited service capacity between them. Investigate whether a learned
+policy offers a useful tradeoff among throughput, deadlines, and service balance.
+
+## Concept notes
+
+An allocation decision changes both immediate departures and the backlog seen
+by later decisions. A policy that maximizes current throughput may leave an
+urgent packet waiting. A policy that always prioritizes urgency may starve bulk
+traffic. The objective must therefore be stated before selecting an algorithm.
+
+Tabular Q-learning stores a value for each discrete state/action pair. After
+observing a reward, it moves the old estimate toward `reward + gamma * best
+next-state value`. Exploration collects evidence about alternative actions.
+Training and evaluation are different phases: evaluation uses a frozen table
+and no exploratory random actions.
+
+The provided state bins queue sizes and head-of-line age. This compresses
+information and is not guaranteed to be Markov: the full packet-age distribution
+and traffic phase are omitted. Treat state design as an experimental choice.
+
+## Environment contract
+
+- Two FIFO queues share 10, 12, or 14 packets/slot of service capacity.
+- There are five actions. Action indices 0–4 allocate approximately 10%, 30%,
+  50%, 70%, or 90% of capacity to class 0; integer rounding gives the remainder
+  to class 1. The total never exceeds capacity.
+- Unused allocations are not transferred to the other class. This is a deliberate
+  isolation assumption; work-conserving reallocation is a possible extension.
+- Packets arrive before the decision. An observation exposes queue sizes,
+  head-of-line ages, and current capacity, but no future arrivals.
+- Class 0 has a 4-slot deadline; class 1 has a 20-slot deadline. Before service,
+  packets that cannot meet their deadline at the end of this slot expire.
+- The default reward is `completed - 2 * expired - 0.02 * queued_after_service`.
+- Each episode lasts 120 slots. Remaining packets are reported as pending,
+  not silently classified as successes or drops; there is no final drain.
+
+Traffic and capacity events are generated before the episode, independent of
+policy actions. This makes same-seed comparisons paired experiments.
+The shifted setting reverses the relative offered loads of the two classes.
+This is an abstract shared link, not an OFDM or 5G scheduler.
+
+## Prelab
+
+1. For capacity 12 and action 1, compute both integer allocations.
+2. Explain why a high throughput can coexist with many missed deadlines.
+3. Construct two queues with equal length and different urgency.
+4. Predict the effect of increasing the expiry penalty in the reward.
+5. Why can a high fairness score be misleading when offered loads differ?
+
+## Run the policies
+
+```sh
+python3 -m ece668.project3 --out runs/p3-baseline
+```
+
+The runner trains for 100 episodes, saves `qtable.json`, and compares equal
+allocation, demand-proportional allocation, and the frozen learned policy on
+20 new seeds in each setting. `metrics.csv` retains every episode; `summary.json`
+contains only a quick throughput summary. Use the full CSV for your report.
+
+`p95_delay_served` excludes expired and pending packets. Always report their
+fractions alongside delay. `jain_served` measures the balance of delivered counts,
+not entitlement satisfaction or fairness relative to demand. Include per-class
+service and expiry counts when making fairness claims.
+
+## Student implementation
+
+Edit `allocate(observation)` in `student/policies.py`, returning an integer
+action index. The starter uses equal allocation. Implement an urgency-aware,
+optimization-based, or learned alternative.
+
+```sh
+python3 -m ece668.project3 --student --out runs/p3-student
+```
+
+For learning experiments, modify the trainer or load your separately trained
+artifact inside your policy. Keep evaluation deterministic and freeze it before
+final comparisons. The supplied Q-table trainer uses seeds starting at zero;
+evaluation starts at 10000. Reserve an additional disjoint validation seed range
+if tuning settings, and record it in your manifest.
+
+## Required investigation
+
+1. Reproduce all three baselines and explain their objectives.
+2. Propose a policy or change one learned-policy component: state, reward,
+   exploration, or training budget. State the expected mechanism.
+3. Compare performance on paired episodes under original and shifted traffic.
+4. Repeat training with at least three training RNG seeds if your method learns.
+   Separate variation across trained models from variation across traffic episodes.
+5. Analyze one tradeoff using throughput, expiry, pending fraction, and per-class
+   service. A learned policy that loses to a simple rule is a valid finding.
+
+Use `--train-seed 7`, `--train-seed 8`, and `--train-seed 9` with separate output
+directories to vary exploration while keeping the training traffic episodes fixed.
+
+## Submit and assessment
+
+Submit implementation, frozen model if applicable, experiment configurations,
+per-episode CSV results, two or three figures, and a 4–5 page report. Demonstrate
+one legal action, one complete episode, and the capacity/accounting invariants.
+
+| Criterion | Points |
+| --- | --- |
+| Objective, state/action design, and network reasoning | 20 |
+| Correct policy implementation and resource constraints | 25 |
+| Paired comparisons, repeated training, and shift analysis | 35 |
+| Interpretation and reproducibility | 20 |
+
+Optional wireless work can replace abstract capacity with a documented recorded
+rate trace. Keep a trace-free default example. Incorporating Sionna, ns-3, or a
+RAN stack is a separate integration task with its own version and license record.

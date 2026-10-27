@@ -1,0 +1,7 @@
+{
+  "slots": 240,
+  "buffer": 80,
+  "arrival_rate": 10,
+  "capacities": [5, 9],
+  "propagation": [1, 4]
+}

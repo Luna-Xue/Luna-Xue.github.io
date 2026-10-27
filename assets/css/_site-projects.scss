@@ -541,6 +541,11 @@
     color: #26312d;
     line-height: 1.35;
   }
+
+  .course-detail-text {
+    margin: .65rem 0 0;
+    line-height: 1.5;
+  }
 }
 
 .course-file-tabs {
@@ -681,6 +686,24 @@
   }
 }
 
+.course-syllabus-content a.courseware-download {
+  display: inline-block;
+  padding: .7rem 1rem;
+  border-radius: 5px;
+  background: $accent-primary;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background: $accent-dark;
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
 .course-schedule-table {
   width: 100%;
   table-layout: fixed;
@@ -711,6 +734,33 @@
   th:first-child,
   td:first-child {
     width: 64px;
+  }
+}
+
+.course-schedule-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.course-schedule-table.course-schedule-outline {
+  display: table;
+  min-width: 700px;
+  table-layout: fixed;
+  white-space: normal;
+
+  td {
+    text-align: left;
+  }
+
+  td:first-child {
+    text-align: center;
+  }
+
+  time {
+    display: block;
+    margin-bottom: .35rem;
+    color: $accent-dark;
+    font-weight: 700;
   }
 }
 

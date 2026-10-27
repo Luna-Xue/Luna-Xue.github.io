@@ -93,6 +93,21 @@ These pages are plain HTML with Jekyll front matter. Edit directly:
 
 Place images in `assets/img/`. Reference them in YAML or HTML as `/assets/img/filename.jpg`.
 
+### ECE 668 Courseware
+
+The original course package is maintained in `_courseware/ece668/`. Its source
+directory is excluded from Jekyll's default output by the leading underscore.
+Edit project code and handouts there, then regenerate the public download and
+handout pages from the website root:
+
+```sh
+python3 scripts/build_ece668_courseware.py
+```
+
+The generated pages live under `pages/teaching/ece-668/labs/`, and the ZIP is
+`assets/downloads/ece668-network-intelligence-lab.zip`. The course package has
+its own MIT license; that license does not apply to the rest of this website.
+
 ## Test Locally with Docker
 
 ```bash

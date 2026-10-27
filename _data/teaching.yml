@@ -19,7 +19,7 @@ sections:
         institution: "University of Hawaiʻi at Mānoa"
         term: "2027 Spring"
         image: "/assets/img/courses/course-ai_ran.png"
-        blurb: "Agentic AI for Wireless Networks"
+        blurb: "Network Fundamentals, Learning, and Agentic AI"
         url: "/teaching/ece-668/"
 
   - heading: "Fall 2026"

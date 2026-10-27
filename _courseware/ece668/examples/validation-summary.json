@@ -1,0 +1,346 @@
+{
+  "version": "0.1.0",
+  "validated_on": "2026-10-27",
+  "python": "3.9.6",
+  "data": "synthetic",
+  "experiments": {
+    "p1-baseline": {
+      "evaluation_rows": 30
+    },
+    "p1-student": {
+      "evaluation_rows": 45
+    },
+    "p2-baseline": {
+      "evaluation_rows": 9,
+      "metrics": [
+        {
+          "mae": "3.361842105263158",
+          "rmse": "4.256316255892581",
+          "split": "validation",
+          "method": "persistence",
+          "samples": "456"
+        },
+        {
+          "mae": "2.7807017543859622",
+          "rmse": "3.4427580289651343",
+          "split": "validation",
+          "method": "moving_mean",
+          "samples": "456"
+        },
+        {
+          "mae": "2.631123459561176",
+          "rmse": "3.2937719407404527",
+          "split": "validation",
+          "method": "trained_linear",
+          "samples": "456"
+        },
+        {
+          "mae": "3.1637426900584797",
+          "rmse": "4.09713921018097",
+          "split": "test",
+          "method": "persistence",
+          "samples": "684"
+        },
+        {
+          "mae": "2.6274366471734876",
+          "rmse": "3.365264940856399",
+          "split": "test",
+          "method": "moving_mean",
+          "samples": "684"
+        },
+        {
+          "mae": "2.526890389040991",
+          "rmse": "3.235957155606124",
+          "split": "test",
+          "method": "trained_linear",
+          "samples": "684"
+        },
+        {
+          "mae": "3.659356725146199",
+          "rmse": "4.774291533738048",
+          "split": "shift",
+          "method": "persistence",
+          "samples": "684"
+        },
+        {
+          "mae": "3.9427387914229954",
+          "rmse": "4.958842136490423",
+          "split": "shift",
+          "method": "moving_mean",
+          "samples": "684"
+        },
+        {
+          "mae": "3.486707393583024",
+          "rmse": "4.450017302470633",
+          "split": "shift",
+          "method": "trained_linear",
+          "samples": "684"
+        }
+      ]
+    },
+    "p2-student": {
+      "evaluation_rows": 9,
+      "metrics": [
+        {
+          "mae": "3.361842105263158",
+          "rmse": "4.256316255892581",
+          "split": "validation",
+          "method": "persistence",
+          "samples": "456"
+        },
+        {
+          "mae": "2.7807017543859622",
+          "rmse": "3.4427580289651343",
+          "split": "validation",
+          "method": "moving_mean",
+          "samples": "456"
+        },
+        {
+          "mae": "2.902752744032773",
+          "rmse": "3.6295480810783713",
+          "split": "validation",
+          "method": "trained_linear",
+          "samples": "456"
+        },
+        {
+          "mae": "3.1637426900584797",
+          "rmse": "4.09713921018097",
+          "split": "test",
+          "method": "persistence",
+          "samples": "684"
+        },
+        {
+          "mae": "2.6274366471734876",
+          "rmse": "3.365264940856399",
+          "split": "test",
+          "method": "moving_mean",
+          "samples": "684"
+        },
+        {
+          "mae": "2.796911592258383",
+          "rmse": "3.508787297396372",
+          "split": "test",
+          "method": "trained_linear",
+          "samples": "684"
+        },
+        {
+          "mae": "3.659356725146199",
+          "rmse": "4.774291533738048",
+          "split": "shift",
+          "method": "persistence",
+          "samples": "684"
+        },
+        {
+          "mae": "3.9427387914229954",
+          "rmse": "4.958842136490423",
+          "split": "shift",
+          "method": "moving_mean",
+          "samples": "684"
+        },
+        {
+          "mae": "3.4713274727369665",
+          "rmse": "4.658328005742583",
+          "split": "shift",
+          "method": "trained_linear",
+          "samples": "684"
+        }
+      ]
+    },
+    "p3-baseline": {
+      "evaluation_rows": 120,
+      "summary": [
+        {
+          "mean_throughput": 9.568333333333335,
+          "policy": "equal",
+          "scenario": "test"
+        },
+        {
+          "mean_throughput": 10.530416666666667,
+          "policy": "demand",
+          "scenario": "test"
+        },
+        {
+          "mean_throughput": 10.080833333333334,
+          "policy": "q_learning",
+          "scenario": "test"
+        },
+        {
+          "mean_throughput": 8.992916666666666,
+          "policy": "equal",
+          "scenario": "shift"
+        },
+        {
+          "mean_throughput": 10.540000000000001,
+          "policy": "demand",
+          "scenario": "shift"
+        },
+        {
+          "mean_throughput": 8.902916666666666,
+          "policy": "q_learning",
+          "scenario": "shift"
+        }
+      ]
+    },
+    "p3-student": {
+      "evaluation_rows": 160,
+      "summary": [
+        {
+          "mean_throughput": 9.568333333333335,
+          "policy": "equal",
+          "scenario": "test"
+        },
+        {
+          "mean_throughput": 10.530416666666667,
+          "policy": "demand",
+          "scenario": "test"
+        },
+        {
+          "mean_throughput": 10.080833333333334,
+          "policy": "q_learning",
+          "scenario": "test"
+        },
+        {
+          "mean_throughput": 9.568333333333335,
+          "policy": "student",
+          "scenario": "test"
+        },
+        {
+          "mean_throughput": 8.992916666666666,
+          "policy": "equal",
+          "scenario": "shift"
+        },
+        {
+          "mean_throughput": 10.540000000000001,
+          "policy": "demand",
+          "scenario": "shift"
+        },
+        {
+          "mean_throughput": 8.902916666666666,
+          "policy": "q_learning",
+          "scenario": "shift"
+        },
+        {
+          "mean_throughput": 8.992916666666666,
+          "policy": "student",
+          "scenario": "shift"
+        }
+      ]
+    },
+    "p4-baseline": {
+      "evaluation_rows": 360,
+      "summary": [
+        {
+          "policy": "naive",
+          "split": "validation",
+          "success_rate": 0.3
+        },
+        {
+          "policy": "rules",
+          "split": "validation",
+          "success_rate": 1.0
+        },
+        {
+          "policy": "trained_tree",
+          "split": "validation",
+          "success_rate": 1.0
+        },
+        {
+          "policy": "naive",
+          "split": "test",
+          "success_rate": 0.175
+        },
+        {
+          "policy": "rules",
+          "split": "test",
+          "success_rate": 1.0
+        },
+        {
+          "policy": "trained_tree",
+          "split": "test",
+          "success_rate": 1.0
+        },
+        {
+          "policy": "naive",
+          "split": "shift",
+          "success_rate": 0.0
+        },
+        {
+          "policy": "rules",
+          "split": "shift",
+          "success_rate": 0.0
+        },
+        {
+          "policy": "trained_tree",
+          "split": "shift",
+          "success_rate": 0.0
+        }
+      ]
+    },
+    "p4-student": {
+      "evaluation_rows": 480,
+      "summary": [
+        {
+          "policy": "naive",
+          "split": "validation",
+          "success_rate": 0.3
+        },
+        {
+          "policy": "rules",
+          "split": "validation",
+          "success_rate": 1.0
+        },
+        {
+          "policy": "trained_tree",
+          "split": "validation",
+          "success_rate": 1.0
+        },
+        {
+          "policy": "student",
+          "split": "validation",
+          "success_rate": 0.3
+        },
+        {
+          "policy": "naive",
+          "split": "test",
+          "success_rate": 0.175
+        },
+        {
+          "policy": "rules",
+          "split": "test",
+          "success_rate": 1.0
+        },
+        {
+          "policy": "trained_tree",
+          "split": "test",
+          "success_rate": 1.0
+        },
+        {
+          "policy": "student",
+          "split": "test",
+          "success_rate": 0.175
+        },
+        {
+          "policy": "naive",
+          "split": "shift",
+          "success_rate": 0.0
+        },
+        {
+          "policy": "rules",
+          "split": "shift",
+          "success_rate": 0.0
+        },
+        {
+          "policy": "trained_tree",
+          "split": "shift",
+          "success_rate": 0.0
+        },
+        {
+          "policy": "student",
+          "split": "shift",
+          "success_rate": 0.0
+        }
+      ]
+    }
+  },
+  "interpretation": "Reproducibility example only. These are not grading thresholds or evidence about a real network."
+}

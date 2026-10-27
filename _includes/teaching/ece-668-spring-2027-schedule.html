@@ -1,56 +1,118 @@
-<h4>Weekly Course Schedule</h4>
-
-<p>
-  The tentative weekly schedule below follows the official
-  <a href="https://manoa.hawaii.edu/registrar/academic-calendar/spring-2027/" target="_blank" rel="noopener">
-    UHM Spring 2027 Academic Calendar
-  </a>. This tentative plan uses Monday and Wednesday sessions of 75 minutes.
-  Meeting times and room will be confirmed before the semester begins.
-</p>
-
-<table class="course-schedule-table">
+<div class="course-schedule-scroll" role="region" aria-label="Spring 2027 weekly schedule" tabindex="0">
+<table class="course-schedule-table course-schedule-outline">
   <thead>
     <tr>
-      <th>Week</th>
-      <th>Monday</th>
-      <th>Wednesday</th>
+      <th scope="col">Week</th>
+      <th scope="col">Monday</th>
+      <th scope="col">Wednesday</th>
+      <th scope="col">Project milestones</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td>1</td><td>Jan 11</td><td>Jan 13</td></tr>
-    <tr><td>2</td><td>Jan 18 <span class="no-class">· No class (MLK Day)</span></td><td>Jan 20</td></tr>
-    <tr><td>3</td><td>Jan 25</td><td>Jan 27</td></tr>
-    <tr><td>4</td><td>Feb 1</td><td>Feb 3</td></tr>
-    <tr><td>5</td><td>Feb 8</td><td>Feb 10</td></tr>
-    <tr><td>6</td><td>Feb 15 <span class="no-class">· No class (Presidents' Day)</span></td><td>Feb 17</td></tr>
-    <tr><td>7</td><td>Feb 22</td><td>Feb 24</td></tr>
-    <tr><td>8</td><td>Mar 1</td><td>Mar 3</td></tr>
-    <tr><td>9</td><td>Mar 8</td><td>Mar 10</td></tr>
-    <tr><td>—</td><td colspan="2" class="no-class">Spring Recess (Mar 15-19) · No class</td></tr>
-    <tr><td>10</td><td>Mar 22</td><td>Mar 24</td></tr>
-    <tr><td>11</td><td>Mar 29</td><td>Mar 31</td></tr>
-    <tr><td>12</td><td>Apr 5</td><td>Apr 7</td></tr>
-    <tr><td>13</td><td>Apr 12</td><td>Apr 14</td></tr>
-    <tr><td>14</td><td>Apr 19</td><td>Apr 21</td></tr>
-    <tr><td>15</td><td>Apr 26</td><td>Apr 28</td></tr>
-    <tr><td>16</td><td>May 3</td><td>May 5 <span class="no-class">· Last day of instruction</span></td></tr>
+    <tr>
+      <td>1</td>
+      <td><time datetime="2027-01-11">Jan 11</time><strong>Course orientation</strong><br>Project roadmap, assessment, student interests, and environment setup</td>
+      <td data-core-session="1"><time datetime="2027-01-13">Jan 13</time><strong>Short lecture 1/8</strong><br>Network architecture, paths, and capacity; trace a packet and run the baseline</td>
+      <td>Project 1 introduction and setup</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><time datetime="2027-01-18">Jan 18</time><span class="no-class">No class · MLK Day</span></td>
+      <td data-core-session="2"><time datetime="2027-01-20">Jan 20</time><strong>Short lecture 2/8</strong><br>Queues, congestion, delay, and loss; compare buffer sizes</td>
+      <td>Project 1 baseline check</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><time datetime="2027-01-25">Jan 25</time><strong>Programming studio</strong><br>Implement and compare adaptive path policies</td>
+      <td><time datetime="2027-01-27">Jan 27</time><strong>Student results discussion</strong><br>Project 1 demonstrations, bottlenecks, and failure cases</td>
+      <td>Project 1 results and submission target</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td data-core-session="3"><time datetime="2027-02-01">Feb 1</time><strong>Short lecture 3/8</strong><br>Telemetry, causal features, and data splits; audit a prediction window</td>
+      <td><time datetime="2027-02-03">Feb 3</time><strong>Data studio</strong><br>Inspect episodes, reproduce simple predictors, and check leakage</td>
+      <td>Project 2 introduction and data preparation</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td data-core-session="4"><time datetime="2027-02-08">Feb 8</time><strong>Short lecture 4/8</strong><br>Small-model training and validation; fit and reload a predictor</td>
+      <td><time datetime="2027-02-10">Feb 10</time><strong>Model clinic</strong><br>Feature experiments, validation choices, and paired comparisons</td>
+      <td>Project 2 training and progress check</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><time datetime="2027-02-15">Feb 15</time><span class="no-class">No class · Presidents' Day</span></td>
+      <td><time datetime="2027-02-17">Feb 17</time><strong>Student results discussion</strong><br>Project 2 demonstrations, traffic shifts, and forecast failures</td>
+      <td>Project 2 results and submission target</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td data-core-session="5"><time datetime="2027-02-22">Feb 22</time><strong>Short lecture 5/8</strong><br>Resource allocation, deadlines, and fairness; step through an episode</td>
+      <td><time datetime="2027-02-24">Feb 24</time><strong>Programming studio</strong><br>Compare equal-share and demand-based allocation</td>
+      <td>Project 3 introduction and rule-based baselines</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td data-core-session="6"><time datetime="2027-03-01">Mar 1</time><strong>Short lecture 6/8</strong><br>Q-learning; inspect states, actions, rewards, and policy objectives</td>
+      <td><time datetime="2027-03-03">Mar 3</time><strong>Training studio</strong><br>Train a policy and vary exploration or state design</td>
+      <td>Project 3 implementation; explore Project 4 topics</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><time datetime="2027-03-08">Mar 8</time><strong>Student-led case discussion</strong><br>Map the allocation model to wireless resources and RAN architecture</td>
+      <td><time datetime="2027-03-10">Mar 10</time><strong>Case exploration and project clinic</strong><br>Students examine AI-RAN, OCUDU, or OpenISAC-Edge and discuss feasible extensions</td>
+      <td>Project 3 progress check; discuss Project 4 feasibility</td>
+    </tr>
+    <tr><td>—</td><td colspan="3" class="no-class">Spring Recess (Mar 15–19) · No class</td></tr>
+    <tr>
+      <td>10</td>
+      <td><time datetime="2027-03-22">Mar 22</time><strong>Evaluation studio</strong><br>Repeat training and compare policies under changed traffic</td>
+      <td><time datetime="2027-03-24">Mar 24</time><strong>Student results discussion</strong><br>Project 3 demonstrations and resource-allocation tradeoffs</td>
+      <td>Project 3 results and submission target</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td data-core-session="7"><time datetime="2027-03-29">Mar 29</time><strong>Short lecture 7/8</strong><br>Agent observations, tools, and task success; inspect a diagnostic trajectory</td>
+      <td><time datetime="2027-03-31">Mar 31</time><strong>Proposal workshop</strong><br>Student pitches, peer feedback, and evaluation-plan review</td>
+      <td>Project 4 proposal and evaluation plan</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td data-core-session="8"><time datetime="2027-04-05">Apr 5</time><strong>Short lecture 8/8</strong><br>Expert demonstrations, training, and held-out evaluation; train a tool policy</td>
+      <td><time datetime="2027-04-07">Apr 7</time><strong>Training and integration studio</strong><br>Build the chosen model, controller, or agent</td>
+      <td>Project 4 baseline and initial implementation</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><time datetime="2027-04-12">Apr 12</time><strong>Project clinic</strong><br>Debug workflows and review initial failures in small groups</td>
+      <td><time datetime="2027-04-14">Apr 14</time><strong>Midpoint demonstrations</strong><br>Students show a working system, early results, and one unresolved issue</td>
+      <td>Project 4 progress check</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><time datetime="2027-04-19">Apr 19</time><strong>Student-led topic exchange</strong><br>Share project-relevant findings on edge computing, model selection, or another chosen topic</td>
+      <td><time datetime="2027-04-21">Apr 21</time><strong>Robustness studio</strong><br>Run changed conditions, ablations, and failure analysis</td>
+      <td>Project 4 robustness and comparison experiments</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><time datetime="2027-04-26">Apr 26</time><strong>Peer reproduction studio</strong><br>Run another group's small example and prepare the final demonstration</td>
+      <td><time datetime="2027-04-28">Apr 28</time><strong>Final demonstrations</strong><br>Student presentations and peer discussion</td>
+      <td>Project 4 demonstrations begin</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><time datetime="2027-05-03">May 3</time><strong>Final demonstrations</strong><br>Student presentations and evaluation discussion</td>
+      <td><time datetime="2027-05-05">May 5</time><strong>Project retrospective</strong><br>Student reflections, reproducibility handoff, and a brief instructor wrap-up <span class="no-class">· Last day of instruction</span></td>
+      <td>Project 4 final demonstration and report target</td>
+    </tr>
   </tbody>
 </table>
+</div>
 
-<p>
-  <strong>Final exam:</strong> during the final examination period, May 10-14, 2027.
-  The exact date and time follow the official UHM final examination schedule.
-</p>
-
-<h4>Important Academic Dates</h4>
-
+<h4>Other Academic Dates</h4>
 <ul>
-  <li><strong>Jan 11:</strong> Semester begins.</li>
-  <li><strong>Jan 18:</strong> Martin Luther King Jr. Day, non-instructional day.</li>
-  <li><strong>Feb 15:</strong> Presidents' Day, non-instructional day.</li>
-  <li><strong>Mar 15-19:</strong> Spring recess, no class.</li>
   <li><strong>Mar 26:</strong> Prince Kūhiō Day and Good Friday, non-instructional day.</li>
-  <li><strong>May 5:</strong> Last day of instruction.</li>
   <li><strong>May 6-7:</strong> Study period.</li>
   <li><strong>May 10-14:</strong> Final examination period.</li>
   <li><strong>May 14:</strong> Semester ends.</li>
