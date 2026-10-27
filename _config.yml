@@ -64,6 +64,13 @@ sass:
 highlighter: rouge
 timezone: "Pacific/Honolulu"
 
+# Course materials are maintained in the private Luna-Xue/ECE-668 repository.
+# Keep any old local exports out of the published website.
+exclude:
+  - _courseware
+  - pages/teaching/ece-668/labs
+  - assets/downloads/ece668-network-intelligence-lab.zip
+
 # Plugins (GitHub Pages only support a few)
 plugins:
   - jekyll-redirect-from

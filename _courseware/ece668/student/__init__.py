@@ -1,1 +1,0 @@
-"""Student-owned extension points."""

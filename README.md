@@ -95,18 +95,15 @@ Place images in `assets/img/`. Reference them in YAML or HTML as `/assets/img/fi
 
 ### ECE 668 Courseware
 
-The original course package is maintained in `_courseware/ece668/`. Its source
-directory is excluded from Jekyll's default output by the leading underscore.
-Edit project code and handouts there, then regenerate the public download and
-handout pages from the website root:
+Course code, student handouts, and instructor notes are maintained in the private
+[Luna-Xue/ECE-668 repository](https://github.com/Luna-Xue/ECE-668).
+The website publishes project outlines only. Add links to individual projects
+when the course materials are ready for student access.
 
-```sh
-python3 scripts/build_ece668_courseware.py
-```
-
-The generated pages live under `pages/teaching/ece-668/labs/`, and the ZIP is
-`assets/downloads/ece668-network-intelligence-lab.zip`. The course package has
-its own MIT license; that license does not apply to the rest of this website.
+The former courseware source, generated handout pages, ZIP, and export script
+have been removed from this checkout. Jekyll exclusions and Git ignore rules
+prevent old course exports from being included accidentally. This removal does
+not erase the website repository's earlier Git history.
 
 ## Test Locally with Docker
 

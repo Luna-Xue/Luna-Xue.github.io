@@ -27,3 +27,8 @@ vendor/
 codex/
 .gitignore
 *.mp4
+
+# ECE 668 materials are maintained in their separate private repository.
+/_courseware/ece668/
+/pages/teaching/ece-668/labs/
+/assets/downloads/ece668-network-intelligence-lab.zip
