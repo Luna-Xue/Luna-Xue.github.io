@@ -1,4 +1,9 @@
 - label: award
+  title: "Congratulations to <strong>Saurabh Parkar</strong> on receiving the <strong>UHM Giving Tree Scholarship</strong> for the 2026–27 academic year in recognition of his excellent research!"
+  date: Nov, 2026
+  lab: true
+
+- label: award
   title: "I received an <strong>Outstanding Service Award</strong> at <strong>IEEE Healthcom 2026</strong>, where I co-organized <strong>WCIHS 2026</strong> and the poster session with <strong>Yucheng Xie</strong>."
   date: Oct, 2026
   lab: false
