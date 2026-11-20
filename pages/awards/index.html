@@ -15,7 +15,8 @@ share_description: "Awards, professional service, leadership, and academic activ
     <figure class="award-gallery-item">
         <a class="award-gallery-image" href="{{ award.image | relative_url }}" target="_blank" rel="noopener"
            aria-label="View full-size image: {{ award.alt | escape }}">
-            <img src="{{ award.image | relative_url }}" alt="{{ award.alt | escape }}" loading="lazy" decoding="async">
+            <img src="{{ award.image | relative_url }}" alt="{{ award.alt | escape }}" loading="lazy" decoding="async"
+                 style="width: auto; height: auto; max-width: 100%; max-height: 200px;">
         </a>
         <figcaption>
             <strong class="award-gallery-title">{{ award.title | escape }}</strong>

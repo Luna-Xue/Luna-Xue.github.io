@@ -1,3 +1,18 @@
+- label: service
+  title: "I will serve as a <strong>Program Committee (PC) member</strong> for the <strong>Security, Privacy, and Trust</strong> track at <strong>ICCCN 2027</strong>."
+  date: Nov, 2026
+  lab: false
+
+- label: service
+  title: "I will serve as a <strong>Technical Program Committee member</strong> for the <strong>IEEE INFOCOM 2027 Workshop on Embodied Intelligence Networks (EIN)</strong>."
+  date: Nov, 2026
+  lab: false
+
+- label: service
+  title: "I will serve as <strong>General Chair</strong> of the <strong>IEEE INFOCOM 2027 ISAC² Workshop</strong>."
+  date: Nov, 2026
+  lab: false
+
 - label: award
   title: "Congratulations to <strong>Saurabh Parkar</strong> on receiving the <strong>UHM Giving Tree Scholarship</strong> for the 2026–27 academic year in recognition of his excellent research!"
   date: Nov, 2026
@@ -12,11 +27,6 @@
   title: "Our paper <strong><em>Programmable Transmitarray-Assisted near-Field ISAC for in-Cabin Occupancy Sensing</em></strong> has been accepted by the <a class='news-link' href='https://isac2026.isac-ieee.org/' target='_blank' rel='noopener'><strong>1st Annual IEEE ISAC 2026</strong></a>."
   date: Oct, 2026
   lab: true
-
-- label: service
-  title: "I was invited to serve on the Technical Program Committee for the International Conference on Computer Communications and Networks (ICCCN) 2027."
-  date: Sept, 2026
-  lab: false
 
 - label: other
   title: "UHM WINGS Lab joins <a class='news-link' href='https://openairinterface.org/' target='_blank' rel='noopener'><strong>OpenAirInterface</strong></a> as a Member Organization."
