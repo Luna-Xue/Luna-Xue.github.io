@@ -14,7 +14,7 @@
 | **Course site**     | https://luna-xue.github.io/teaching/ece-362/ |
 | **Course web tool** | https://ece362.147-224-57-207.sslip.io/      |
 
-### Course Description
+### Course Description 
 
 Fundamental discrete mathematics for engineering, including **logic, proof techniques, sets, relations, functions, counting, recurrences, growth of functions, and discrete models of computation**. The course develops mathematical tools for reasoning about algorithms, correctness, complexity, and computational systems.
 
@@ -144,3 +144,5 @@ Makeup exams are available for documented university-approved circumstances. Stu
 * Late homework submissions are not accepted. The lowest homework score is dropped.
 * Regrade requests must be submitted by email within **one week** after graded work is returned. The request should identify the specific grading issue.
 * Approved makeup work associated with an excused absence will be handled separately from the late-work policy.
+
+
